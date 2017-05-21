@@ -10,7 +10,7 @@ var uglify = require("gulp-uglify");
 var cachebust = new CacheBuster;
 
 gulp.task("build-css", function(){
-  return gulp.src("./frontend/*.scss")
+  return gulp.src("frontend/**/*.scss")
   .pipe(sourcemaps.init())
   .pipe(sass())
   .pipe(cachebust.resources())
