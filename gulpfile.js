@@ -9,6 +9,7 @@ var uglify = require("gulp-uglify");
 
 var cachebust = new CacheBuster;
 
+
 gulp.task("build-css", function(){
   return gulp.src("frontend/**/*.scss")
   .pipe(sourcemaps.init())
@@ -17,6 +18,11 @@ gulp.task("build-css", function(){
   .pipe(concat("styles.css"))
   .pipe(sourcemaps.write("./maps"))
   .pipe(gulp.dest("./dist"));
+})
+
+gulp.task('build-views', function() {
+  return gulp.src('./frontend/views/**/*.html')
+  .pipe(gulp.dest('./dist/views'))
 })
 
 gulp.task('build-js', function() {
@@ -30,10 +36,10 @@ gulp.task('build-js', function() {
       .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('build', ['build-css', 'build-js'], function() {
+gulp.task('build', ['build-css', 'build-js', 'build-views'], function() {
     return gulp.src('index.html')
         .pipe(cachebust.references())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('watch', function() {
