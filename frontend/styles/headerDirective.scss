@@ -1,0 +1,190 @@
+@import "fonts";
+.regular{
+  font-family: "regular";
+}
+
+.condensed{
+  font-family: "condensed";
+}
+
+.bold{
+  font-family: "bold";
+}
+
+.capital{
+  text-transform: uppercase;
+}
+
+
+
+
+
+.header-men-hover {
+  position: absolute;
+  border-top-color:#F2F2F2;
+  border-top-width:1.5px;
+  border-top-style: solid;
+  background-color: white;
+  top: 140px;
+  width: 100%;
+  height: 435.6px;
+  z-index: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+
+}
+
+.header-hover-title {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+
+
+.header-women-hover {
+
+}
+
+.header-kid-hover {
+
+}
+
+.header-underwear-hover {
+
+}
+
+.header-discover-hover {
+
+}
+
+
+
+
+
+
+
+.header-container {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  font-family: regular;
+
+
+  .header-left {
+    padding-left: 65px;
+
+    .header-left-top {
+      font-family: regular;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      padding-top: 18px;
+
+
+
+
+        .american-flag {
+          margin-left: 30px;
+          width: 25px;
+          height: 15px;
+
+      }
+
+        small {
+          color: #7B7B82;
+          margin-left: 10px;
+      }
+  }
+
+
+  .header-left-bottom {
+    padding-top: 40px;
+  }
+
+}
+
+  .header-middle {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 40%;
+    font-family: bold;
+
+
+    .header-middle-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 100;
+      color: #0484A9;
+      padding-top: 18px;
+
+
+  }
+
+    .header-middle-bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-end;
+      font-size: 11px;
+      padding-top: 60px;
+      padding-bottom: 5px;
+      padding-left: 30px;
+      padding-right: 30px;
+      color: #7B7B91;
+
+
+  }
+}
+
+
+  .header-right {
+
+
+    .header-right-top {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-top: 18px;
+      font-family: regular;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+
+      .header-right-top-left {
+
+      }
+
+
+      .header-right-top-right {
+
+      }
+    }
+
+    .header-right-bottom {
+      padding-top: 60px;
+      font-size: 11.5px;
+      font-family: regular;
+      color: #7B7B91;
+      font-weight: 300;
+
+    }
+  }
+
+
+}
+
+
+@media (max-width: 600px) {
+
+
+}

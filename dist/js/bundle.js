@@ -59,8 +59,26 @@ angular.module('app').controller('checkoutCtrl', function ($scope, mainSrvc) {
   $scope.test = 'checkout working';
   $scope.test2 = mainSrvc.test;
 });
-"use strict";
-"use strict";
+'use strict';
+
+angular.module('app').directive('footerDirective', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: '../../frontend/views/directives/footerDirective.html'
+
+  };
+});
+'use strict';
+
+angular.module('app').directive('headerDirective', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: '../../frontend/views/directives/headerDirective.html'
+
+  };
+});
 'use strict';
 
 angular.module('app').controller('kidsCtrl', function ($scope, mainSrvc) {
