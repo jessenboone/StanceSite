@@ -6,46 +6,46 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 
   $stateProvider.state('home', {
     url: '/',
-    templateUrl: './frontend/views/home.html'
+    templateUrl: './../views/home.html'
   }).state('mens', {
     url: '/mens',
-    templateUrl: './frontend/views/mens.html',
+    templateUrl: './../views/mens.html',
     controller: 'mensCtrl'
   }).state('womens', {
     url: '/womens',
-    templateUrl: './frontend/views/womens.html',
+    templateUrl: './../views/womens.html',
     controller: 'womensCtrl'
   }).state('kids', {
     url: '/kids',
-    templateUrl: './frontend/views/kids.html',
+    templateUrl: './../views/kids.html',
     controller: 'kidsCtrl'
   }).state('login', {
-    url: '/login',
-    templateUrl: './frontend/views/login.html',
+    url: '/login/:user_id',
+    templateUrl: './../views/login.html',
     controller: 'loginCtrl'
   }).state('account', {
     url: '/account/:user_id',
-    templateUrl: './frontend/views/account.html',
+    templateUrl: './../views/account.html',
     controller: 'accountCtrl'
   }).state('register', {
     url: '/register',
-    templateUrl: './frontend/views/register.html',
+    templateUrl: './../views/register.html',
     controller: 'registerCtrl'
   }).state('singleProduct', {
     url: '/singleProduct/:product_id',
-    templateUrl: './frontend/views/singleProduct.html',
+    templateUrl: './../views/singleProduct.html',
     controller: 'singleProductCtrl'
   }).state('cart', {
     url: '/cart',
-    templateUrl: './frontend/views/cart.html',
+    templateUrl: './../views/cart.html',
     controller: 'cartCtrl'
   }).state('orders', {
     url: '/orders/:user_id',
-    templateUrl: './frontend/views/orders.html',
+    templateUrl: './../views/orders.html',
     controller: 'ordersCtrl'
   }).state('checkout', {
     url: '/checkout',
-    templateUrl: './frontend/views/checkout.html',
+    templateUrl: './../views/checkout.html',
     controller: 'checkoutCtrl'
   });
 });
@@ -167,15 +167,16 @@ angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
 
 angular.module('app').service('mainSrvc', function ($http) {
 
+  // PRODUCTS //////////////////////////////////////////
   this.test = 'service working';
 
-  // PRODUCTS //////////////////////////////////////////
-  this.getProducts = function () {
-    return $http({
-      method: 'GET',
-      url: '/products'
-    }).then(function (response) {
-      return response.data;
+  this.getProducts = function (callback) {
+    return $http.get('/api/products').then(function (response) {
+      console.log(response);
+      callback(response.data);
+    }, function (err) {
+      callback(err);
+      console.log(err);
     });
   };
 
@@ -295,7 +296,6 @@ angular.module('app').service('mainSrvc', function ($http) {
     });
   };
   //need to talk to Todd about this
-
 });
 'use strict';
 
@@ -304,12 +304,10 @@ angular.module('app').controller('mensCtrl', function ($scope, mainSrvc) {
   $scope.test = 'mens working';
   $scope.test2 = mainSrvc.test;
 
-  $scope.getProducts = function () {
-    mainSrvc.getProducts().then(function (response) {
-      $scope.products = response;
-    });
-  };
-  getProducts();
+  mainSrvc.getProducts(function (data) {
+    $scope.products = data;
+    console.log(data);
+  });
 
   $scope.getProductsByCategory = function (mens) {
     mainSrvc.getProductsByCategory(mens).then(function (response) {

@@ -1,4 +1,4 @@
-const app = require('./backend/server')
+const app = require('../.././index.js')
     , db = app.get('db');
 
 module.exports = {
@@ -6,6 +6,7 @@ module.exports = {
   getProducts: (req, res) => {
     db.get_products((err, products) => {
       if (!err) {
+        console.log(products);
         res.status(200).send(products);
       } else {
         res.send(err);
@@ -15,7 +16,7 @@ module.exports = {
 
   getProductsByCategory: (req, res) => {
     let category = req.params.category;
-    db.get_products_by_category(category, (err, products) => {
+    db.get_prods_by_category(category, (err, products) => {
       if (!err) {
         res.status(200).send(products);
       } else {
@@ -25,11 +26,13 @@ module.exports = {
   },
 
   getSingleProduct: (req, res) => {
-    let search = req.params.product_id;
+    let search = req.params.id;
+    console.log(req.params.id);
     db.get_single_product(search, (err, product) => {
       if (!err) {
         res.status(200).send(product);
       } else {
+        console.log(err);
         res.send(err);
       }
     });

@@ -75,50 +75,103 @@ table {
 .capital {
   text-transform: uppercase; }
 
+@media (max-width: 768px) and (min-width: 540px) {
+  .home-jumbotron-text {
+    width: 540px; } }
+
+@media (min-width: 768px) {
+  .home-collection {
+    width: calc(25% - 15px); }
+  .home-jumbotron-text {
+    position: absolute;
+    color: white; }
+  .home-button {
+    color: #000000;
+    background: #FFFFFF; }
+  .home-subheading {
+    margin-top: 10px; }
+  .home-jumbotron-text {
+    width: 560px; } }
+
+@media (max-width: 768px) {
+  .home-collection {
+    width: calc(50% - 5px); }
+  .home-button {
+    color: #FFFFFF;
+    background: #000000; }
+  .home-subheading {
+    margin-top: 2.5px; } }
+
+@media (min-width: 957px) {
+  .home-heading {
+    font-size: 70px;
+    letter-spacing: 5px; }
+  .home-subheading {
+    font-size: 15px; }
+  .home-text {
+    font-size: 15px; } }
+
+@media (max-width: 957px) {
+  .home-heading {
+    font-size: 38.5px;
+    letter-spacing: 5.3px; }
+  .home-subheading {
+    font-size: 13px; }
+  .home-text {
+    font-size: 12.5px; } }
+
 .home-wrapper {
   width: 100%;
   text-align: center; }
   .home-wrapper .home-jumbotron-container {
-    width: 100%; }
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
     .home-wrapper .home-jumbotron-container img {
       width: 100%;
-      margin-bottom: 40px; }
+      margin-bottom: 25px; }
     .home-wrapper .home-jumbotron-container .home-jumbotron-text {
       text-align: center;
-      padding: 35px; }
+      padding: 0 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
       .home-wrapper .home-jumbotron-container .home-jumbotron-text .home-subheading {
-        font-size: 13px;
-        padding-bottom: 45px; }
+        margin-bottom: 12.5px; }
       .home-wrapper .home-jumbotron-container .home-jumbotron-text .home-heading {
-        font-size: 120px;
-        letter-spacing: 10px;
-        padding-bottom: 30px; }
+        margin-bottom: 8px; }
       .home-wrapper .home-jumbotron-container .home-jumbotron-text .home-text {
-        font-size: 12px;
         letter-spacing: 0.03em;
-        margin-bottom: 55px;
-        line-height: 20px; }
-    .home-wrapper .home-jumbotron-container .home-button {
-      font-size: 48px;
-      line-height: 13px;
-      color: #FFFFFF;
-      background: #000000;
-      height: 166px;
-      width: 548px;
-      margin-bottom: 150px; }
+        margin-bottom: 18px;
+        line-height: 18px; }
+      .home-wrapper .home-jumbotron-container .home-jumbotron-text .home-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        border: none;
+        height: 48px;
+        width: 181px;
+        margin-bottom: 40px; }
   .home-wrapper .home-collection-images {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 30px; }
+    padding: 0 10px;
+    margin-bottom: 15px; }
     .home-wrapper .home-collection-images .home-collection {
-      width: calc(50% - 15px);
-      font-size: 20px;
-      line-height: 28px;
       color: #1A1A1A; }
       .home-wrapper .home-collection-images .home-collection img {
-        width: 100%; }
+        width: 100%;
+        margin-bottom: 3px; }
+      .home-wrapper .home-collection-images .home-collection p {
+        font-size: 22px;
+        line-height: 27px;
+        letter-spacing: 1.5px;
+        margin-bottom: 10px; }
 
 
 @font-face {
