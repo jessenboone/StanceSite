@@ -77,9 +77,18 @@ angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
 });
 'use strict';
 
-angular.module('app').service('mainSrvc', function () {
+angular.module('app').service('mainSrvc', function ($http) {
 
   this.test = 'service working';
+
+  this.getProducts = function () {
+    return $http({
+      method: 'GET',
+      url: '/products'
+    }).then(function (response) {
+      return response.data;
+    });
+  };
 });
 'use strict';
 
