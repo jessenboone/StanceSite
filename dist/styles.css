@@ -121,6 +121,29 @@ table {
         width: 100%; }
 
 
+@font-face {
+  font-family: "regular";
+  src: url("../.././Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf"); }
+
+@font-face {
+  font-family: "bold";
+  src: url("../.././Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf"); }
+
+@font-face {
+  font-family: "condensed";
+  src: url("../.././Akzidenz-Grotesk/akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf"); }
+
+.regular {
+  font-family: "regular"; }
+
+.condensed {
+  font-family: "condensed"; }
+
+.bold {
+  font-family: "bold"; }
+
+.capital {
+  text-transform: uppercase; }
 
 
 

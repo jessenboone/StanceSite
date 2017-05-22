@@ -61,7 +61,7 @@ angular.module('app')
     }).then(response => response.data)
   };
 
-  this.deleteItemInCart = (product, user) {
+  this.deleteItemInCart = (product, user) => {
     return $http({
       method: 'DELETE',
       url: '/cart/clear/' + product + '/' + user
@@ -81,7 +81,7 @@ angular.module('app')
   };
 
   // EMAIL LIST //////////////////////////////////////////
-  this.addEmail = (email) {
+  this.addEmail = (email) => {
     return $http({
       method: 'POST',
       url: '/email',

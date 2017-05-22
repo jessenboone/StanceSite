@@ -24,9 +24,14 @@ angular.module('app', ['ui.router'])
       controller: 'kidsCtrl'
     })
     .state('login', {
-      url: '/login/:user_id',
+      url: '/login',
       templateUrl: './frontend/views/login.html',
       controller: 'loginCtrl'
+    })
+    .state('account', {
+      url: '/account/:user_id',
+      templateUrl: './frontend/views/account.html',
+      controller: 'accountCtrl'
     })
     .state('register', {
       url: '/register',
