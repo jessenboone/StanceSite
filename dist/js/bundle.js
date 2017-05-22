@@ -80,6 +80,7 @@ angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
 angular.module('app').service('mainSrvc', function ($http) {
 
   this.test = 'service working';
+<<<<<<< HEAD
 
   this.getProducts = function (callback) {
     return $http.get('/api/products').then(function (response) {
@@ -90,6 +91,18 @@ angular.module('app').service('mainSrvc', function ($http) {
       console.log(err);
     });
   };
+||||||| merged common ancestors
+=======
+
+  this.getProducts = function () {
+    return $http({
+      method: 'GET',
+      url: '/products'
+    }).then(function (response) {
+      return response.data;
+    });
+  };
+>>>>>>> master
 });
 'use strict';
 

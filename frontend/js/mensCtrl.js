@@ -4,8 +4,17 @@ angular.module('app')
   $scope.test = 'mens working';
   $scope.test2 = mainSrvc.test;
 
+
   mainSrvc.getProducts(function(data){
         $scope.products = data;
         console.log(data);
       })
+
+  $scope.getProductsByCategory = (mens) => {
+    mainSrvc.getProductsByCategory(mens).then(function(response) {
+      $scope.mensProducts = response;
+    });
+  };
+
+
 });
