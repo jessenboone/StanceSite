@@ -87,19 +87,17 @@ table {
       text-align: center;
       padding: 35px; }
       .home-wrapper .home-jumbotron-container .home-jumbotron-text .home-subheading {
-        font-size: 12px;
-        line-height: 26px;
-        padding-bottom: 69px; }
+        font-size: 13px;
+        padding-bottom: 45px; }
       .home-wrapper .home-jumbotron-container .home-jumbotron-text .home-heading {
-        font-size: 139px;
-        line-height: 60px;
-        letter-spacing: 0.03em;
-        padding-bottom: 70px; }
+        font-size: 120px;
+        letter-spacing: 10px;
+        padding-bottom: 30px; }
       .home-wrapper .home-jumbotron-container .home-jumbotron-text .home-text {
         font-size: 12px;
-        line-height: 22px;
         letter-spacing: 0.03em;
-        margin-bottom: 55px; }
+        margin-bottom: 55px;
+        line-height: 20px; }
     .home-wrapper .home-jumbotron-container .home-button {
       font-size: 48px;
       line-height: 13px;
