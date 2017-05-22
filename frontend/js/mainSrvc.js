@@ -7,7 +7,7 @@ angular.module('app')
     return $http.get('/api/products').then(
       function(response){
         console.log(response);
-        callback(response);
+        callback(response.data);
       },
       function(err){
         callback(err);
