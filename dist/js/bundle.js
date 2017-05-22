@@ -23,6 +23,10 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     url: '/login/:user_id',
     templateUrl: './../views/login.html',
     controller: 'loginCtrl'
+  }).state('account', {
+    url: '/account/:user_id',
+    templateUrl: './../views/account.html',
+    controller: 'accountCtrl'
   }).state('register', {
     url: '/register',
     templateUrl: './../views/register.html',
@@ -353,6 +357,13 @@ angular.module('app').controller('singleProductCtrl', function ($scope, mainSrvc
       $scope.singleProduct = response;
     });
   };
+});
+'use strict';
+
+angular.module('app').controller('accountCtrl', function ($scope, mainSrvc) {
+
+  $scope.test = 'account working';
+  $scope.test2 = mainSrvc.test;
 });
 'use strict';
 

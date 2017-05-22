@@ -28,6 +28,11 @@ angular.module('app', ['ui.router'])
       templateUrl: './../views/login.html',
       controller: 'loginCtrl'
     })
+    .state('account', {
+      url: '/account/:user_id',
+      templateUrl: './../views/account.html',
+      controller: 'accountCtrl'
+    })
     .state('register', {
       url: '/register',
       templateUrl: './../views/register.html',
