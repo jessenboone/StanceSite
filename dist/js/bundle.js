@@ -132,9 +132,20 @@ angular.module('app').directive('footerDirective', function () {
 
 angular.module('app').directive('headerDirective', function () {
 
+  // menMenu = false;
+  //
+  // womenMenu = false;
+  //
+  // kidMenu = false;
+  //
+  // underwearMenu = false;
+  //
+  // discoverMenu = false;
+
+
   return {
     restrict: 'E',
-    templateUrl: '../../frontend/views/directives/headerDirective.html'
+    templateUrl: '../views/directives/headerDirective.html'
 
   };
 });

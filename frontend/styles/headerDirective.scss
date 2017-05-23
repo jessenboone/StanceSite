@@ -31,15 +31,37 @@
   z-index: 5px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-
+  justify-content: center;
+  font-family: regular;
 
 }
 
 .header-hover-title {
+  width: 12%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  border-right-color: #F2F2F2;
+  border-right-style: solid;
+  border-right-width: 1.5px;
+  padding-bottom: 20px;
+  color: #7B7B91;
+
+
+  .header-hover-list {
+    margin-top: 35px;
+
+
+    .hover-list-items {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+  }
 }
+
 
 
 
@@ -47,20 +69,82 @@
 
 
 .header-women-hover {
+  position: absolute;
+  border-top-color:#F2F2F2;
+  border-top-width:1.5px;
+  border-top-style: solid;
+  background-color: white;
+  top: 140px;
+  width: 100%;
+  height: 391.2px;
+  z-index: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: regular;
 
 }
 
-.header-kid-hover {
+
+
+.header-kids-hover {
+  position: absolute;
+  border-top-color:#F2F2F2;
+  border-top-width:1.5px;
+  border-top-style: solid;
+  background-color: white;
+  top: 140px;
+  width: 100%;
+  height: 318px;
+  z-index: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: regular;
 
 }
+
+
 
 .header-underwear-hover {
+  position: absolute;
+  border-top-color:#F2F2F2;
+  border-top-width:1.5px;
+  border-top-style: solid;
+  background-color: white;
+  top: 140px;
+  width: 100%;
+  height: 259.2px;
+  z-index: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: regular;
 
 }
+
+
+
+
 
 .header-discover-hover {
+  position: absolute;
+  border-top-color:#F2F2F2;
+  border-top-width:1.5px;
+  border-top-style: solid;
+  background-color: white;
+  top: 140px;
+  width: 100%;
+  height: 122.6px;
+  z-index: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: regular;
 
 }
+
+
 
 
 
@@ -78,11 +162,11 @@
 
 
   .header-left {
-    padding-left: 65px;
+    padding-left: 150px;
 
     .header-left-top {
       font-family: regular;
-      font-size: 11px;
+      font-size: 12px;
       display: flex;
       align-items: center;
       padding-top: 18px;
@@ -105,7 +189,7 @@
 
 
   .header-left-bottom {
-    padding-top: 40px;
+    padding-top: 45px;
   }
 
 }
@@ -113,8 +197,10 @@
   .header-middle {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     list-style-type: none;
-    width: 40%;
+    width: 55%;
     font-family: bold;
 
 
@@ -125,7 +211,9 @@
       font-size: 11px;
       font-weight: 100;
       color: #0484A9;
-      padding-top: 18px;
+      padding-top: 26px;
+      width: 192px;
+      height: 50px;
 
 
   }
@@ -133,14 +221,24 @@
     .header-middle-bottom {
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
-      align-items: flex-end;
+      justify-content: center;
+      align-items: center;
       font-size: 11px;
-      padding-top: 60px;
+      margin-top: 50px;
       padding-bottom: 5px;
-      padding-left: 30px;
+      margin-left: 60px;
       padding-right: 30px;
       color: #7B7B91;
+
+
+      a {
+        display: flex;
+        justify-content: center;
+        height: 67.4px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-top: 10px;
+      }
 
 
   }
@@ -156,27 +254,53 @@
       align-items: center;
       padding-top: 18px;
       font-family: regular;
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 500;
       letter-spacing: 1px;
+      margin-right: 50px;
 
       .header-right-top-left {
-
+        font-size: 16px;
+        padding-right: 15px;
       }
 
+      .header-right-top-middle1 {
+        font-size: 12px;
+      }
+
+      .header-right-top-middle2 {
+        font-size: 16px;
+        padding-left: 35px;
+      }
 
       .header-right-top-right {
-
+        font-size: 16px;
+        padding-left: 10px;
       }
     }
 
     .header-right-bottom {
-      padding-top: 60px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-top: 45px;
+      padding-left: 117px;
       font-size: 11.5px;
       font-family: regular;
       color: #7B7B91;
       font-weight: 300;
 
+
+      .header-right-bottom-left {
+        font-size: 14px;
+      }
+
+
+      .header-right-bottom-right {
+        font-size: 16px;
+        margin-left: 16px;
+        transform: scaleX(-1);
+      }
     }
   }
 
