@@ -29,7 +29,7 @@ angular.module('app', ['ui.router'])
       controller: 'loginCtrl'
     })
     .state('account', {
-      url: '/account/:user_id',
+      url: '/account',  /*/:user_id*/
       templateUrl: './../views/account.html',
       controller: 'accountCtrl'
     })

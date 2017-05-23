@@ -24,7 +24,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/login.html',
     controller: 'loginCtrl'
   }).state('account', {
-    url: '/account/:user_id',
+    url: '/account', /*/:user_id*/
     templateUrl: './../views/account.html',
     controller: 'accountCtrl'
   }).state('register', {
@@ -146,6 +146,9 @@ angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'login working';
   $scope.test2 = mainSrvc.test;
+
+  $scope.isShown = true;
+  $scope.isShown2 = true;
 
   $scope.login = function (returnUserEmail, returnUserPassword) {
     mainSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
@@ -334,6 +337,9 @@ angular.module('app').controller('registerCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'register working';
   $scope.test2 = mainSrvc.test;
+
+  $scope.isShown = true;
+  $scope.isShown2 = true;
 
   $scope.register = function (user) {
     mainSrvc.register(user).then(function (response) {

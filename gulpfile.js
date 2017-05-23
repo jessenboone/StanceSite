@@ -36,7 +36,7 @@ gulp.task('build-js', function() {
       .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('build', ['build-css', 'build-js', 'build-views', 'watch'], function() {
+gulp.task('build', ['build-css', 'build-js', 'build-views'], function() {
     return gulp.src('index.html')
         .pipe(cachebust.references())
         .pipe(gulp.dest('./dist'));

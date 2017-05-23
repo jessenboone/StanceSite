@@ -4,6 +4,9 @@ angular.module('app')
   $scope.test = 'login working';
   $scope.test2 = mainSrvc.test;
 
+  $scope.isShown = true;
+  $scope.isShown2 = true;
+
   $scope.login = (returnUserEmail, returnUserPassword) => {
     mainSrvc.login(returnUserEmail, returnUserPassword).then(function(response) {
       $scope.email = response.email;
