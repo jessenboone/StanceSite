@@ -24,7 +24,7 @@ angular.module('app', ['ui.router'])
       controller: 'kidsCtrl'
     })
     .state('login', {
-      url: '/login/:user_id',
+      url: '/login',
       templateUrl: './../views/login.html',
       controller: 'loginCtrl'
     })

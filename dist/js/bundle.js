@@ -20,7 +20,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/kids.html',
     controller: 'kidsCtrl'
   }).state('login', {
-    url: '/login/:user_id',
+    url: '/login',
     templateUrl: './../views/login.html',
     controller: 'loginCtrl'
   }).state('account', {
