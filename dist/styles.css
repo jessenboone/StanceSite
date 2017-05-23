@@ -50,16 +50,16 @@ table {
 
 
 @font-face {
-  font-family: "regular";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf"); }
+  font-family: regular;
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
 @font-face {
-  font-family: "bold";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf"); }
+  font-family: bold;
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
 
 @font-face {
-  font-family: "condensed";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf"); }
+  font-family: condensed;
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
   font-family: "regular"; }
@@ -105,16 +105,16 @@ table {
   height: 360px; }
 
 @font-face {
-  font-family: "regular";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf"); }
+  font-family: regular;
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
 @font-face {
-  font-family: "bold";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf"); }
+  font-family: bold;
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
 
 @font-face {
-  font-family: "condensed";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf"); }
+  font-family: condensed;
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
   font-family: "regular"; }
@@ -321,16 +321,16 @@ table {
       transform: scaleX(-1); }
 
 @font-face {
-  font-family: "regular";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf"); }
+  font-family: regular;
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
 @font-face {
-  font-family: "bold";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf"); }
+  font-family: bold;
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
 
 @font-face {
-  font-family: "condensed";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf"); }
+  font-family: condensed;
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
   font-family: "regular"; }
@@ -444,16 +444,16 @@ table {
 
 
 @font-face {
-  font-family: "regular";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf"); }
+  font-family: regular;
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
 @font-face {
-  font-family: "bold";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf"); }
+  font-family: bold;
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
 
 @font-face {
-  font-family: "condensed";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf"); }
+  font-family: condensed;
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
   font-family: "regular"; }
