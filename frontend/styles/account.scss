@@ -1,0 +1,153 @@
+$gray: #999;
+$aqua: #0493c1;
+
+.acc-padding {
+  padding: 0 2px 0 13px;
+}
+
+.acc-border-bottom {
+  border-bottom: 1px solid rgba(142,142,148,0.3);
+  margin-bottom: 36px;
+}
+
+.acc-subheading {
+  font-size: 25.25px;
+  color: #1a1a1a;
+  letter-spacing: 2.5px;
+  margin-bottom: 22px;
+}
+
+.acc-text {
+  color: $gray;
+  letter-spacing: 1px;
+  font-size: 12px;
+  margin-bottom: 12px;
+  line-height: 19px;
+}
+
+.acc-noline {
+  text-decoration: none;
+}
+
+.acc-wrapper {
+  padding: 10px 10px;
+  .acc-my-acc {
+    // display: flex;
+    .acc-heading {
+      font-size: 31px;
+      letter-spacing: 2.5px;
+      margin-bottom: 44px;
+    }
+    span {
+      font-size: 13px;
+      a {
+        font-size: 13px;
+        color: $gray;
+      }
+    }
+  }
+
+  .acc-account-management {
+    .acc-managenment-div {
+      border-bottom: 1px solid rgba(142,142,148,0.3);
+      width: 90%;
+      margin-bottom: 40px;
+      .acc-my-acc {
+        visibility: hidden;
+      }
+      .acc-account {
+        margin-bottom: 1px;
+        .acc-account-heading {
+          margin-bottom: 17px;
+          color: $gray;
+          font-size: 14px;
+        }
+        .acc-a-bottom {
+          margin-bottom: 14px;
+        }
+        p {
+          a {
+            margin-left: 17px;
+            color: $aqua;
+            font-size: 12px;
+          }
+        }
+      }
+      .acc-management-bottom {
+        margin-bottom: 44px;
+      }
+    }
+    .acc-directive {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .acc-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .acc-subheading {
+    font-size: 34.25px;
+  }
+
+  .acc-text {
+    font-size: 14px;
+  }
+
+  .acc-wrapper {
+    display: flex;
+    flex-direction: row;
+    .acc-div {
+      order: 2;
+      margin-top: 67px;
+      .acc-my-acc {
+        .acc-heading {
+          font-size: 38px;
+          margin-bottom: 60px;
+        }
+      }
+      .acc-divs {
+        display: flex;
+        flex-direction: column;
+        padding-right: 10px;
+        .acc-div-divide {
+          display: flex;
+          justify-content: space-between;
+          .acc-div-double {
+            width: 48%;
+            height: 190px;
+          }
+        }
+      }
+    }
+
+    .acc-account-management {
+      order: 1;
+      width: 37%;
+      .acc-managenment-div {
+        margin-bottom: 49px;
+        .acc-my-acc {
+          visibility: visible;
+          font-size: 12px;
+          margin-bottom: 58px;
+          a {
+            text-decoration: none;
+            color: $gray;
+          }
+        }
+        .acc-account {
+          margin-left: 10px;
+        }
+      }
+      .acc-directive {
+        width: 84%;
+        margin-top: 10px;
+      }
+    }
+  }
+}
