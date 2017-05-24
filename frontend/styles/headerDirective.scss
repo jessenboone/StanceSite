@@ -33,8 +33,15 @@
   flex-direction: row;
   justify-content: center;
   font-family: regular;
+  font-weight: 300;
 
 }
+
+
+.header-hover-title:hover {
+    cursor: pointer;
+  }
+
 
 .header-hover-title {
   width: 12%;
@@ -54,6 +61,11 @@
   .header-hover-list {
     margin-top: 35px;
 
+
+    .hover-list-items:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
 
     .hover-list-items {
       font-size: 14px;
@@ -164,12 +176,20 @@
   .header-left {
     padding-left: 150px;
 
+    .american-flag {
+        cursor: pointer;
+
+      }
+
+
     .header-left-top {
       font-family: regular;
       font-size: 12px;
       display: flex;
       align-items: center;
       padding-top: 18px;
+
+
 
 
 
@@ -181,12 +201,22 @@
 
       }
 
+
+        small:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+
         small {
           color: #7B7B82;
           margin-left: 10px;
       }
   }
 
+
+  .header-left-bottom:hover {
+      cursor: pointer;
+    }
 
   .header-left-bottom {
     padding-top: 45px;
@@ -230,6 +260,10 @@
       padding-right: 30px;
       color: #7B7B91;
 
+      a:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
 
       a {
         display: flex;
@@ -259,19 +293,43 @@
       letter-spacing: 1px;
       margin-right: 50px;
 
+
+      .header-right-top-left:hover {
+          cursor: pointer;
+        }
+
       .header-right-top-left {
+        color: #7B7B91;
         font-size: 16px;
         padding-right: 15px;
       }
 
+      .header-right-top-middle1:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+
       .header-right-top-middle1 {
+        color: #7B7B91;
         font-size: 12px;
       }
+
+
+
+      .header-right-top-middle2:hover {
+          cursor: pointer;
+        }
 
       .header-right-top-middle2 {
         font-size: 16px;
         padding-left: 35px;
       }
+
+
+      .header-right-top-right:hover {
+          cursor: pointer;
+        }
+
 
       .header-right-top-right {
         font-size: 16px;
@@ -296,6 +354,12 @@
       }
 
 
+
+      .header-right-bottom-right:hover {
+          cursor: pointer;
+        }
+
+
       .header-right-bottom-right {
         font-size: 16px;
         margin-left: 16px;
@@ -305,6 +369,13 @@
   }
 
 
+}
+
+
+.showBorder {
+  border-bottom-color: orange;
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
 }
 
 

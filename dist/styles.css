@@ -141,7 +141,11 @@ table {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-family: regular; }
+  font-family: regular;
+  font-weight: 300; }
+
+.header-hover-title:hover {
+  cursor: pointer; }
 
 .header-hover-title {
   width: 12%;
@@ -158,6 +162,9 @@ table {
   color: #7B7B91; }
   .header-hover-title .header-hover-list {
     margin-top: 35px; }
+    .header-hover-title .header-hover-list .hover-list-items:hover {
+      cursor: pointer;
+      text-decoration: underline; }
     .header-hover-title .header-hover-list .hover-list-items {
       font-size: 14px;
       margin-bottom: 15px; }
@@ -231,6 +238,8 @@ table {
   font-family: regular; }
   .header-container .header-left {
     padding-left: 150px; }
+    .header-container .header-left .american-flag {
+      cursor: pointer; }
     .header-container .header-left .header-left-top {
       font-family: regular;
       font-size: 12px;
@@ -241,9 +250,14 @@ table {
         margin-left: 30px;
         width: 25px;
         height: 15px; }
+      .header-container .header-left .header-left-top small:hover {
+        cursor: pointer;
+        text-decoration: underline; }
       .header-container .header-left .header-left-top small {
         color: #7B7B82;
         margin-left: 10px; }
+    .header-container .header-left .header-left-bottom:hover {
+      cursor: pointer; }
     .header-container .header-left .header-left-bottom {
       padding-top: 45px; }
   .header-container .header-middle {
@@ -275,6 +289,9 @@ table {
       margin-left: 60px;
       padding-right: 30px;
       color: #7B7B91; }
+      .header-container .header-middle .header-middle-bottom a:hover {
+        cursor: pointer;
+        text-decoration: underline; }
       .header-container .header-middle .header-middle-bottom a {
         display: flex;
         justify-content: center;
@@ -292,14 +309,25 @@ table {
     font-weight: 500;
     letter-spacing: 1px;
     margin-right: 50px; }
+    .header-container .header-right .header-right-top .header-right-top-left:hover {
+      cursor: pointer; }
     .header-container .header-right .header-right-top .header-right-top-left {
+      color: #7B7B91;
       font-size: 16px;
       padding-right: 15px; }
+    .header-container .header-right .header-right-top .header-right-top-middle1:hover {
+      cursor: pointer;
+      text-decoration: underline; }
     .header-container .header-right .header-right-top .header-right-top-middle1 {
+      color: #7B7B91;
       font-size: 12px; }
+    .header-container .header-right .header-right-top .header-right-top-middle2:hover {
+      cursor: pointer; }
     .header-container .header-right .header-right-top .header-right-top-middle2 {
       font-size: 16px;
       padding-left: 35px; }
+    .header-container .header-right .header-right-top .header-right-top-right:hover {
+      cursor: pointer; }
     .header-container .header-right .header-right-top .header-right-top-right {
       font-size: 16px;
       padding-left: 10px; }
@@ -315,10 +343,17 @@ table {
     font-weight: 300; }
     .header-container .header-right .header-right-bottom .header-right-bottom-left {
       font-size: 14px; }
+    .header-container .header-right .header-right-bottom .header-right-bottom-right:hover {
+      cursor: pointer; }
     .header-container .header-right .header-right-bottom .header-right-bottom-right {
       font-size: 16px;
       margin-left: 16px;
       transform: scaleX(-1); }
+
+.showBorder {
+  border-bottom-color: orange;
+  border-bottom-style: solid;
+  border-bottom-width: 5px; }
 
 @font-face {
   font-family: regular;
