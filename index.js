@@ -3,13 +3,11 @@ const express = require('express')
     , massive = require('massive')
     , cors = require('cors')
     , session = require('express-session')
-    // , config = require('./config');
+    , config = require('./backend/config');
 
 const app = module.exports = express();
 
-const massiveInstance = massive.connectSync({connectionString: 'postgres://postgres:@localhost/Stance'});
-//'postgres://postgres:@localhost/personal-project'
-//config.connectionString    no single quotes
+const massiveInstance = massive.connectSync({connectionString: config.database_secret});
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist'));
@@ -31,9 +29,9 @@ const emailListControl = require('./backend/server/emailListControl');
 // const ordersControl = require('./backend/server/ordersControl');
 
 // PRODUCTS
-app.get('/api/products', productsControl.getProducts);
-app.get('/products/:category', productsControl.getProductsByCategory);
-app.get('/product/:id', productsControl.getSingleProduct);
+app.get('/api/products/:mwk/:category', productsControl.getProducts);
+// app.get('/api/products/:category', productsControl.getProductsByMwk);
+// app.get('/api/product/:id', productsControl.getSingleProduct);
 
 // USERS
 // app.post('/register', usersControl.register);

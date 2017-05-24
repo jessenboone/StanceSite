@@ -1,2 +1,2 @@
 select * from products
-where category = $1;
+where mwk = $1;

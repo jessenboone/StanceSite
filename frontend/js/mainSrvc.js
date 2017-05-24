@@ -1,29 +1,19 @@
 angular.module('app')
 .service('mainSrvc', function($http) {
 
-  
-
-  // PRODUCTS //////////////////////////////////////////
-  this.test = 'service working'
-
-  this.getProducts = function(callback){
-    return $http.get('/api/products').then(
-      function(response){
-        console.log(response);
-        callback(response.data);
-      },
-      function(err){
-        callback(err);
-        console.log(err);
-      })
-  };
-
-  this.getProductsByCategory = (param) => {
+  this.getProducts = (mwk, category) => {
     return $http({
-      method: 'GET',
-      url: '/products/' + param
-    }).then(response => response.data)
-  };
+       method: 'GET',
+       url: '/api/products/' + mwk + '/' + category
+     }).then(response => response.data)
+   };
+
+  //  this.getProductsByMwk = (mwk) => {
+  //    return $http({
+  //       method: 'GET',
+  //       url: '/api/products/' + mwk
+  //     }).then(response => response.data)
+  //   };
 
   this.getSingleProduct = (param) => {
     return $http({
@@ -68,7 +58,7 @@ angular.module('app')
     }).then(response => response.data)
   };
 
-  this.deleteItemInCart = (product, user) {
+  this.deleteItemInCart = (product, user) => {
     return $http({
       method: 'DELETE',
       url: '/cart/clear/' + product + '/' + user
@@ -88,7 +78,7 @@ angular.module('app')
   };
 
   // EMAIL LIST //////////////////////////////////////////
-  this.addEmail = (email) {
+  this.addEmail = (email) => {
     return $http({
       method: 'POST',
       url: '/email',
