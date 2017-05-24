@@ -50,7 +50,6 @@ table {
 
 
 
-<<<<<<< HEAD
 @media (max-width: 768px) {
   .featured-item {
     width: 50%; } }
@@ -108,7 +107,6 @@ table {
         color: gray;
         margin-bottom: 20px; }
 
-=======
 @font-face {
   font-family: "regular";
   src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf"); }
@@ -184,7 +182,6 @@ table {
 
 .bold {
   font-family: "bold"; }
->>>>>>> master
 
 .capital {
   text-transform: uppercase; }

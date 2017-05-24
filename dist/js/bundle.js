@@ -405,25 +405,6 @@ angular.module('app').controller('womensCtrl', function ($scope, mainSrvc) {
     });
   };
   $scope.getProducts();
-<<<<<<< HEAD
-||||||| merged common ancestors
-||||||| merged common ancestors
-=======
-
-  $scope.getProducts = function () {
-    mainSrvc.getProducts().then(function (response) {
-      $scope.products = response;
-    });
-  };
-  getProducts();
-
-  $scope.getProductsByCategory = function (womens) {
-    mainSrvc.getProductsByCategory(womens).then(function (response) {
-      $scope.womensProducts = response;
-    });
-  };
->>>>>>> master
-=======
 });
 "use strict";
 
@@ -440,6 +421,5 @@ angular.module('app').directive("punksAndPoets", function () {
     restrict: "E",
     templateUrl: "./views/punksAndPoets.html"
   };
->>>>>>> d7d0b4ce5b7d9b7d89650c51514d43a7921b0565
 });
 //# sourceMappingURL=bundle.js.map
