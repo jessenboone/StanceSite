@@ -1,3 +1,47 @@
+
+<div class="home-wrapper">
+  <!-- insert header directive -->
+
+  <!-- starting jumbotron -->
+  <div class="home-jumbotron-container">
+    <picture>
+      <source media="(min-width: 1440px)" srcset="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw2aa15acf/2017/assets/in-line/socks/casual/blue/men/captain-fin/captain-fin-primary_lg.jpg">
+      <source media="(min-width: 750px)" srcset="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw18bdec89/2017/assets/in-line/socks/casual/blue/men/captain-fin/captain-fin-primary_md.jpg">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw8a498f0c/2017/assets/in-line/socks/casual/blue/men/captain-fin/captain-fin-secondary_md.jpg" alt="Men's Captain Fin Socks">
+    </picture>
+    <div class="home-jumbotron-text">
+      <p class="home-subheading capital regular">Captain fin x stance</p>
+      <p class="home-heading capital condensed">Keep the fun Alive</p>
+      <p class="home-text regular">Mitch Abshere is all about surfing clean lines and coloring outside the rest.</p>
+      <button class="home-button bold">Shop the Collection</button>
+    </div>
+  </div>
+  <div class="home-collection-images condensed capital">
+    <div class="home-collection">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw531cd905/2017/assets/in-line/socks/performance/fusion-athletic/stretch-low/men-training-stretch-secondary_md.jpg" alt="Image of stars and stripes">
+      <p>Train with the best</p>
+    </div>
+    <div class="home-collection">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dwda6065c0/2017/assets/in-line/socks/casual/uncommon-solids/men/lifestyle/mark-oblow/men-uncommon_solids-mark_oblow-secondary_md.jpg" alt="Image of basketball legends socks">
+      <p>Go back to basics</p>
+    </div>
+    <div class="home-collection">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dwe1d3af23/2017/assets/nba/collections/legends/todd-francis/nba-legends-todd-francis-secondary_md.jpg" alt="image of womens socks">
+      <p>Legends of the league</p>
+    </div>
+    <div class="home-collection">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw95361a1c/2017/assets/in-line/underwear/men/feel-alternate-blocks/secondary_md.jpg" alt="image of kids socks">
+      <p>new underwear styles</p>
+    </div>
+  </div>
+</div>
+
+<featured></featured>
+<featured></featured>
+
+<div ng-repeat="p in products">
+  <p ng-repeat="(key,val) in p">{{val}}</p>
+
 {{test}}
 {{test2}}
 

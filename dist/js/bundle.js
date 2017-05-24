@@ -406,4 +406,20 @@ angular.module('app').controller('womensCtrl', function ($scope, mainSrvc) {
   };
   $scope.getProducts();
 });
+"use strict";
+
+angular.module('app').directive("featured", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./views/featured.html"
+  };
+});
+"use strict";
+
+angular.module('app').directive("punksAndPoets", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./views/punksAndPoets.html"
+  };
+});
 //# sourceMappingURL=bundle.js.map
