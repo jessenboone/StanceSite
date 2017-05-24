@@ -114,8 +114,11 @@ $aqua: #0493c1;
 }
 
 @media only screen and (min-width: 768px) {
-  .bottom3 {
-    margin-bottom: 18px;
+
+  .reg-wrapper {
+    .bottom3 {
+      margin-bottom: 18px;
+    }
   }
 
   .reg-input-style {

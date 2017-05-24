@@ -487,7 +487,7 @@ table {
     flex-direction: column; } }
 
 @media only screen and (min-width: 768px) {
-  .bottom3 {
+  .reg-wrapper .bottom3 {
     margin-bottom: 18px; }
   .reg-input-style {
     border: 1px solid rgba(142, 142, 148, 0.3);
