@@ -31,7 +31,7 @@ const emailListControl = require('./backend/server/emailListControl');
 // PRODUCTS
 app.get('/api/products/:mwk/:category', productsControl.getProducts);
 // app.get('/api/products/:category', productsControl.getProductsByMwk);
-// app.get('/api/product/:id', productsControl.getSingleProduct);
+app.get('/api/product/:id', productsControl.getSingleProduct);
 
 // USERS
 // app.post('/register', usersControl.register);

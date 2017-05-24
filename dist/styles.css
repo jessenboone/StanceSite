@@ -50,17 +50,74 @@ table {
 
 
 
+@media (max-width: 768px) {
+  .featured-item {
+    width: 50%; } }
+
+@media (min-width: 768px) {
+  .featured-item {
+    width: 25%; } }
+
+@media (min-width: 1200px) {
+  .featuredSocks {
+    width: 1200px; } }
+
+.featuredSocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 90px; }
+  .featuredSocks .featured-title {
+    font-size: 36px;
+    letter-spacing: 2.5px;
+    margin-bottom: 42px; }
+  .featuredSocks .featured-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    border: none;
+    height: 48px;
+    padding: 0px 28px;
+    color: white;
+    background: black;
+    margin-bottom: 20px; }
+  .featuredSocks .featured-items-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    .featuredSocks .featured-items-container .featured-item {
+      padding: 1.25rem; }
+      .featuredSocks .featured-items-container .featured-item img {
+        width: 100%;
+        margin-bottom: 22px; }
+      .featuredSocks .featured-items-container .featured-item .line-under-featured-image {
+        background-color: rgba(0, 0, 0, 0.03);
+        color: rgba(0, 0, 0, 0.03);
+        border-color: rgba(0, 0, 0, 0.03);
+        margin-bottom: 18px; }
+      .featuredSocks .featured-items-container .featured-item .featured-item-name {
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 8px; }
+      .featuredSocks .featured-items-container .featured-item .featured-item-style {
+        font-size: 12px;
+        color: gray;
+        margin-bottom: 20px; }
+
 @font-face {
   font-family: "regular";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf"); }
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
 @font-face {
   font-family: "bold";
-  src: url("../.././Akzidenz-Grotesk/Akzidenz-grotesk-bold.ttf"); }
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
 
 @font-face {
   font-family: "condensed";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf"); }
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
   font-family: "regular"; }
@@ -107,15 +164,15 @@ table {
 
 @font-face {
   font-family: "regular";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf"); }
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
 @font-face {
   font-family: "bold";
-  src: url("../.././Akzidenz-Grotesk/Akzidenz-grotesk-bold.ttf"); }
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
 
 @font-face {
   font-family: "condensed";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf"); }
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
   font-family: "regular"; }
@@ -336,15 +393,15 @@ table {
 
 @font-face {
   font-family: "regular";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf"); }
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
 @font-face {
   font-family: "bold";
-  src: url("../.././Akzidenz-Grotesk/Akzidenz-grotesk-bold.ttf"); }
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
 
 @font-face {
   font-family: "condensed";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf"); }
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
   font-family: "regular"; }
@@ -436,7 +493,7 @@ table {
         font-size: 13px;
         border: none;
         height: 48px;
-        width: 181px;
+        padding: 0 28px;
         margin-bottom: 40px; }
   .home-wrapper .home-collection-images {
     width: 100%;
@@ -459,15 +516,15 @@ table {
 
 @font-face {
   font-family: "regular";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf"); }
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
 @font-face {
   font-family: "bold";
-  src: url("../.././Akzidenz-Grotesk/Akzidenz-grotesk-bold.ttf"); }
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
 
 @font-face {
   font-family: "condensed";
-  src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf"); }
+  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
   font-family: "regular"; }
@@ -672,6 +729,16 @@ table {
       .login-wrapper .login-section-3 hr {
         margin-bottom: 44px; } }
 
+.new_img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px; }
 
 
 
@@ -798,5 +865,15 @@ table {
           margin-bottom: 44px; } }
 
 
+.new_img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px; }
 
 /*# sourceMappingURL=maps/styles.css.map */
