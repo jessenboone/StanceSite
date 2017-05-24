@@ -5,17 +5,18 @@ angular.module('app')
   $scope.test2 = mainSrvc.test;
 
   $scope.getProducts = () => {
-    mainSrvc.getProducts().then(function(response) {
-      $scope.products = response;
-    })
-  };
-  getProducts();
-
-  $scope.getProductsByCategory = (womens) => {
-    mainSrvc.getProductsByCategory(womens).then(function(response) {
-      $scope.womensProducts = response;
-    });
-  };
+    console.log('get products from ctrl');
+     mainSrvc.getProducts('Womens', 'New Arrivals').then(function(response) {
+       $scope.products = response;
+     });
+     mainSrvc.getProducts('Womens', 'Training').then(function(response) {
+       $scope.product = response;
+     });
+     mainSrvc.getProducts('Womens', 'Uncommon Solids').then(function(response) {
+       $scope.prod = response;
+     });
+   };
+   $scope.getProducts();
 
 
 });
