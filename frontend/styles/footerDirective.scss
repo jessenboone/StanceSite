@@ -1,0 +1,55 @@
+@import "fonts";
+.regular{
+  font-family: "regular";
+}
+
+.condensed{
+  font-family: "condensed";
+}
+
+.bold{
+  font-family: "bold";
+}
+
+.capital{
+  text-transform: uppercase;
+}
+
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 565.4px;
+  background-color: #1A1A1A;
+  width: 100%;
+}
+
+.footer1 {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1A1A1A;
+  color: white;
+  width: 80%;
+  height: 110.4px;
+  border-bottom-color: #3B3B3F;
+  border-bottom-style: inset;
+  border-bottom-width:thin;
+
+}
+
+
+.footer2 {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items:flex-start;
+  background-color: #1A1A1A;
+  color: white;
+  width: 100%;
+  height: 360px;
+}

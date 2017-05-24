@@ -1,19 +1,13 @@
 angular.module('app')
 .service('mainSrvc', function($http) {
 
+// PRODUCTS //////////////////////////////////////////
   this.getProducts = (mwk, category) => {
     return $http({
-       method: 'GET',
-       url: '/api/products/' + mwk + '/' + category
-     }).then(response => response.data)
-   };
-
-  //  this.getProductsByMwk = (mwk) => {
-  //    return $http({
-  //       method: 'GET',
-  //       url: '/api/products/' + mwk
-  //     }).then(response => response.data)
-  //   };
+      method: 'GET',
+      url: '/api/products/' + mwk + '/' + category
+    }).then(response => response.data)
+  };
 
   this.getSingleProduct = (param) => {
     return $http({
