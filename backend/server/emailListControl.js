@@ -4,7 +4,7 @@ const app = require('../.././index.js')
 module.exports = {
 
   addEmail: (req, res) => {
-    console.log('addEmail function working')
+    console.log()
     let email = req.body.email_address;
     db.add_email(email, (err, addedEmail) => {
       if (!err) {
