@@ -59,17 +59,16 @@ $aqua: #0493c1;
           margin-bottom: 34px;
         }
         .reg-checkbox {
-          // display: flex;
           input {
             height: 18px;
             width: 18px;
             float: left;
             margin-right: 13px;
             margin-top: -3px;
-            -webkit-appearance: none;
-            color: #ffffff;
-            border-radius: 0;
-            border: 1px solid black;
+          //   -webkit-appearance: none;
+          //   color: #ffffff;
+          //   border-radius: 0;
+          //   border: 1px solid black;
           }
           .reg-checkbox-text {
             font-size: 12px;
@@ -131,11 +130,19 @@ $aqua: #0493c1;
     flex-direction: row;
     .reg-create-wrapper {
       order: 2;
+      padding: 36px 3%;
+      .reg-create {
+        .reg-heading {
+          font-size: 40px;
+          margin-top: 36px;
+          margin-bottom: 41px;
+        }
+        .reg-subheading {
+          margin-bottom: 56px;
+        }
+      }
     }
     .login-wrapper {
-      // padding: 5% 0;
-      // display: flex;
-      // flex-direction: row;
       width: 36%;
       margin-left: 2%;
       .login-section-3 {
