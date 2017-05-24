@@ -225,12 +225,22 @@
 
 
 
-    <div class="header-container">
+
+
+
+
+
+
+
+
+<!-- header-full -->
+
+    <div class="header-container" id="header-container">
       <div class="header-left">
-        <div class="header-left-top">
-            <img class="american-flag" src="https://bfx-objects.borderfree.com/v1/dist/images/context-chooser/flags/US.gif" alt=""><small>1-888-391-9020</small>
+        <div class="header-left-top" id="header-left-top ">
+            <img class="american-flag" src="https://bfx-objects.borderfree.com/v1/dist/images/context-chooser/flags/US.gif" alt=""><small id="phone">1-888-391-9020</small>
         </div>
-        <div class="header-left-bottom">
+        <div class="header-left-bottom" id="header-left-bottom">
           <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/Sites-Stance_US-Site/-/default/v1495370486050/images/svg-icons/stance-logo.svg" alt="stance logo">
         </div>
       </div>
@@ -238,7 +248,7 @@
         <div class="header-middle-top">
           <h4>FREE US SHIPPING OVER $25</h4>
         </div>
-        <div class="header-middle-bottom">
+        <div class="header-middle-bottom" id="header-middle-bottom">
             <a ng-mouseover="showMen = true" ng-mouseleave="showMen = false" ng-class="{'showBorder': showMen}">MEN</a>
             <a ng-mouseover="showWomen = true" ng-mouseleave="showWomen = false">WOMEN</a>
             <a ng-mouseover="showKids = true" ng-mouseleave="showKids = false">KIDS</a>
@@ -248,10 +258,10 @@
       </div>
       <div class="header-right">
         <div class="header-right-top">
-          <div class="header-right-top-left">
+          <div class="header-right-top-left" id="header-right-top-left">
             <i class="fa fa-user" aria-hidden="true"></i>
           </div>
-          <div class="header-right-top-middle1">
+          <div class="header-right-top-middle1" id="header-right-top-middle1">
             <p>Login / Register</p>
           </div>
           <div class="header-right-top-middle2">
@@ -261,7 +271,7 @@
             0
           </div>
         </div>
-        <div class="header-right-bottom">
+        <div class="header-right-bottom" id="header-right-bottom">
           <div class="header-right-bottom-left">
           <p>Search</p>
           </div>
@@ -275,3 +285,76 @@
     <div class="other-container">
 
     </div>
+
+
+
+
+
+
+
+
+<!-- header-responsive -->
+
+
+<div id="header-container-responsive">
+  <div id="header-top-responsive">
+      <i class="fa fa-bars" aria-hidden="true" id="header-hamburger"></i>
+      <img id="header-logo-responsive" src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/Sites-Stance_US-Site/-/default/v1495370486050/images/svg-icons/stance-logo.svg" alt="stance logo">
+      <div id="header-right-responsive">
+        <img id="american-flag-responsive" src="https://bfx-objects.borderfree.com/v1/dist/images/context-chooser/flags/US.gif" alt="">
+      <div id="header-cart-responsive">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      </div>
+      <div id="header-cart-responsive">
+        <p>0</p>
+      </div>
+    </div>
+  </div>
+  <div class="header-bottom-responsive" id="header-bottom-responsive">
+    <p>FREE US SHIPPING OVER $25</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+    <div class="header-container-responsive" id="header-container-responsive">
+      <div class="header-left">
+        <div class="header-left-top" id="header-left-top ">
+
+            <img class="american-flag" src="https://bfx-objects.borderfree.com/v1/dist/images/context-chooser/flags/US.gif" alt="">
+        </div>
+        <div class="header-left-bottom" id="header-left-bottom">
+          <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/Sites-Stance_US-Site/-/default/v1495370486050/images/svg-icons/stance-logo.svg" alt="stance logo">
+        </div>
+      </div>
+      <div class="header-middle">
+        <div class="header-middle-top">
+          <h4>FREE US SHIPPING OVER $25</h4>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="header-right-top">
+          <div class="header-right-top-middle2">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </div>
+          <div class="header-right-top-right">
+            0
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="other-container">
+
+    </div> -->

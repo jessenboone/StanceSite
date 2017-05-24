@@ -130,6 +130,7 @@ table {
 
 .header-men-hover {
   position: absolute;
+  z-index: 25;
   border-top-color: #F2F2F2;
   border-top-width: 1.5px;
   border-top-style: solid;
@@ -137,7 +138,6 @@ table {
   top: 140px;
   width: 100%;
   height: 435.6px;
-  z-index: 5px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -171,6 +171,7 @@ table {
 
 .header-women-hover {
   position: absolute;
+  z-index: 25;
   border-top-color: #F2F2F2;
   border-top-width: 1.5px;
   border-top-style: solid;
@@ -186,6 +187,7 @@ table {
 
 .header-kids-hover {
   position: absolute;
+  z-index: 25;
   border-top-color: #F2F2F2;
   border-top-width: 1.5px;
   border-top-style: solid;
@@ -201,6 +203,7 @@ table {
 
 .header-underwear-hover {
   position: absolute;
+  z-index: 25;
   border-top-color: #F2F2F2;
   border-top-width: 1.5px;
   border-top-style: solid;
@@ -216,6 +219,7 @@ table {
 
 .header-discover-hover {
   position: absolute;
+  z-index: 25;
   border-top-color: #F2F2F2;
   border-top-width: 1.5px;
   border-top-style: solid;
@@ -237,15 +241,15 @@ table {
   justify-content: space-around;
   font-family: regular; }
   .header-container .header-left {
-    padding-left: 150px; }
+    padding-left: 130px; }
     .header-container .header-left .american-flag {
       cursor: pointer; }
     .header-container .header-left .header-left-top {
       font-family: regular;
-      font-size: 12px;
+      font-size: 11px;
       display: flex;
       align-items: center;
-      padding-top: 18px; }
+      padding-top: 12px; }
       .header-container .header-left .header-left-top .american-flag {
         margin-left: 30px;
         width: 25px;
@@ -255,7 +259,8 @@ table {
         text-decoration: underline; }
       .header-container .header-left .header-left-top small {
         color: #7B7B82;
-        margin-left: 10px; }
+        margin-left: 10px;
+        width: 95px; }
     .header-container .header-left .header-left-bottom:hover {
       cursor: pointer; }
     .header-container .header-left .header-left-bottom {
@@ -275,7 +280,7 @@ table {
       font-size: 11px;
       font-weight: 100;
       color: #0484A9;
-      padding-top: 26px;
+      padding-top: 13px;
       width: 192px;
       height: 50px; }
     .header-container .header-middle .header-middle-bottom {
@@ -299,61 +304,137 @@ table {
         margin-left: 20px;
         margin-right: 20px;
         padding-top: 10px; }
-  .header-container .header-right .header-right-top {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-top: 18px;
-    font-family: regular;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    margin-right: 50px; }
-    .header-container .header-right .header-right-top .header-right-top-left:hover {
-      cursor: pointer; }
-    .header-container .header-right .header-right-top .header-right-top-left {
+  .header-container .header-right {
+    padding-right: 130px; }
+    .header-container .header-right .header-right-top {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-top: 12px;
+      font-family: regular;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-right: 50px; }
+      .header-container .header-right .header-right-top .header-right-top-left:hover {
+        cursor: pointer; }
+      .header-container .header-right .header-right-top .header-right-top-left {
+        color: #7B7B91;
+        font-size: 16px;
+        padding-right: 15px; }
+      .header-container .header-right .header-right-top .header-right-top-middle1:hover {
+        cursor: pointer;
+        text-decoration: underline; }
+      .header-container .header-right .header-right-top .header-right-top-middle1 {
+        color: #7B7B91;
+        font-size: 12px; }
+      .header-container .header-right .header-right-top .header-right-top-middle2:hover {
+        cursor: pointer; }
+      .header-container .header-right .header-right-top .header-right-top-middle2 {
+        font-size: 16px;
+        padding-left: 35px; }
+      .header-container .header-right .header-right-top .header-right-top-right:hover {
+        cursor: pointer; }
+      .header-container .header-right .header-right-top .header-right-top-right {
+        font-size: 16px;
+        padding-left: 10px; }
+    .header-container .header-right .header-right-bottom {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-top: 45px;
+      padding-left: 117px;
+      font-size: 11.5px;
+      font-family: regular;
       color: #7B7B91;
-      font-size: 16px;
-      padding-right: 15px; }
-    .header-container .header-right .header-right-top .header-right-top-middle1:hover {
-      cursor: pointer;
-      text-decoration: underline; }
-    .header-container .header-right .header-right-top .header-right-top-middle1 {
-      color: #7B7B91;
-      font-size: 12px; }
-    .header-container .header-right .header-right-top .header-right-top-middle2:hover {
-      cursor: pointer; }
-    .header-container .header-right .header-right-top .header-right-top-middle2 {
-      font-size: 16px;
-      padding-left: 35px; }
-    .header-container .header-right .header-right-top .header-right-top-right:hover {
-      cursor: pointer; }
-    .header-container .header-right .header-right-top .header-right-top-right {
-      font-size: 16px;
-      padding-left: 10px; }
-  .header-container .header-right .header-right-bottom {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-top: 45px;
-    padding-left: 117px;
-    font-size: 11.5px;
-    font-family: regular;
-    color: #7B7B91;
-    font-weight: 300; }
-    .header-container .header-right .header-right-bottom .header-right-bottom-left {
-      font-size: 14px; }
-    .header-container .header-right .header-right-bottom .header-right-bottom-right:hover {
-      cursor: pointer; }
-    .header-container .header-right .header-right-bottom .header-right-bottom-right {
-      font-size: 16px;
-      margin-left: 16px;
-      transform: scaleX(-1); }
+      font-weight: 300; }
+      .header-container .header-right .header-right-bottom .header-right-bottom-left {
+        font-size: 14px; }
+      .header-container .header-right .header-right-bottom .header-right-bottom-right:hover {
+        cursor: pointer; }
+      .header-container .header-right .header-right-bottom .header-right-bottom-right {
+        font-size: 16px;
+        margin-left: 16px;
+        transform: scaleX(-1); }
 
 .showBorder {
   border-bottom-color: orange;
   border-bottom-style: solid;
   border-bottom-width: 5px; }
+
+@media (min-width: 926px) {
+  #header-container-responsive {
+    display: none; } }
+
+@media (max-width: 925px) {
+  #header-container {
+    display: none; }
+  #header-container-responsive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 122.2px; }
+  #header-hamburger {
+    font-size: 18px;
+    margin-left: 10px; }
+  #header-logo-responsive {
+    display: flex;
+    align-items: flex-start;
+    width: 85px;
+    height: 20px;
+    margin-left: 10%; }
+  #header-top-responsive {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 65%;
+    padding-top: 20px;
+    padding-left: 20px; }
+  #header-right-responsive {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; }
+  #american-flag-responsive {
+    width: 25px;
+    height: 15px;
+    margin-right: 20px; }
+  #header-cart-responsive {
+    font-size: 18px;
+    margin-right: 15px; }
+  #header-bottom-responsive {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    font-family: bold;
+    font-size: 11px;
+    color: #0484A9;
+    padding-top: 5px; } }
+
+@media (max-width: 370px) {
+  #header-right-responsive {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; }
+  #american-flag-responsive {
+    width: 25px;
+    height: 15px;
+    margin-right: 12px; }
+  #header-cart-responsive {
+    font-size: 16px;
+    margin-right: 12px; } }
+
+@media (max-width: 321px) {
+  #header-right-responsive {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; }
+  #american-flag-responsive {
+    width: 25px;
+    height: 15px; }
+  #header-cart-responsive {
+    font-size: 16px; } }
 
 @font-face {
   font-family: regular;
