@@ -20,11 +20,11 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/kids.html',
     controller: 'kidsCtrl'
   }).state('login', {
-    url: '/login/:user_id',
+    url: '/login',
     templateUrl: './../views/login.html',
     controller: 'loginCtrl'
   }).state('account', {
-    url: '/account/:user_id',
+    url: '/account', /*/:user_id*/
     templateUrl: './../views/account.html',
     controller: 'accountCtrl'
   }).state('register', {
@@ -157,15 +157,15 @@ angular.module('app').controller('kidsCtrl', function ($scope, mainSrvc) {
 
   $scope.getProducts = function () {
     console.log('get products from ctrl');
-    mainSrvc.getProducts('Kids', 'Kids').then(function (response) {
+    mainSrvc.getProducts('Kids', 'Boys').then(function (response) {
       $scope.products = response;
     });
-    //  mainSrvc.getProducts('Girls', 'Kids').then(function(response) {
-    //    $scope.product = response;
-    //  });
-    //  mainSrvc.getProducts('Baby Girl', 'Kids').then(function(response) {
-    //    $scope.prod = response;
-    //  });
+    mainSrvc.getProducts('Kids', 'Girls').then(function (response) {
+      $scope.product = response;
+    });
+    mainSrvc.getProducts('Kids', 'Baby').then(function (response) {
+      $scope.prod = response;
+    });
   };
   $scope.getProducts();
 });
@@ -175,6 +175,9 @@ angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'login working';
   $scope.test2 = mainSrvc.test;
+
+  $scope.isShown = true;
+  $scope.isShown2 = true;
 
   $scope.login = function (returnUserEmail, returnUserPassword) {
     mainSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
@@ -349,6 +352,9 @@ angular.module('app').controller('registerCtrl', function ($scope, mainSrvc) {
   $scope.test = 'register working';
   $scope.test2 = mainSrvc.test;
 
+  $scope.isShown = true;
+  $scope.isShown2 = true;
+
   $scope.register = function (user) {
     mainSrvc.register(user).then(function (response) {
       user.first_name = '';
@@ -399,5 +405,21 @@ angular.module('app').controller('womensCtrl', function ($scope, mainSrvc) {
     });
   };
   $scope.getProducts();
+});
+"use strict";
+
+angular.module('app').directive("featured", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./views/featured.html"
+  };
+});
+"use strict";
+
+angular.module('app').directive("punksAndPoets", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./views/punksAndPoets.html"
+  };
 });
 //# sourceMappingURL=bundle.js.map

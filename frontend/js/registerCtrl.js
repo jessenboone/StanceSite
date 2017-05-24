@@ -4,6 +4,9 @@ angular.module('app')
   $scope.test = 'register working';
   $scope.test2 = mainSrvc.test;
 
+  $scope.isShown = true;
+  $scope.isShown2 = true;
+
   $scope.register = (user) => {
     mainSrvc.register(user).then(function(response) {
       user.first_name = '';

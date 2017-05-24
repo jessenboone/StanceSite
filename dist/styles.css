@@ -1,3 +1,4 @@
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -48,6 +49,63 @@ table {
   border-spacing: 0; }
 
 
+
+@media (max-width: 768px) {
+  .featured-item {
+    width: 50%; } }
+
+@media (min-width: 768px) {
+  .featured-item {
+    width: 25%; } }
+
+@media (min-width: 1200px) {
+  .featuredSocks {
+    width: 1200px; } }
+
+.featuredSocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 90px; }
+  .featuredSocks .featured-title {
+    font-size: 36px;
+    letter-spacing: 2.5px;
+    margin-bottom: 42px; }
+  .featuredSocks .featured-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    border: none;
+    height: 48px;
+    padding: 0px 28px;
+    color: white;
+    background: black;
+    margin-bottom: 20px; }
+  .featuredSocks .featured-items-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    .featuredSocks .featured-items-container .featured-item {
+      padding: 1.25rem; }
+      .featuredSocks .featured-items-container .featured-item img {
+        width: 100%;
+        margin-bottom: 22px; }
+      .featuredSocks .featured-items-container .featured-item .line-under-featured-image {
+        background-color: rgba(0, 0, 0, 0.03);
+        color: rgba(0, 0, 0, 0.03);
+        border-color: rgba(0, 0, 0, 0.03);
+        margin-bottom: 18px; }
+      .featuredSocks .featured-items-container .featured-item .featured-item-name {
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 8px; }
+      .featuredSocks .featured-items-container .featured-item .featured-item-style {
+        font-size: 12px;
+        color: gray;
+        margin-bottom: 20px; }
 
 @font-face {
   font-family: "regular";
@@ -422,7 +480,7 @@ table {
         font-size: 13px;
         border: none;
         height: 48px;
-        width: 181px;
+        padding: 0 28px;
         margin-bottom: 40px; }
   .home-wrapper .home-collection-images {
     width: 100%;
@@ -464,13 +522,351 @@ table {
 .bold {
   font-family: "bold"; }
 
+.point {
+  cursor: pointer; }
+
+#bright1:hover {
+  background: rgba(26, 26, 26, 0.8);
+  transition: 1s; }
+
+#bright2:hover {
+  background: rgba(26, 26, 26, 0.8);
+  transition: 1s; }
+
+#bright3:hover {
+  background: rgba(26, 26, 26, 0.8);
+  transition: 1s; }
+
 .capital {
   text-transform: uppercase; }
 
+.bottom3 {
+  margin-bottom: 17px; }
+
+.login-subheading {
+  font-size: 25.25px;
+  letter-spacing: 2.5px; }
+
+.login-p {
+  color: #999;
+  font-size: 11.5px;
+  line-height: 18px;
+  letter-spacing: .75px; }
+
+.login-input-style {
+  border: 1px solid rgba(142, 142, 148, 0.2);
+  height: 50px;
+  width: 100%;
+  padding-left: 20px;
+  font-size: 12.5px;
+  font-weight: bold;
+  margin-bottom: 34px; }
+
+.login-anchor {
+  font-size: 13px;
+  text-decoration: none;
+  color: #0493c1; }
+
+.login-wrapper {
+  padding: 5% 3%; }
+  .login-wrapper .login-my-acc-div .login-my-acc-text {
+    margin-bottom: 42px; }
+    .login-wrapper .login-my-acc-div .login-my-acc-text .login-acc-heading {
+      font-size: 31px;
+      letter-spacing: 2.5px; }
+  .login-wrapper .login-my-acc-div .login-my-acc-inputs {
+    display: flex;
+    flex-direction: column; }
+  .login-wrapper .login-my-acc-div .login-login {
+    display: flex;
+    margin-bottom: 42px; }
+    .login-wrapper .login-my-acc-div .login-login button {
+      height: 51px;
+      width: 94px;
+      background: #1a1a1a;
+      color: #ffffff;
+      font-size: 13px; }
+    .login-wrapper .login-my-acc-div .login-login .login-checkbox {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      padding-left: 9px; }
+      .login-wrapper .login-my-acc-div .login-login .login-checkbox input {
+        height: 20px;
+        width: 20px;
+        background: #ffffff; }
+      .login-wrapper .login-my-acc-div .login-login .login-checkbox p {
+        font-size: 13px;
+        padding-left: 9px;
+        padding-top: 5px; }
+  .login-wrapper .login-check-order-div {
+    margin-bottom: 50px; }
+    .login-wrapper .login-check-order-div .login-check-order-text .login-check-order-p {
+      margin-bottom: 40px; }
+    .login-wrapper .login-check-order-div .login-check-order-button p {
+      font-size: 14px;
+      color: #999;
+      line-height: 17px;
+      margin-bottom: 29px; }
+    .login-wrapper .login-check-order-div .login-check-order-button button {
+      height: 51px;
+      width: 148px;
+      background: #1a1a1a;
+      color: #ffffff;
+      font-size: 13px; }
+  .login-wrapper .login-new-customer-div {
+    margin-bottom: 45px; }
+    .login-wrapper .login-new-customer-div .login-new-Customer-p {
+      margin-bottom: 40px; }
+    .login-wrapper .login-new-customer-div button {
+      height: 51px;
+      width: 188px;
+      background: #1a1a1a;
+      color: #ffffff;
+      font-size: 13px; }
+  .login-wrapper .login-benefits-div {
+    margin-bottom: 45px; }
+    .login-wrapper .login-benefits-div .login-benefits-heading {
+      color: #999;
+      font-size: 18px; }
+  .login-wrapper .login-acc-settings-div {
+    color: #999;
+    font-size: 17px; }
+    .login-wrapper .login-acc-settings-div .login-my-acc {
+      visibility: hidden; }
+    .login-wrapper .login-acc-settings-div .login-settings-confidently {
+      margin-bottom: 40px; }
+      .login-wrapper .login-acc-settings-div .login-settings-confidently .login-settings-sub .login-acc {
+        font-size: 15px; }
+      .login-wrapper .login-acc-settings-div .login-settings-confidently .login-settings-sub p a {
+        margin-left: 21px; }
+  .login-wrapper hr {
+    width: 95%;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 36px; }
+  .login-wrapper .login-help-div .login-help {
+    color: #1a1a1a;
+    margin-bottom: 40px; }
+  .login-wrapper .login-help-div .login-help-questions p a {
+    font-size: 12px; }
+  .login-wrapper .login-help-div .login-help-questions .login-contact {
+    font-size: 13px; }
+  .login-wrapper .login-help-div .login-help-questions .login-text-space {
+    margin-bottom: 17px; }
+
+@media only screen and (max-width: 768px) {
+  .login-wrapper {
+    display: flex;
+    flex-direction: column; } }
+
+@media only screen and (min-width: 768px) {
+  .bottom3 {
+    margin-bottom: 18px; }
+  .login-subheading {
+    font-size: 35.25px;
+    letter-spacing: 3px; }
+  .login-p {
+    font-size: 13px;
+    line-height: 21px; }
+  .login-input-style {
+    border: 1px solid rgba(142, 142, 148, 0.3);
+    font-size: 11.5px; }
+  .login-wrapper {
+    padding: 5% 0;
+    display: flex;
+    flex-direction: row; }
+    .login-wrapper .login-section-1 {
+      order: 2;
+      width: 33.3%;
+      padding-left: 1%;
+      padding-right: 2%; }
+      .login-wrapper .login-section-1 .login-my-acc-div .login-my-acc-text .login-acc-heading {
+        position: relative;
+        width: 200%; }
+        .login-wrapper .login-section-1 .login-my-acc-div .login-my-acc-text .login-acc-heading span {
+          position: absolute;
+          z-index: 1;
+          font-size: 40px;
+          top: -80px; }
+      .login-wrapper .login-section-1 .login-my-acc-div .login-my-acc-text .login-acc-subheading {
+        margin-top: 53%; }
+    .login-wrapper .login-section-2 {
+      order: 3;
+      width: 33.3%;
+      margin-top: 16%;
+      padding-left: 1%;
+      padding-right: 1%; }
+      .login-wrapper .login-section-2 .login-benefits-heading {
+        line-height: 26px;
+        margin-bottom: 16px; }
+      .login-wrapper .login-section-2 .login-benefits-sub {
+        margin-bottom: 16px; }
+    .login-wrapper .login-section-3 {
+      order: 1;
+      width: 29%;
+      padding-left: 3%;
+      padding-right: 1%;
+      margin-top: -25px; }
+      .login-wrapper .login-section-3 .login-acc-settings-div .login-my-acc {
+        visibility: visible;
+        font-size: 13px;
+        margin-bottom: 58px;
+        margin-left: -10px; }
+        .login-wrapper .login-section-3 .login-acc-settings-div .login-my-acc a {
+          text-decoration: none;
+          color: #999;
+          font-size: 13px; }
+      .login-wrapper .login-section-3 .login-acc-settings-div .login-settings-confidently .login-acc {
+        font-size: 14px;
+        margin-bottom: 18px; }
+      .login-wrapper .login-section-3 hr {
+        margin-bottom: 44px; } }
+
+.new_img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px; }
 
 
 
+#reg-bright:hover {
+  background: rgba(26, 26, 26, 0.8);
+  transition: 1s; }
+
+.reg-subheading {
+  font-size: 25.25px;
+  letter-spacing: 2.5px; }
+
+.reg-flex {
+  display: flex;
+  flex-direction: column; }
+
+.reg-subheading {
+  margin-bottom: 47px; }
+
+.reg-input-style {
+  border: 1px solid rgba(142, 142, 148, 0.3);
+  height: 50px;
+  width: 100%;
+  padding-left: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 34px; }
+
+.reg-anchor {
+  font-size: 14px;
+  text-decoration: none;
+  color: #0493c1; }
+
+.reg-wrapper .reg-create-wrapper {
+  padding: 5% 3%; }
+  .reg-wrapper .reg-create-wrapper .reg-create .reg-heading {
+    font-size: 31px;
+    letter-spacing: 2.5px;
+    margin-bottom: 35px; }
+  .reg-wrapper .reg-create-wrapper .reg-create .reg-name {
+    margin-bottom: 30px; }
+  .reg-wrapper .reg-create-wrapper .reg-create .reg-email {
+    margin-bottom: 10px; }
+    .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-characters {
+      font-size: 11.5px;
+      margin-top: -29px;
+      color: #999;
+      margin-left: 5px;
+      margin-bottom: 34px; }
+    .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-checkbox input {
+      height: 18px;
+      width: 18px;
+      float: left;
+      margin-right: 13px;
+      margin-top: -3px;
+      -webkit-appearance: none;
+      color: #ffffff;
+      border-radius: 0;
+      border: 1px solid black; }
+    .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-checkbox .reg-checkbox-text {
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: .25px;
+      margin-bottom: 36px; }
+    .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-privacy {
+      color: #999;
+      font-size: 13px;
+      line-height: 15px;
+      margin-bottom: 32px; }
+      .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-privacy a {
+        font-size: 12px; }
+    .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-apply-button {
+      height: 52px;
+      width: 98px;
+      background: #1a1a1a;
+      color: #ffffff;
+      font-size: 13px;
+      letter-spacing: 1px; }
+
+@media only screen and (max-width: 425px) {
+  .reg-subheading {
+    letter-spacing: 2px; } }
+
+@media only screen and (max-width: 768px) {
+  .reg-wrapper {
+    display: flex;
+    flex-direction: column; } }
+
+@media only screen and (min-width: 768px) {
+  .reg-wrapper .bottom3 {
+    margin-bottom: 18px; }
+  .reg-input-style {
+    border: 1px solid rgba(142, 142, 148, 0.3);
+    font-size: 11.5px; }
+  .reg-wrapper {
+    display: flex;
+    flex-direction: row; }
+    .reg-wrapper .reg-create-wrapper {
+      order: 2; }
+    .reg-wrapper .login-wrapper {
+      width: 36%;
+      margin-left: 2%; }
+      .reg-wrapper .login-wrapper .login-section-3 {
+        order: 1;
+        width: 100%;
+        padding-left: 3%;
+        padding-right: 1%;
+        margin-top: -25px; }
+        .reg-wrapper .login-wrapper .login-section-3 .login-acc-settings-div .login-my-acc {
+          visibility: visible;
+          font-size: 13px;
+          margin-bottom: 58px;
+          margin-left: -10px; }
+          .reg-wrapper .login-wrapper .login-section-3 .login-acc-settings-div .login-my-acc a {
+            text-decoration: none;
+            color: #999;
+            font-size: 13px; }
+        .reg-wrapper .login-wrapper .login-section-3 .login-acc-settings-div .login-settings-confidently .login-acc {
+          font-size: 14px;
+          margin-bottom: 18px; }
+        .reg-wrapper .login-wrapper .login-section-3 hr {
+          margin-bottom: 44px; } }
 
 
+.new_img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px; }
 
 /*# sourceMappingURL=maps/styles.css.map */
