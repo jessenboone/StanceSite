@@ -321,6 +321,19 @@ table {
       margin-left: 16px;
       transform: scaleX(-1); }
 
+.help-div .help {
+  color: #1a1a1a;
+  margin-bottom: 40px; }
+
+.help-div .help-questions p a {
+  font-size: 12px; }
+
+.help-div .help-questions .help-contact {
+  font-size: 13px; }
+
+.help-div .help-questions .help-text-space {
+  margin-bottom: 17px; }
+
 @font-face {
   font-family: "regular";
   src: url("./../Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf"); }
@@ -590,15 +603,6 @@ table {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     margin-bottom: 36px; }
-  .login-wrapper .login-help-div .login-help {
-    color: #1a1a1a;
-    margin-bottom: 40px; }
-  .login-wrapper .login-help-div .login-help-questions p a {
-    font-size: 12px; }
-  .login-wrapper .login-help-div .login-help-questions .login-contact {
-    font-size: 13px; }
-  .login-wrapper .login-help-div .login-help-questions .login-text-space {
-    margin-bottom: 17px; }
 
 @media only screen and (max-width: 768px) {
   .login-wrapper {
@@ -618,7 +622,7 @@ table {
     border: 1px solid rgba(142, 142, 148, 0.3);
     font-size: 11.5px; }
   .login-wrapper {
-    padding: 5% 0;
+    padding: 33px 0;
     display: flex;
     flex-direction: row; }
     .login-wrapper .login-section-1 {
@@ -628,18 +632,18 @@ table {
       padding-right: 2%; }
       .login-wrapper .login-section-1 .login-my-acc-div .login-my-acc-text .login-acc-heading {
         position: relative;
-        width: 200%; }
+        width: 150%; }
         .login-wrapper .login-section-1 .login-my-acc-div .login-my-acc-text .login-acc-heading span {
           position: absolute;
           z-index: 1;
           font-size: 40px;
           top: -80px; }
       .login-wrapper .login-section-1 .login-my-acc-div .login-my-acc-text .login-acc-subheading {
-        margin-top: 53%; }
+        margin-top: 122px; }
     .login-wrapper .login-section-2 {
       order: 3;
       width: 33.3%;
-      margin-top: 16%;
+      margin-top: 123px;
       padding-left: 1%;
       padding-right: 1%; }
       .login-wrapper .login-section-2 .login-benefits-heading {
@@ -721,11 +725,7 @@ table {
       width: 18px;
       float: left;
       margin-right: 13px;
-      margin-top: -3px;
-      -webkit-appearance: none;
-      color: #ffffff;
-      border-radius: 0;
-      border: 1px solid black; }
+      margin-top: -3px; }
     .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-checkbox .reg-checkbox-text {
       font-size: 12px;
       line-height: 18px;
@@ -765,7 +765,14 @@ table {
     display: flex;
     flex-direction: row; }
     .reg-wrapper .reg-create-wrapper {
-      order: 2; }
+      order: 2;
+      padding: 36px 3%; }
+      .reg-wrapper .reg-create-wrapper .reg-create .reg-heading {
+        font-size: 40px;
+        margin-top: 36px;
+        margin-bottom: 41px; }
+      .reg-wrapper .reg-create-wrapper .reg-create .reg-subheading {
+        margin-bottom: 56px; }
     .reg-wrapper .login-wrapper {
       width: 36%;
       margin-left: 2%; }
