@@ -24,12 +24,12 @@ angular.module('app', ['ui.router'])
       controller: 'kidsCtrl'
     })
     .state('login', {
-      url: '/login/:user_id',
+      url: '/login',
       templateUrl: './../views/login.html',
       controller: 'loginCtrl'
     })
     .state('account', {
-      url: '/account/:user_id',
+      url: '/account',  /*/:user_id*/
       templateUrl: './../views/account.html',
       controller: 'accountCtrl'
     })

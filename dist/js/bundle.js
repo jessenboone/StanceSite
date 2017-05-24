@@ -20,11 +20,11 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/kids.html',
     controller: 'kidsCtrl'
   }).state('login', {
-    url: '/login/:user_id',
+    url: '/login',
     templateUrl: './../views/login.html',
     controller: 'loginCtrl'
   }).state('account', {
-    url: '/account/:user_id',
+    url: '/account', /*/:user_id*/
     templateUrl: './../views/account.html',
     controller: 'accountCtrl'
   }).state('register', {
@@ -100,26 +100,6 @@ angular.module('app').controller('checkoutCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'checkout working';
   $scope.test2 = mainSrvc.test;
-<<<<<<< HEAD
-
-  $scope.submitOrder = function () {
-    /*talk to Todd about this*/
-  };
-
-  $scope.deleteCart = function () {
-    storeSrvc.deleteCart().then(function (response) {
-      /*may get rid of this alert function*/
-      swal({
-        title: "Sweet!",
-        text: "Thank you for your purchase!",
-        imageUrl: "./sweetalert-master/example/images/thumbs-up.jpg",
-        timer: 1000,
-        showConfirmButton: false
-      });
-    });
-  };
-||||||| merged common ancestors
-=======
 
   $scope.submitOrder = function () {
     /*talk to Todd about this*/
@@ -168,14 +148,12 @@ angular.module('app').directive('headerDirective', function () {
     templateUrl: '../views/directives/headerDirective.html'
 
   };
->>>>>>> master
 });
 'use strict';
 
 angular.module('app').controller('kidsCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'kids working';
-<<<<<<< HEAD
 
   $scope.getProducts = function () {
     console.log('get products from ctrl');
@@ -190,24 +168,6 @@ angular.module('app').controller('kidsCtrl', function ($scope, mainSrvc) {
     //  });
   };
   $scope.getProducts();
-||||||| merged common ancestors
-  $scope.test2 = mainSrvc.test;
-=======
-  $scope.test2 = mainSrvc.test;
-
-  $scope.getProducts = function () {
-    mainSrvc.getProducts().then(function (response) {
-      $scope.products = response;
-    });
-  };
-  getProducts();
-
-  $scope.getProductsByCategory = function (kids) {
-    mainSrvc.getProductsByCategory(kids).then(function (response) {
-      $scope.kidsProducts = response;
-    });
-  };
->>>>>>> master
 });
 'use strict';
 
@@ -215,6 +175,9 @@ angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'login working';
   $scope.test2 = mainSrvc.test;
+
+  $scope.isShown = true;
+  $scope.isShown2 = true;
 
   $scope.login = function (returnUserEmail, returnUserPassword) {
     mainSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
@@ -236,7 +199,7 @@ angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
 
 angular.module('app').service('mainSrvc', function ($http) {
 
-<<<<<<< HEAD
+  // PRODUCTS //////////////////////////////////////////
   this.getProducts = function (mwk, category) {
     return $http({
       method: 'GET',
@@ -246,144 +209,6 @@ angular.module('app').service('mainSrvc', function ($http) {
     });
   };
 
-  //  this.getProductsByMwk = (mwk) => {
-  //    return $http({
-  //       method: 'GET',
-  //       url: '/api/products/' + mwk
-  //     }).then(response => response.data)
-  //   };
-||||||| merged common ancestors
-  this.test = 'service working';
-<<<<<<< HEAD
-=======
-  // PRODUCTS //////////////////////////////////////////
-  this.test = 'service working';
->>>>>>> master
-
-  this.getSingleProduct = function (param) {
-    return $http({
-      method: 'GET',
-      url: '/products/' + param
-    }).then(function (response) {
-      return response.data;
-    });
-  };
-
-<<<<<<< HEAD
-  // USERS //////////////////////////////////////////
-  this.register = function (user) {
-    return $http({
-      method: 'POST',
-      url: '/register',
-      data: { user: user }
-    }).then(function (response) {
-      return response;
-    });
-  };
-
-  this.login = function (email, password) {
-    return $http({
-      method: 'POST',
-      url: '/login',
-      data: {
-        email: email,
-        password: password
-      }
-    }).then(function (response) {
-      return response.data;
-    } /*index number from table*/);
-  };
-
-  // CART //////////////////////////////////////////
-  this.getCart = function (user) {
-    return $http({
-      method: 'POST',
-      url: '/cart',
-      data: { user: user }
-    }).then(function (response) {
-      return response.data;
-    });
-  };
-
-  this.deleteCart = function () {
-    return $http({
-      method: 'DELETE',
-      url: '/cart/clear'
-    }).then(function (response) {
-      return response.data;
-    });
-  };
-
-  this.deleteItemInCart = function (product, user) {
-    return $http({
-      method: 'DELETE',
-      url: '/cart/clear/' + product + '/' + user
-    }).then(function (response) {
-      return response;
-    });
-  };
-
-  this.createCart = function (quantity, purchase, user_id) {
-    return $http({
-      method: 'POST',
-      url: '/create/cart',
-      data: {
-        quantity: quantity,
-        purchase: purchase,
-        user_id: user_id
-      }
-    }).then(function (response) {
-      return response;
-    });
-  };
-
-  // EMAIL LIST //////////////////////////////////////////
-  this.addEmail = function (email) {
-    return $http({
-      method: 'POST',
-      url: '/email',
-      data: { email: email }
-    }).then(function (response) {
-      return response;
-    });
-  }; /*FOR THE FOOTER*/
-
-  // ORDERS //////////////////////////////////////////
-  this.getOrders = function (user_id) {
-||||||| merged common ancestors
-  this.getProducts = function () {
-=======
-  this.getProductsByCategory = function (param) {
->>>>>>> master
-    return $http({
-      method: 'GET',
-<<<<<<< HEAD
-      url: '/orders/' + user_id
-    }).then(function (response) {
-      return response.data;
-    });
-  };
-
-  this.submitOrder = function (order) {
-    return $http({
-      method: 'POST',
-      url: '/orders/submit',
-      data: { order: order }
-||||||| merged common ancestors
-      url: '/products'
-=======
-      url: '/products/' + param
->>>>>>> master
-    }).then(function (response) {
-      return response.data;
-    });
-  };
-<<<<<<< HEAD
-  //need to talk to Todd about this
-||||||| merged common ancestors
->>>>>>> master
-=======
-
   this.getSingleProduct = function (param) {
     return $http({
       method: 'GET',
@@ -491,13 +316,11 @@ angular.module('app').service('mainSrvc', function ($http) {
     });
   };
   //need to talk to Todd about this
->>>>>>> master
 });
 'use strict';
 
 angular.module('app').controller('mensCtrl', function ($scope, mainSrvc) {
 
-<<<<<<< HEAD
   $scope.getProducts = function () {
     console.log('get products from ctrl');
     mainSrvc.getProducts('Mens', 'New Arrivals').then(function (response) {
@@ -508,29 +331,6 @@ angular.module('app').controller('mensCtrl', function ($scope, mainSrvc) {
     });
   };
   $scope.getProducts();
-||||||| merged common ancestors
-  $scope.test = 'mens working';
-  $scope.test2 = mainSrvc.test;
-
-  mainSrvc.getProducts(function (data) {
-    $scope.products = data;
-    console.log(data);
-  });
-=======
-  $scope.test = 'mens working';
-  $scope.test2 = mainSrvc.test;
-
-  mainSrvc.getProducts(function (data) {
-    $scope.products = data;
-    console.log(data);
-  });
-
-  $scope.getProductsByCategory = function (mens) {
-    mainSrvc.getProductsByCategory(mens).then(function (response) {
-      $scope.mensProducts = response;
-    });
-  };
->>>>>>> master
 });
 'use strict';
 
@@ -552,6 +352,9 @@ angular.module('app').controller('registerCtrl', function ($scope, mainSrvc) {
   $scope.test = 'register working';
   $scope.test2 = mainSrvc.test;
 
+  $scope.isShown = true;
+  $scope.isShown2 = true;
+
   $scope.register = function (user) {
     mainSrvc.register(user).then(function (response) {
       user.first_name = '';
@@ -568,15 +371,6 @@ angular.module('app').controller('singleProductCtrl', function ($scope, mainSrvc
 
   $scope.test = 'single product working';
   $scope.test2 = mainSrvc.test;
-<<<<<<< HEAD
-
-  $scope.getSingleProduct = function (product) {
-    mainSrvc.getSingleProduct(product).then(function (response) {
-      $scope.singleProduct = response;
-    });
-  };
-||||||| merged common ancestors
-=======
 
   $scope.getSingleProduct = function (product) {
     mainSrvc.getSingleProduct(product).then(function (response) {
@@ -590,7 +384,6 @@ angular.module('app').controller('accountCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'account working';
   $scope.test2 = mainSrvc.test;
->>>>>>> master
 });
 'use strict';
 
@@ -598,7 +391,6 @@ angular.module('app').controller('womensCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'womens working';
   $scope.test2 = mainSrvc.test;
-<<<<<<< HEAD
 
   $scope.getProducts = function () {
     console.log('get products from ctrl');
@@ -613,21 +405,5 @@ angular.module('app').controller('womensCtrl', function ($scope, mainSrvc) {
     });
   };
   $scope.getProducts();
-||||||| merged common ancestors
-=======
-
-  $scope.getProducts = function () {
-    mainSrvc.getProducts().then(function (response) {
-      $scope.products = response;
-    });
-  };
-  getProducts();
-
-  $scope.getProductsByCategory = function (womens) {
-    mainSrvc.getProductsByCategory(womens).then(function (response) {
-      $scope.womensProducts = response;
-    });
-  };
->>>>>>> master
 });
 //# sourceMappingURL=bundle.js.map
