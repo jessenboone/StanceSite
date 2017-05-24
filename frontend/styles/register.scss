@@ -1,0 +1,172 @@
+$gray: #999;
+$aqua: #0493c1;
+
+#reg-bright:hover {
+  background: rgba(26,26,26,0.8);
+  transition: 1s;
+}
+
+.reg-subheading {
+  font-size: 25.25px;
+  letter-spacing: 2.5px;
+}
+
+.reg-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.reg-subheading {
+  margin-bottom: 47px;
+}
+
+.reg-input-style {
+  border: 1px solid rgba(142,142,148,0.3);
+  height: 50px;
+  width: 100%;
+  padding-left: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 34px;
+}
+
+.reg-anchor {
+  font-size: 14px;
+  text-decoration: none;
+  color: $aqua;
+}
+
+.reg-wrapper {
+
+  .reg-create-wrapper {
+    padding: 5% 3%;
+    .reg-create {
+      .reg-heading {
+        font-size: 31px;
+        letter-spacing: 2.5px;
+        margin-bottom: 35px;
+      }
+      .reg-name {
+        margin-bottom: 30px;
+      }
+      .reg-email {
+        margin-bottom: 10px;
+        .reg-characters {
+          font-size: 11.5px;
+          margin-top: -29px;
+          color: $gray;
+          margin-left: 5px;
+          margin-bottom: 34px;
+        }
+        .reg-checkbox {
+          // display: flex;
+          input {
+            height: 18px;
+            width: 18px;
+            float: left;
+            margin-right: 13px;
+            margin-top: -3px;
+            -webkit-appearance: none;
+            color: #ffffff;
+            border-radius: 0;
+            border: 1px solid black;
+          }
+          .reg-checkbox-text {
+            font-size: 12px;
+            line-height: 18px;
+            letter-spacing: .25px;
+            margin-bottom: 36px;
+          }
+        }
+        .reg-privacy {
+          color: $gray;
+          font-size: 13px;
+          line-height: 15px;
+          margin-bottom: 32px;
+          a {
+            font-size: 12px;
+          }
+        }
+        .reg-apply-button {
+          height: 52px;
+          width: 98px;
+          background: #1a1a1a;
+          color: #ffffff;
+          font-size: 13px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .reg-subheading {
+    letter-spacing: 2px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .reg-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+  .reg-wrapper {
+    .bottom3 {
+      margin-bottom: 18px;
+    }
+  }
+
+  .reg-input-style {
+    border: 1px solid rgba(142,142,148,0.3);
+    font-size: 11.5px;
+  }
+
+  .reg-wrapper {
+    display: flex;
+    flex-direction: row;
+    .reg-create-wrapper {
+      order: 2;
+    }
+    .login-wrapper {
+      // padding: 5% 0;
+      // display: flex;
+      // flex-direction: row;
+      width: 36%;
+      margin-left: 2%;
+      .login-section-3 {
+        order: 1;
+        width: 100%;
+        padding-left: 3%;
+        padding-right: 1%;
+        margin-top: -25px;
+        .login-acc-settings-div {
+          .login-my-acc {
+            visibility: visible;
+            font-size: 13px;
+            margin-bottom: 58px;
+            margin-left: -10px;
+            a {
+              text-decoration: none;
+              color: $gray;
+              font-size: 13px;
+            }
+          }
+          .login-settings-confidently {
+            .login-acc {
+              font-size: 14px;
+              margin-bottom: 18px;
+            }
+          }
+        }
+        hr {
+          margin-bottom: 44px;
+        }
+      }
+    }
+  }
+}

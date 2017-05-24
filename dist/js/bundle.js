@@ -20,9 +20,13 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/kids.html',
     controller: 'kidsCtrl'
   }).state('login', {
-    url: '/login/:user_id',
+    url: '/login',
     templateUrl: './../views/login.html',
     controller: 'loginCtrl'
+  }).state('account', {
+    url: '/account', /*/:user_id*/
+    templateUrl: './../views/account.html',
+    controller: 'accountCtrl'
   }).state('register', {
     url: '/register',
     templateUrl: './../views/register.html',
@@ -114,27 +118,56 @@ angular.module('app').controller('checkoutCtrl', function ($scope, mainSrvc) {
     });
   };
 });
-"use strict";
-"use strict";
+'use strict';
+
+angular.module('app').directive('footerDirective', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: '../../frontend/views/directives/footerDirective.html'
+
+  };
+});
+'use strict';
+
+angular.module('app').directive('headerDirective', function () {
+
+  // menMenu = false;
+  //
+  // womenMenu = false;
+  //
+  // kidMenu = false;
+  //
+  // underwearMenu = false;
+  //
+  // discoverMenu = false;
+
+
+  return {
+    restrict: 'E',
+    templateUrl: '../views/directives/headerDirective.html'
+
+  };
+});
 'use strict';
 
 angular.module('app').controller('kidsCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'kids working';
-  $scope.test2 = mainSrvc.test;
 
   $scope.getProducts = function () {
-    mainSrvc.getProducts().then(function (response) {
+    console.log('get products from ctrl');
+    mainSrvc.getProducts('Kids', 'Kids').then(function (response) {
       $scope.products = response;
     });
+    //  mainSrvc.getProducts('Girls', 'Kids').then(function(response) {
+    //    $scope.product = response;
+    //  });
+    //  mainSrvc.getProducts('Baby Girl', 'Kids').then(function(response) {
+    //    $scope.prod = response;
+    //  });
   };
-  getProducts();
-
-  $scope.getProductsByCategory = function (kids) {
-    mainSrvc.getProductsByCategory(kids).then(function (response) {
-      $scope.kidsProducts = response;
-    });
-  };
+  $scope.getProducts();
 });
 'use strict';
 
@@ -142,6 +175,9 @@ angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'login working';
   $scope.test2 = mainSrvc.test;
+
+  $scope.isShown = true;
+  $scope.isShown2 = true;
 
   $scope.login = function (returnUserEmail, returnUserPassword) {
     mainSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
@@ -164,22 +200,10 @@ angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
 angular.module('app').service('mainSrvc', function ($http) {
 
   // PRODUCTS //////////////////////////////////////////
-  this.test = 'service working';
-
-  this.getProducts = function (callback) {
-    return $http.get('/api/products').then(function (response) {
-      console.log(response);
-      callback(response.data);
-    }, function (err) {
-      callback(err);
-      console.log(err);
-    });
-  };
-
-  this.getProductsByCategory = function (param) {
+  this.getProducts = function (mwk, category) {
     return $http({
       method: 'GET',
-      url: '/products/' + param
+      url: '/api/products/' + mwk + '/' + category
     }).then(function (response) {
       return response.data;
     });
@@ -297,19 +321,16 @@ angular.module('app').service('mainSrvc', function ($http) {
 
 angular.module('app').controller('mensCtrl', function ($scope, mainSrvc) {
 
-  $scope.test = 'mens working';
-  $scope.test2 = mainSrvc.test;
-
-  mainSrvc.getProducts(function (data) {
-    $scope.products = data;
-    console.log(data);
-  });
-
-  $scope.getProductsByCategory = function (mens) {
-    mainSrvc.getProductsByCategory(mens).then(function (response) {
-      $scope.mensProducts = response;
+  $scope.getProducts = function () {
+    console.log('get products from ctrl');
+    mainSrvc.getProducts('Mens', 'New Arrivals').then(function (response) {
+      $scope.products = response;
+    });
+    mainSrvc.getProducts('Mens', 'Super Invisible').then(function (response) {
+      $scope.prod = response;
     });
   };
+  $scope.getProducts();
 });
 'use strict';
 
@@ -330,6 +351,9 @@ angular.module('app').controller('registerCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'register working';
   $scope.test2 = mainSrvc.test;
+
+  $scope.isShown = true;
+  $scope.isShown2 = true;
 
   $scope.register = function (user) {
     mainSrvc.register(user).then(function (response) {
@@ -356,23 +380,31 @@ angular.module('app').controller('singleProductCtrl', function ($scope, mainSrvc
 });
 'use strict';
 
+angular.module('app').controller('accountCtrl', function ($scope, mainSrvc) {
+
+  $scope.test = 'account working';
+  $scope.test2 = mainSrvc.test;
+});
+'use strict';
+
 angular.module('app').controller('womensCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'womens working';
   $scope.test2 = mainSrvc.test;
 
   $scope.getProducts = function () {
-    mainSrvc.getProducts().then(function (response) {
+    console.log('get products from ctrl');
+    mainSrvc.getProducts('Womens', 'New Arrivals').then(function (response) {
       $scope.products = response;
     });
-  };
-  getProducts();
-
-  $scope.getProductsByCategory = function (womens) {
-    mainSrvc.getProductsByCategory(womens).then(function (response) {
-      $scope.womensProducts = response;
+    mainSrvc.getProducts('Womens', 'Training').then(function (response) {
+      $scope.product = response;
+    });
+    mainSrvc.getProducts('Womens', 'Uncommon Solids').then(function (response) {
+      $scope.prod = response;
     });
   };
+  $scope.getProducts();
 });
 "use strict";
 
