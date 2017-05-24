@@ -4,6 +4,4 @@ angular.module('app')
   $scope.test = 'account working';
   $scope.test2 = mainSrvc.test;
 
-
-
 });

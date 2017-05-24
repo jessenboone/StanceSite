@@ -20,11 +20,11 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/kids.html',
     controller: 'kidsCtrl'
   }).state('login', {
-    url: '/login/:user_id',
+    url: '/login',
     templateUrl: './../views/login.html',
     controller: 'loginCtrl'
   }).state('account', {
-    url: '/account/:user_id',
+    url: '/account', /*/:user_id*/
     templateUrl: './../views/account.html',
     controller: 'accountCtrl'
   }).state('register', {
@@ -175,6 +175,9 @@ angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'login working';
   $scope.test2 = mainSrvc.test;
+
+  $scope.isShown = true;
+  $scope.isShown2 = true;
 
   $scope.login = function (returnUserEmail, returnUserPassword) {
     mainSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
@@ -349,6 +352,9 @@ angular.module('app').controller('registerCtrl', function ($scope, mainSrvc) {
   $scope.test = 'register working';
   $scope.test2 = mainSrvc.test;
 
+  $scope.isShown = true;
+  $scope.isShown2 = true;
+
   $scope.register = function (user) {
     mainSrvc.register(user).then(function (response) {
       user.first_name = '';
@@ -399,5 +405,41 @@ angular.module('app').controller('womensCtrl', function ($scope, mainSrvc) {
     });
   };
   $scope.getProducts();
+<<<<<<< HEAD
+||||||| merged common ancestors
+||||||| merged common ancestors
+=======
+
+  $scope.getProducts = function () {
+    mainSrvc.getProducts().then(function (response) {
+      $scope.products = response;
+    });
+  };
+  getProducts();
+
+  $scope.getProductsByCategory = function (womens) {
+    mainSrvc.getProductsByCategory(womens).then(function (response) {
+      $scope.womensProducts = response;
+    });
+  };
+>>>>>>> master
+=======
+});
+"use strict";
+
+angular.module('app').directive("featured", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./views/featured.html"
+  };
+});
+"use strict";
+
+angular.module('app').directive("punksAndPoets", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./views/punksAndPoets.html"
+  };
+>>>>>>> d7d0b4ce5b7d9b7d89650c51514d43a7921b0565
 });
 //# sourceMappingURL=bundle.js.map

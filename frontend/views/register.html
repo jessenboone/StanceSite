@@ -1,2 +1,60 @@
-{{test}}
-{{test2}}
+<main class="reg-wrapper regular">
+  <section class="reg-create-wrapper">
+    <div class="reg-create">
+      <p class="reg-heading capital condensed">create account</p>
+      <div class="reg-name reg-flex">
+        <p class="reg-subheading capital bold">name</p>
+        <input class="reg-input-style" type="text" placeholder="First Name"/>
+        <input class="reg-input-style" type="text" placeholder="Last Name"/>
+      </div>
+      <div class="reg-email reg-flex">
+        <p class="reg-subheading capital bold">email / login information</p>
+        <input class="reg-input-style" type="text" placeholder="Email"/>
+        <input class="reg-input-style" type="text" placeholder="Confirm Email"/>
+        <input class="reg-input-style" type="text" placeholder="Password"/>
+        <p class="reg-characters">8 - 255 characters</p>
+        <input class="reg-input-style" type="text" placeholder="Confirm Password"/>
+        <div class="reg-checkbox">
+          <input type="checkbox"/><p class="bold reg-checkbox-text">Please add me to the Stance newsletter list to receive the latest product launches and online exclusives.</p>
+        </div>
+        <p class="reg-privacy">Stance does not share or sell personal info. (<a href="https://www.stance.com/account?dwcont=C41383969" class="reg-privacy-policy reg-anchor" title="Privacy Policy">Privacy Policy</a>)</p>
+        <button id="reg-bright" class="point reg-apply-button bold" type="submit" name="button">Apply</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="login-wrapper regular">
+    <div class="login-section-3">
+      <div class="login-acc-settings-div">
+        <div class="login-my-acc">
+          <p><a class="bold" href="#">My Account</a></p>
+        </div>
+        <div class="login-settings-confidently">
+          <div class="login-settings-sub bottom3">
+            <p class="login-acc capital bottom3 bold" ng-click="isShown=!isShown">account settings</p>
+            <p><a href="#" class="login-anchor bold point" ng-show="isShown">Create Account</a></p>
+          </div>
+          <div class="login-settings-sub bottom3">
+            <p class="login-acc capital bottom3 bold" ng-click="isShown2=!isShown2">shop confidently</p>
+            <p><a href="#" class="login-anchor bold point" ng-show="isShown2">Privacy Policy</a></p>
+          </div>
+        </div>
+        <hr/>
+
+        <div class="login-help-div">
+          <div class="login-help">
+            <p class="login-subheading capital condensed">need help?</p>
+          </div>
+          <div class="login-help-questions login-p">
+            <p class="bottom3">If you have any question or need help with your account, you may <a href="#" class="login-anchor point">Contact Us</a> to assist you.</p>
+            <p class="login-contact"><span class="bold">Email</span> info@stance.com</p>
+            <p class="login-contact"><span class="bold">Call</span> (888) 391-9020</p>
+            <p class="login-contact login-text-space"><span class="bold">Text</span> (949) 391-4272</p>
+            <p class="login-contact">Mon-Thu 7am-5pm PST</p>
+            <p class="login-contact">Fri 7am-4pm PST</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
