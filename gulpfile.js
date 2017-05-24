@@ -25,6 +25,11 @@ gulp.task('build-views', function() {
   .pipe(gulp.dest('./dist/views'))
 })
 
+gulp.task('build-images', function() {
+  return gulp.src('./frontend/images/**/*')
+  .pipe(gulp.dest('./dist/images'))
+})
+
 gulp.task('build-js', function() {
    return gulp.src('frontend/**/*.js')
       .pipe(sourcemaps.init())
@@ -36,7 +41,7 @@ gulp.task('build-js', function() {
       .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('build', ['build-css', 'build-js', 'build-views'], function() {
+gulp.task('build', ['build-css', 'build-js', 'build-views', 'build-images', 'watch'], function() {
     return gulp.src('index.html')
         .pipe(cachebust.references())
         .pipe(gulp.dest('./dist'));
