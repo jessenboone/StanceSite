@@ -32,7 +32,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/register.html',
     controller: 'registerCtrl'
   }).state('singleProduct', {
-    url: '/single/product', /*/:product_id*/
+    url: '/single/product/:product_id', /* /:product_id */
     templateUrl: './../views/singleProduct.html',
     controller: 'singleProductCtrl'
   }).state('cart', {
@@ -384,7 +384,7 @@ angular.module('app').controller('singleProductCtrl', function ($scope, mainSrvc
   $scope.test2 = mainSrvc.test;
 
   $scope.getSingleProduct = function () {
-    mainSrvc.getSingleProduct($stateParams.id).then(function (response) {
+    mainSrvc.getSingleProduct($stateParams.product_id).then(function (response) {
       $scope.singleProduct = response;
     });
   };
