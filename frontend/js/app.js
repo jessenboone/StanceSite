@@ -39,7 +39,7 @@ angular.module('app', ['ui.router'])
       controller: 'registerCtrl'
     })
     .state('singleProduct', {
-      url: '/singleProduct/:id',
+      url: '/single/product', /*/:product_id*/
       templateUrl: './../views/singleProduct.html',
       controller: 'singleProductCtrl'
     })
