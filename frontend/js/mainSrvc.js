@@ -12,7 +12,7 @@ angular.module('app')
   this.getSingleProduct = (param) => {
     return $http({
       method: 'GET',
-      url: '/products/' + param
+      url: '/api/product/' + param
     }).then(response => response.data)
   };
 
