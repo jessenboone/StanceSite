@@ -211,17 +211,6 @@ table {
         margin-bottom: 20px; }
 
 @font-face {
-<<<<<<< HEAD
-  font-family: regular;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
-
-@font-face {
-  font-family: bold;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
-
-@font-face {
-  font-family: condensed;
-=======
   font-family: "regular";
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
@@ -231,7 +220,6 @@ table {
 
 @font-face {
   font-family: "condensed";
->>>>>>> master
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
@@ -411,17 +399,6 @@ table {
     letter-spacing: 1px; }
 
 @font-face {
-<<<<<<< HEAD
-  font-family: regular;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
-
-@font-face {
-  font-family: bold;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
-
-@font-face {
-  font-family: condensed;
-=======
   font-family: "regular";
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
@@ -431,7 +408,6 @@ table {
 
 @font-face {
   font-family: "condensed";
->>>>>>> master
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
@@ -768,17 +744,6 @@ table {
   margin-bottom: 17px; }
 
 @font-face {
-<<<<<<< HEAD
-  font-family: regular;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
-
-@font-face {
-  font-family: bold;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
-
-@font-face {
-  font-family: condensed;
-=======
   font-family: "regular";
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
@@ -788,7 +753,6 @@ table {
 
 @font-face {
   font-family: "condensed";
->>>>>>> master
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
@@ -903,17 +867,6 @@ table {
 
 
 @font-face {
-<<<<<<< HEAD
-  font-family: regular;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
-
-@font-face {
-  font-family: bold;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
-
-@font-face {
-  font-family: condensed;
-=======
   font-family: "regular";
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
@@ -923,7 +876,6 @@ table {
 
 @font-face {
   font-family: "condensed";
->>>>>>> master
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
