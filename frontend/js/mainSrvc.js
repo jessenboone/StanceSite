@@ -1,6 +1,8 @@
 angular.module('app')
 .service('mainSrvc', function($http) {
 
+  this.test = 'service working';
+
 // PRODUCTS //////////////////////////////////////////
   this.getProducts = (mwk, category) => {
     return $http({
