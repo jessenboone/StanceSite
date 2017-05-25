@@ -3,7 +3,7 @@ angular.module('app')
 
   return {
     restrict: 'E',
-    templateUrl: '../../frontend/views/directives/footerDirective.html'
+    templateUrl: '../views/directives/footerDirective.html'
 
   }
 

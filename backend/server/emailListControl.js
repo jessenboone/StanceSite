@@ -2,17 +2,17 @@ const app = require('../.././index.js')
     , db = app.get('db');
 
 module.exports = {
-
-  addEmail: (req, res) => {
-    console.log('addEmail function working')
-    let email = req.body.email_address;
-    db.add_email(email, (err, addedEmail) => {
-      if (!err) {
-        res.status(200).send(addedEmail);
-      } else {
-        res.send(err)
-      }
-    });
-  }
-
+  addEmail: function(req, res){
+     db.add_email(req.body.email_address, function(err, email){
+       console.log(req.body.email_address);
+       if(!err){
+         console.log(req.body.email_address);
+         res.send(req.body.email_address);
+       }
+       else {
+         console.log(err);
+         res.send(err);
+       }
+     })
+   }
 };

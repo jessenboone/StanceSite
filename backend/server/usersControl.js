@@ -1,11 +1,12 @@
-const app = require('./backend/server')
+const app = require('../.././index.js')
     , db = app.get('db');
 
 module.exports = {
 
   register: (req, res) => {
-    let user = req.body.user;
-    db.register([user.first_name, user.last_name, user.email, user.password, user.newsletter], (err, users) => {
+    let user = req.body;
+    console.log(req.body);
+    db.register([user[0].first_name, user[0].last_name, user[0].email, user[0].password, user[0].newsletter], (err, users) => {
       if (!err) {
         res.send(users);
       } else {
@@ -25,5 +26,4 @@ module.exports = {
       }
     });
   }
-
 };

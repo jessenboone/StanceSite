@@ -1,6 +1,8 @@
 angular.module('app')
 .service('mainSrvc', function($http) {
 
+  this.test = 'service working';
+
 // PRODUCTS //////////////////////////////////////////
   this.getProducts = (mwk, category) => {
     return $http({
@@ -12,7 +14,7 @@ angular.module('app')
   this.getSingleProduct = (param) => {
     return $http({
       method: 'GET',
-      url: '/products/' + param
+      url: '/api/product/' + param
     }).then(response => response.data)
   };
 

@@ -1,1 +1,83 @@
+<main class="acc-wrapper regular">
+  <div class="acc-div">
+    <section class="acc-my-acc">
+      <p class="acc-heading capital condensed">my account | welcome, {{user.first_name}}jason <span class="condensed">(<a href="#">logout</a>)</span></p>
+    </section>
 
+    <div class="acc-divs">
+      <section class="acc-personal-orders acc-padding acc-div-divide">
+        <div class="acc-div-double acc-border-bottom">
+          <a class="acc-noline" href="#">
+            <p class="acc-subheading capital condensed">personal data</p>
+            <p class="acc-text">Show or update your personal information</p>
+          </a>
+        </div>
+        <div class="acc-div-double acc-border-bottom">
+          <a class="acc-noline" href="#">
+            <p class="acc-subheading capital condensed">orders</p>
+            <div class="acc-text">
+              <p>Check the status of your orders or see past orders.</p>
+              <p>For International Orders, please contact customer service.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="acc-address-wishlist acc-padding acc-div-divide">
+        <div class="acc-div-double acc-border-bottom">
+          <a class="acc-noline" href="#">
+            <p class="acc-subheading capital condensed">address</p>
+            <p class="acc-text">Manage your billing and shipping addresses</p>
+          </a>
+        </div>
+        <div class="acc-div-double acc-border-bottom">
+          <a class="acc-noline" href="#">
+            <p class="acc-subheading capital condensed">wish list</p>
+            <p class="acc-text">View and modify items on your list or invite friends</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="acc-padding acc-div-divide">
+        <div class="acc-payment acc-border-bottom acc-div-double">
+          <a class="acc-noline" href="#">
+            <p class="acc-subheading capital condensed">payment settings</p>
+            <p class="acc-text">Manage credit cards</p>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="acc-account-management">
+    <div class="acc-managenment-div">
+      <div class="acc-my-acc">
+        <p><a class="bold" href="#">My Account</a></p>
+      </div>
+      <div class="acc-account">
+        <p class="acc-account-heading capital bold" ng-click="isShown=!isShown">my account</p>
+        <p class="acc-a-bottom" ng-show="isShown"><a class="acc-noline bold" href="#">Personal Data</a></p>
+        <p class="acc-a-bottom" ng-show="isShown"><a class="acc-noline bold" href="#">Addresses</a></p>
+        <p class="acc-a-bottom" ng-show="isShown"><a class="acc-noline bold" href="#">Payment Settings</a></p>
+        <p class="acc-a-bottom" ng-show="isShown"><a class="acc-noline bold" href="#">Email Settings</a></p>
+      </div>
+      <div class="acc-account">
+        <p class="acc-account-heading capital bold" ng-click="isShown2=!isShown2">order information</p>
+        <p class="acc-a-bottom" ng-show="isShown2"><a class="acc-noline bold" href="#">Order History</a></p>
+      </div>
+      <div class="acc-account">
+        <p class="acc-account-heading capital bold" ng-click="isShown3=!isShown3">wish list</p>
+        <p class="acc-a-bottom" ng-show="isShown3"><a class="acc-noline bold" href="#">Modify Wish List</a></p>
+      </div>
+      <div class="acc-account acc-management-bottom">
+        <p class="acc-account-heading capital bold" ng-click="isShown4=!isShown4">shop confidently</p>
+        <p class="acc-a-bottom" ng-show="isShown4"><a class="acc-noline bold" href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+
+    <div class="acc-directive">
+      <help-directive></help-directive>
+    </div>
+
+  </section>
+</main>
