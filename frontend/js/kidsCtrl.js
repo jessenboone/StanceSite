@@ -2,20 +2,20 @@ angular.module('app')
 .controller('kidsCtrl', function($scope, mainSrvc) {
 
   $scope.test = 'kids working';
-  $scope.test2 = mainSrvc.test;
 
   $scope.getProducts = () => {
-    mainSrvc.getProducts().then(function(response) {
-      $scope.products = response;
-    })
-  };
-  getProducts();
-
-  $scope.getProductsByCategory = (kids) => {
-    mainSrvc.getProductsByCategory(kids).then(function(response) {
-      $scope.kidsProducts = response;
-    });
-  };
+    console.log('get products from ctrl');
+     mainSrvc.getProducts('Kids', 'Boys').then(function(response) {
+       $scope.products = response;
+     });
+     mainSrvc.getProducts('Kids', 'Girls').then(function(response) {
+       $scope.product = response;
+     });
+     mainSrvc.getProducts('Kids', 'Baby').then(function(response) {
+       $scope.prod = response;
+     });
+   };
+   $scope.getProducts();
 
 
 });

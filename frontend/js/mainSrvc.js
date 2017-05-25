@@ -1,34 +1,20 @@
 angular.module('app')
 .service('mainSrvc', function($http) {
 
+  this.test = 'service working';
 
-
-  // PRODUCTS //////////////////////////////////////////
-  this.test = 'service working'
-
-  this.getProducts = function(callback){
-    return $http.get('/api/products').then(
-      function(response){
-        console.log(response);
-        callback(response.data);
-      },
-      function(err){
-        callback(err);
-        console.log(err);
-      })
-  };
-
-  this.getProductsByCategory = (param) => {
+// PRODUCTS //////////////////////////////////////////
+  this.getProducts = (mwk, category) => {
     return $http({
       method: 'GET',
-      url: '/products/' + param
+      url: '/api/products/' + mwk + '/' + category
     }).then(response => response.data)
   };
 
   this.getSingleProduct = (param) => {
     return $http({
       method: 'GET',
-      url: '/products/' + param
+      url: '/api/product/' + param
     }).then(response => response.data)
   };
 

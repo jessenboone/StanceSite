@@ -3,13 +3,11 @@ const express = require('express')
     , massive = require('massive')
     , cors = require('cors')
     , session = require('express-session')
-    // , config = require('./config');
+    , config = require('./backend/config');
 
 const app = module.exports = express();
 
-const massiveInstance = massive.connectSync({connectionString: 'postgres://postgres:@localhost/Stance'});
-//'postgres://postgres:@localhost/personal-project'
-//config.connectionString    no single quotes
+const massiveInstance = massive.connectSync({connectionString: config.database_secret});
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist'));
@@ -21,29 +19,29 @@ app.use(express.static(__dirname + '/dist'));
 //   cookie: { secure: false }
 // }));
 
-const port = 3030;    //80
+const port = 8080;    //80
 
 app.set('db', massiveInstance);
 const productsControl = require('./backend/server/productsControl');
-// const usersControl = require('./backend/server/usersControl');
-// const cartControl = require('./backend/server/cartControl');
+const usersControl = require('./backend/server/usersControl');
+const cartControl = require('./backend/server/cartControl');
 const emailListControl = require('./backend/server/emailListControl');
 // const ordersControl = require('./backend/server/ordersControl');
 
 // PRODUCTS
-app.get('/api/products', productsControl.getProducts);
-app.get('/products/:category', productsControl.getProductsByCategory);
-app.get('/product/:id', productsControl.getSingleProduct);
+app.get('/api/products/:mwk/:category', productsControl.getProducts);
+app.get('/api/products/:category', productsControl.getProductsByMwk);
+app.get('/api/product/:id', productsControl.getSingleProduct);
 
 // USERS
-// app.post('/register', usersControl.register);
-// app.post('/login', usersControl.login);
+app.post('/api/register', usersControl.register);
+app.post('/api/login', usersControl.login);
 
 // CART
-// app.post('/cart', cartControl.getCart);
-// app.delete('/cart/clear', cartControl.deleteCart);
-// app.delete('/cart/clear/:product_id/:user_id', cartControl.deleteItemInCart);
-// app.post('/cart/add', cartControl.createCart);
+app.post('/api/cart', cartControl.getCart);
+app.delete('/api/cart/clear', cartControl.deleteCart);
+app.delete('/api/cart/clear/:product_id/:user_id', cartControl.deleteItemInCart);
+app.post('/api/cart/add', cartControl.createCart);
 // app.put('/cart/update', cartControl.updateCart);         /*?????????might not need if add to cart does it for us????????????*/
 
 // EMAIL LIST
@@ -61,7 +59,3 @@ app.get('/test', function(req, res) {
 app.listen(port, () => {
   console.log(`Ship docked on port ${port}`);
 });
-
-// app.all('/*', function(req, res, next){
-//   res.header("Access-Contro-Allow-Origin", '*');
-// })

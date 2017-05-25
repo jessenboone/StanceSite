@@ -24,12 +24,12 @@ angular.module('app', ['ui.router'])
       controller: 'kidsCtrl'
     })
     .state('login', {
-      url: '/login/:user_id',
+      url: '/login',
       templateUrl: './../views/login.html',
       controller: 'loginCtrl'
     })
     .state('account', {
-      url: '/account/:user_id',
+      url: '/account',  /*/:user_id*/
       templateUrl: './../views/account.html',
       controller: 'accountCtrl'
     })
@@ -39,7 +39,7 @@ angular.module('app', ['ui.router'])
       controller: 'registerCtrl'
     })
     .state('singleProduct', {
-      url: '/singleProduct/:product_id',
+      url: '/single/product', /*/:product_id*/
       templateUrl: './../views/singleProduct.html',
       controller: 'singleProductCtrl'
     })
