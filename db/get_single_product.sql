@@ -1,2 +1,2 @@
 select * from products
-where id = $1;
+where product_id = $1;
