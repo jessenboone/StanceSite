@@ -32,7 +32,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/register.html',
     controller: 'registerCtrl'
   }).state('singleProduct', {
-    url: '/singleProduct/:product_id',
+    url: '/singleProduct/:id',
     templateUrl: './../views/singleProduct.html',
     controller: 'singleProductCtrl'
   }).state('cart', {
@@ -151,6 +151,15 @@ angular.module('app').directive('headerDirective', function () {
 });
 'use strict';
 
+angular.module('app').directive('helpDirective', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './views/directives/helpDirective.html'
+  };
+});
+'use strict';
+
 angular.module('app').controller('kidsCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'kids working';
@@ -199,6 +208,8 @@ angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
 
 angular.module('app').service('mainSrvc', function ($http) {
 
+  this.test = 'service working';
+
   // PRODUCTS //////////////////////////////////////////
   this.getProducts = function (mwk, category) {
     return $http({
@@ -212,7 +223,7 @@ angular.module('app').service('mainSrvc', function ($http) {
   this.getSingleProduct = function (param) {
     return $http({
       method: 'GET',
-      url: '/products/' + param
+      url: '/api/product/' + param
     }).then(function (response) {
       return response.data;
     });
@@ -367,16 +378,17 @@ angular.module('app').controller('registerCtrl', function ($scope, mainSrvc) {
 });
 'use strict';
 
-angular.module('app').controller('singleProductCtrl', function ($scope, mainSrvc) {
+angular.module('app').controller('singleProductCtrl', function ($scope, mainSrvc, $stateParams) {
 
   $scope.test = 'single product working';
   $scope.test2 = mainSrvc.test;
 
-  $scope.getSingleProduct = function (product) {
-    mainSrvc.getSingleProduct(product).then(function (response) {
+  $scope.getSingleProduct = function () {
+    mainSrvc.getSingleProduct($stateParams.id).then(function (response) {
       $scope.singleProduct = response;
     });
   };
+  $scope.getSingleProduct();
 });
 'use strict';
 
@@ -384,6 +396,11 @@ angular.module('app').controller('accountCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'account working';
   $scope.test2 = mainSrvc.test;
+
+  $scope.isShown = true;
+  $scope.isShown2 = true;
+  $scope.isShown3 = true;
+  $scope.isShown4 = true;
 });
 'use strict';
 
