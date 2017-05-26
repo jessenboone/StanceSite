@@ -32,7 +32,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/register.html',
     controller: 'registerCtrl'
   }).state('singleProduct', {
-    url: '/singleProduct/:id',
+    url: '/single/product/:id',
     templateUrl: './../views/singleProduct.html',
     controller: 'singleProductCtrl'
   }).state('cart', {
@@ -233,7 +233,7 @@ angular.module('app').service('mainSrvc', function ($http) {
   this.register = function (user) {
     return $http({
       method: 'POST',
-      url: '/register',
+      url: '/api/register',
       data: { user: user }
     }).then(function (response) {
       return response;
@@ -366,12 +366,9 @@ angular.module('app').controller('registerCtrl', function ($scope, mainSrvc) {
   $scope.isShown = true;
   $scope.isShown2 = true;
 
-  $scope.register = function (user) {
-    mainSrvc.register(user).then(function (response) {
-      user.first_name = '';
-      user.last_name = '';
-      user.email = '';
-      user.password = '';
+  $scope.register = function () {
+    console.log('button working!');
+    mainSrvc.register($scope.user).then(function (response) {
       /*may need to set default for newsletter*/
     });
   };
@@ -384,6 +381,7 @@ angular.module('app').controller('singleProductCtrl', function ($scope, mainSrvc
   $scope.test2 = mainSrvc.test;
 
   $scope.getSingleProduct = function () {
+    console.log($stateParams.id);
     mainSrvc.getSingleProduct($stateParams.id).then(function (response) {
       $scope.singleProduct = response;
     });

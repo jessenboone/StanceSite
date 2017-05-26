@@ -54,8 +54,6 @@ module.exports = {
 
   getSingleProduct: (req, res) => {
     let search = req.params.id;
-    console.log(req.params.id);
-    console.log('single product function working!', search);
     db.get_single_product([search], (err, product) => {
       if (!err) {
         res.status(200).send(product);

@@ -5,6 +5,7 @@ angular.module('app')
   $scope.test2 = mainSrvc.test;
 
   $scope.getSingleProduct = () => {
+    console.log($stateParams.id);
     mainSrvc.getSingleProduct($stateParams.id).then(function(response) {
       $scope.singleProduct = response;
     });

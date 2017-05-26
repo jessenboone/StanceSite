@@ -22,7 +22,7 @@ angular.module('app')
   this.register = (user) => {
     return $http({
       method: 'POST',
-      url: '/register',
+      url: '/api/register',
       data: {user}
     }).then(response => response)
   };
