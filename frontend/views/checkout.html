@@ -81,10 +81,11 @@
       	<option value="WI">Wisconsin</option>
       	<option value="WY">Wyoming</option>
       </select>
-      <input type="text" id="checkout-lastname">
       <label for="checkout-lastname">Phone</label>
       <input type="text" id="checkout-lastname">
-      <p>Example: 333-333-3333</p>
+      <div class="checkout-example-phone-container">
+        <p class="checkout-example-phone regular">Example: 333-333-3333</p>
+      </div>
       <div class="checkout-checkbox">
         <input class="checkbox" type="checkbox" checked>
         <p>Add to Address Book</p>
@@ -93,7 +94,7 @@
         <input class="checkbox" type="checkbox" checked>
         <p>Use this address for Billing</p>
       </div>
-      <p>Is this a gift?</p>
+      <p class="checkout-gift-title bold">Is this a gift?</p>
       <div class="checkbox-gift-radio-container">
         <div class="checkbox-gift-radio-option">
           <input type="radio" name="gift" id="gift-true" value="true">
@@ -138,12 +139,45 @@
     </form>
     <button class="checkout-button bold">Continue to Billing</button>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="checkout-order-container">
     <div class="checkout-order-summary-title-container">
       <p class="checkout-order-summary-title condensed capital">Order Summary</p>
       <p class="checkout-edit">Edit</p>
     </div>
-    <div class="checkout-order-container">
+    <div class="checkout-order-summary-container">
       <div class="checkout-order-item-container">
         <img src="https://sits-pod41.demandware.net/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dw66fe9e84/prod_images/M556B17XAL_MUL.jpg?sw=89&sh=89&sm=fit" alt="sock">
         <div class="checkout-order-item">
@@ -174,7 +208,7 @@
       </div>
     </div>
     <div class="checkout-order-summary-container">
-      <p class="checkout-order-summary-title">Shipping Address</p>
+      <p class="checkout-order-summary-title condensed capital">Shipping Address</p>
       <p class="checkout-edit">Edit</p>
     </div>
     <div class="checkout-order-address-info-container">
@@ -186,7 +220,7 @@
       <p class="checkout-order-address-info">Method: UPS 2nd Day</p>
     </div>
     <div class="checkout-order-summary-container">
-      <p class="checkout-order-summary-title">Billing Address</p>
+      <p class="checkout-order-summary-title condensed capital">Billing Address</p>
       <p class="checkout-edit">Edit</p>
     </div>
     <div class="checkout-order-billing-container">

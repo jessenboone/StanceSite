@@ -52,14 +52,15 @@
       }
     }
   }
-.new_img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  color: white;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 10px;
+  .new_img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+  }
 }
