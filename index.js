@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/dist'));
 //   cookie: { secure: false }
 // }));
 
-const port = 8080;    //80
+const port = 3030;    //80
 
 app.set('db', massiveInstance);
 const productsControl = require('./backend/server/productsControl');

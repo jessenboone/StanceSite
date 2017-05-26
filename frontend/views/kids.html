@@ -35,14 +35,13 @@
   <p class="featured-title condensed capital">Boys</p>
   <button class="featured-button bold">Shop Now</button>
   <div class="featured-items-container">
-    <div class="featured-item" ng-repeat="p in products | limitTo:4" ui-sref="singleProduct({ id: p.id })">
+    <div class="featured-item" ng-repeat="p in products | limitTo:4" ui-sref="singleProduct({ id: p.product_id })">
       <img ng-src={{p.main_image_url}} />
       <hr class="line-under-featured-image">
       <p class="featured-item-name capital condensed">{{p.name}}</p>
       <p class="featured-item-style regular">{{p.collection}}</p>
       <p class="condensed">{{p.price | currency}}</p>
     </div>
-
   </div>
 </div>
 
@@ -50,7 +49,7 @@
   <p class="featured-title condensed capital">Girls</p>
   <button class="featured-button bold">Shop Now</button>
   <div class="featured-items-container">
-    <div class="featured-item" ng-repeat="p in product | limitTo:-4" ui-sref="singleProduct({ id: p.id })">
+    <div class="featured-item" ng-repeat="p in product | limitTo:-4" ui-sref="singleProduct({ id: p.product_id })">
       <img ng-src={{p.main_image_url}} />
       <hr class="line-under-featured-image">
       <p class="featured-item-name capital condensed">{{p.name}}</p>
@@ -64,7 +63,7 @@
   <p class="featured-title condensed capital">Baby</p>
   <button class="featured-button bold">Shop Now</button>
   <div class="featured-items-container">
-    <div class="featured-item" ng-repeat="p in prod | limitTo:-4" ui-sref="singleProduct({ id: p.id })">
+    <div class="featured-item" ng-repeat="p in prod | limitTo:-4" ui-sref="singleProduct({ id: p.product_id })">
       <img ng-src={{p.main_image_url}} />
       <hr class="line-under-featured-image">
       <p class="featured-item-name capital condensed">{{p.name}}</p>
@@ -75,30 +74,18 @@
 </div>
 
 
-
-
-<!-- <div class="" ng-repeat="p in products">
-  {{p.name}}
-  <img ng-src={{p.main_image_url}} />
-  <img ng-src={{p.details_main_image_url}} />
-  <img ng-src={{p.front_image_url}} />
-  <img ng-src={{p.back_image_url}} />
+<div class="kids-carousel-container">
+  <div class="kids-carousel-top">
+    <p class="kids-carousel-title capital condensed">It's their world,<br>we're just<br>living in it.</p>
+    <div class="line-under-kids-carousel-title"></div>
+    <p class="kids-carousel-text regular">Get them started on the right foot. With new styles, including a few for the "big kids," you're sure to find something they'll all love.</p>
+    <button class="kids-carousel-button bold">Shop New Arrivals</button>
+  </div>
+  <div class="kids-carousel-bottom">
+    <div class="kids-carousel-bottom-description">
+      <div class="line-in-kids-carousel-bottom-description"></div>
+      <p class="kids-carousel-description bold">Kids New Arrivals</p>
+    </div>
+    <kids-carousel></kids-carousel>
+  </div>
 </div>
-</br>
-</br> -->
-<!-- <div class="" ng-repeat="p in product">
-  {{p.name}}
-  <img ng-src={{p.main_image_url}} />
-  <img ng-src={{p.details_main_image_url}} />
-  <img ng-src={{p.front_image_url}} />
-  <img ng-src={{p.back_image_url}} />
-</div>
-</br>
-</br>
-<div class="" ng-repeat="p in prod">
-  {{p.name}}
-  <img ng-src={{p.main_image_url}} />
-  <img ng-src={{p.details_main_image_url}} />
-  <img ng-src={{p.front_image_url}} />
-  <img ng-src={{p.back_image_url}} />
-</div> -->

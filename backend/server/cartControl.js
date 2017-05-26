@@ -5,9 +5,7 @@ module.exports = {
 
   getCart: (req, res) => {
     let user = req.body[0].user_id;
-    console.log(req.body[0].user_id);
     db.get_cart([user], (err, cart) => {
-      // console.log(cart);
       if (!err) {
         res.send(cart);
       } else {
@@ -42,55 +40,38 @@ module.exports = {
     });
   },
 
-  // createCart: (req, res) => {
-  //   console.log(req.body.purchase);
-  //   let item = req.body;
-  //   db.get_cart([item.user_id], (err, cart) => {
-  //     if (!err) {
-  //       let found = false;
-  //       let index = 0;
-  //       for (var i = 0; i < cart.length; i++) {
-  //         if (cart[i].product_id === item.purchase) {
-  //           index = i;
-  //           found = true;
-  //           cart[i].quantity += item.quantity;
-  //         }
-  //       }
-  //       if (found === false) {
-  //         db.add_to_cart([item.purchase, item.quantity, item.user_id], (err) => {
-  //           if (!err) {
-  //             res.status(200).send();
-  //           } else {
-  //             res.send(err);
-  //           }
-  //         })
-  //       } else {
-  //         db.update_quantity([cart[index].product_id, cart[index].quantity, cart[index].user_id], (err) => {
-  //           if (!err) {
-  //             res.status(200).send();
-  //           } else {
-  //             res.send(err);
-  //           }
-  //         })
-  //       }
-  //     }
-  //     else {
-  //       res.send(err);
-  //     }
-  //   })
-  // }
-
   createCart: (req, res) => {
     let item = req.body;
-    console.log(req.body);
-    db.add_to_cart([item[0].product_id, item[0].quantity, item[0].user_id], (err, cart) => {
-      console.log(item[0].product_id, item[0].quantity, item[0].user_id);
-      if(!err) {
-        console.log(cart);
-        res.status(200).send(cart)
+    db.get_cart([item.user_id], (err, cart) => {
+      if (!err) {
+        let found = false;
+        let index = 0;
+        for (var i = 0; i < cart.length; i++) {
+          if (cart[i].product_id === item.purchase) {
+            index = i;
+            found = true;
+            cart[i].quantity += item.quantity;
+          }
+        }
+        if (found === false) {
+          db.add_to_cart([item[0].product_id, item[0].quantity, item[0].user_id], (err, cart) => {
+            if (!err) {
+              res.status(200).send(cart);
+            } else {
+              res.send(err);
+            }
+          })
+        } else {
+          db.update_quantity([cart[index].product_id, cart[index].quantity, cart[index].user_id], (err) => {
+            if (!err) {
+              res.status(200).send();
+            } else {
+              res.send(err);
+            }
+          })
+        }
       }
       else {
-        console.log(err);
         res.send(err);
       }
     })

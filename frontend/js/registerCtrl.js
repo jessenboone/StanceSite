@@ -7,12 +7,9 @@ angular.module('app')
   $scope.isShown = true;
   $scope.isShown2 = true;
 
-  $scope.register = (user) => {
-    mainSrvc.register(user).then(function(response) {
-      user.first_name = '';
-      user.last_name = '';
-      user.email = '';
-      user.password = '';
+  $scope.register = () => {
+    console.log('button working!');
+    mainSrvc.register($scope.user).then(function(response) {
       /*may need to set default for newsletter*/
     });
   };
