@@ -1307,11 +1307,70 @@ i {
     margin-bottom: 43px; }
   .single-wrapper .single-info .single-contact * {
     margin: 0 6.5px; }
-  .single-wrapper .single-like {
-    font-size: 25px;
-    letter-spacing: 2.5px;
-    margin-bottom: -75px;
-    margin-left: 10px; }
+  .single-wrapper .single-featured {
+    margin-bottom: 10px; }
+    .single-wrapper .single-featured .single-like {
+      font-size: 25px;
+      letter-spacing: 2.5px;
+      margin-bottom: -75px;
+      margin-left: 10px; }
+  .single-wrapper .single-description {
+    background: #f6f6fb;
+    padding: 35px 35px;
+    margin: 60px -18px 5px -18px; }
+    .single-wrapper .single-description .single-desc-heading {
+      font-size: 35px;
+      letter-spacing: 2.5px;
+      margin-bottom: 35px; }
+    .single-wrapper .single-description .single-desc-text {
+      color: #999;
+      font-size: 15px;
+      line-height: 21px; }
+  .single-wrapper .single-features-care .single-features-care-list {
+    border-top: 1px solid rgba(142, 142, 148, 0.3);
+    border-bottom: 1px solid rgba(142, 142, 148, 0.3);
+    padding-left: 20px;
+    padding-right: 20px; }
+    .single-wrapper .single-features-care .single-features-care-list .single-features-care-drop {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 23px;
+      margin-bottom: 23px; }
+      .single-wrapper .single-features-care .single-features-care-list .single-features-care-drop .single-features-care-heading {
+        font-size: 15px;
+        letter-spacing: 1.25px; }
+      .single-wrapper .single-features-care .single-features-care-list .single-features-care-drop .single-plus-minus {
+        font-size: 18px; }
+    .single-wrapper .single-features-care .single-features-care-list ul {
+      list-style-type: disc;
+      margin-left: 19px;
+      font-size: 27px;
+      margin-right: 19px;
+      margin-bottom: 10px; }
+      .single-wrapper .single-features-care .single-features-care-list ul li p {
+        color: #999;
+        font-size: 14.5px;
+        letter-spacing: 0.5px;
+        line-height: 22px; }
+  .single-wrapper .single-reviews {
+    margin-bottom: 134px; }
+    .single-wrapper .single-reviews .single-reviews-heading {
+      font-size: 35px;
+      letter-spacing: 2.5px;
+      text-align: center;
+      margin-top: 150px;
+      margin-bottom: 38px; }
+    .single-wrapper .single-reviews .single-reviews-text {
+      font-size: 14.5px;
+      color: #5e5a57;
+      margin-left: 10px; }
+      .single-wrapper .single-reviews .single-reviews-text a {
+        font-size: 18px;
+        color: #0493c1;
+        text-decoration: none; }
+
+.single-features-list {
+  border-bottom: none !important; }
 
 .new_img {
   height: 50px;

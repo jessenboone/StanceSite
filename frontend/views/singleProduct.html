@@ -4,10 +4,10 @@
       <img src={{p.main_image_url}} alt="socks" />
     </div>
     <div class="single-main-image" ng-if="pic2">
-      <img src={{p.front_image_url}} alt="socks" />
+      <img src={{p.large_front_image_url}} alt="socks" />
     </div>
     <div class="single-main-image" ng-if="pic3">
-      <img src={{p.back_image_url}} alt="socks" />
+      <img src={{p.large_back_image_url}} alt="socks" />
     </div>
 
     <div class="single-image-views">
@@ -93,4 +93,42 @@
     </div>
   </section>
 
+  <section class="single-description">
+    <p class="capital condensed single-desc-heading">description</p>
+    <p class="single-desc-text">{{p.description}}</p>
+  </section>
+
+  <section class="single-features-care">
+    <div class="single-features-care-list single-features-list">
+      <div class="single-features-care-drop">
+        <p class="single-features-care-heading condensed">Features</p>
+        <p class="single-plus-minus bold" ng-click="showProdFeatures=!showProdFeatures" ng-hide="showProdFeatures">+</p>
+        <p class="single-plus-minus bold" ng-click="showProdFeatures=!showProdFeatures" ng-show="showProdFeatures">&#8211;</p>
+      </div>
+      <ul class="single-features-care-drop-list"  ng-show="showProdFeatures">
+        <li><p>hi</p></li>
+        <li><p>hi</p></li>
+        <li><p>hi</p></li>
+        <li><p>hi</p></li>
+      </ul>
+    </div>
+    <div class="single-features-care-list">
+      <div class="single-features-care-drop">
+        <p class="single-features-care-heading condensed">Product Care</p>
+        <p class="single-plus-minus bold" ng-click="showProdCare=!showProdCare" ng-hide="showProdCare">+</p>
+        <p class="single-plus-minus bold" ng-show="showProdCare" ng-click="showProdCare=!showProdCare">&#8211;</p>
+      </div>
+      <ul class="single-features-care-drop-list"  ng-show="showProdCare">
+        <li><p>high gdkfdfj dslfkjds ow fdsljf  fdsj dkfj fj dsfdsjf dsjdkldsj dkfdsj ldkskld jflksdsd jdfdkdf djkf dkfjds fdf</p></li>
+        <li><p>hi</p></li>
+        <li><p>hi</p></li>
+        <li><p>hi</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="single-reviews">
+    <p class="single-reviews-heading capital condensed">reviews</p>
+    <p class="single-reviews-text">Be the first to <a href="#" class="bold">Write a Review</a></p>
+  </section>
 </main>
