@@ -1,12 +1,60 @@
-{{test}}
-{{test2}}
-<div ng-repeat="p in singleProduct">
-  <img ng-src={{p.main_image_url}} />
-  <img ng-src={{p.details_main_image_url}} />
-  <img ng-src={{p.front_image_url}} />
-  <img ng-src={{p.back_image_url}} />
-  <h1>{{p.name}}</h1>
-  <h6>{{p.collection}}</h6>
-  <p>{{p.price | currency}}</p>
-  <p>{{size}}</p>
-</div>
+<main class="single-wrapper regular" ng-repeat="p in singleProduct">
+  <section class="single-images">
+    <div class="single-main-image">
+      <img src={{p.main_image_url}} alt="socks" />
+    </div>
+
+    <div class="single-image-views">
+      <div class="single-opaque" ng-click="div1=!div1"  ng-if="div1">
+        <img class="single-pic1" ng-src={{p.main_image_url}} />
+        <!-- <div class="single-opaque" ng-if="div1"></div> -->
+      </div>
+      <div class="single-opaque" ng-click="div2=!div2"  ng-if="div2">
+        <img class="single-pic2" ng-src={{p.front_image_url}} ng-if="p.front_image_url" />
+        <!-- <div class="single-opaque" ng-if="div2"></div> -->
+      </div>
+      <div class="single-opaque" ng-click="div3=!div3" ng-if="div3">
+        <img class="single-pic3" ng-src={{p.back_image_url}} ng-if="p.back_image_url" />
+        <!-- <div class="single-opaque" ng-if="div3"></div> -->
+      </div>
+      <!-- <img ng-src={{p.back_image_url}} /> -->
+      <!-- ng-if="p.back_image_url && pic3" -->
+      <!-- ng-click="showHide(pic1) && div1=!div1" -->
+    </div>
+  </section>
+
+  <section class="single-info">
+    <p class="single-name capital condensed">{{p.name}}</p>
+    <p class="single-collection">{{p.collection}}</p>
+    <p class="bold single-price">{{p.price | currency}}</p>
+    <select class="single-box single-size" name="">
+      <option value="">Select Size</option>
+      <option value="" selected>Small</option>
+      <option value="">Medium</option>
+      <option value="">Large</option>
+    </select>
+    <div class="single-qty">
+      <p class="bold">QTY</p>
+      <input class="single-box bold" type="text" name="" value="1" />
+    </div>
+    <p class="single-availability"><span class="bold">Availability:</span> In Stock</p>
+    <button class="bold" type="button" name="button">Add to Cart</button>
+    <div class="">
+      <div class="single-wishlist">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+        <p>Save to Wish List</p>
+      </div>
+      <div class="single-fit-guide">
+
+        <p>Size and Fit Guide</p>
+      </div>
+    </div>
+    <div class="single-contact">
+      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+      <i class="fa fa-paper-plane" aria-hidden="true"></i>
+    </div>
+  </section>
+
+</main>
