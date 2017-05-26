@@ -1,4 +1,4 @@
-const app = require('./backend/server')
+const app = require('../.././index.js')
     , db = app.get('db');
 
 module.exports = {
@@ -15,11 +15,13 @@ module.exports = {
   },
 
   submitOrder: (req, res) => {
-    // WE DONT KNOW WHAT TO DO HERE
+    let order = req.body
+    console.log(req.body);
     db.submit_order([], (err, order) => {
       if (!err) {
-        res.status(200).send(order);
+        console.lgo(order);
       } else {
+        console.log(err);
         res.send(err)
       }
     })
