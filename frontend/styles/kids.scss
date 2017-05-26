@@ -1,0 +1,59 @@
+.kids-carousel-container{
+  width: 100%;
+  padding: 0 10px;
+  .kids-carousel-top{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .kids-carousel-title{
+      margin-top: 74px;
+      font-size: 24.5px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      line-height: 21px;
+    }
+    .line-under-kids-carousel-title{
+      width: 100px;
+      height: 4px;
+      background: black;
+      margin-bottom: 40px;
+    }
+    .kids-carousel-text{
+      letter-spacing: 0.03em;
+      text-align: center;
+      font-size: 12.5px;
+      line-height: 18px;
+      margin-bottom: 40px;
+    }
+    .kids-carousel-button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: black;
+      color: white;
+      font-size: 13px;
+      border: none;
+      height: 48px;
+      padding: 0 28px;
+      margin-bottom: 50px;
+    }
+  }
+  .kids-carousel-bottom{
+    .kids-carousel-bottom-description{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+      .line-in-kids-carousel-bottom-description{
+        width: 100px;
+        height: 4px;
+        margin-right: 35px;
+        background: black;
+      }
+      .kids-carousel-description{
+        font-size: 14px;
+      }
+    }
+  }
+}
