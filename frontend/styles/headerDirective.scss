@@ -21,6 +21,7 @@
 
 .header-men-hover {
   position: absolute;
+  z-index: 25;
   border-top-color:#F2F2F2;
   border-top-width:1.5px;
   border-top-style: solid;
@@ -28,13 +29,19 @@
   top: 140px;
   width: 100%;
   height: 435.6px;
-  z-index: 5px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   font-family: regular;
+  font-weight: 300;
 
 }
+
+
+.header-hover-title:hover {
+    cursor: pointer;
+  }
+
 
 .header-hover-title {
   width: 12%;
@@ -55,6 +62,11 @@
     margin-top: 35px;
 
 
+    .hover-list-items:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
     .hover-list-items {
       font-size: 14px;
       margin-bottom: 15px;
@@ -70,6 +82,7 @@
 
 .header-women-hover {
   position: absolute;
+  z-index: 25;
   border-top-color:#F2F2F2;
   border-top-width:1.5px;
   border-top-style: solid;
@@ -89,6 +102,7 @@
 
 .header-kids-hover {
   position: absolute;
+  z-index: 25;
   border-top-color:#F2F2F2;
   border-top-width:1.5px;
   border-top-style: solid;
@@ -108,6 +122,7 @@
 
 .header-underwear-hover {
   position: absolute;
+  z-index: 25;
   border-top-color:#F2F2F2;
   border-top-width:1.5px;
   border-top-style: solid;
@@ -129,6 +144,7 @@
 
 .header-discover-hover {
   position: absolute;
+  z-index: 25;
   border-top-color:#F2F2F2;
   border-top-width:1.5px;
   border-top-style: solid;
@@ -162,14 +178,22 @@
 
 
   .header-left {
-    padding-left: 150px;
+    padding-left: 130px;
+
+    .american-flag {
+        cursor: pointer;
+
+      }
+
 
     .header-left-top {
       font-family: regular;
-      font-size: 12px;
+      font-size: 11px;
       display: flex;
       align-items: center;
-      padding-top: 18px;
+      padding-top: 12px;
+
+
 
 
 
@@ -181,12 +205,24 @@
 
       }
 
+
+        small:hover {
+          cursor: pointer;
+          text-decoration: underline;
+
+        }
+
         small {
           color: #7B7B82;
           margin-left: 10px;
+          width: 95px;
       }
   }
 
+
+  .header-left-bottom:hover {
+      cursor: pointer;
+    }
 
   .header-left-bottom {
     padding-top: 45px;
@@ -211,7 +247,7 @@
       font-size: 11px;
       font-weight: 100;
       color: #0484A9;
-      padding-top: 26px;
+      padding-top: 13px;
       width: 192px;
       height: 50px;
 
@@ -230,6 +266,10 @@
       padding-right: 30px;
       color: #7B7B91;
 
+      a:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
 
       a {
         display: flex;
@@ -246,32 +286,56 @@
 
 
   .header-right {
-
+    padding-right: 130px;
 
     .header-right-top {
       display: flex;
       flex-direction: row;
       align-items: center;
-      padding-top: 18px;
+      padding-top: 12px;
       font-family: regular;
       font-size: 13px;
       font-weight: 500;
       letter-spacing: 1px;
       margin-right: 50px;
 
+
+      .header-right-top-left:hover {
+          cursor: pointer;
+        }
+
       .header-right-top-left {
+        color: #7B7B91;
         font-size: 16px;
         padding-right: 15px;
       }
 
+      .header-right-top-middle1:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+
       .header-right-top-middle1 {
+        color: #7B7B91;
         font-size: 12px;
       }
+
+
+
+      .header-right-top-middle2:hover {
+          cursor: pointer;
+        }
 
       .header-right-top-middle2 {
         font-size: 16px;
         padding-left: 35px;
       }
+
+
+      .header-right-top-right:hover {
+          cursor: pointer;
+        }
+
 
       .header-right-top-right {
         font-size: 16px;
@@ -296,6 +360,12 @@
       }
 
 
+
+      .header-right-bottom-right:hover {
+          cursor: pointer;
+        }
+
+
       .header-right-bottom-right {
         font-size: 16px;
         margin-left: 16px;
@@ -308,7 +378,148 @@
 }
 
 
-@media (max-width: 600px) {
+.showBorder {
+  border-bottom-color: orange;
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+}
+
+
+
+
+
+@media (min-width: 926px) {
+  #header-container-responsive {
+    display: none;
+  }
+}
+
+
+
+
+@media (max-width: 925px) {
+
+  #header-container {
+    display: none;
+
+  }
+
+  #header-container-responsive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 122.2px;
+
+
+  }
+
+  #header-hamburger {
+    font-size: 18px;
+    margin-left: 10px;
+
+  }
+
+  #header-logo-responsive {
+      display: flex;
+      align-items: flex-start;
+      width: 85px;
+      height: 20px;
+      margin-left: 10%;
+
+  }
+
+  #header-top-responsive {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 65%;
+    padding-top: 20px;
+    padding-left: 20px;
+
+
+
+  }
+
+  #header-right-responsive {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+
+  }
+
+  #american-flag-responsive {
+      width: 25px;
+      height: 15px;
+      margin-right: 20px;
+  }
+
+  #header-cart-responsive {
+    font-size: 18px;
+    margin-right: 15px;
+  }
+
+  #header-bottom-responsive {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    font-family: bold;
+    font-size: 11px;
+    color: #0484A9;
+    padding-top: 5px;
+
+  }
+
+}
+
+@media (max-width: 370px) {
+
+
+
+  #header-right-responsive {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+
+  }
+
+  #american-flag-responsive {
+      width: 25px;
+      height: 15px;
+      margin-right: 12px;
+  }
+
+  #header-cart-responsive {
+    font-size: 16px;
+    margin-right: 12px;
+  }
+
+
+}
+
+@media (max-width: 321px) {
+
+  #header-right-responsive {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+
+  }
+
+  #american-flag-responsive {
+      width: 25px;
+      height: 15px;
+
+  }
+
+  #header-cart-responsive {
+    font-size: 16px;
+
+  }
 
 
 }
