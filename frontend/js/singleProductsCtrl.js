@@ -9,7 +9,7 @@ angular.module('app')
   $scope.div3 = true;
 
   $scope.getSingleProduct = () => {
-    mainSrvc.getSingleProduct($stateParams.product_id).then(function(response) {
+    mainSrvc.getSingleProduct($stateParams.id).then(function(response) {
       $scope.singleProduct = response;
     });
   }

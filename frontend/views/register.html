@@ -4,21 +4,21 @@
       <p class="reg-heading capital condensed">create account</p>
       <div class="reg-name reg-flex">
         <p class="reg-subheading capital bold">name</p>
-        <input class="reg-input-style" type="text" placeholder="First Name"/>
-        <input class="reg-input-style" type="text" placeholder="Last Name"/>
+        <input id="firstName" ng-model="user.first_name" class="reg-input-style" type="text" placeholder="First Name"/>
+        <input ng-model="user.last_name" class="reg-input-style" type="text" placeholder="Last Name"/>
       </div>
       <div class="reg-email reg-flex">
         <p class="reg-subheading capital bold">email / login information</p>
-        <input class="reg-input-style" type="text" placeholder="Email"/>
-        <input class="reg-input-style" type="text" placeholder="Confirm Email"/>
-        <input class="reg-input-style" type="text" placeholder="Password"/>
+        <input ng-model="user.email" class="reg-input-style" type="text" placeholder="Email"/>
+        <input ng-model="user.email_confirm" class="reg-input-style" type="text" placeholder="Confirm Email"/>
+        <input ng-model="user.password" class="reg-input-style" type="text" placeholder="Password"/>
         <p class="reg-characters">8 - 255 characters</p>
         <input class="reg-input-style" type="text" placeholder="Confirm Password"/>
         <div class="reg-checkbox">
-          <input type="checkbox"/><p class="bold reg-checkbox-text">Please add me to the Stance newsletter list to receive the latest product launches and online exclusives.</p>
+          <input type="checkbox" ng-model="user.newsletter" ng-true-value="true" ng-false-value="false"/><p class="bold reg-checkbox-text">Please add me to the Stance newsletter list to receive the latest product launches and online exclusives.</p>
         </div>
         <p class="reg-privacy">Stance does not share or sell personal info. (<a href="https://www.stance.com/account?dwcont=C41383969" class="reg-privacy-policy reg-anchor" title="Privacy Policy">Privacy Policy</a>)</p>
-        <button id="reg-bright" class="point reg-apply-button bold" type="submit" name="button">Apply</button>
+        <button id="reg-bright" class="point reg-apply-button bold" type="submit" name="button" ng-click="register()">Apply</button>
       </div>
     </div>
   </section>
