@@ -422,6 +422,15 @@ angular.module('app').controller('womensCtrl', function ($scope, mainSrvc) {
 });
 "use strict";
 
+angular.module('app').directive("kidsCarousel", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./views/kidsCarousel.html",
+    link: function link(scope, element, attributes) {}
+  };
+});
+"use strict";
+
 angular.module('app').directive("featured", function () {
   return {
     restrict: "E",
