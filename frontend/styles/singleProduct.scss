@@ -7,6 +7,20 @@ $aqua: #0493c1;
   width: 100%;
 }
 
+#single-bright:hover {
+  background: rgba(26,26,26,0.8);
+  transition: 1s;
+}
+
+.opaque {
+  opacity: 0.5;
+}
+
+i {
+  color: $gray;
+  font-size: 10px;
+}
+
 .single-wrapper {
   padding: 25px 18px;
   display: flex;
@@ -27,22 +41,10 @@ $aqua: #0493c1;
       display: flex;
       height: 47px;
       width: 47px;
-      color: green;
-      z-index: 9;
-      opacity: 0.4;
       img {
         height: 47px;
         width: 47px;
       }
-      // .single-opaque {
-      //   height: 47px;
-      //   width: 47px;
-      //   opacity: 0.4;
-      //   top: 0;
-      //   left: 0;
-      //   z-index: 9;
-      //   color: pink;
-      // }
     }
   }
 
@@ -91,8 +93,41 @@ $aqua: #0493c1;
       width: 100%;
       color: #ffffff;
       background: #1a1a1a;
-      margin-bottom: 5px;
+      margin-bottom: 28px;
       font-size: 13px;
     }
+    .single-wish-fit {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12.5px;
+      margin-bottom: 28px;
+      color: #888;
+      .single-wishlist {
+        display: flex;
+      }
+      .single-fit {
+        display: flex;
+        img {
+          margin-top: -3px;
+        }
+      }
+      .single-child :first-child {
+        margin-right: 6px;
+      }
+    }
+    .single-contact {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 43px;
+    }
+    .single-contact * {
+      margin: 0 6.5px;
+    }
+  }
+  .single-like {
+    font-size: 25px;
+    letter-spacing: 2.5px;
+    margin-bottom: -75px;
+    margin-left: 10px;
   }
 }

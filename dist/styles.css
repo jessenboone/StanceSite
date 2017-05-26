@@ -211,17 +211,6 @@ table {
         margin-bottom: 20px; }
 
 @font-face {
-<<<<<<< HEAD
-  font-family: regular;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
-
-@font-face {
-  font-family: bold;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
-
-@font-face {
-  font-family: condensed;
-=======
   font-family: "regular";
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
@@ -231,7 +220,6 @@ table {
 
 @font-face {
   font-family: "condensed";
->>>>>>> master
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
@@ -411,17 +399,6 @@ table {
     letter-spacing: 1px; }
 
 @font-face {
-<<<<<<< HEAD
-  font-family: regular;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
-
-@font-face {
-  font-family: bold;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
-
-@font-face {
-  font-family: condensed;
-=======
   font-family: "regular";
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
@@ -431,7 +408,6 @@ table {
 
 @font-face {
   font-family: "condensed";
->>>>>>> master
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
@@ -768,17 +744,6 @@ table {
   margin-bottom: 17px; }
 
 @font-face {
-<<<<<<< HEAD
-  font-family: regular;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
-
-@font-face {
-  font-family: bold;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
-
-@font-face {
-  font-family: condensed;
-=======
   font-family: "regular";
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
@@ -788,7 +753,6 @@ table {
 
 @font-face {
   font-family: "condensed";
->>>>>>> master
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
@@ -903,17 +867,6 @@ table {
 
 
 @font-face {
-<<<<<<< HEAD
-  font-family: regular;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
-
-@font-face {
-  font-family: bold;
-  src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-black.ttf); }
-
-@font-face {
-  font-family: condensed;
-=======
   font-family: "regular";
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-light.ttf); }
 
@@ -923,7 +876,6 @@ table {
 
 @font-face {
   font-family: "condensed";
->>>>>>> master
   src: url(./Akzidenz-Grotesk/Akzidenz-grotesk-r-condensed-medium-5920a5e93625a.ttf); }
 
 .regular {
@@ -1269,6 +1221,17 @@ table {
   height: 50px;
   width: 100%; }
 
+#single-bright:hover {
+  background: rgba(26, 26, 26, 0.8);
+  transition: 1s; }
+
+.opaque {
+  opacity: 0.5; }
+
+i {
+  color: #999;
+  font-size: 10px; }
+
 .single-wrapper {
   padding: 25px 18px;
   display: flex;
@@ -1284,10 +1247,7 @@ table {
     margin-bottom: 25px;
     display: flex;
     height: 47px;
-    width: 47px;
-    color: green;
-    z-index: 9;
-    opacity: 0.4; }
+    width: 47px; }
     .single-wrapper .single-images .single-image-views img {
       height: 47px;
       width: 47px; }
@@ -1325,8 +1285,33 @@ table {
     width: 100%;
     color: #ffffff;
     background: #1a1a1a;
-    margin-bottom: 5px;
+    margin-bottom: 28px;
     font-size: 13px; }
+  .single-wrapper .single-info .single-wish-fit {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.5px;
+    margin-bottom: 28px;
+    color: #888; }
+    .single-wrapper .single-info .single-wish-fit .single-wishlist {
+      display: flex; }
+    .single-wrapper .single-info .single-wish-fit .single-fit {
+      display: flex; }
+      .single-wrapper .single-info .single-wish-fit .single-fit img {
+        margin-top: -3px; }
+    .single-wrapper .single-info .single-wish-fit .single-child :first-child {
+      margin-right: 6px; }
+  .single-wrapper .single-info .single-contact {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 43px; }
+  .single-wrapper .single-info .single-contact * {
+    margin: 0 6.5px; }
+  .single-wrapper .single-like {
+    font-size: 25px;
+    letter-spacing: 2.5px;
+    margin-bottom: -75px;
+    margin-left: 10px; }
 
 .new_img {
   height: 50px;

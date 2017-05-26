@@ -1,25 +1,25 @@
 <main class="single-wrapper regular" ng-repeat="p in singleProduct">
   <section class="single-images">
-    <div class="single-main-image">
+    <div class="single-main-image" ng-if="pic1">
       <img src={{p.main_image_url}} alt="socks" />
+    </div>
+    <div class="single-main-image" ng-if="pic2">
+      <img src={{p.front_image_url}} alt="socks" />
+    </div>
+    <div class="single-main-image" ng-if="pic3">
+      <img src={{p.back_image_url}} alt="socks" />
     </div>
 
     <div class="single-image-views">
-      <div class="single-opaque" ng-click="div1=!div1"  ng-if="div1">
+      <div ng-click="showHide('pic1')" ng-class="{'opaque': !pic1, pic2, pic3}">
         <img class="single-pic1" ng-src={{p.main_image_url}} />
-        <!-- <div class="single-opaque" ng-if="div1"></div> -->
       </div>
-      <div class="single-opaque" ng-click="div2=!div2"  ng-if="div2">
-        <img class="single-pic2" ng-src={{p.front_image_url}} ng-if="p.front_image_url" />
-        <!-- <div class="single-opaque" ng-if="div2"></div> -->
+      <div ng-click="showHide('pic2')" ng-class="{'opaque': !pic2, pic1, pic3}">
+        <img class="single-pic2" ng-src={{p.front_image_url}} />
       </div>
-      <div class="single-opaque" ng-click="div3=!div3" ng-if="div3">
-        <img class="single-pic3" ng-src={{p.back_image_url}} ng-if="p.back_image_url" />
-        <!-- <div class="single-opaque" ng-if="div3"></div> -->
+      <div ng-click="showHide('pic3')" ng-class="{'opaque': !pic3, pic1, pic2}">
+        <img class="single-pic3" ng-src={{p.back_image_url}} />
       </div>
-      <!-- <img ng-src={{p.back_image_url}} /> -->
-      <!-- ng-if="p.back_image_url && pic3" -->
-      <!-- ng-click="showHide(pic1) && div1=!div1" -->
     </div>
   </section>
 
@@ -39,21 +39,57 @@
     </div>
     <p class="single-availability"><span class="bold">Availability:</span> In Stock</p>
     <button class="bold" type="button" name="button">Add to Cart</button>
-    <div class="">
-      <div class="single-wishlist">
-        <i class="fa fa-heart" aria-hidden="true"></i>
+    <div class="single-wish-fit">
+      <div class="single-wishlist single-child">
+        <i class="fa fa-heart fa-lg" aria-hidden="true"></i>
         <p>Save to Wish List</p>
       </div>
-      <div class="single-fit-guide">
-
+      <div class="single-fit single-child">
+        <img src="./images/lines.png" alt="cascading lines">
         <p>Size and Fit Guide</p>
       </div>
     </div>
     <div class="single-contact">
-      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-      <i class="fa fa-paper-plane" aria-hidden="true"></i>
+      <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a>
+      <i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i>
+    </div>
+  </section>
+
+  <section class="single-featured">
+    <p class="capital condensed single-like">you might also like</p>
+    <div class="featuredSocks">
+      <div class="featured-items-container">
+        <div class="featured-item">
+          <img class="featured-image" src="http://demandware.edgesuite.net/sits_pod41/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwc26e758d/prod_images/M526B17POO_RST.jpg?sw=450&amp;sh=720&amp;sm=fit" alt="POOLBOY">
+          <hr class="line-under-featured-image">
+          <p class="featured-item-name capital condensed">Pool Boy</p>
+          <p class="featured-item-style regular">Classic Light</p>
+          <p class="condensed">$15.00</p>
+        </div>
+        <div class="featured-item">
+          <img class="featured-image" src="http://demandware.edgesuite.net/sits_pod41/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwc26e758d/prod_images/M526B17POO_RST.jpg?sw=450&amp;sh=720&amp;sm=fit" alt="POOLBOY">
+          <hr class="line-under-featured-image">
+          <p class="featured-item-name capital condensed">Pool Boy</p>
+          <p class="featured-item-style regular">Classic Light</p>
+          <p class="condensed">$15.00</p>
+        </div>
+        <div class="featured-item">
+          <img class="featured-image" src="http://demandware.edgesuite.net/sits_pod41/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwc26e758d/prod_images/M526B17POO_RST.jpg?sw=450&amp;sh=720&amp;sm=fit" alt="POOLBOY">
+          <hr class="line-under-featured-image">
+          <p class="featured-item-name capital condensed">Pool Boy</p>
+          <p class="featured-item-style regular">Classic Light</p>
+          <p class="condensed">$15.00</p>
+        </div>
+        <div class="featured-item">
+          <img class="featured-image" src="http://demandware.edgesuite.net/sits_pod41/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwc26e758d/prod_images/M526B17POO_RST.jpg?sw=450&amp;sh=720&amp;sm=fit" alt="POOLBOY">
+          <hr class="line-under-featured-image">
+          <p class="featured-item-name capital condensed">Pool Boy</p>
+          <p class="featured-item-style regular">Classic Light</p>
+          <p class="condensed">$15.00</p>
+        </div>
+      </div>
     </div>
   </section>
 
