@@ -984,9 +984,14 @@ table {
       height: 235px;
       width: 235px; }
   .single-wrapper .single-images .single-image-views {
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    display: flex;
+    height: 47px;
+    width: 47px;
+    color: green;
+    z-index: 9;
+    opacity: 0.4; }
     .single-wrapper .single-images .single-image-views img {
-      opacity: 0.4;
       height: 47px;
       width: 47px; }
   .single-wrapper .single-info .single-name {

@@ -24,11 +24,25 @@ $aqua: #0493c1;
     }
     .single-image-views {
       margin-bottom: 25px;
+      display: flex;
+      height: 47px;
+      width: 47px;
+      color: green;
+      z-index: 9;
+      opacity: 0.4;
       img {
-        opacity: 0.4;
         height: 47px;
         width: 47px;
       }
+      // .single-opaque {
+      //   height: 47px;
+      //   width: 47px;
+      //   opacity: 0.4;
+      //   top: 0;
+      //   left: 0;
+      //   z-index: 9;
+      //   color: pink;
+      // }
     }
   }
 
