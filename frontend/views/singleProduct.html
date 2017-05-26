@@ -1,7 +1,4 @@
-
-{{test}}
-{{test2}}
-<div ng-repeat="p in singleProduct">
+<!-- <div ng-repeat="p in singleProduct">
   <img ng-src={{p.details_large_main_image_url}} />
   <img ng-src={{p.details_main_image_url}} />
   <img ng-src={{p.front_image_url}} />
@@ -12,15 +9,12 @@
   <h6>{{p.collection}}</h6>
   <p>{{p.price | currency}}</p>
   <p>{{size}}</p>
-</div>
-
-{{test}}
-{{test2}}
+</div> -->
 
 <main class="single-wrapper regular" ng-repeat="p in singleProduct">
   <section class="single-images">
     <div class="single-main-image">
-      <img src={{p.main_image_url}} alt="socks" />
+      <img ng-src={{p.details_large_main_image_url}} alt="socks" />
     </div>
 
     <div class="single-image-views">

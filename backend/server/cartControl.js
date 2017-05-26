@@ -54,7 +54,7 @@ module.exports = {
           }
         }
         if (found === false) {
-          db.add_to_cart([item[0].product_id, item[0].quantity, item[0].user_id], (err, cart) => {
+          db.add_to_cart([item.product_id, item.quantity, item.user_id], (err, cart) => {
             if (!err) {
               res.status(200).send(cart);
             } else {
@@ -75,6 +75,7 @@ module.exports = {
         res.send(err);
       }
     })
-  }
+  },
+
 
 };
