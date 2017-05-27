@@ -56,43 +56,39 @@ angular.module('app').controller('cartCtrl', function ($scope, mainSrvc) {
   $scope.test = 'cart working';
   $scope.test2 = mainSrvc.test;
 
-  $scope.getCart = function (user) {
-    $scope.subtotal = 0;
-    storeSrvc.getCart(user).then(function (response) {
-      $scope.userCart = response.map(function (v) {
-        v.total = v.quantity * v.product_price;
-        $scope.subtotal += v.total;
-        return v;
-      });
-    });
-  };
-
-  $scope.deleteItemInCart = function (product, item) {
-    storeSrvc(product, item).then(function (response) {
-      $scope.response = response;
-      /*????????????????????*/
-    });
-  };
-
-  $scope.createItem = function (quantity, purchase) {
-    var user_id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : $scope.userId;
-
-    storeSrvc.createItem(quantity, purchase, user_id).then(function (response) {
-      $scope.getCartTotal($scope.userId);
-    });
-  };
-
-  $scope.getCartTotal = function () {
-    var user_id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userId;
-
-    $scope.cartTotal = 0;
-    storeSrvc.getCart(user_id).then(function (response) {
-      $scope.cartTotal = response.reduce(function (acc, value) {
-        return value.quantity + acc;
-      }, 0);
-    });
-  };
-  $scope.getCartTotal();
+  // $scope.getCart = (user) => {
+  //   $scope.subtotal = 0;
+  //   storeSrvc.getCart(user).then((response) => {
+  //     $scope.userCart = response.map(v => {
+  //       v.total = v.quantity * v.product_price
+  //       $scope.subtotal += v.total
+  //       return v
+  //     })
+  //   });
+  // };
+  //
+  // $scope.deleteItemInCart = (product, item) => {
+  //   storeSrvc(product, item).then((response) => {
+  //     $scope.response = response;
+  //     /*????????????????????*/
+  //   });
+  // };
+  //
+  // $scope.createItem = (quantity, purchase, user_id = $scope.userId) => {
+  //   storeSrvc.createItem(quantity, purchase, user_id).then(function(response) {
+  //     $scope.getCartTotal($scope.userId);
+  //   });
+  // };
+  //
+  // $scope.getCartTotal = (user_id = $scope.userId) => {
+  //   $scope.cartTotal = 0;
+  //   storeSrvc.getCart(user_id).then((response) => {
+  //     $scope.cartTotal = response.reduce((acc, value) => {
+  //       return value.quantity + acc;
+  //     }, 0)
+  //   })
+  // }
+  // $scope.getCartTotal();
 });
 'use strict';
 
