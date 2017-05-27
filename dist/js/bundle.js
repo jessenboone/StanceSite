@@ -32,7 +32,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/register.html',
     controller: 'registerCtrl'
   }).state('singleProduct', {
-    url: '/single/product/:product_id', /* /:product_id */
+    url: '/single/product/:id/:mwk', /* /:product_id */
     templateUrl: './../views/singleProduct.html',
     controller: 'singleProductCtrl'
   }).state('cart', {
@@ -322,7 +322,6 @@ angular.module('app').service('mainSrvc', function ($http) {
 angular.module('app').controller('mensCtrl', function ($scope, mainSrvc) {
 
   $scope.getProducts = function () {
-    console.log('get products from ctrl');
     mainSrvc.getProducts('Mens', 'New Arrivals').then(function (response) {
       $scope.products = response;
     });
@@ -343,6 +342,37 @@ angular.module('app').controller('ordersCtrl', function ($scope, mainSrvc) {
     mainSrvc.getOrders(user_id).then(function (response) {
       $scope.order = response;
     });
+  };
+});
+'use strict';
+
+angular.module('app').directive('randomDirective', function (mainSrvc) {
+
+  return {
+    restrict: 'E',
+    templateUrl: './views/directives/randomDirective.html',
+    // scope: {
+    //
+    // }
+    controller: function controller($scope, $stateParams) {
+      $scope.getProducts = function () {
+        console.log('stateParams', $stateParams.mwk);
+        mainSrvc.getProducts($stateParams.mkw).then(function (response) {
+          var arr = [];
+          var rand = [];
+          for (var i = 0; i < response.length; i++) {
+            if (response[i]['mwk'] === 'Mens') {
+              arr.push(response[i]);
+            }
+          }
+          for (var j = 0; j < 4; j++) {
+            rand.push(arr[Math.floor(arr.length * Math.random())]);
+          }
+          $scope.random = rand;
+        });
+      };
+      $scope.getProducts();
+    }
   };
 });
 'use strict';
@@ -372,11 +402,19 @@ angular.module('app').controller('singleProductCtrl', function ($scope, mainSrvc
   $scope.pic1 = true;
 
   $scope.getSingleProduct = function () {
-    mainSrvc.getSingleProduct($stateParams.product_id).then(function (response) {
+    mainSrvc.getSingleProduct($stateParams.id).then(function (response) {
       $scope.singleProduct = response;
     });
   };
   $scope.getSingleProduct();
+
+  // $scope.getProducts = () => {
+  //   mainSrvc.getProducts($stateParams.mwk).then(function(response) {
+  //     console.log(response);
+  //     $scope.random = response;
+  //   });
+  // }
+  // $scope.getProducts();
 
   $scope.showHide = function (pic) {
     $scope.pic1 = false;

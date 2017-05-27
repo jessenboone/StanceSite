@@ -19,7 +19,7 @@ module.exports = {
     }
     else if(r.category === 'undefined' &&  r.mwk) {
       console.log('running prods by cat.');
-      db.get_prods_by_category([r.category], (err, products) => {
+      db.get_prods_by_category([r.mwk], (err, products) => {
         if(!err) {
           return res.status(200).send(products);
         }

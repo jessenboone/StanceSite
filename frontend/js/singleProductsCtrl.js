@@ -4,11 +4,19 @@ angular.module('app')
   $scope.pic1 = true;
 
   $scope.getSingleProduct = () => {
-    mainSrvc.getSingleProduct($stateParams.product_id).then(function(response) {
+    mainSrvc.getSingleProduct($stateParams.id).then(function(response) {
       $scope.singleProduct = response;
     });
   }
   $scope.getSingleProduct();
+
+  // $scope.getProducts = () => {
+  //   mainSrvc.getProducts($stateParams.mwk).then(function(response) {
+  //     console.log(response);
+  //     $scope.random = response;
+  //   });
+  // }
+  // $scope.getProducts();
 
   $scope.showHide = (pic) => {
     $scope.pic1 = false;
