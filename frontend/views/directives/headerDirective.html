@@ -1,41 +1,565 @@
-
 <div class="slide-menu" ng-class="{'slide-in': slideIn}">
-  <div class="slide-search">
-    <i class="fa fa-times" aria-hidden="true" id="big-x" ng-click="slideIn = !slideIn"></i>
-    <input type="text" placeholder="Search">
-    <div class="slide-box">
-      <i class="fa fa-times" aria-hidden="true" id="small-x"></i>
-      <i class="fa fa-search" aria-hidden="true" id="slide-search-icon"></i>
+    <div class="slide-search">
+        <i class="fa fa-times" aria-hidden="true" id="big-x" ng-click="slideIn = !slideIn"></i>
+        <input type="text" placeholder="Search">
+        <div class="slide-box">
+            <i class="fa fa-times" aria-hidden="true" id="small-x"></i>
+            <i class="fa fa-search" aria-hidden="true" id="slide-search-icon"></i>
+        </div>
     </div>
-  </div>
-  <div class="slide-login">
-    <i class="fa fa-user" aria-hidden="true"></i>
-    <h2>Login / Register</h2>
-  </div>
-  <div class="slide-text1">
-    <h3>MEN</h3>
-    <i class="fa fa-plus" aria-hidden="true"></i>
-  </div>
-  <div class="slide-text1">
-    <h3>WOMEN</h3>
-    <i class="fa fa-plus" aria-hidden="true"></i>
-  </div>
-  <div class="slide-text1">
-    <h3>KIDS</h3>
-    <i class="fa fa-plus" aria-hidden="true"></i>
-  </div>
-  <div class="slide-text1">
-    <h3>UNDERWEAR</h3>
-    <i class="fa fa-plus" aria-hidden="true"></i>
-  </div>
-  <div class="slide-text1">
-    <h3>DISCOVER</h3>
-    <i class="fa fa-plus" aria-hidden="true"></i>
-  </div>
-  <div class="slide-text6">
-    <h3>1-888-391-9020</h3>
-  </div>
+    <div class="slide-login">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <h2>Login / Register</h2>
+    </div>
+
+
+
+
+    <div class="anything">
+
+
+        <div class="slide-container">
+            <div class="slide-text1">
+                <h3>MEN</h3>
+                <i class="fa fa-plus" aria-hidden="true" ng-click="sdMen = !sdMen" ng-hide="sdMen"></i>
+                <i class="fa fa-minus" aria-hidden="true" ng-click="sdMen = !sdMen" ng-show="sdMen"></i>
+            </div>
+            <div class="slide-hide-1" ng-if="sdMen">
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>FEATURED</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdMen2 = !sdMen2" ng-hide="sdMen2"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdMen2 = !sdMen2" ng-show="sdMen2"></i>
+                    </li>
+                    <li ng-if="sdMen2">
+                        <ul style="list-style-type:none;">
+                            <li>New Arrivals</li>
+                            <li>Best Sellers</li>
+                            <li>College Shop</li>
+                            <li>Disney</li>
+                            <li>MLB Shop</li>
+                            <li>NBA Shop</li>
+                            <li>Star Wars</li>
+                            <li>Last Call</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>CASUAL</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdMen3 = !sdMen3" ng-hide="sdMen3"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdMen3 = !sdMen3" ng-show="sdMen3"></i>
+                    </li>
+                    <li ng-if="sdMen3">
+                        <ul style="list-style-type:none;">
+                            <li>Anthem</li>
+                            <li>Collections</li>
+                            <li>College Casual</li>
+                            <li>MLB Casual</li>
+                            <li>NBA Casual</li>
+                            <li>Uncommon Solids</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>PERFORMANCE</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdMen4 = !sdMen4" ng-hide="sdMen4"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdMen4 = !sdMen4" ng-show="sdMen4"></i>
+                    </li>
+                    <li ng-if="sdMen4">
+                        <ul style="list-style-type:none;">
+                            <li>Adventure</li>
+                            <li>MLB On Field</li>
+                            <li>NBA On Court</li>
+                            <li>Basketball</li>
+                            <li>Run</li>
+                            <li>Training</li>
+                            <li>Golf</li>
+                            <li>Snow</li>
+                            <li>Moto</li>
+                            <li>Skateboarding</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>PREMIUM</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdMen5 = !sdMen5" ng-hide="sdMen5"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdMen5 = !sdMen5" ng-show="sdMen5"></i>
+                    </li>
+                    <li ng-if="sdMen5">
+                        <ul style="list-style-type:none;">
+                            <li>Made in U.S.A</li>
+                            <li>Dress Socks</li>
+                            <li>The Reserve</li>
+                            <li>Topstitch</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>SHOP BY HEIGHT</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdMen6 = !sdMen6" ng-hide="sdMen6"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdMen6 = !sdMen6" ng-show="sdMen6"></i>
+                    </li>
+                    <li ng-if="sdMen6">
+                        <ul style="list-style-type:none;">
+                            <li>Super Invisibles</li>
+                            <li>Low</li>
+                            <li>Quarter</li>
+                            <li>Crew</li>
+                            <li>Over the Calf</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="slide-container">
+            <div class="slide-text1">
+                <h3>WOMEN</h3>
+                <i class="fa fa-plus" aria-hidden="true" ng-click="sdWomen = !sdWomen" ng-hide="sdWomen"></i>
+                <i class="fa fa-minus" aria-hidden="true" ng-click="sdWomen = !sdWomen" ng-show="sdWomen"></i>
+            </div>
+            <div class="slide-hide-1" ng-if="sdWomen">
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>FEATURED</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdWomen2 = !sdWomen2" ng-hide="sdWomen2"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdWomen2 = !sdWomen2" ng-show="sdWomen2"></i>
+                    </li>
+                    <li ng-if="sdWomen2">
+                        <ul style="list-style-type:none;">
+                            <li>New Arrivals</li>
+                            <li>Best Sellers</li>
+                            <li>College Collection</li>
+                            <li>Disney</li>
+                            <li>Rihanna</li>
+                            <li>Gift Boxes</li>
+                            <li>Last Call</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>CASUAL</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdWomen3 = !sdWomen3" ng-hide="sdWomen3"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdWomen3 = !sdWomen3" ng-show="sdWomen3"></i>
+                    </li>
+                    <li ng-if="sdWomen3">
+                        <ul style="list-style-type:none;">
+                            <li>Super Invisibles</li>
+                            <li>Anklets</li>
+                            <li>Crew</li>
+                            <li>Knee High</li>
+                            <li>Thigh High</li>
+                            <li>Boot Socks</li>
+                            <li>Hosiery</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>PERFORMANCE</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdWomen4 = !sdWomen4" ng-hide="sdWomen4"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdWomen4 = !sdWomen4" ng-show="sdWomen4"></i>
+                    </li>
+                    <li ng-if="sdWomen4">
+                        <ul style="list-style-type:none;">
+                            <li>Adventure</li>
+                            <li>Training</li>
+                            <li>Run</li>
+                            <li>Snow</li>
+                            <li>Moto</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>PREMIUM</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdWomen5 = !sdWomen5" ng-hide="sdWomen5"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdWomen5 = !sdWomen5" ng-show="sdWomen5"></i>
+                    </li>
+                    <li ng-if="sdWomen5">
+                        <ul style="list-style-type:none;">
+                            <li>The Reserve</li>
+                            <li>Topstitch</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>COLLECTIONS</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdWomen6 = !sdWomen6" ng-hide="sdWomen6"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdWomen6 = !sdWomen6" ng-show="sdWomen6"></i>
+                    </li>
+                    <li ng-if="sdWomen6">
+                        <ul style="list-style-type:none;">
+                            <li>MLB</li>
+                            <li>Beauty and the Beast</li>
+                            <li>Minnie Mouse</li>
+                            <li>Hello Kitty</li>
+                            <li>Harley-Davidson</li>
+                            <li>Zodiac Collection</li>
+                            <li>Americana</li>
+                            <li>Uncommon Solids</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="slide-container">
+            <div class="slide-text1">
+                <h3>KIDS</h3>
+                <i class="fa fa-plus" aria-hidden="true" ng-click="sdKids = !sdKids" ng-hide="sdKids"></i>
+                <i class="fa fa-minus" aria-hidden="true" ng-click="sdKids = !sdKids" ng-show="sdKids"></i>
+            </div>
+            <div class="slide-hide-1" ng-if="sdKids">
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>FEATURED</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdKids2 = !sdKids2" ng-hide="sdKids2"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdKids2 = !sdKids2" ng-show="sdKids2"></i>
+                    </li>
+                    <li ng-if="sdKids2">
+                        <ul style="list-style-type:none;">
+                            <li>New Arrivals</li>
+                            <li>Disney</li>
+                            <li>Americana</li>
+                            <li>Snow</li>
+                            <li>Moto</li>
+                            <li>Last Call</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>BOYS</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdKids3 = !sdKids3" ng-hide="sdKids3"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdKids3 = !sdKids3" ng-show="sdKids3"></i>
+                    </li>
+                    <li ng-if="sdKids3">
+                        <ul style="list-style-type:none;">
+                            <li>Casual</li>
+                            <li>Star Wars</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>GIRLS</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdKids4 = !sdKids4" ng-hide="sdKids4"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdKids4 = !sdKids4" ng-show="sdKids4"></i>
+                    </li>
+                    <li ng-if="sdKids4">
+                        <ul style="list-style-type:none;">
+                            <li>Casual</li>
+                            <li>Sanrio x Stance</li>
+                            <li>Uncommon Solids</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>BABY</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdKids5 = !sdKids5" ng-hide="sdKids5"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdKids5 = !sdKids5" ng-show="sdKids5"></i>
+                    </li>
+                    <li ng-if="sdKids5">
+                        <ul style="list-style-type:none;">
+                            <li>Infant</li>
+                            <li>Toddler</li>
+                            <li>Freshly Picked</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="slide-container">
+            <div class="slide-text1">
+                <h3>UNDERWEAR</h3>
+                <i class="fa fa-plus" aria-hidden="true" ng-click="sdUnderwear = !sdUnderwear" ng-hide="sdUnderwear"></i>
+                <i class="fa fa-minus" aria-hidden="true" ng-click="sdUnderwear = !sdUnderwear" ng-show="sdUnderwear"></i>
+            </div>
+            <div class="slide-hide-1" ng-if="sdUnderwear">
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>WHOLESTER</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdUnderwear2 = !sdUnderwear2" ng-hide="sdUnderwear2"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdUnderwear2 = !sdUnderwear2" ng-show="sdUnderwear2"></i>
+                    </li>
+                    <li ng-if="sdUnderwear2">
+                        <ul style="list-style-type:none;">
+                            <li>Uncommon Solids</li>
+                            <li>Prints and Patterns</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>BOXER BRIEF</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdUnderwear3 = !sdUnderwear3" ng-hide="sdUnderwear3"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdUnderwear3 = !sdUnderwear3" ng-show="sdUnderwear3"></i>
+                    </li>
+                    <li ng-if="sdUnderwear3">
+                        <ul style="list-style-type:none;">
+                            <li>Star Wars Underwear</li>
+                            <li>NBA Underwear</li>
+                            <li>MLB Underwear</li>
+                            <li>Uncommon Solids</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>BOXER</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdUnderwear4 = !sdUnderwear4" ng-hide="sdUnderwear4"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdUnderwear4 = !sdUnderwear4" ng-show="sdUnderwear4"></i>
+                    </li>
+                    <li ng-if="sdUnderwear4">
+                        <ul style="list-style-type:none;">
+                            <li>Uncommon Solids</li>
+                            <li>Prints and Patterns</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>BOYS UNDERWEAR</h1>
+                        <i class="fa fa-plus" aria-hidden="true" ng-click="sdUnderwear5 = !sdUnderwear5" ng-hide="sdUnderwear5"></i>
+                        <i class="fa fa-minus" aria-hidden="true" ng-click="sdUnderwear5 = !sdUnderwear5" ng-show="sdUnderwear5"></i>
+                    </li>
+                    <li ng-if="sdUnderwear5">
+                        <ul style="list-style-type:none;">
+                            <li>Boxer Briefs</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="slide-container">
+            <div class="slide-text1">
+                <h3>DISCOVER</h3>
+                <i class="fa fa-plus" aria-hidden="true" ng-click="sdDiscover = !sdDiscover" ng-hide="sdDiscover"></i>
+                <i class="fa fa-minus" aria-hidden="true" ng-click="sdDiscover = !sdDiscover" ng-show="sdDiscover"></i>
+            </div>
+            <div class="slide-hide-1" ng-if="sdDiscover">
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>THE THREAD</h1>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>PUNKS & POETS</h1>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>ABOUT US</h1>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>PRESS</h1>
+                    </li>
+                </ul>
+                <ul class="slide-text2">
+                    <li class="menu-item">
+                        <h1>INNOVATION</h1>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -43,230 +567,229 @@
 
 
 <div class="header-men-hover" ng-show="showMen" ng-mouseover="showMen = true" ng-mouseleave="showMen = false">
-  <div class="header-hover-title">
-    <p>FEATURED</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">New Arrivals</li>
-        <li class="hover-list-items">Best Sellers</li>
-        <li class="hover-list-items">College Shop</li>
-        <li class="hover-list-items">Disney</li>
-        <li class="hover-list-items">MLB Shop</li>
-        <li class="hover-list-items">NBA Shop</li>
-        <li class="hover-list-items">Star Wars</li>
-        <li class="hover-list-items">Last Call</li>
-      </ul>
-  </div>
+    <div class="header-hover-title">
+        <p>FEATURED</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">New Arrivals</li>
+            <li class="hover-list-items">Best Sellers</li>
+            <li class="hover-list-items">College Shop</li>
+            <li class="hover-list-items">Disney</li>
+            <li class="hover-list-items">MLB Shop</li>
+            <li class="hover-list-items">NBA Shop</li>
+            <li class="hover-list-items">Star Wars</li>
+            <li class="hover-list-items">Last Call</li>
+        </ul>
+    </div>
 
-  <div class="header-hover-title">
-    <p>CASUAL</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Anthem</li>
-        <li class="hover-list-items">Collections</li>
-        <li class="hover-list-items">College Casual</li>
-        <li class="hover-list-items">MLB Casual</li>
-        <li class="hover-list-items">NBA Casual</li>
-        <li class="hover-list-items">Uncommon Solids</li>
-      </ul>
-  </div>
-  <div class="header-hover-title">
-    <p>PERFORMANCE</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Adventure</li>
-        <li class="hover-list-items">MLB On Field</li>
-        <li class="hover-list-items">NBA On Court</li>
-        <li class="hover-list-items">Basketball</li>
-        <li class="hover-list-items">Run</li>
-        <li class="hover-list-items">Training</li>
-        <li class="hover-list-items">Golf</li>
-        <li class="hover-list-items">Snow</li>
-        <li class="hover-list-items">Moto</li>
-        <li class="hover-list-items">Skateboarding</li>
-      </ul>
-  </div>
-  <div class="header-hover-title">
-    <p>PREMIUM</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Made in U.S.A</li>
-        <li class="hover-list-items">Dress Socks</li>
-        <li class="hover-list-items">The Reserve</li>
-        <li class="hover-list-items">Topstitch</li>
-      </ul>
-  </div>
-  <div class="header-hover-title">
-    <p>SHOP BY HEIGHT</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Super Invisibles</li>
-        <li class="hover-list-items">Low</li>
-        <li class="hover-list-items">Quarter</li>
-        <li class="hover-list-items">Crew</li>
-        <li class="hover-list-items">Over the Calf</li>
-      </ul>
-  </div>
+    <div class="header-hover-title">
+        <p>CASUAL</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Anthem</li>
+            <li class="hover-list-items">Collections</li>
+            <li class="hover-list-items">College Casual</li>
+            <li class="hover-list-items">MLB Casual</li>
+            <li class="hover-list-items">NBA Casual</li>
+            <li class="hover-list-items">Uncommon Solids</li>
+        </ul>
+    </div>
+    <div class="header-hover-title">
+        <p>PERFORMANCE</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Adventure</li>
+            <li class="hover-list-items">MLB On Field</li>
+            <li class="hover-list-items">NBA On Court</li>
+            <li class="hover-list-items">Basketball</li>
+            <li class="hover-list-items">Run</li>
+            <li class="hover-list-items">Training</li>
+            <li class="hover-list-items">Golf</li>
+            <li class="hover-list-items">Snow</li>
+            <li class="hover-list-items">Moto</li>
+            <li class="hover-list-items">Skateboarding</li>
+        </ul>
+    </div>
+    <div class="header-hover-title">
+        <p>PREMIUM</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Made in U.S.A</li>
+            <li class="hover-list-items">Dress Socks</li>
+            <li class="hover-list-items">The Reserve</li>
+            <li class="hover-list-items">Topstitch</li>
+        </ul>
+    </div>
+    <div class="header-hover-title">
+        <p>SHOP BY HEIGHT</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Super Invisibles</li>
+            <li class="hover-list-items">Low</li>
+            <li class="hover-list-items">Quarter</li>
+            <li class="hover-list-items">Crew</li>
+            <li class="hover-list-items">Over the Calf</li>
+        </ul>
+    </div>
 </div>
 
 
 
 <div class="header-women-hover" ng-show="showWomen" ng-mouseover="showWomen = true" ng-mouseleave="showWomen = false">
-  <div class="header-hover-title">
-    <p>FEATURED</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">New Arrivals</li>
-        <li class="hover-list-items">Best Sellers</li>
-        <li class="hover-list-items">College Collection</li>
-        <li class="hover-list-items">Disney</li>
-        <li class="hover-list-items">Rihanna</li>
-        <li class="hover-list-items">Gift Boxes</li>
-        <li class="hover-list-items">Last Call</li>
-      </ul>
-  </div>
+    <div class="header-hover-title">
+        <p>FEATURED</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">New Arrivals</li>
+            <li class="hover-list-items">Best Sellers</li>
+            <li class="hover-list-items">College Collection</li>
+            <li class="hover-list-items">Disney</li>
+            <li class="hover-list-items">Rihanna</li>
+            <li class="hover-list-items">Gift Boxes</li>
+            <li class="hover-list-items">Last Call</li>
+        </ul>
+    </div>
 
-  <div class="header-hover-title">
-    <p>CASUAL</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Super Invisibles</li>
-        <li class="hover-list-items">Anklets</li>
-        <li class="hover-list-items">Crew</li>
-        <li class="hover-list-items">Knee High</li>
-        <li class="hover-list-items">Thigh High</li>
-        <li class="hover-list-items">Boot Socks</li>
-        <li class="hover-list-items">Hosiery</li>
-      </ul>
-  </div>
-  <div class="header-hover-title">
-    <p>PERFORMANCE</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Adventure</li>
-        <li class="hover-list-items">Training</li>
-        <li class="hover-list-items">Run</li>
-        <li class="hover-list-items">Snow</li>
-        <li class="hover-list-items">Moto</li>
-      </ul>
-  </div>
-  <div class="header-hover-title">
-    <p>PREMIUM</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">The Reserve</li>
-        <li class="hover-list-items">Topstitch</li>
-      </ul>
-  </div>
-  <div class="header-hover-title">
-    <p>COLLECTIONS</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">MLB</li>
-        <li class="hover-list-items">Beauty and the Beast</li>
-        <li class="hover-list-items">Minnie Mouse</li>
-        <li class="hover-list-items">Hello Kitty</li>
-        <li class="hover-list-items">Harley-Davidson</li>
-        <li class="hover-list-items">Zodiac Collection</li>
-        <li class="hover-list-items">Americana</li>
-        <li class="hover-list-items">Uncommon Solids</li>
-      </ul>
-  </div>
+    <div class="header-hover-title">
+        <p>CASUAL</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Super Invisibles</li>
+            <li class="hover-list-items">Anklets</li>
+            <li class="hover-list-items">Crew</li>
+            <li class="hover-list-items">Knee High</li>
+            <li class="hover-list-items">Thigh High</li>
+            <li class="hover-list-items">Boot Socks</li>
+            <li class="hover-list-items">Hosiery</li>
+        </ul>
+    </div>
+    <div class="header-hover-title">
+        <p>PERFORMANCE</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Adventure</li>
+            <li class="hover-list-items">Training</li>
+            <li class="hover-list-items">Run</li>
+            <li class="hover-list-items">Snow</li>
+            <li class="hover-list-items">Moto</li>
+        </ul>
+    </div>
+    <div class="header-hover-title">
+        <p>PREMIUM</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">The Reserve</li>
+            <li class="hover-list-items">Topstitch</li>
+        </ul>
+    </div>
+    <div class="header-hover-title">
+        <p>COLLECTIONS</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">MLB</li>
+            <li class="hover-list-items">Beauty and the Beast</li>
+            <li class="hover-list-items">Minnie Mouse</li>
+            <li class="hover-list-items">Hello Kitty</li>
+            <li class="hover-list-items">Harley-Davidson</li>
+            <li class="hover-list-items">Zodiac Collection</li>
+            <li class="hover-list-items">Americana</li>
+            <li class="hover-list-items">Uncommon Solids</li>
+        </ul>
+    </div>
 </div>
 
 
 
 <div class="header-kids-hover" ng-show="showKids" ng-mouseover="showKids = true" ng-mouseleave="showKids = false">
-  <div class="header-hover-title">
-    <p>FEATURED</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">New Arrivals</li>
-        <li class="hover-list-items">Disney</li>
-        <li class="hover-list-items">Americana</li>
-        <li class="hover-list-items">Snow</li>
-        <li class="hover-list-items">Moto</li>
-        <li class="hover-list-items">Last Call</li>
-      </ul>
-  </div>
+    <div class="header-hover-title">
+        <p>FEATURED</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">New Arrivals</li>
+            <li class="hover-list-items">Disney</li>
+            <li class="hover-list-items">Americana</li>
+            <li class="hover-list-items">Snow</li>
+            <li class="hover-list-items">Moto</li>
+            <li class="hover-list-items">Last Call</li>
+        </ul>
+    </div>
 
-  <div class="header-hover-title">
-    <p>BOYS</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Casual</li>
-        <li class="hover-list-items">Star Wars</li>
-      </ul>
-  </div>
+    <div class="header-hover-title">
+        <p>BOYS</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Casual</li>
+            <li class="hover-list-items">Star Wars</li>
+        </ul>
+    </div>
 
-  <div class="header-hover-title">
-    <p>GIRLS</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Casual</li>
-        <li class="hover-list-items">Sanrio x Stance</li>
-        <li class="hover-list-items">Uncommon Solids</li>
-      </ul>
-  </div>
+    <div class="header-hover-title">
+        <p>GIRLS</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Casual</li>
+            <li class="hover-list-items">Sanrio x Stance</li>
+            <li class="hover-list-items">Uncommon Solids</li>
+        </ul>
+    </div>
 
-  <div class="header-hover-title">
-    <p>BABY</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Infant</li>
-        <li class="hover-list-items">Toddler</li>
-        <li class="hover-list-items">Freshly Picked</li>
-      </ul>
-  </div>
+    <div class="header-hover-title">
+        <p>BABY</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Infant</li>
+            <li class="hover-list-items">Toddler</li>
+            <li class="hover-list-items">Freshly Picked</li>
+        </ul>
+    </div>
 </div>
 
 
 
 <div class="header-underwear-hover" ng-show="showUnderwear" ng-mouseover="showUnderwear = true" ng-mouseleave="showUnderwear = false">
-  <div class="header-hover-title">
-    <p>WHOLESTER</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Uncommon Solids</li>
-        <li class="hover-list-items">Prints and Patterns</li>
-      </ul>
-  </div>
+    <div class="header-hover-title">
+        <p>WHOLESTER</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Uncommon Solids</li>
+            <li class="hover-list-items">Prints and Patterns</li>
+        </ul>
+    </div>
 
-  <div class="header-hover-title">
-    <p>BOXER BRIEF</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Star Wars Underwear</li>
-        <li class="hover-list-items">NBA Underwear</li>
-        <li class="hover-list-items">MLB Underwear</li>
-        <li class="hover-list-items">Uncommon Solids</li>
-      </ul>
-  </div>
+    <div class="header-hover-title">
+        <p>BOXER BRIEF</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Star Wars Underwear</li>
+            <li class="hover-list-items">NBA Underwear</li>
+            <li class="hover-list-items">MLB Underwear</li>
+            <li class="hover-list-items">Uncommon Solids</li>
+        </ul>
+    </div>
 
-  <div class="header-hover-title">
-    <p>BOXER</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Uncommon Solids</li>
-        <li class="hover-list-items">Prints and Patterns</li>
-      </ul>
-  </div>
+    <div class="header-hover-title">
+        <p>BOXER</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Uncommon Solids</li>
+            <li class="hover-list-items">Prints and Patterns</li>
+        </ul>
+    </div>
 
-  <div class="header-hover-title">
-    <p>BOYS UNDERWEAR</p>
-      <ul class="header-hover-list">
-        <li class="hover-list-items">Boxer Briefs</li>
-      </ul>
-  </div>
+    <div class="header-hover-title">
+        <p>BOYS UNDERWEAR</p>
+        <ul class="header-hover-list">
+            <li class="hover-list-items">Boxer Briefs</li>
+        </ul>
+    </div>
 </div>
 
 
 
- <div class="header-discover-hover" ng-show="showDiscover" ng-mouseover="showDiscover = true" ng-mouseleave="showDiscover = false">
-  <div class="header-hover-title">
-    <p>THE THREAD</p>
-  </div>
+<div class="header-discover-hover" ng-show="showDiscover" ng-mouseover="showDiscover = true" ng-mouseleave="showDiscover = false">
+    <div class="header-hover-title">
+        <p>THE THREAD</p>
+    </div>
 
-  <div class="header-hover-title">
-    <p>PUNKS & POETS</p>
-  </div>
+    <div class="header-hover-title">
+        <p>PUNKS & POETS</p>
+    </div>
 
-  <div class="header-hover-title">
-    <p>ABOUT US</p>
-  </div>
+    <div class="header-hover-title">
+        <p>ABOUT US</p>
+    </div>
 
-  <div class="header-hover-title">
-    <p>PRESS</p>
-  </div>
+    <div class="header-hover-title">
+        <p>PRESS</p>
+    </div>
 
-  <div class="header-hover-title">
-    <p>INNOVATION</p>
-  </div>
+    <div class="header-hover-title">
+        <p>INNOVATION</p>
+    </div>
 </div>
-
 
 
 
@@ -279,18 +802,18 @@
 
 <!-- header-full -->
 
-    <div class="header-container" id="header-container">
-      <div class="header-left">
+<div class="header-container" id="header-container">
+    <div class="header-left">
         <div class="header-left-top" id="header-left-top ">
             <img class="american-flag" src="https://bfx-objects.borderfree.com/v1/dist/images/context-chooser/flags/US.gif" alt=""><small id="phone">1-888-391-9020</small>
         </div>
         <div class="header-left-bottom" id="header-left-bottom">
-          <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/Sites-Stance_US-Site/-/default/v1495370486050/images/svg-icons/stance-logo.svg" alt="stance logo">
+            <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/Sites-Stance_US-Site/-/default/v1495370486050/images/svg-icons/stance-logo.svg" alt="stance logo">
         </div>
-      </div>
-      <div class="header-middle">
+    </div>
+    <div class="header-middle">
         <div class="header-middle-top">
-          <h4>FREE US SHIPPING OVER $25</h4>
+            <h4>FREE US SHIPPING OVER $25</h4>
         </div>
         <div class="header-middle-bottom" id="header-middle-bottom">
             <a ng-mouseover="showMen = true" ng-mouseleave="showMen = false" ng-class="{'showBorder': showMen}">MEN</a>
@@ -299,36 +822,36 @@
             <a ng-mouseover="showUnderwear = true" ng-mouseleave="showUnderwear = false">UNDERWEAR</a>
             <a ng-mouseover="showDiscover = true" ng-mouseleave="showDiscover = false">DISCOVER</a>
         </div>
-      </div>
-      <div class="header-right">
+    </div>
+    <div class="header-right">
         <div class="header-right-top">
-          <div class="header-right-top-left" id="header-right-top-left">
-            <i class="fa fa-user" aria-hidden="true"></i>
-          </div>
-          <div class="header-right-top-middle1" id="header-right-top-middle1">
-            <p>Login / Register</p>
-          </div>
-          <div class="header-right-top-middle2">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-          </div>
-          <div class="header-right-top-right">
-            0
-          </div>
+            <div class="header-right-top-left" id="header-right-top-left">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+            <div class="header-right-top-middle1" id="header-right-top-middle1">
+                <p>Login / Register</p>
+            </div>
+            <div class="header-right-top-middle2">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </div>
+            <div class="header-right-top-right">
+                0
+            </div>
         </div>
         <div class="header-right-bottom" id="header-right-bottom">
-          <div class="header-right-bottom-left">
-          <p>Search</p>
-          </div>
-          <div class="header-right-bottom-right">
-            <i class="fa fa-search"></i>
-          </div>
+            <div class="header-right-bottom-left">
+                <p>Search</p>
+            </div>
+            <div class="header-right-bottom-right">
+                <i class="fa fa-search"></i>
+            </div>
         </div>
-      </div>
     </div>
+</div>
 
-    <div class="other-container">
+<div class="other-container">
 
-    </div>
+</div>
 
 
 
@@ -341,20 +864,20 @@
 
 
 <div id="header-container-responsive">
-  <div id="header-top-responsive">
-      <i class="fa fa-bars" aria-hidden="true" id="header-hamburger" ng-click="slideIn = !slideIn"></i>
-      <img id="header-logo-responsive" src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/Sites-Stance_US-Site/-/default/v1495370486050/images/svg-icons/stance-logo.svg" alt="stance logo">
-      <div id="header-right-responsive">
-        <img id="american-flag-responsive" src="https://bfx-objects.borderfree.com/v1/dist/images/context-chooser/flags/US.gif" alt="">
-      <div id="header-cart-responsive">
-        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-      </div>
-      <div id="header-cart-responsive">
-        <p>0</p>
-      </div>
+    <div id="header-top-responsive">
+        <i class="fa fa-bars" aria-hidden="true" id="header-hamburger" ng-click="slideIn = !slideIn"></i>
+        <img id="header-logo-responsive" src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/Sites-Stance_US-Site/-/default/v1495370486050/images/svg-icons/stance-logo.svg" alt="stance logo">
+        <div id="header-right-responsive">
+            <img id="american-flag-responsive" src="https://bfx-objects.borderfree.com/v1/dist/images/context-chooser/flags/US.gif" alt="">
+            <div id="header-cart-responsive">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </div>
+            <div id="header-cart-responsive">
+                <p>0</p>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="header-bottom-responsive" id="header-bottom-responsive">
-    <p>FREE US SHIPPING OVER $25</p>
-  </div>
+    <div class="header-bottom-responsive" id="header-bottom-responsive">
+        <p>FREE US SHIPPING OVER $25</p>
+    </div>
 </div>
