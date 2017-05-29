@@ -5,7 +5,7 @@
       <p class="capital">Step 2: Billing</p>
       <p class="capital">Step 3: Place Order</p>
     </div>
-    <p class="checkout-input-title condensed capital">Select or enter shipping address</p>
+    <p class="checkout-input-title condensed capital">Select or enter billing address</p>
     <form class="checkout-input-form" action="index.html" method="post">
       <label for="checkout-firstname">First Name</label>
       <input type="text" id="checkout-firstname">
@@ -86,58 +86,99 @@
       <div class="checkout-example-phone-container">
         <p class="checkout-example-phone regular">Example: 333-333-3333</p>
       </div>
+      <label for="checkout-firstname">Email</label>
+      <input type="text" id="checkout-firstname">
       <div class="checkout-checkbox">
         <input class="checkbox" type="checkbox" checked>
         <p>Add to Address Book</p>
       </div>
+      <div class="checkout-checkbox" id="checkout-text-wraparound">
+        <input class="checkbox" type="checkbox" checked>
+        <p id="checkout-text-wraparound">Please add me to the Stance newsletter list to receive the latest product launches and online exclusives.</p>
+      </div>
+      <p class="checkout-input-title condensed capital">Enter coupon codes</p>
+      <label>Enter coupon code (Optional)</label>
+      <div class="checkout-enter-coupon-container">
+        <input id="coupon-input" type="text">
+        <button class="bold" type="button" name="button">Apply</button>
+      </div>
+      <p class="checkout-coupon-note regular">You may only apply one coupon code per order. If you already entered your coupon code in the cart, you do not need to enter it again.</p>
+      <p class="checkout-input-title condensed capital">Select Payment Method</p>
+      <div ng-init="ifchecked=true" class="checkbox-card-radio-container">
+        <div class="checkbox-card-radio-option">
+          <input ng-model="ifchecked" type="radio" selected ng-value="checked" name="payment-method" class="bullet">
+          <label>Credit Card</label>
+        </div>
+        <div class="checkbox-card-radio-option">
+          <input ng-model="ifchecked" type="radio" ng-value="!checked" name="payment-method" class="bullet">
+          <label>PayPal</label>
+        </div>
+      </div>
+      <div ng-if="ifchecked" class="checkout-payment-by-credit">
+        <label for="checkout-firstname">Name on Card</label>
+        <input type="text">
+        <label for="checkout-country">Type</label>
+        <select class="select-dropdown">
+          <option>Visa</option>
+          <option>American Express</option>
+          <option>Master Card</option>
+          <option>Discover</option>
+        </select>
+        <label>Number</label>
+        <input type="text">
+        <div class="checkout-example-phone-container">
+          <p class="checkout-example-phone regular">Example: 4111111111111111</p>
+        </div>
+        <label>Expiration Date</label>
+        <div class="checkout-card-exp-container">
+          <select class="select-dropdown" id="checkout-expiration-month">
+            <option>Month</option>
+            <option value='1'>Janaury</option>
+            <option value='2'>February</option>
+            <option value='3'>March</option>
+            <option value='4'>April</option>
+            <option value='5'>May</option>
+            <option value='6'>June</option>
+            <option value='7'>July</option>
+            <option value='8'>August</option>
+            <option value='9'>September</option>
+            <option value='10'>October</option>
+            <option value='11'>November</option>
+            <option value='12'>December</option>
+          </select>
+          <select class="select-dropdown" id="checkout-expiration-year">
+            <option>Year</option>
+            <option>2017</option>
+            <option>2018</option>
+            <option>2019</option>
+            <option>2020</option>
+            <option>2021</option>
+            <option>2022</option>
+            <option>2023</option>
+            <option>2024</option>
+            <option>2025</option>
+            <option>2026</option>
+            <option>2027</option>
+            <option>2028</option>
+            <option>2029</option>
+            <option>2030</option>
+          </select>
+        </div>
+        <label>Security Code</label>
+        <div class="checkout-security-code-container">
+          <input id="checkout-security-code" type="text">
+          <p class="regular">What is this?</p>
+        </div>
+      </div>
+      <div ng-if="!ifchecked" class="checkout-payment-by-paypal">
+        <p>Selecting PayPal will take you to the PayPal site to complete the payment information step.</p>
+      </div>
       <div class="checkout-checkbox">
         <input class="checkbox" type="checkbox" checked>
-        <p>Use this address for Billing</p>
-      </div>
-      <p class="checkout-gift-title bold">Is this a gift?</p>
-      <div class="checkbox-gift-radio-container">
-        <div class="checkbox-gift-radio-option">
-          <input type="radio" name="gift" class="bullet" id="gift-true" value="true">
-          <label for="gift-true">Yes</label>
-        </div>
-        <div class="checkbox-gift-radio-option">
-          <input type="radio" name="gift" class="bullet" id="gift-false" value="false">
-          <label for="gift-false">No</label>
-        </div>
+        <p>Save this Card</p>
       </div>
     </form>
-    <p class="checkout-input-title condensed capital">Select Shipping Method</p>
-    <form ng-init="shippingMethod=uspsGround" class="checkout-shipping-option-form" action="index.html" method="post">
-      <div class="checkout-shipping-option">
-        <input class="bullet" type="radio" id="USPS-ground" ng-value="uspsGround" ng-model="shippingMethod" name="checkout-shipping-address">
-        <label for="USPS-Ground">
-          <p class="bold">USPS Shipping: $0.00 (<a href="#">Details</a>)</p>
-          <p class="regular">(USPS Ground Shipping 4-6 Business Days)</p>
-        </label>
-      </div>
-      <div class="checkout-shipping-option">
-        <input class="bullet" type="radio" id="UPS-ground" ng-value="upsGround" ng-model="shippingMethod" name="checkout-shipping-address">
-        <label for="UPS-ground">
-          <p class="bold">UPS Ground: $7.00 (<a href="#">Details</a>)</p>
-          <p class="regular">(UPS Ground Shipping 3-5 Business Days)</p>
-        </label>
-      </div>
-      <div class="checkout-shipping-option">
-        <input class="bullet" type="radio" id="UPS-2nd-day" ng-value="upsSecondDay" ng-model="shippingMethod" name="checkout-shipping-address">
-        <label for="UPS-2nd-day">
-          <p class="bold">UPS Second Day: $12.00 (<a href="#">Details</a>)</p>
-          <p class="regular">(Two Business Day Delivery)</p>
-        </label>
-      </div>
-      <div class="checkout-shipping-option">
-        <input class="bullet" type="radio" id="UPS-next-day" ng-value="upsNextDay" ng-model="shippingMethod" name="checkout-shipping-address">
-        <label for="UPS-next-day">
-          <p class="bold">UPS Next Day Delivery: $18.00 (<a href="#">Details</a>)</p>
-          <p class="regular">(Next Business Day Delivery)</p>
-        </label>
-      </div>
-    </form>
-    <button class="checkout-button bold" ui-sref="billing">Continue to Billing</button>
+    <button class="checkout-button bold" ui-sref="billing">Continue to Place Order</button>
   </div>
   <order-summary></order-summary>
 </div>
