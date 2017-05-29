@@ -58,5 +58,10 @@ angular.module('app', ['ui.router'])
       templateUrl: './../views/checkout.html',
       controller: 'checkoutCtrl'
     })
+    .state('billing', {
+      url: '/billing',
+      templateUrl: './../views/billing.html',
+      controller: 'billingCtrl'
+    })
 
 });
