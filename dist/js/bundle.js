@@ -40,7 +40,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/cart.html',
     controller: 'cartCtrl'
   }).state('orders', {
-    url: '/orders/:user_id',
+    url: '/orders', /* /:user_id */
     templateUrl: './../views/orders.html',
     controller: 'ordersCtrl'
   }).state('checkout', {
@@ -434,6 +434,15 @@ angular.module('app').controller('accountCtrl', function ($scope, mainSrvc) {
   $scope.isShown2 = true;
   $scope.isShown3 = true;
   $scope.isShown4 = true;
+});
+'use strict';
+
+angular.module('app').directive('userDataDirective', function () {
+
+  return {
+    method: 'E',
+    templateUrl: './views/directives/userDataDirective.html'
+  };
 });
 'use strict';
 

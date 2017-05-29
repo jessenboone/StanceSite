@@ -32,26 +32,6 @@
     .acc-wrapper .acc-my-acc span a {
       font-size: 13px;
       color: #999; }
-  .acc-wrapper .acc-account-management .acc-managenment-div {
-    border-bottom: 1px solid rgba(142, 142, 148, 0.3);
-    width: 90%;
-    margin-bottom: 40px; }
-    .acc-wrapper .acc-account-management .acc-managenment-div .acc-my-acc {
-      visibility: hidden; }
-    .acc-wrapper .acc-account-management .acc-managenment-div .acc-account {
-      margin-bottom: 1px; }
-      .acc-wrapper .acc-account-management .acc-managenment-div .acc-account .acc-account-heading {
-        margin-bottom: 17px;
-        color: #999;
-        font-size: 14px; }
-      .acc-wrapper .acc-account-management .acc-managenment-div .acc-account .acc-a-bottom {
-        margin-bottom: 14px; }
-      .acc-wrapper .acc-account-management .acc-managenment-div .acc-account p a {
-        margin-left: 17px;
-        color: #0493c1;
-        font-size: 12px; }
-    .acc-wrapper .acc-account-management .acc-managenment-div .acc-management-bottom {
-      margin-bottom: 44px; }
   .acc-wrapper .acc-account-management .acc-directive {
     margin-left: 10px; }
 
@@ -84,23 +64,9 @@
           .acc-wrapper .acc-div .acc-divs .acc-div-divide .acc-div-double {
             width: 48%;
             height: 190px; }
-    .acc-wrapper .acc-account-management {
-      order: 1;
-      width: 37%; }
-      .acc-wrapper .acc-account-management .acc-managenment-div {
-        margin-bottom: 49px; }
-        .acc-wrapper .acc-account-management .acc-managenment-div .acc-my-acc {
-          visibility: visible;
-          font-size: 12px;
-          margin-bottom: 58px; }
-          .acc-wrapper .acc-account-management .acc-managenment-div .acc-my-acc a {
-            text-decoration: none;
-            color: #999; }
-        .acc-wrapper .acc-account-management .acc-managenment-div .acc-account {
-          margin-left: 10px; }
-      .acc-wrapper .acc-account-management .acc-directive {
-        width: 84%;
-        margin-top: 10px; } }
+    .acc-wrapper .acc-directive {
+      width: 84%;
+      margin-top: 10px; } }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -1092,6 +1058,134 @@ table {
   align-items: center;
   font-size: 10px; }
 
+.order-wrapper {
+  width: 100%; }
+  .order-wrapper .order-info {
+    width: 100%; }
+    .order-wrapper .order-info .order-heading {
+      font-size: 38px;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      letter-spacing: 2.5px; }
+    .order-wrapper .order-info .order-total-items {
+      visibility: hidden; }
+    .order-wrapper .order-info .order-info-div {
+      width: 100%;
+      color: #999;
+      letter-spacing: .5px;
+      margin-bottom: 10px; }
+      .order-wrapper .order-info .order-info-div .order-small-div {
+        height: 4px;
+        border-top: 1px solid rgba(142, 142, 148, 0.3);
+        border-bottom: 1px solid rgba(142, 142, 148, 0.3); }
+      .order-wrapper .order-info .order-info-div .order-info {
+        width: 100%;
+        background: #f6f6fb; }
+        .order-wrapper .order-info .order-info-div .order-info .order-status {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 4px; }
+          .order-wrapper .order-info .order-info-div .order-info .order-status .order-status-status {
+            margin-top: 7px; }
+            .order-wrapper .order-info .order-info-div .order-info .order-status .order-status-status p {
+              margin-bottom: 5px; }
+        .order-wrapper .order-info .order-info-div .order-info .order-product-info {
+          display: flex;
+          justify-content: space-between; }
+          .order-wrapper .order-info .order-info-div .order-info .order-product-info .order-status-2 {
+            margin-bottom: 29px; }
+            .order-wrapper .order-info .order-info-div .order-info .order-product-info .order-status-2 .order-status-subheading {
+              margin-bottom: 8px; }
+  .order-wrapper .user-data-directive {
+    padding-left: 15px; }
+  .order-wrapper .help-directive {
+    padding-left: 15px;
+    padding-right: 15px; }
+
+@media only screen and (max-width: 424px) {
+  .order-info-div {
+    padding-left: 1px;
+    padding-right: 1px;
+    font-size: 10px; } }
+
+@media only screen and (min-width: 425px) {
+  .order-info-div {
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 11px; } }
+
+@media only screen and (max-width: 767px) {
+  .order-status button {
+    height: 38px;
+    width: 88px;
+    background: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    text-align: center;
+    margin-top: 4px; } }
+
+@media only screen and (min-width: 768px) {
+  .order-wrapper {
+    display: flex; }
+    .order-wrapper .order-info {
+      order: 2;
+      width: 70%;
+      padding-left: 10px; }
+      .order-wrapper .order-info .order-heading {
+        font-size: 36px;
+        margin-top: 65px;
+        letter-spacing: 3.5px;
+        margin-bottom: 71px;
+        padding-left: 15px; }
+      .order-wrapper .order-info .order-total-items {
+        visibility: visible;
+        font-size: 12px;
+        color: #999;
+        font-size: 14.5px;
+        margin-bottom: 21px;
+        padding-left: 15px; }
+      .order-wrapper .order-info .order-info-div {
+        font-size: 12px;
+        margin-bottom: 25px; }
+        .order-wrapper .order-info .order-info-div .order-info .order-status {
+          padding-left: 5px; }
+          .order-wrapper .order-info .order-info-div .order-info .order-status .order-status-status {
+            margin-top: 8px; }
+            .order-wrapper .order-info .order-info-div .order-info .order-status .order-status-status p {
+              margin-bottom: 6px; }
+          .order-wrapper .order-info .order-info-div .order-info .order-status button {
+            width: 125px;
+            font-size: 12px;
+            height: 38px;
+            background: #1a1a1a;
+            color: #ffffff;
+            border: none;
+            text-align: center;
+            margin-top: 4px; }
+    .order-wrapper .order-directives {
+      order: 1;
+      width: 30%;
+      padding-left: 5px;
+      padding-top: 10px; } }
+
+@media only screen and (max-width: 1024px) {
+  .order-product-info {
+    padding: 0 10px; } }
+
+@media only screen and (min-width: 1024px) {
+  .order-wrapper {
+    padding-right: 5%; }
+  .order-status button {
+    background: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    text-align: center;
+    margin-top: 4px;
+    margin-right: 8px;
+    height: 45px;
+    width: 130px; }
+  .order-product-info {
+    padding: 0px 155px 0 15px; } }
 
 
 .random-items-container {
@@ -1426,7 +1520,8 @@ i {
         height: 47px;
         width: 47px; }
     .single-products .single-info .single-name {
-      font-size: 53px; }
+      font-size: 53px;
+      word-break: break-word; }
   .single-featured .single-like {
     font-size: 25px;
     letter-spacing: 2.5px;
@@ -1436,17 +1531,23 @@ i {
 @media (min-width: 768px) {
   .single-products {
     width: 100%;
+    height: 586px;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 66px;
     margin-bottom: 30px; }
     .single-products .single-images {
+      height: auto;
+      width: 55%;
       display: flex;
       flex-direction: row;
       margin-top: 5px; }
       .single-products .single-images .single-main-image {
         margin-left: 10%;
         order: 2; }
+        .single-products .single-images .single-main-image img {
+          height: 423px;
+          width: 423px; }
       .single-products .single-images .single-image-views {
         flex-direction: column;
         height: 57px;
@@ -1465,6 +1566,41 @@ i {
     letter-spacing: 3px;
     margin-bottom: 65px;
     margin-left: 16px; } }
+
+.user-managenment-div {
+  border-bottom: 1px solid rgba(142, 142, 148, 0.3);
+  width: 90%;
+  margin-bottom: 40px;
+  padding-bottom: 25px; }
+  .user-managenment-div .user-my-acc {
+    visibility: hidden; }
+  .user-managenment-div .user-account {
+    margin-bottom: 1px; }
+    .user-managenment-div .user-account .user-account-heading {
+      margin-bottom: 17px;
+      color: #999;
+      font-size: 14px; }
+    .user-managenment-div .user-account .user-a-bottom {
+      margin-bottom: 14px; }
+    .user-managenment-div .user-account p a {
+      margin-left: 17px;
+      color: #0493c1;
+      font-size: 12px; }
+  .user-managenment-div .user-management-bottom {
+    margin-bottom: 44px; }
+
+@media only screen and (min-width: 768px) {
+  .user-managenment-div {
+    margin-bottom: 49px; }
+    .user-managenment-div .user-my-acc {
+      visibility: visible;
+      font-size: 12px;
+      margin-bottom: 58px; }
+      .user-managenment-div .user-my-acc a {
+        text-decoration: none;
+        color: #999; }
+    .user-managenment-div .user-account {
+      margin-left: 10px; } }
 
 .new_img {
   height: 50px;

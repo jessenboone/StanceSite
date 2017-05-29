@@ -17,10 +17,10 @@
           <img class="single-pic1" ng-src={{p.main_image_url}} />
         </div>
         <div ng-click="showHide('pic2')" ng-class="{'opaque': !pic2, pic1, pic3}">
-          <img class="single-pic2" ng-src={{p.front_image_url}} />
+          <img class="single-pic2" ng-src={{p.front_image_url}} ng-if="p.front_image_url"/>
         </div>
         <div ng-click="showHide('pic3')" ng-class="{'opaque': !pic3, pic1, pic2}">
-          <img class="single-pic3" ng-src={{p.back_image_url}} />
+          <img class="single-pic3" ng-src={{p.back_image_url}} ng-if="p.back_image_url"/>
         </div>
       </div>
     </section>
