@@ -1,11 +1,27 @@
-<div class="kids-carousel">
-  <div>your content</div>
-  <div>your content</div>
-  <div>your content</div>
-</div>
+<div class="carousel-wrapper">
+  <div class="carousel">
+    <div style="width: 200px" class="slide1">Slide 1</div>
+    <div class="slide2">Slide 2</div>
+    <div class="slide3">Slide 3</div>
+  </div>
+  <!-- <div class="slider-nav">
+    <div><</div>
+    <div>></div>
+  </div> -->
 
-<script>
-  $( document ).ready(function() {
-    $('.kids-carousel').slick();
-  });
-</script>
+  <script type="text/javascript">
+
+      $(".carousel").slick({
+        dots: true,
+        infinite: true,
+        cssEase: "linear"
+      });
+    //  $('.slider-nav').slick({
+    //    slidesToShow: 3,
+    //    slidesToScroll: 1,
+    //    asNavFor: '.carousel',
+    //    centerMode: true,
+    //    focusOnSelect: true
+    //  });
+  </script>
+</div>
