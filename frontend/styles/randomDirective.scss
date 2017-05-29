@@ -1,18 +1,17 @@
 .random-items-container{
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   padding-left: 8px;
   padding-right: 8px;
   .random-item{
     margin-bottom: 48px;
-    width: 42%;
+    // width: 42%;
     img{
       width: 100%;
       margin-bottom: 6px;
       border-bottom:  1px solid rgba(142,142,148,0.3);
-      padding-bottom: 10px;
+      // padding-bottom: 10px;
     }
     .random-text {
       // border-top:  1px solid rgba(142,142,148,0.3);
@@ -29,6 +28,30 @@
       }
       .random-price {
         font-size: 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .random-items-container {
+    flex-wrap: wrap;
+    .random-item {
+      width: 42%;
+      img {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .random-items-container {
+    flex-direction: row;
+    .random-item {
+      width: 21%;
+      img {
+        padding-bottom: 27px;
       }
     }
   }

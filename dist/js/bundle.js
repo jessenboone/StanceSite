@@ -212,7 +212,7 @@ angular.module('app').service('mainSrvc', function ($http) {
   this.getSingleProduct = function (param) {
     return $http({
       method: 'GET',
-      url: '/api/product/' + param
+      url: '/api/product/' + param + '/'
     }).then(function (response) {
       return response.data;
     });
