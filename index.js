@@ -26,7 +26,7 @@ const productsControl = require('./backend/server/productsControl');
 const usersControl = require('./backend/server/usersControl');
 const cartControl = require('./backend/server/cartControl');
 const emailListControl = require('./backend/server/emailListControl');
-// const ordersControl = require('./backend/server/ordersControl');
+const ordersControl = require('./backend/server/ordersControl');
 
 // PRODUCTS
 app.get('/api/products/:mwk/:category', productsControl.getProducts);
@@ -42,14 +42,14 @@ app.post('/api/cart', cartControl.getCart);
 app.delete('/api/cart/clear', cartControl.deleteCart);
 app.delete('/api/cart/clear/:product_id/:user_id', cartControl.deleteItemInCart);
 app.post('/api/cart/add', cartControl.createCart);
-// app.put('/cart/update', cartControl.updateCart);         /*?????????might not need if add to cart does it for us????????????*/
+app.put('/api/cart/update', cartControl.createCart);     /* still not working - needs more configuring */
 
 // EMAIL LIST
-app.post('/email', emailListControl.addEmail);
+app.post('/api/email', emailListControl.addEmail);
 
 // ORDERS
-// app.get('/orders/:user_id', ordersControl.getOrders);
-// app.post('/orders/submit', ordersControl.submitOrder);
+app.get('/api/orders/:user_id', ordersControl.getOrders);
+app.post('/api/orders/submit', ordersControl.submitOrder); /* not in working order */
 
 //TEST////////////////////
 app.get('/test', function(req, res) {
