@@ -3,7 +3,7 @@ angular.module('app').directive("kidsCarousel", function(){
     restrict: "E",
     templateUrl: "./views/kidsCarousel.html",
     link: function(scope, element, attributes) {
-      
+
     }
   }
 })

@@ -227,6 +227,9 @@ table {
 @media (min-width: 1200px) {
   .checkout-container {
     width: 1200px;
+    margin: auto; }
+  .checkout-steps-container {
+    width: 1200px;
     margin: auto; } }
 
 @media (max-width: 768px) {
@@ -234,9 +237,13 @@ table {
     flex-direction: column; }
   .checkout-input-title {
     font-size: 26px;
-    letter-spacing: 2px; } }
+    letter-spacing: 2px; }
+  .checkout-steps-container {
+    display: none; } }
 
 @media (min-width: 768px) {
+  .checkout-steps-container {
+    display: flex; }
   order-summary {
     width: 30%; }
   .checkout-shipping-container {
@@ -294,17 +301,19 @@ table {
   left: 3.5px;
   color: white; }
 
+.checkout-steps-container .checkout-steps {
+  margin: 30px 0 30px 20px;
+  display: flex;
+  font-size: 11px; }
+  .checkout-steps-container .checkout-steps .checkout-step {
+    margin-right: 20px; }
+
 .checkout-container {
   display: flex;
   justify-content: space-between;
   padding: 0 20px; }
   .checkout-container .checkout-shipping-container {
     margin-top: 10px; }
-    .checkout-container .checkout-shipping-container .checkout-steps {
-      display: none;
-      width: 100%;
-      justify-content: space-around;
-      margin-bottom: 30px; }
     .checkout-container .checkout-shipping-container .checkout-input-title {
       margin-bottom: 30px; }
     .checkout-container .checkout-shipping-container .checkout-input-form {
@@ -412,6 +421,7 @@ table {
         padding-top: 10px; }
     .checkout-container .checkout-order-container .checkout-order-summary-container {
       border: 1px solid rgba(0, 0, 0, 0.1);
+      margin-top: 12px;
       margin-bottom: 40px;
       display: flex;
       flex-direction: column; }
@@ -1571,20 +1581,52 @@ table {
         letter-spacing: 1.5px;
         margin-bottom: 10px; }
 
-.kids-carousel-container {
-  width: 100%;
-  padding: 0 10px; }
-  .kids-carousel-container .kids-carousel-top {
-    width: 100%;
+@media (min-width: 768px) {
+  .kids-carousel-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between; }
+  .kids-carousel-top {
+    width: 20%;
+    justify-content: center;
+    align-items: flex-start; }
+  .kids-carousel-text {
+    text-align: left; }
+  .kids-carousel-bottom {
+    width: 75%; }
+  .kids-carousel-title {
+    font-size: 36px;
+    letter-spacing: 2px;
+    line-height: 34px; }
+  .kids-carousel-arrows {
+    display: flex; } }
+
+@media (max-width: 768px) {
+  .kids-carousel-top {
     align-items: center; }
+  .kids-carousel-text {
+    text-align: center; }
+  .kids-carousel-title {
+    font-size: 24.5px;
+    letter-spacing: 2px;
+    line-height: 21px; }
+  .kids-carousel-arrows {
+    display: none; } }
+
+@media (min-width: 1200px) {
+  .kids-carousel-container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto; } }
+
+.kids-carousel-container {
+  padding: 0 10px;
+  margin-top: 74px;
+  margin-bottom: 74px; }
+  .kids-carousel-container .kids-carousel-top {
+    display: flex;
+    flex-direction: column; }
     .kids-carousel-container .kids-carousel-top .kids-carousel-title {
-      margin-top: 74px;
-      font-size: 24.5px;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-      line-height: 21px; }
+      margin-bottom: 20px; }
     .kids-carousel-container .kids-carousel-top .line-under-kids-carousel-title {
       width: 100px;
       height: 4px;
@@ -1592,7 +1634,6 @@ table {
       margin-bottom: 40px; }
     .kids-carousel-container .kids-carousel-top .kids-carousel-text {
       letter-spacing: 0.03em;
-      text-align: center;
       font-size: 12.5px;
       line-height: 18px;
       margin-bottom: 40px; }
@@ -1607,59 +1648,61 @@ table {
       height: 48px;
       padding: 0 28px;
       margin-bottom: 50px; }
-  .kids-carousel-container .kids-carousel-bottom .kids-carousel-bottom-description {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-bottom: 10px; }
-    .kids-carousel-container .kids-carousel-bottom .kids-carousel-bottom-description .line-in-kids-carousel-bottom-description {
-      width: 100px;
-      height: 4px;
-      margin-right: 35px;
-      background: black; }
-    .kids-carousel-container .kids-carousel-bottom .kids-carousel-bottom-description .kids-carousel-description {
-      font-size: 14px; }
-    .kids-carousel-container .kids-carousel-bottom .kids-carousel-bottom-description kids-carousel .slider-for .slide1 {
-      color: red;
-      height: 200px;
-      width: 200px; }
-    .kids-carousel-container .kids-carousel-bottom .kids-carousel-bottom-description kids-carousel .slider-for .slide2 {
-      color: green;
-      height: 200px;
-      width: 200px; }
-    .kids-carousel-container .kids-carousel-bottom .kids-carousel-bottom-description kids-carousel .slider-for .slide3 {
-      color: orange;
-      height: 200px;
-      width: 200px; }
+  .kids-carousel-container .kids-carousel-bottom {
+    position: relative; }
+    .kids-carousel-container .kids-carousel-bottom .kids-carousel-bottom-description {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 10px; }
+      .kids-carousel-container .kids-carousel-bottom .kids-carousel-bottom-description .line-in-kids-carousel-bottom-description {
+        width: 100px;
+        height: 4px;
+        margin-right: 35px;
+        background: black; }
+      .kids-carousel-container .kids-carousel-bottom .kids-carousel-bottom-description .kids-carousel-description {
+        font-size: 14px; }
 
 kids-carousel .carousel-wrapper {
-  height: 600px;
-  width: 600px;
-  background: pink;
+  width: 100%;
   margin: auto; }
   kids-carousel .carousel-wrapper .carousel {
-    margin: auto;
-    width: 500px;
-    height: 500px; }
-    kids-carousel .carousel-wrapper .carousel .slide1 {
-      border: 2px solid black;
-      background: red;
-      margin: 0 50px;
-      margin-right: 50px;
-      height: 200px;
-      width: 290px; }
-    kids-carousel .carousel-wrapper .carousel .slide2 {
-      border: 2px solid black;
-      margin: 0 50px;
-      background: green;
-      height: 200px;
-      width: 70vw; }
-    kids-carousel .carousel-wrapper .carousel .slide3 {
-      border: 2px solid black;
-      margin: 0 50px;
-      background: orange;
-      height: 200px;
-      width: 80vw; }
+    float: right;
+    width: 94%; }
+    kids-carousel .carousel-wrapper .carousel .slide {
+      margin-right: 50px; }
+      kids-carousel .carousel-wrapper .carousel .slide img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px; }
+
+.kids-carousel-arrows {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 124px;
+  height: 46px;
+  margin-top: -30px; }
+  .kids-carousel-arrows .kids-carousel-arrow {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .kids-carousel-arrows .kids-carousel-arrow:nth-of-type(1) {
+    border-right: 1px solid rgba(0, 0, 0, 0.1); }
+  .kids-carousel-arrows .kids-carousel-arrow:focus {
+    border: 1px solid black; }
+  .kids-carousel-arrows .kids-carousel-arrow:hover {
+    border: 1px solid rgba(0, 0, 0, 0.1); }
+  .kids-carousel-arrows .kids-carousel-arrow:hover {
+    border: 1px solid rgba(0, 0, 0, 0.1); }
+  .kids-carousel-arrows .kids-carousel-arrow:active {
+    background: black; }
+    .kids-carousel-arrows .kids-carousel-arrow:active i {
+      color: white; }
 
 @font-face {
   font-family: "regular";
