@@ -1,11 +1,55 @@
-.new_img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  color: white;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 10px;
+@media (min-width: 1200px) {
+  .mens-mlb-nba-container{
+    width: 1200px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 768px){
+  .mens-mlb-nba-section{
+    width: calc(50% - 10px);
+  }
+  .mens-mlb-nba-container{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px){
+  .mens-mlb-nba-section{
+    width: 100%;
+  }
+}
+
+.mens-mlb-nba-container{
+  padding: 0 10px;
+  margin-top: 90px;
+  .mens-mlb-nba-section{
+    margin-bottom: 12px;
+    .mens-mlb-nba-title{
+      font-size: 26px;
+      letter-spacing: 2px;
+      line-height: 50px;
+    }
+    .mens-mlb-nba-section-main-image{
+      width: 100%;
+      margin-bottom: 3px;
+    }
+    .mens-mlb-nba-sub-image-container{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .mens-mlb-nba-sub-image{
+        width: calc(50% - 3px);
+        img{
+          width: 100%;
+        }
+        p{
+          font-size: 21px;
+          letter-spacing: 2px;
+          line-height: 43px;
+        }
+      }
+    }
+  }
 }

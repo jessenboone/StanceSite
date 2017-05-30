@@ -47,7 +47,37 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     url: '/checkout',
     templateUrl: './../views/checkout.html',
     controller: 'checkoutCtrl'
+  }).state('billing', {
+    url: '/billing',
+    templateUrl: './../views/billing.html',
+    controller: 'billingCtrl'
   });
+});
+'use strict';
+
+angular.module('app').controller('billingCtrl', function ($scope, mainSrvc) {
+
+  $scope.checked = true;
+
+  $scope.uspsGround = {
+    "name": "USPS Shipping",
+    "price": 0.00
+  };
+
+  $scope.upsGround = {
+    "name": "UPS Ground",
+    "price": 7.00
+  };
+
+  $scope.upsSecondDay = {
+    "name": "UPS Second Day",
+    "price": 12.00
+  };
+
+  $scope.upsNextDay = {
+    "name": "UPS Next Day Delivery",
+    "price": 18.00
+  };
 });
 'use strict';
 
@@ -56,43 +86,39 @@ angular.module('app').controller('cartCtrl', function ($scope, mainSrvc) {
   $scope.test = 'cart working';
   $scope.test2 = mainSrvc.test;
 
-  $scope.getCart = function (user) {
-    $scope.subtotal = 0;
-    storeSrvc.getCart(user).then(function (response) {
-      $scope.userCart = response.map(function (v) {
-        v.total = v.quantity * v.product_price;
-        $scope.subtotal += v.total;
-        return v;
-      });
-    });
-  };
-
-  $scope.deleteItemInCart = function (product, item) {
-    storeSrvc(product, item).then(function (response) {
-      $scope.response = response;
-      /*????????????????????*/
-    });
-  };
-
-  $scope.createItem = function (quantity, purchase) {
-    var user_id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : $scope.userId;
-
-    storeSrvc.createItem(quantity, purchase, user_id).then(function (response) {
-      $scope.getCartTotal($scope.userId);
-    });
-  };
-
-  $scope.getCartTotal = function () {
-    var user_id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userId;
-
-    $scope.cartTotal = 0;
-    storeSrvc.getCart(user_id).then(function (response) {
-      $scope.cartTotal = response.reduce(function (acc, value) {
-        return value.quantity + acc;
-      }, 0);
-    });
-  };
-  $scope.getCartTotal();
+  // $scope.getCart = (user) => {
+  //   $scope.subtotal = 0;
+  //   storeSrvc.getCart(user).then((response) => {
+  //     $scope.userCart = response.map(v => {
+  //       v.total = v.quantity * v.product_price
+  //       $scope.subtotal += v.total
+  //       return v
+  //     })
+  //   });
+  // };
+  //
+  // $scope.deleteItemInCart = (product, item) => {
+  //   storeSrvc(product, item).then((response) => {
+  //     $scope.response = response;
+  //     /*????????????????????*/
+  //   });
+  // };
+  //
+  // $scope.createItem = (quantity, purchase, user_id = $scope.userId) => {
+  //   storeSrvc.createItem(quantity, purchase, user_id).then(function(response) {
+  //     $scope.getCartTotal($scope.userId);
+  //   });
+  // };
+  //
+  // $scope.getCartTotal = (user_id = $scope.userId) => {
+  //   $scope.cartTotal = 0;
+  //   storeSrvc.getCart(user_id).then((response) => {
+  //     $scope.cartTotal = response.reduce((acc, value) => {
+  //       return value.quantity + acc;
+  //     }, 0)
+  //   })
+  // }
+  // $scope.getCartTotal();
 });
 'use strict';
 
@@ -100,6 +126,26 @@ angular.module('app').controller('checkoutCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'checkout working';
   $scope.test2 = mainSrvc.test;
+
+  $scope.uspsGround = {
+    "name": "USPS Shipping",
+    "price": 0.00
+  };
+
+  $scope.upsGround = {
+    "name": "UPS Ground",
+    "price": 7.00
+  };
+
+  $scope.upsSecondDay = {
+    "name": "UPS Second Day",
+    "price": 12.00
+  };
+
+  $scope.upsNextDay = {
+    "name": "UPS Next Day Delivery",
+    "price": 18.00
+  };
 
   $scope.submitOrder = function () {
     /*talk to Todd about this*/
@@ -222,7 +268,7 @@ angular.module('app').service('mainSrvc', function ($http) {
   this.register = function (user) {
     return $http({
       method: 'POST',
-      url: '/register',
+      url: '/api/register',
       data: { user: user }
     }).then(function (response) {
       return response;
@@ -385,12 +431,9 @@ angular.module('app').controller('registerCtrl', function ($scope, mainSrvc) {
   $scope.isShown = true;
   $scope.isShown2 = true;
 
-  $scope.register = function (user) {
-    mainSrvc.register(user).then(function (response) {
-      user.first_name = '';
-      user.last_name = '';
-      user.email = '';
-      user.password = '';
+  $scope.register = function () {
+    console.log('button working!');
+    mainSrvc.register($scope.user).then(function (response) {
       /*may need to set default for newsletter*/
     });
   };
@@ -464,6 +507,23 @@ angular.module('app').controller('womensCtrl', function ($scope, mainSrvc) {
     });
   };
   $scope.getProducts();
+});
+"use strict";
+
+angular.module('app').directive("kidsCarousel", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./views/kidsCarousel.html",
+    link: function link(scope, element, attributes) {}
+  };
+});
+"use strict";
+
+angular.module('app').directive("orderSummary", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./views/orderSummary.html"
+  };
 });
 "use strict";
 

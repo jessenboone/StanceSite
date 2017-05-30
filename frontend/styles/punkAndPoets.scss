@@ -1,0 +1,90 @@
+@media(max-width: 768px){
+  .punksAndPoets-section-container{
+    flex-direction: column;
+  }
+  .punksAndPoets-section{
+    width: 100%;
+  }
+  .punksAndPoets-container{
+    padding: 0 10px;
+    align-items: center;
+  }
+  .punksAndPoets-title{
+    font-size: 26.5px;
+  }
+  .punksAndPoets-bio{
+    font-size: 12.5px;
+    line-height: 18px;
+  }
+}
+@media(min-width: 768px){
+  .punksAndPoets-section{
+    width: calc(50% - 10px);
+  }
+  .punksAndPoets-container{
+    padding: 0 20px;
+    align-items: flex-start;
+  }
+  .punksAndPoets-title{
+    font-size: 34px;
+  }
+  .punksAndPoets-bio{
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@media(min-width: 1200px){
+  .punksAndPoets-container{
+    width: 1200px;
+    margin: auto;
+  }
+}
+
+.punksAndPoets-container{
+  margin-top: 95px;
+  display: flex;
+  flex-direction: column;
+  .punksAndPoets-title{
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    .punkAndPoets-and-sign{
+      font-size: 22px;
+    }
+  }
+  .line-under-punksAndPoets{
+    width: 100px;
+    height: 4px;
+    background: black;
+    margin-bottom: 40px;
+  }
+  .punksAndPoets-section-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .punksAndPoets-section{
+      margin-bottom: 46px;
+      img{
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      .punksAndPoets-name{
+        font-size: 26px;
+        letter-spacing: 1.5px;
+        margin-bottom: 20px;
+        display: flex;
+        .punksAndPoets-arrow{
+          width: 10px;
+          height: 10px;
+          margin-left: 15px;
+          margin-top: 6px;
+          align-self: center;
+        }
+      }
+      .punksAndPoets-bio{
+        letter-spacing: 0.03em;
+        color: gray;
+      }
+    }
+  }
+}

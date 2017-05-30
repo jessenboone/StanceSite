@@ -47,8 +47,12 @@
     .featured-item{
       padding: 1.25rem;
       img{
+        display: flex;
+        margin: auto;
         width: 100%;
         margin-bottom: 22px;
+        max-height: 215px;
+        max-width: 215px;
       }
       .line-under-featured-image{
         background-color: rgba(0,0,0,0.03);
