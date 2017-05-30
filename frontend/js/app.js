@@ -39,7 +39,7 @@ angular.module('app', ['ui.router'])
       controller: 'registerCtrl'
     })
     .state('singleProduct', {
-      url: '/single/product/:id',
+      url: '/single/product/:id/:mwk', /* /:product_id */
       templateUrl: './../views/singleProduct.html',
       controller: 'singleProductCtrl'
     })
@@ -49,7 +49,7 @@ angular.module('app', ['ui.router'])
       controller: 'cartCtrl'
     })
     .state('orders', {
-      url: '/orders/:user_id',
+      url: '/orders',  /* /:user_id */
       templateUrl: './../views/orders.html',
       controller: 'ordersCtrl'
     })
