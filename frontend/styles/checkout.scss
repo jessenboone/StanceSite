@@ -6,6 +6,10 @@ $aqua: #0493c1;
     width: 1200px;
     margin: auto;
   }
+  .checkout-steps-container{
+    width: 1200px;
+    margin: auto;
+  }
 }
 
 @media(max-width: 768px){
@@ -16,9 +20,15 @@ $aqua: #0493c1;
     font-size: 26px;
     letter-spacing: 2px;
   }
+  .checkout-steps-container{
+    display: none;
+  }
 }
 
 @media(min-width: 768px){
+  .checkout-steps-container{
+    display: flex;
+  }
   order-summary{
     width: 30%;
   }
@@ -87,18 +97,23 @@ $aqua: #0493c1;
   	color: white;
 }
 
+.checkout-steps-container{
+  .checkout-steps{
+    margin: 30px 0 30px 20px;
+    display: flex;
+    font-size: 11px;
+    .checkout-step{
+      margin-right: 20px;
+    }
+  }
+}
+
 .checkout-container{
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
   .checkout-shipping-container{
     margin-top: 10px;
-    .checkout-steps{
-      display: none;
-      width: 100%;
-      justify-content: space-around;
-      margin-bottom: 30px;
-    }
     .checkout-input-title{
       margin-bottom: 30px;
     }
@@ -259,6 +274,7 @@ $aqua: #0493c1;
     }
     .checkout-order-summary-container{
       border: 1px solid rgba(0,0,0,0.1);
+      margin-top: 12px;
       margin-bottom: 40px;
       display: flex;
       flex-direction: column;
