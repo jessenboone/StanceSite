@@ -32,7 +32,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/register.html',
     controller: 'registerCtrl'
   }).state('singleProduct', {
-    url: '/single/product/:id',
+    url: '/single/product/:id/:mwk', /* /:product_id */
     templateUrl: './../views/singleProduct.html',
     controller: 'singleProductCtrl'
   }).state('cart', {
@@ -40,7 +40,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     templateUrl: './../views/cart.html',
     controller: 'cartCtrl'
   }).state('orders', {
-    url: '/orders/:user_id',
+    url: '/orders', /* /:user_id */
     templateUrl: './../views/orders.html',
     controller: 'ordersCtrl'
   }).state('checkout', {
@@ -86,43 +86,39 @@ angular.module('app').controller('cartCtrl', function ($scope, mainSrvc) {
   $scope.test = 'cart working';
   $scope.test2 = mainSrvc.test;
 
-  $scope.getCart = function (user) {
-    $scope.subtotal = 0;
-    storeSrvc.getCart(user).then(function (response) {
-      $scope.userCart = response.map(function (v) {
-        v.total = v.quantity * v.product_price;
-        $scope.subtotal += v.total;
-        return v;
-      });
-    });
-  };
-
-  $scope.deleteItemInCart = function (product, item) {
-    storeSrvc(product, item).then(function (response) {
-      $scope.response = response;
-      /*????????????????????*/
-    });
-  };
-
-  $scope.createItem = function (quantity, purchase) {
-    var user_id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : $scope.userId;
-
-    storeSrvc.createItem(quantity, purchase, user_id).then(function (response) {
-      $scope.getCartTotal($scope.userId);
-    });
-  };
-
-  $scope.getCartTotal = function () {
-    var user_id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userId;
-
-    $scope.cartTotal = 0;
-    storeSrvc.getCart(user_id).then(function (response) {
-      $scope.cartTotal = response.reduce(function (acc, value) {
-        return value.quantity + acc;
-      }, 0);
-    });
-  };
-  $scope.getCartTotal();
+  // $scope.getCart = (user) => {
+  //   $scope.subtotal = 0;
+  //   storeSrvc.getCart(user).then((response) => {
+  //     $scope.userCart = response.map(v => {
+  //       v.total = v.quantity * v.product_price
+  //       $scope.subtotal += v.total
+  //       return v
+  //     })
+  //   });
+  // };
+  //
+  // $scope.deleteItemInCart = (product, item) => {
+  //   storeSrvc(product, item).then((response) => {
+  //     $scope.response = response;
+  //     /*????????????????????*/
+  //   });
+  // };
+  //
+  // $scope.createItem = (quantity, purchase, user_id = $scope.userId) => {
+  //   storeSrvc.createItem(quantity, purchase, user_id).then(function(response) {
+  //     $scope.getCartTotal($scope.userId);
+  //   });
+  // };
+  //
+  // $scope.getCartTotal = (user_id = $scope.userId) => {
+  //   $scope.cartTotal = 0;
+  //   storeSrvc.getCart(user_id).then((response) => {
+  //     $scope.cartTotal = response.reduce((acc, value) => {
+  //       return value.quantity + acc;
+  //     }, 0)
+  //   })
+  // }
+  // $scope.getCartTotal();
 });
 'use strict';
 
@@ -262,7 +258,7 @@ angular.module('app').service('mainSrvc', function ($http) {
   this.getSingleProduct = function (param) {
     return $http({
       method: 'GET',
-      url: '/api/product/' + param
+      url: '/api/product/' + param + '/'
     }).then(function (response) {
       return response.data;
     });
@@ -372,7 +368,6 @@ angular.module('app').service('mainSrvc', function ($http) {
 angular.module('app').controller('mensCtrl', function ($scope, mainSrvc) {
 
   $scope.getProducts = function () {
-    console.log('get products from ctrl');
     mainSrvc.getProducts('Mens', 'New Arrivals').then(function (response) {
       $scope.products = response;
     });
@@ -397,6 +392,37 @@ angular.module('app').controller('ordersCtrl', function ($scope, mainSrvc) {
 });
 'use strict';
 
+angular.module('app').directive('randomDirective', function (mainSrvc) {
+
+  return {
+    restrict: 'E',
+    templateUrl: './views/directives/randomDirective.html',
+    // scope: {
+    //
+    // }
+    controller: function controller($scope, $stateParams) {
+      $scope.getProducts = function () {
+        console.log('stateParams', $stateParams.mwk);
+        mainSrvc.getProducts($stateParams.mkw).then(function (response) {
+          var arr = [];
+          var rand = [];
+          for (var i = 0; i < response.length; i++) {
+            if (response[i]['mwk'] === 'Mens') {
+              arr.push(response[i]);
+            }
+          }
+          for (var j = 0; j < 4; j++) {
+            rand.push(arr[Math.floor(arr.length * Math.random())]);
+          }
+          $scope.random = rand;
+        });
+      };
+      $scope.getProducts();
+    }
+  };
+});
+'use strict';
+
 angular.module('app').controller('registerCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'register working';
@@ -416,12 +442,7 @@ angular.module('app').controller('registerCtrl', function ($scope, mainSrvc) {
 
 angular.module('app').controller('singleProductCtrl', function ($scope, mainSrvc, $stateParams) {
 
-  $scope.test = 'single product working';
-  $scope.test2 = mainSrvc.test;
-
-  $scope.div1 = true;
-  $scope.div2 = true;
-  $scope.div3 = true;
+  $scope.pic1 = true;
 
   $scope.getSingleProduct = function () {
     mainSrvc.getSingleProduct($stateParams.id).then(function (response) {
@@ -430,11 +451,19 @@ angular.module('app').controller('singleProductCtrl', function ($scope, mainSrvc
   };
   $scope.getSingleProduct();
 
+  // $scope.getProducts = () => {
+  //   mainSrvc.getProducts($stateParams.mwk).then(function(response) {
+  //     console.log(response);
+  //     $scope.random = response;
+  //   });
+  // }
+  // $scope.getProducts();
+
   $scope.showHide = function (pic) {
     $scope.pic1 = false;
     $scope.pic2 = false;
     $scope.pic3 = false;
-    $scope.pic = true;
+    $scope[pic] = true;
   };
 });
 'use strict';
@@ -448,6 +477,15 @@ angular.module('app').controller('accountCtrl', function ($scope, mainSrvc) {
   $scope.isShown2 = true;
   $scope.isShown3 = true;
   $scope.isShown4 = true;
+});
+'use strict';
+
+angular.module('app').directive('userDataDirective', function () {
+
+  return {
+    method: 'E',
+    templateUrl: './views/directives/userDataDirective.html'
+  };
 });
 'use strict';
 
