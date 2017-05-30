@@ -540,9 +540,15 @@
 
       button:hover {
         cursor: pointer;
+
+      }
+
+
+      button::selection {
         background-color: white;
         color: #1A1A1A;
       }
+
 
       button {
         height: 48px;
@@ -574,8 +580,7 @@
 
       button:hover {
         cursor: pointer;
-        background-color: white;
-        color: #1A1A1A;
+
       }
 
       button::selection {
