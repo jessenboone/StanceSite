@@ -18,6 +18,22 @@ $aqua: #0493c1;
   cursor: pointer;
 }
 
+.border {
+  border: none;
+}
+
+.outline {
+  outline: none;
+}
+
+.focus:focus {
+  border: 1px black solid;
+}
+
+.yellow:focus {
+  background: #faffbd;
+}
+
 #bright1:hover {
   background: rgba(26,26,26,0.8);
   transition: 1s;

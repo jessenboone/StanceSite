@@ -48,35 +48,6 @@ $aqua: #0493c1;
   }
 
   .acc-account-management {
-    // .acc-managenment-div {
-    //   border-bottom: 1px solid rgba(142,142,148,0.3);
-    //   width: 90%;
-    //   margin-bottom: 40px;
-    //   .acc-my-acc {
-    //     visibility: hidden;
-    //   }
-    //   .acc-account {
-    //     margin-bottom: 1px;
-    //     .acc-account-heading {
-    //       margin-bottom: 17px;
-    //       color: $gray;
-    //       font-size: 14px;
-    //     }
-    //     .acc-a-bottom {
-    //       margin-bottom: 14px;
-    //     }
-    //     p {
-    //       a {
-    //         margin-left: 17px;
-    //         color: $aqua;
-    //         font-size: 12px;
-    //       }
-    //     }
-    //   }
-    //   .acc-management-bottom {
-    //     margin-bottom: 44px;
-    //   }
-    // }
     .acc-directive {
       margin-left: 10px;
     }
@@ -105,6 +76,7 @@ $aqua: #0493c1;
     .acc-div {
       order: 2;
       margin-top: 67px;
+      margin-left: 2%;
       .acc-my-acc {
         .acc-heading {
           font-size: 38px;
@@ -126,28 +98,14 @@ $aqua: #0493c1;
       }
     }
 
-    // .acc-account-management {
-    //   order: 1;
-    //   width: 37%;
-    //   .acc-managenment-div {
-    //     margin-bottom: 49px;
-    //     .acc-my-acc {
-    //       visibility: visible;
-    //       font-size: 12px;
-    //       margin-bottom: 58px;
-    //       a {
-    //         text-decoration: none;
-    //         color: $gray;
-    //       }
-    //     }
-    //     .acc-account {
-    //       margin-left: 10px;
-    //     }
-    //   }
+    .acc-account-management {
+      margin-left: 8%;
+      width: 25%;
       .acc-directive {
         width: 84%;
         margin-top: 10px;
       }
-    // }
+    }
+
   }
 }

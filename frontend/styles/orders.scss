@@ -1,6 +1,22 @@
 $gray: #999;
 $aqua: #0493c1;
 
+.border {
+  border: none;
+}
+
+.outline {
+  outline: none;
+}
+
+.focus:focus {
+  border: 1px black solid;
+}
+
+.yellow:focus {
+  background: #faffbd;
+}
+
 .order-wrapper {
   width: 100%;
   .order-info {
