@@ -1,11 +1,26 @@
+@media (min-width: 374px){
+  .new_img {
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 374px){
+  .new_img {
+    width: 40px;
+    height: 40px;
+    font-size: 8px;
+  }
+}
+
 .new_img {
-  height: 50px;
-  width: 50px;
+  font-family: "bold";
+  position: absolute;
   border-radius: 50%;
   color: white;
   background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 10px;
 }

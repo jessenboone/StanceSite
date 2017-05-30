@@ -47,7 +47,37 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     url: '/checkout',
     templateUrl: './../views/checkout.html',
     controller: 'checkoutCtrl'
+  }).state('billing', {
+    url: '/billing',
+    templateUrl: './../views/billing.html',
+    controller: 'billingCtrl'
   });
+});
+'use strict';
+
+angular.module('app').controller('billingCtrl', function ($scope, mainSrvc) {
+
+  $scope.checked = true;
+
+  $scope.uspsGround = {
+    "name": "USPS Shipping",
+    "price": 0.00
+  };
+
+  $scope.upsGround = {
+    "name": "UPS Ground",
+    "price": 7.00
+  };
+
+  $scope.upsSecondDay = {
+    "name": "UPS Second Day",
+    "price": 12.00
+  };
+
+  $scope.upsNextDay = {
+    "name": "UPS Next Day Delivery",
+    "price": 18.00
+  };
 });
 'use strict';
 
@@ -96,6 +126,26 @@ angular.module('app').controller('checkoutCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'checkout working';
   $scope.test2 = mainSrvc.test;
+
+  $scope.uspsGround = {
+    "name": "USPS Shipping",
+    "price": 0.00
+  };
+
+  $scope.upsGround = {
+    "name": "UPS Ground",
+    "price": 7.00
+  };
+
+  $scope.upsSecondDay = {
+    "name": "UPS Second Day",
+    "price": 12.00
+  };
+
+  $scope.upsNextDay = {
+    "name": "UPS Next Day Delivery",
+    "price": 18.00
+  };
 
   $scope.submitOrder = function () {
     /*talk to Todd about this*/
@@ -423,6 +473,14 @@ angular.module('app').directive("kidsCarousel", function () {
     restrict: "E",
     templateUrl: "./views/kidsCarousel.html",
     link: function link(scope, element, attributes) {}
+  };
+});
+"use strict";
+
+angular.module('app').directive("orderSummary", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./views/orderSummary.html"
   };
 });
 "use strict";
