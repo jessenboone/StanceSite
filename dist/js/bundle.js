@@ -200,7 +200,8 @@ angular.module('app').directive('helpDirective', function () {
 });
 'use strict';
 
-angular.module('app').controller('inventoryCtrl', function ($scope, mainSrvc) {
+angular.module('app').controller('inventoryCtrl', function ($scope, mainSrvc, $stateParams) {
+
   $scope.getProducts = function () {
     mainSrvc.getProducts("Womens").then(function (response) {
       $scope.product = response;
