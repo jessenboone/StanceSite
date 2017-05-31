@@ -1,0 +1,193 @@
+$gray: #999;
+$aqua: #0493c1;
+
+.order-wrapper {
+  width: 100%;
+  .order-info {
+    width: 100%;
+    .order-heading {
+      font-size: 38px;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      letter-spacing: 2.5px;
+    }
+    .order-total-items {
+      visibility: hidden;
+    }
+    .order-info-div {
+      width: 100%;
+      color: $gray;
+      // font-size: 10px;
+      letter-spacing: .5px;
+      // padding-left: 1px;
+      // padding-right: 1px;
+      margin-bottom: 10px;
+      .order-small-div {
+        height: 4px;
+        border-top: 1px solid rgba(142,142,148,0.3);
+        border-bottom: 1px solid rgba(142,142,148,0.3);
+      }
+      .order-info {
+        width: 100%;
+        background: #f6f6fb;
+        .order-status {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 4px;
+          .order-status-status {
+            margin-top: 7px;
+            p {
+              margin-bottom: 5px;
+            }
+          }
+          // button {
+          //   height: 38px;
+          //   width: 88px;
+          //   background: #1a1a1a;
+          //   color: #ffffff;
+          //   border: none;
+          //   text-align: center;
+          //   margin-top: 4px;
+          // }
+        }
+        .order-product-info {
+          display: flex;
+          justify-content: space-between;
+          // padding: 0 10px;
+          .order-status-2 {
+            margin-bottom: 29px;
+            .order-status-subheading {
+              margin-bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .user-data-directive {
+    padding-left: 15px;
+  }
+
+  .help-directive {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 424px) {
+  .order-info-div {
+    padding-left: 1px;
+    padding-right: 1px;
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .order-info-div {
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .order-status {
+    button {
+      height: 38px;
+      width: 88px;
+      background: #1a1a1a;
+      color: #ffffff;
+      border: none;
+      text-align: center;
+      margin-top: 4px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .order-wrapper {
+    display: flex;
+    .order-info {
+      order: 2;
+      width: 70%;
+      padding-left: 10px;
+      .order-heading {
+        font-size: 36px;
+        margin-top: 65px;
+        letter-spacing: 3.5px;
+        margin-bottom: 71px;
+        padding-left: 15px;
+      }
+      .order-total-items {
+        visibility: visible;
+        font-size: 12px;
+        color: $gray;
+        font-size: 14.5px;
+        margin-bottom: 21px;
+        padding-left: 15px;
+      }
+      .order-info-div {
+        font-size: 12px;
+        margin-bottom: 25px;
+        .order-info {
+          .order-status {
+            padding-left: 5px;
+            .order-status-status {
+              margin-top: 8px;
+              p {
+                margin-bottom: 6px;
+              }
+            }
+            button {
+              width: 125px;
+              font-size: 12px;
+              height: 38px;
+              background: #1a1a1a;
+              color: #ffffff;
+              border: none;
+              text-align: center;
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+    }
+
+    .order-directives {
+      order: 1;
+      width: 30%;
+      padding-left: 5px;
+      padding-top: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .order-product-info {
+    padding: 0 10px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .order-wrapper {
+    padding-right: 5%;
+  }
+
+  .order-status {
+    button {
+      background: #1a1a1a;
+      color: #ffffff;
+      border: none;
+      text-align: center;
+      margin-top: 4px;
+      margin-right: 8px;
+      height: 45px;
+      width: 130px;
+    }
+  }
+
+  .order-product-info {
+    padding: 0px 155px 0 15px;
+  }
+}

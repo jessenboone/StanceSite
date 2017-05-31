@@ -1,73 +1,118 @@
-<!-- <div ng-repeat="p in singleProduct">
-  <img ng-src={{p.details_large_main_image_url}} />
-  <img ng-src={{p.details_main_image_url}} />
-  <img ng-src={{p.front_image_url}} />
-  <img ng-src={{p.large_front_image_url}} />
-  <img ng-src={{p.back_image_url}} />
-  <img ng-src={{p.large_back_image_url}} />
-  <h1>{{p.name}}</h1>
-  <h6>{{p.collection}}</h6>
-  <p>{{p.price | currency}}</p>
-  <p>{{size}}</p>
-</div> -->
-
 <main class="single-wrapper regular" ng-repeat="p in singleProduct">
+<<<<<<< HEAD
   <section class="single-images">
     <div class="single-main-image" id="single-main-image">
       <img ng-src={{p.details_large_main_image_url}} alt="socks" />
     </div>
+||||||| merged common ancestors
+  <section class="single-images">
+    <div class="single-main-image">
+      <img ng-src={{p.details_large_main_image_url}} alt="socks" />
+    </div>
+=======
+>>>>>>> master
 
-    <div class="single-image-views">
-      <div class="single-opaque" ng-click="div1=!div1"  ng-if="div1">
-        <img class="single-pic1" ng-src={{p.main_image_url}} />
-        <!-- <div class="single-opaque" ng-if="div1"></div> -->
+  <div class="single-products">
+    <section class="single-images">
+      <div class="single-main-image" ng-if="pic1">
+        <img src={{p.main_image_url}} alt="socks" />
       </div>
-      <div class="single-opaque" ng-click="div2=!div2"  ng-if="div2">
-        <img class="single-pic2" ng-src={{p.front_image_url}} ng-if="p.front_image_url" />
-        <!-- <div class="single-opaque" ng-if="div2"></div> -->
+      <div class="single-main-image" ng-if="pic2">
+        <img src={{p.large_front_image_url}} alt="socks" />
       </div>
-      <div class="single-opaque" ng-click="div3=!div3" ng-if="div3">
-        <img class="single-pic3" ng-src={{p.back_image_url}} ng-if="p.back_image_url" />
-        <!-- <div class="single-opaque" ng-if="div3"></div> -->
+      <div class="single-main-image" ng-if="pic3">
+        <img src={{p.large_back_image_url}} alt="socks" />
       </div>
-      <!-- <img ng-src={{p.back_image_url}} /> -->
-      <!-- ng-if="p.back_image_url && pic3" -->
-      <!-- ng-click="showHide(pic1) && div1=!div1" -->
+
+      <div class="single-image-views">
+        <div ng-click="showHide('pic1')" ng-class="{'opaque': !pic1, pic2, pic3}">
+          <img class="single-pic1" ng-src={{p.main_image_url}} />
+        </div>
+        <div ng-click="showHide('pic2')" ng-class="{'opaque': !pic2, pic1, pic3}">
+          <img class="single-pic2" ng-src={{p.front_image_url}} ng-if="p.front_image_url"/>
+        </div>
+        <div ng-click="showHide('pic3')" ng-class="{'opaque': !pic3, pic1, pic2}">
+          <img class="single-pic3" ng-src={{p.back_image_url}} ng-if="p.back_image_url"/>
+        </div>
+      </div>
+    </section>
+
+    <section class="single-info">
+      <p class="single-name capital condensed">{{p.name}}</p>
+      <p class="single-collection">{{p.collection}}</p>
+      <p class="bold single-price">{{p.price | currency}}</p>
+      <select class="single-box single-size" name="">
+        <option value="" selected>Select Size</option>
+        <option value="">Small</option>
+        <option value="">Medium</option>
+        <option value="">Large</option>
+      </select>
+      <div class="single-qty">
+        <p class="bold">QTY</p>
+        <input class="single-box bold" type="text" name="" value="1" />
+      </div>
+      <p class="single-availability"><span class="bold">Availability:</span> In Stock</p>
+      <button class="bold" id="single-bright" type="button" name="button">Add to Cart</button>
+      <div class="single-wish-fit">
+        <div class="single-wishlist single-child">
+          <i class="fa fa-heart fa-lg" aria-hidden="true"></i>
+          <p>Save to Wish List</p>
+        </div>
+        <div class="single-fit single-child">
+          <img src="./images/lines.png" alt="cascading lines">
+          <p>Size and Fit Guide</p>
+        </div>
+      </div>
+      <div class="single-contact">
+        <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a>
+        <i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i>
+      </div>
+    </section>
+  </div>
+
+  <section class="single-featured">
+    <p class="single-like capital condensed">you might also like</p>
+    <random-directive></random-directive>
+  </section>
+
+  <section class="single-description">
+    <p class="capital condensed single-desc-heading">description</p>
+    <p class="single-desc-text">{{p.description}}</p>
+  </section>
+
+  <section class="single-features-care">
+    <div class="single-features-care-list single-features-list">
+      <div class="single-features-care-drop">
+        <p class="single-features-care-heading condensed">Features</p>
+        <p class="single-plus-minus bold" ng-click="showProdFeatures=!showProdFeatures" ng-hide="showProdFeatures">+</p>
+        <p class="single-plus-minus bold" ng-click="showProdFeatures=!showProdFeatures" ng-show="showProdFeatures">&#8211;</p>
+      </div>
+      <ul class="single-features-care-drop-list"  ng-show="showProdFeatures">
+        <li><p>hi</p></li>
+        <li><p>hi</p></li>
+        <li><p>hi</p></li>
+        <li><p>hi</p></li>
+      </ul>
+    </div>
+    <div class="single-features-care-list">
+      <div class="single-features-care-drop">
+        <p class="single-features-care-heading condensed">Product Care</p>
+        <p class="single-plus-minus bold" ng-click="showProdCare=!showProdCare" ng-hide="showProdCare">+</p>
+        <p class="single-plus-minus bold" ng-show="showProdCare" ng-click="showProdCare=!showProdCare">&#8211;</p>
+      </div>
+      <ul class="single-features-care-drop-list"  ng-show="showProdCare">
+        <li><p>high gdkfdfj dslfkjds ow fdsljf  fdsj dkfj fj dsfdsjf dsjdkldsj dkfdsj ldkskld jflksdsd jdfdkdf djkf dkfjds fdf</p></li>
+        <li><p>hi</p></li>
+        <li><p>hi</p></li>
+        <li><p>hi</p></li>
+      </ul>
     </div>
   </section>
 
-  <section class="single-info">
-    <p class="single-name capital condensed">{{p.name}}</p>
-    <p class="single-collection">{{p.collection}}</p>
-    <p class="bold single-price">{{p.price | currency}}</p>
-    <select class="single-box single-size" name="">
-      <option value="">Select Size</option>
-      <option value="" selected>Small</option>
-      <option value="">Medium</option>
-      <option value="">Large</option>
-    </select>
-    <div class="single-qty">
-      <p class="bold">QTY</p>
-      <input class="single-box bold" type="text" name="" value="1" />
-    </div>
-    <p class="single-availability"><span class="bold">Availability:</span> In Stock</p>
-    <button class="bold" type="button" name="button">Add to Cart</button>
-    <div class="">
-      <div class="single-wishlist">
-        <i class="fa fa-heart" aria-hidden="true"></i>
-        <p>Save to Wish List</p>
-      </div>
-      <div class="single-fit-guide">
-
-        <p>Size and Fit Guide</p>
-      </div>
-    </div>
-    <div class="single-contact">
-      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-      <i class="fa fa-paper-plane" aria-hidden="true"></i>
-    </div>
+  <section class="single-reviews">
+    <p class="single-reviews-heading capital condensed">reviews</p>
+    <p class="single-reviews-text">Be the first to <a href="#" class="bold">Write a Review</a></p>
   </section>
-
 </main>

@@ -3,9 +3,9 @@ const express = require('express')
     , massive = require('massive')
     , cors = require('cors')
     , session = require('express-session')
-    , config = require('./backend/config')
-    , passport = require('passport')
-    , Auth0Strategy = require('passport-auth0');
+    , config = require('./backend/config');
+    // , passport = require('passport') -- used for auth0
+    // , Auth0Strategy = require('passport-auth0'); --used for auth0
 
 const app = module.exports = express();
 
@@ -20,44 +20,44 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false }
 }));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize()); --used for auth0
+// app.use(passport.session()); -- used for auth0
 
-passport.use(new Auth0Strategy({
-  domain: config.auth0_domain,
-  clientID: config.auth0_clientID,
-  clientSecret: config.auth0_clientSecret,
-  callbackURL: config.auth0_callbackURL
-}, function(accessToken, refreshToken, extraParams, profile, done) {
-  console.log('profile', profile);
-  return done(null, profile);
-}));
-
-app.get('/auth', passport.authenticate('auth0'));
-
-app.get('/auth/callback', passport.authenticate('auth0', {
-  successRedirect: '/#!/',
-  failureRedirect: '/auth'
-}))
-
-passport.serializeUser(function(user, done) {
-  console.log('serial', user);
-  done(null, user);
-});
-
-passport.deserializeUser(function(obj, done) {
-  console.log('obj', obj);
-  done(null, obj);
-});
-
-app.get('/user/authed', (req, res, next) => {
-  console.log(req.session);
-  if (!req.user) {
-    return res.status(404).send('User not found')
-  } else {
-    return res.status(200).send(req.user)
-  }
-})
+// passport.use(new Auth0Strategy({ --used for auth0
+//   domain: config.auth0_domain, --used for auth0
+//   clientID: config.auth0_clientID, --used for auth0
+//   clientSecret: config.auth0_clientSecret, --used for auth0
+//   callbackURL: config.auth0_callbackURL --used for auth0
+// }, function(accessToken, refreshToken, extraParams, profile, done) { --used for auth0
+//   console.log('profile', profile); --used for auth0
+//   return done(null, profile); --used for auth0
+// }));
+//
+// app.get('/auth', passport.authenticate('auth0')); --used for auth0
+//
+// app.get('/auth/callback', passport.authenticate('auth0', { --used for auth0
+//   successRedirect: '/#!/', --used for auth0
+//   failureRedirect: '/auth' --used for auth0
+// }))
+//
+// passport.serializeUser(function(user, done) { --used for auth0
+//   console.log('serial', user); --used for auth0
+//   done(null, user); --used for auth0
+// });
+//
+// passport.deserializeUser(function(obj, done) { --used for auth0
+//   console.log('obj', obj); --used for auth0
+//   done(null, obj); --used for auth0
+// });
+//
+// app.get('/user/authed', (req, res, next) => { --used for auth0
+//   console.log(req.session); --used for auth0
+//   if (!req.user) { --used for auth0
+//     return res.status(404).send('User not found') --used for auth0
+//   } else { --used for auth0
+//     return res.status(200).send(req.user) --used for auth0
+//   } --used for auth0
+// })
 
 
 const port = 3030;    //80

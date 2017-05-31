@@ -35,7 +35,7 @@
   <p class="featured-title condensed capital" id="boys">Boys</p>
   <button class="featured-button bold">Shop Now</button>
   <div class="featured-items-container">
-    <div class="featured-item" ng-repeat="p in products | limitTo:4" ui-sref="singleProduct({ id: p.product_id })">
+    <div class="featured-item" ng-repeat="p in products | limitTo:4" ui-sref="singleProduct({ id: p.id, mwk: p.mwk })">
       <img ng-src={{p.main_image_url}} />
       <hr class="line-under-featured-image">
       <p class="featured-item-name capital condensed">{{p.name}}</p>
@@ -49,7 +49,7 @@
   <p class="featured-title condensed capital">Girls</p>
   <button class="featured-button bold">Shop Now</button>
   <div class="featured-items-container">
-    <div class="featured-item" ng-repeat="p in product | limitTo:-4" ui-sref="singleProduct({ id: p.product_id })">
+    <div class="featured-item" ng-repeat="p in product | limitTo:-4" ui-sref="singleProduct({ id: p.id, mwk: p.mwk })">
       <img ng-src={{p.main_image_url}} />
       <hr class="line-under-featured-image">
       <p class="featured-item-name capital condensed">{{p.name}}</p>
@@ -63,7 +63,7 @@
   <p class="featured-title condensed capital">Baby</p>
   <button class="featured-button bold">Shop Now</button>
   <div class="featured-items-container">
-    <div class="featured-item" ng-repeat="p in prod | limitTo:-4" ui-sref="singleProduct({ id: p.product_id })">
+    <div class="featured-item" ng-repeat="p in prod | limitTo:-4" ui-sref="singleProduct({ id: p.id, mwk: p.mwk })">
       <img ng-src={{p.main_image_url}} />
       <hr class="line-under-featured-image">
       <p class="featured-item-name capital condensed">{{p.name}}</p>
