@@ -1372,10 +1372,17 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center; }
+  .slide-menu .new-font-styling {
+    color: #7B7B82;
+    font-size: 11px;
+    padding-top: 20px;
+    padding-left: 20px;
+    letter-spacing: 1.5px; }
   .slide-menu .slide-search {
     width: 96%;
     height: 60px;
     display: flex;
+    margin-top: 10px;
     flex-direction: row;
     justify-content: center;
     align-items: flex-end; }
@@ -1692,11 +1699,12 @@ table {
       padding-bottom: 5px;
       margin-left: 60px;
       padding-right: 30px;
-      color: #7B7B91; }
-      .header-container .header-middle .header-middle-bottom a:hover {
+      color: #7B7B91;
+      text-decoration: none; }
+      .header-container .header-middle .header-middle-bottom p:hover {
         cursor: pointer;
         text-decoration: underline; }
-      .header-container .header-middle .header-middle-bottom a {
+      .header-container .header-middle .header-middle-bottom p {
         display: flex;
         justify-content: center;
         height: 67.4px;
@@ -1744,19 +1752,39 @@ table {
       display: flex;
       flex-direction: row;
       align-items: center;
-      padding-top: 45px;
+      padding-top: 56px;
       padding-left: 80px;
       font-size: 11.5px;
       font-family: regular;
       color: #7B7B91;
       font-weight: 300; }
       .header-container .header-right .header-right-bottom .header-right-bottom-left {
-        font-size: 14px; }
+        position: absolute;
+        right: 146px;
+        z-index: 5px;
+        font-size: 14px;
+        background-color: transparent;
+        border-left: 0px;
+        border-right: 0px;
+        border-top: 0px;
+        border-bottom: 0px;
+        padding: 0px; }
+        .header-container .header-right .header-right-bottom .header-right-bottom-left .focus-container {
+          border: 1px black solid; }
+        .header-container .header-right .header-right-bottom .header-right-bottom-left input {
+          border: 0px;
+          width: 70px;
+          height: 42px;
+          padding-left: 20px;
+          transition: .5s all ease; }
+        .header-container .header-right .header-right-bottom .header-right-bottom-left input:focus {
+          width: 550px;
+          height: 42px; }
       .header-container .header-right .header-right-bottom .header-right-bottom-right:hover {
         cursor: pointer; }
       .header-container .header-right .header-right-bottom .header-right-bottom-right {
         font-size: 16px;
-        margin-left: 16px;
+        margin-left: 40px;
         transform: scaleX(-1); }
 
 .showBorder {
