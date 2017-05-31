@@ -620,13 +620,8 @@
             <div class="header-left-top" id="header-left-top ">
                 <img class="american-flag" src="https://bfx-objects.borderfree.com/v1/dist/images/context-chooser/flags/US.gif" alt=""><small id="phone">1-888-391-9020</small>
             </div>
-<<<<<<< HEAD
             <div class="header-left-bottom" id="header-left-bottom">
                 <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/Sites-Stance_US-Site/-/default/v1495370486050/images/svg-icons/stance-logo.svg" alt="stance logo" ui-sref="home">
-=======
-            <div class="header-right-top-middle1" id="header-right-top-middle1">
-                <a href='/auth'><p>{{ 1 ? "Logged in suckas" : 'Login / Regist'}}</p></a>
->>>>>>> master
             </div>
         </div>
         <div class="header-middle">
@@ -647,10 +642,10 @@
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </div>
                 <div class="header-right-top-middle1" id="header-right-top-middle1">
-                    <p>Login / Register</p>
+                    <a href='/auth'><p>{{ 1 ? "Logged in suckas" : 'Login / Regist'}}</p></a>
                 </div>
                 <div class="header-right-top-middle2">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <i class="fa fa-shopping-cart" aria-hidden="true" ui-sref="cart"></i>
                 </div>
                 <div class="header-right-top-right">
                     0

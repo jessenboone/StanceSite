@@ -1551,7 +1551,7 @@ table {
   cursor: pointer; }
 
 .header-hover-title {
-  width: 12%;
+  width: 15%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
