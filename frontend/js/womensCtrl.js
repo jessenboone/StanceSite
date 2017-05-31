@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('womensCtrl', function($scope, mainSrvc) {
+.controller('womensCtrl', function($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'womens working';
   $scope.test2 = mainSrvc.test;

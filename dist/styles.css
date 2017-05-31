@@ -50,7 +50,8 @@
     flex-direction: row; }
     .acc-wrapper .acc-div {
       order: 2;
-      margin-top: 67px; }
+      margin-top: 67px;
+      margin-left: 2%; }
       .acc-wrapper .acc-div .acc-my-acc .acc-heading {
         font-size: 38px;
         margin-bottom: 60px; }
@@ -64,9 +65,12 @@
           .acc-wrapper .acc-div .acc-divs .acc-div-divide .acc-div-double {
             width: 48%;
             height: 190px; }
-    .acc-wrapper .acc-directive {
-      width: 84%;
-      margin-top: 10px; } }
+    .acc-wrapper .acc-account-management {
+      margin-left: 8%;
+      width: 25%; }
+      .acc-wrapper .acc-account-management .acc-directive {
+        width: 84%;
+        margin-top: 10px; } }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -364,7 +368,9 @@ table {
     background-color: #1A1A1A;
     color: white;
     border: none;
-    display: flex; }
+    display: flex;
+    align-items: center;
+    justify-content: center; }
   .checkout-section .apply-update-btn {
     display: flex;
     flex-direction: column;
@@ -436,7 +442,8 @@ table {
     padding-bottom: 10px;
     margin-bottom: 20px; }
     .desktop-content-wrapper .table-column-titles p {
-      color: black; }
+      color: black;
+      font-size: 18px; }
   .desktop-content-wrapper .products-list-wrapper {
     width: 95%;
     display: flex;
@@ -538,17 +545,22 @@ table {
       width: 150px;
       border: 1px solid black;
       background-color: white; }
-    .desktop-content-wrapper .cart-total-section .right button {
-      float: right;
-      height: 50px;
-      width: 150px;
-      background-color: black;
-      color: white;
-      border: none; }
-      .desktop-content-wrapper .cart-total-section .right button p {
+    .desktop-content-wrapper .cart-total-section .right {
+      width: 30%;
+      float: right; }
+      .desktop-content-wrapper .cart-total-section .right button {
+        float: right;
+        height: 50px;
+        width: 150px;
+        background-color: black;
         color: white;
-        font-size: 15px;
-        font-weight: bold; }
+        border: none; }
+        .desktop-content-wrapper .cart-total-section .right button p {
+          color: white;
+          font-size: 15px;
+          font-weight: bold; }
+      .desktop-content-wrapper .cart-total-section .right button:focus {
+        outline: none; }
   .desktop-content-wrapper .recommend-section .recommend-title h2 {
     font-size: 24px; }
 
@@ -1364,10 +1376,17 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center; }
+  .slide-menu .new-font-styling {
+    color: #7B7B82;
+    font-size: 11px;
+    padding-top: 20px;
+    padding-left: 20px;
+    letter-spacing: 1.5px; }
   .slide-menu .slide-search {
     width: 96%;
     height: 60px;
     display: flex;
+    margin-top: 10px;
     flex-direction: row;
     justify-content: center;
     align-items: flex-end; }
@@ -1684,17 +1703,20 @@ table {
       padding-bottom: 5px;
       margin-left: 60px;
       padding-right: 30px;
-      color: #7B7B91; }
-      .header-container .header-middle .header-middle-bottom a:hover {
+      color: #7B7B91;
+      text-decoration: none; }
+      .header-container .header-middle .header-middle-bottom p:hover {
         cursor: pointer;
         text-decoration: underline; }
-      .header-container .header-middle .header-middle-bottom a {
+      .header-container .header-middle .header-middle-bottom p {
         display: flex;
         justify-content: center;
         height: 67.4px;
         margin-left: 20px;
         margin-right: 20px;
-        padding-top: 10px; }
+        padding-top: 10px;
+        color: grey;
+        text-decoration: none; }
   .header-container .header-right {
     width: 25%;
     display: flex;
@@ -1736,19 +1758,39 @@ table {
       display: flex;
       flex-direction: row;
       align-items: center;
-      padding-top: 45px;
+      padding-top: 56px;
       padding-left: 80px;
       font-size: 11.5px;
       font-family: regular;
       color: #7B7B91;
       font-weight: 300; }
       .header-container .header-right .header-right-bottom .header-right-bottom-left {
-        font-size: 14px; }
+        position: absolute;
+        right: 146px;
+        z-index: 5px;
+        font-size: 14px;
+        background-color: transparent;
+        border-left: 0px;
+        border-right: 0px;
+        border-top: 0px;
+        border-bottom: 0px;
+        padding: 0px; }
+        .header-container .header-right .header-right-bottom .header-right-bottom-left .focus-container {
+          border: 1px black solid; }
+        .header-container .header-right .header-right-bottom .header-right-bottom-left input {
+          border: 0px;
+          width: 70px;
+          height: 42px;
+          padding-left: 20px;
+          transition: .5s all ease; }
+        .header-container .header-right .header-right-bottom .header-right-bottom-left input:focus {
+          width: 550px;
+          height: 42px; }
       .header-container .header-right .header-right-bottom .header-right-bottom-right:hover {
         cursor: pointer; }
       .header-container .header-right .header-right-bottom .header-right-bottom-right {
         font-size: 16px;
-        margin-left: 16px;
+        margin-left: 40px;
         transform: scaleX(-1); }
 
 .showBorder {
@@ -2277,6 +2319,18 @@ kids-carousel .carousel-wrapper {
 .point {
   cursor: pointer; }
 
+.border {
+  border: none; }
+
+.outline {
+  outline: none; }
+
+.focus:focus {
+  border: 1px black solid; }
+
+.yellow:focus {
+  background: #faffbd; }
+
 #bright1:hover {
   background: rgba(26, 26, 26, 0.8);
   transition: 1s; }
@@ -2305,6 +2359,9 @@ kids-carousel .carousel-wrapper {
   line-height: 18px;
   letter-spacing: .75px; }
 
+.login-input-div {
+  height: 85px; }
+
 .login-input-style {
   border: 1px solid rgba(142, 142, 148, 0.2);
   height: 50px;
@@ -2312,7 +2369,7 @@ kids-carousel .carousel-wrapper {
   padding-left: 20px;
   font-size: 12.5px;
   font-weight: bold;
-  margin-bottom: 34px; }
+  margin-bottom: 2px; }
 
 .login-anchor {
   font-size: 13px;
@@ -2508,6 +2565,18 @@ kids-carousel .carousel-wrapper {
           font-size: 21px;
           letter-spacing: 2px;
           line-height: 43px; }
+
+.border {
+  border: none; }
+
+.outline {
+  outline: none; }
+
+.focus:focus {
+  border: 1px black solid; }
+
+.yellow:focus {
+  background: #faffbd; }
 
 .order-wrapper {
   width: 100%; }
@@ -2762,6 +2831,18 @@ kids-carousel .carousel-wrapper {
 .reg-subheading {
   margin-bottom: 47px; }
 
+.register-input-div {
+  position: relative;
+  height: 85px; }
+
+#idea-de-carlos {
+  height: 100px; }
+
+.error {
+  font-size: 12px;
+  color: red;
+  margin-left: 2px; }
+
 .reg-input-style {
   border: 1px solid rgba(142, 142, 148, 0.3);
   height: 50px;
@@ -2769,7 +2850,7 @@ kids-carousel .carousel-wrapper {
   padding-left: 20px;
   font-size: 11px;
   font-weight: bold;
-  margin-bottom: 34px; }
+  margin-bottom: 4px; }
 
 .reg-anchor {
   font-size: 14px;
@@ -2788,9 +2869,8 @@ kids-carousel .carousel-wrapper {
     margin-bottom: 10px; }
     .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-characters {
       font-size: 11.5px;
-      margin-top: -29px;
       color: #999;
-      margin-left: 5px;
+      margin-left: 2px;
       margin-bottom: 34px; }
     .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-checkbox input {
       height: 18px;
@@ -2869,6 +2949,9 @@ kids-carousel .carousel-wrapper {
         .reg-wrapper .login-wrapper .login-section-3 hr {
           margin-bottom: 44px; } }
 
+.require {
+  border: 1px solid red; }
+
 .single-box {
   border: 1px solid rgba(142, 142, 148, 0.3);
   height: 50px;
@@ -2892,6 +2975,7 @@ i {
     .single-wrapper .single-products .single-images {
       margin-top: 5px; }
       .single-wrapper .single-products .single-images .single-main-image {
+        width: 100%;
         display: flex;
         justify-content: center; }
     .single-wrapper .single-products .single-info .single-name {
@@ -3063,7 +3147,6 @@ i {
       flex-direction: row;
       margin-top: 5px; }
       .single-products .single-images .single-main-image {
-        margin-left: 10%;
         order: 2; }
         .single-products .single-images .single-main-image img {
           height: 423px;
@@ -3086,6 +3169,14 @@ i {
     letter-spacing: 3px;
     margin-bottom: 65px;
     margin-left: 16px; } }
+
+@media (max-width: 906px) and (min-width: 768px) {
+  .single-main-image img {
+    margin-left: 3%; } }
+
+@media (min-width: 907px) {
+  .single-main-image img {
+    margin-left: 10%; } }
 
 .user-managenment-div {
   border-bottom: 1px solid rgba(142, 142, 148, 0.3);

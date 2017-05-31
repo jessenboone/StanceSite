@@ -1,5 +1,5 @@
 angular.module('app')
-.directive('headerDirective', function() {
+.directive('headerDirective', function($rootScope) {
 
   return {
     restrict: 'E',
