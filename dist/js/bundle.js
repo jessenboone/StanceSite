@@ -51,6 +51,10 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     url: '/billing',
     templateUrl: './../views/billing.html',
     controller: 'billingCtrl'
+  }).state("inventory", {
+    url: "/inventory",
+    templateUrl: "./../views/inventory.html",
+    controller: "inventoryCtrl"
   });
 });
 'use strict';
@@ -168,6 +172,7 @@ angular.module('app').controller('checkoutCtrl', function ($rootScope, $scope, m
     });
   };
 });
+"use strict";
 'use strict';
 
 angular.module('app').directive('footerDirective', function () {
@@ -199,6 +204,17 @@ angular.module('app').directive('helpDirective', function () {
 });
 'use strict';
 
+angular.module('app').controller('inventoryCtrl', function ($scope, mainSrvc, $stateParams) {
+
+  $scope.getProducts = function () {
+    mainSrvc.getProducts("Womens").then(function (response) {
+      $scope.product = response;
+    });
+  };
+  $scope.getProducts();
+});
+'use strict';
+
 angular.module('app').controller('kidsCtrl', function ($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'kids working';
@@ -223,7 +239,6 @@ angular.module('app').controller('loginCtrl', function ($rootScope, $scope, main
 
   $scope.isShown = true;
   $scope.isShown2 = true;
-
   $scope.isLoggedIn = false;
 
   $scope.login = function () {
