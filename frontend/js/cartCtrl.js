@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('cartCtrl', function($scope, mainSrvc) {
+.controller('cartCtrl', function($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'cart working';
   $scope.test2 = mainSrvc.test;
