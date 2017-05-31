@@ -2155,6 +2155,11 @@ kids-carousel .carousel-wrapper {
 .border {
   border: none; }
 
+.error {
+  font-size: 12px;
+  color: red;
+  margin-left: 2px; }
+
 .outline {
   outline: none; }
 
@@ -2357,6 +2362,9 @@ kids-carousel .carousel-wrapper {
         margin-bottom: 18px; }
       .login-wrapper .login-section-3 hr {
         margin-bottom: 44px; } }
+
+.required {
+  border: 1px solid red; }
 
 @media (min-width: 1200px) {
   .mens-mlb-nba-container {
