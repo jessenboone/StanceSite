@@ -1,5 +1,5 @@
 angular.module('app')
-.directive('userDataDirective', function() {
+.directive('userDataDirective', function($rootScope) {
 
   return {
     method: 'E',

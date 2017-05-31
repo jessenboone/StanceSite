@@ -28,15 +28,18 @@ angular.module('app')
   };
 
   this.login = (email, password) => {
+    console.log('service', email, password);
     return $http({
       method: 'POST',
-      url: '/login',
+      url: '/api/login',
       data: {
         email,
         password
       }
-    }).then(response => response.data/*index number from table*/)
+    }).then(response => response.data);
   };
+
+  // response => response.data
 
   // CART //////////////////////////////////////////
   this.getCart = (user) => {
