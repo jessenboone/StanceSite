@@ -151,7 +151,77 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-<<<<<<< HEAD
+@media (min-width: 338px) {
+  .checkout-enter-coupon-container {
+    display: flex; } }
+
+@media (min-width: 768px) {
+  .checkbox-card-radio-container {
+    display: flex; } }
+
+.checkout-enter-coupon-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  border: none;
+  height: 48px;
+  padding: 0px 28px;
+  color: white;
+  background: black;
+  margin-bottom: 50px; }
+
+.checkout-enter-coupon-container #coupon-input {
+  width: 70%; }
+
+.checkout-coupon-note {
+  color: gray;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  margin-top: -10px;
+  margin-bottom: 120px; }
+
+.checkbox-card-radio-container {
+  font-family: bold;
+  font-size: 12px;
+  margin-right: 10px; }
+  .checkbox-card-radio-container .checkbox-card-radio-option {
+    display: flex;
+    align-items: center;
+    margin: 5px 140px 0 0;
+    margin-bottom: 40px; }
+    .checkbox-card-radio-container .checkbox-card-radio-option input {
+      margin-right: 25px; }
+
+.checkout-card-exp-container {
+  display: flex; }
+  .checkout-card-exp-container #checkout-expiration-month {
+    width: 118px;
+    margin-right: 10px; }
+  .checkout-card-exp-container #checkout-expiration-year {
+    width: 93px; }
+
+.checkout-security-code-container {
+  display: flex; }
+  .checkout-security-code-container #checkout-security-code {
+    width: 118px; }
+  .checkout-security-code-container p {
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #0493c1; }
+
+#checkout-text-wraparound {
+  display: block;
+  align-items: flex-start; }
+
+.select-dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: red; }
+
 .container-wrapper {
   display: flex;
   flex-direction: column;
@@ -328,7 +398,9 @@ table {
     background-color: #1A1A1A;
     color: white;
     border: none;
-    display: flex; }
+    display: flex;
+    align-items: center;
+    justify-content: center; }
   .checkout-section .apply-update-btn {
     display: flex;
     flex-direction: column;
@@ -400,7 +472,8 @@ table {
     padding-bottom: 10px;
     margin-bottom: 20px; }
     .desktop-content-wrapper .table-column-titles p {
-      color: black; }
+      color: black;
+      font-size: 18px; }
   .desktop-content-wrapper .products-list-wrapper {
     width: 95%;
     display: flex;
@@ -502,17 +575,22 @@ table {
       width: 150px;
       border: 1px solid black;
       background-color: white; }
-    .desktop-content-wrapper .cart-total-section .right button {
-      float: right;
-      height: 50px;
-      width: 150px;
-      background-color: black;
-      color: white;
-      border: none; }
-      .desktop-content-wrapper .cart-total-section .right button p {
+    .desktop-content-wrapper .cart-total-section .right {
+      width: 30%;
+      float: right; }
+      .desktop-content-wrapper .cart-total-section .right button {
+        float: right;
+        height: 50px;
+        width: 150px;
+        background-color: black;
         color: white;
-        font-size: 15px;
-        font-weight: bold; }
+        border: none; }
+        .desktop-content-wrapper .cart-total-section .right button p {
+          color: white;
+          font-size: 15px;
+          font-weight: bold; }
+      .desktop-content-wrapper .cart-total-section .right button:focus {
+        outline: none; }
   .desktop-content-wrapper .recommend-section .recommend-title h2 {
     font-size: 24px; }
 
@@ -533,80 +611,6 @@ table {
     display: none; }
   .desktop-content-wrapper {
     display: none; } }
-||||||| merged common ancestors
-=======
-@media (min-width: 338px) {
-  .checkout-enter-coupon-container {
-    display: flex; } }
->>>>>>> master
-
-@media (min-width: 768px) {
-  .checkbox-card-radio-container {
-    display: flex; } }
-
-.checkout-enter-coupon-container button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  border: none;
-  height: 48px;
-  padding: 0px 28px;
-  color: white;
-  background: black;
-  margin-bottom: 50px; }
-
-.checkout-enter-coupon-container #coupon-input {
-  width: 70%; }
-
-.checkout-coupon-note {
-  color: gray;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.03em;
-  margin-top: -10px;
-  margin-bottom: 120px; }
-
-.checkbox-card-radio-container {
-  font-family: bold;
-  font-size: 12px;
-  margin-right: 10px; }
-  .checkbox-card-radio-container .checkbox-card-radio-option {
-    display: flex;
-    align-items: center;
-    margin: 5px 140px 0 0;
-    margin-bottom: 40px; }
-    .checkbox-card-radio-container .checkbox-card-radio-option input {
-      margin-right: 25px; }
-
-.checkout-card-exp-container {
-  display: flex; }
-  .checkout-card-exp-container #checkout-expiration-month {
-    width: 118px;
-    margin-right: 10px; }
-  .checkout-card-exp-container #checkout-expiration-year {
-    width: 93px; }
-
-.checkout-security-code-container {
-  display: flex; }
-  .checkout-security-code-container #checkout-security-code {
-    width: 118px; }
-  .checkout-security-code-container p {
-    margin-left: 10px;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #0493c1; }
-
-#checkout-text-wraparound {
-  display: block;
-  align-items: flex-start; }
-
-.select-dropdown {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: red; }
-
 
 @charset "UTF-8";
 @media (min-width: 1200px) {

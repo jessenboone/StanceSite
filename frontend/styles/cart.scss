@@ -255,6 +255,8 @@
       color: white;
       border: none;
       display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .apply-update-btn {
@@ -357,6 +359,7 @@
     margin-bottom: 20px;
     p {
       color: black;
+      font-size: 18px;
     }
   }
 
@@ -501,6 +504,8 @@
       }
     }
     .right {
+      width: 30%;
+      float: right;
       // border: 1px solid blue;
       button {
         float: right;
@@ -514,6 +519,9 @@
           font-size: 15px;
           font-weight: bold;
         }
+      }
+      button:focus {
+        outline: none;
       }
     }
   }

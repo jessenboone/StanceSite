@@ -1,3 +1,7 @@
 module.exports = {
-  database_secret: 'postgres://ikoqxxgr:q5zUIFrNmf_V_hy1zYH0PX7MkZZfoxkn@stampy.db.elephantsql.com:5432/ikoqxxgr'
+  database_secret: 'postgres://ikoqxxgr:yrC8r_4ifUCgEsSIMaJuxziQysLQCItF@stampy.db.elephantsql.com:5432/ikoqxxgr',
+  auth0_domain: 'zacmcclung.auth0.com',
+  auth0_clientID: 'r9MZ7Mz0QDU9P4odoWpo1e54JQucPZYT',
+  auth0_clientSecret: 'KtSwjQO8ME4GY_edJt3rHDoSWLfnvVpmpZS7ihsLR3coNU9sTPCfkexQr9fc3a6a',
+  auth0_callbackURL: 'http://127.0.0.1:3030/auth/callback'
 }

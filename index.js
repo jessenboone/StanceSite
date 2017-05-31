@@ -3,7 +3,9 @@ const express = require('express')
     , massive = require('massive')
     , cors = require('cors')
     , session = require('express-session')
-    , config = require('./backend/config');
+    , config = require('./backend/config')
+    , passport = require('passport')
+    , Auth0Strategy = require('passport-auth0');
 
 const app = module.exports = express();
 
@@ -12,12 +14,51 @@ const massiveInstance = massive.connectSync({connectionString: config.database_s
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist'));
 
-// app.use(session({
-//   secret: config.password,
-//   resave: false,
-//   saveUninitialized: true,
-//   cookie: { secure: false }
-// }));
+app.use(session({
+  secret: config.database_secret,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new Auth0Strategy({
+  domain: config.auth0_domain,
+  clientID: config.auth0_clientID,
+  clientSecret: config.auth0_clientSecret,
+  callbackURL: config.auth0_callbackURL
+}, function(accessToken, refreshToken, extraParams, profile, done) {
+  console.log('profile', profile);
+  return done(null, profile);
+}));
+
+app.get('/auth', passport.authenticate('auth0'));
+
+app.get('/auth/callback', passport.authenticate('auth0', {
+  successRedirect: '/#!/',
+  failureRedirect: '/auth'
+}))
+
+passport.serializeUser(function(user, done) {
+  console.log('serial', user);
+  done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+  console.log('obj', obj);
+  done(null, obj);
+});
+
+app.get('/user/authed', (req, res, next) => {
+  console.log(req.session);
+  if (!req.user) {
+    return res.status(404).send('User not found')
+  } else {
+    return res.status(200).send(req.user)
+  }
+})
+
 
 const port = 3030;    //80
 
