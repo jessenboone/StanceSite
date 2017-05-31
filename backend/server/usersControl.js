@@ -22,6 +22,7 @@ module.exports = {
     db.login(userInfo, (err, user) => {
       if (!err) {
         res.status(200).send(user);
+        req.session.user = user;
       } else {
         res.send(err)
       }

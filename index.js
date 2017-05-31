@@ -12,12 +12,30 @@ const massiveInstance = massive.connectSync({connectionString: config.database_s
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist'));
 
-// app.use(session({
-//   secret: config.password,
-//   resave: false,
-//   saveUninitialized: true,
-//   cookie: { secure: false }
-// }));
+app.use(session({
+  cookieName: "session",
+  secret: config.sessionSecret,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}));
+
+app.use(function(req, res, next) {
+  if (req.session && req.session.user) {
+    User.findOne({ email: req.session.user.email }, function(err, user) {
+      if (user) {
+        req.user = user;
+        delete req.user.password; // delete the password from the session
+        req.session.user = user;  //refresh the session value
+        res.locals.user = user;
+      }
+      // finishing processing the middleware and run the route
+      next();
+    });
+  } else {
+    next();
+  }
+});
 
 const port = 3030;    //80
 
@@ -36,6 +54,10 @@ app.get('/api/product/:id', productsControl.getSingleProduct);
 // USERS
 app.post('/api/register', usersControl.register);
 app.post('/api/login', usersControl.login);
+app.get('/logout', function(req, res) {
+  req.session.reset();
+  res.redirect('/');
+});
 
 // CART
 app.post('/api/cart', cartControl.getCart);

@@ -51,6 +51,10 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     url: '/billing',
     templateUrl: './../views/billing.html',
     controller: 'billingCtrl'
+  }).state("inventory", {
+    url: "/inventory",
+    templateUrl: "./../views/inventory.html",
+    controller: "inventoryCtrl"
   });
 });
 'use strict';
@@ -164,6 +168,7 @@ angular.module('app').controller('checkoutCtrl', function ($scope, mainSrvc) {
     });
   };
 });
+"use strict";
 'use strict';
 
 angular.module('app').directive('footerDirective', function () {
@@ -195,6 +200,16 @@ angular.module('app').directive('helpDirective', function () {
 });
 'use strict';
 
+angular.module('app').controller('inventoryCtrl', function ($scope, mainSrvc) {
+  $scope.getProducts = function () {
+    mainSrvc.getProducts("Womens").then(function (response) {
+      $scope.product = response;
+    });
+  };
+  $scope.getProducts();
+});
+'use strict';
+
 angular.module('app').controller('kidsCtrl', function ($scope, mainSrvc) {
 
   $scope.test = 'kids working';
@@ -222,22 +237,6 @@ angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
 
   $scope.isShown = true;
   $scope.isShown2 = true;
-
-  $scope.login = function (returnUserEmail, returnUserPassword) {
-    mainSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
-      $scope.email = response.email;
-      $scope.password = response.password;
-      if (returnUserEmail === $scope.email && returnUserPassword === $scope.password) {
-
-        /*check the function names below with the functions in the view page*/
-
-        $scope.isLoggedIn = true;
-        $scope.userId = response.user_id;
-        $scope.getCartTotal($scope.userId);
-        $scope.showHide('prods');
-      }
-    });
-  };
 });
 'use strict';
 
