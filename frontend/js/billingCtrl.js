@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('billingCtrl', function($scope, mainSrvc) {
+.controller('billingCtrl', function($rootScope, $scope, mainSrvc) {
 
   $scope.checked = true;
 

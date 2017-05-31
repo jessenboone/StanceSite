@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('accountCtrl', function($scope, mainSrvc) {
+.controller('accountCtrl', function($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'account working';
   $scope.test2 = mainSrvc.test;

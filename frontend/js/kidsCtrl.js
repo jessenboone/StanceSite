@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('kidsCtrl', function($scope, mainSrvc) {
+.controller('kidsCtrl', function($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'kids working';
 

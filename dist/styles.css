@@ -50,7 +50,8 @@
     flex-direction: row; }
     .acc-wrapper .acc-div {
       order: 2;
-      margin-top: 67px; }
+      margin-top: 67px;
+      margin-left: 2%; }
       .acc-wrapper .acc-div .acc-my-acc .acc-heading {
         font-size: 38px;
         margin-bottom: 60px; }
@@ -64,9 +65,12 @@
           .acc-wrapper .acc-div .acc-divs .acc-div-divide .acc-div-double {
             width: 48%;
             height: 190px; }
-    .acc-wrapper .acc-directive {
-      width: 84%;
-      margin-top: 10px; } }
+    .acc-wrapper .acc-account-management {
+      margin-left: 8%;
+      width: 25%; }
+      .acc-wrapper .acc-account-management .acc-directive {
+        width: 84%;
+        margin-top: 10px; } }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -2148,6 +2152,18 @@ kids-carousel .carousel-wrapper {
 .point {
   cursor: pointer; }
 
+.border {
+  border: none; }
+
+.outline {
+  outline: none; }
+
+.focus:focus {
+  border: 1px black solid; }
+
+.yellow:focus {
+  background: #faffbd; }
+
 #bright1:hover {
   background: rgba(26, 26, 26, 0.8);
   transition: 1s; }
@@ -2176,6 +2192,9 @@ kids-carousel .carousel-wrapper {
   line-height: 18px;
   letter-spacing: .75px; }
 
+.login-input-div {
+  height: 85px; }
+
 .login-input-style {
   border: 1px solid rgba(142, 142, 148, 0.2);
   height: 50px;
@@ -2183,7 +2202,7 @@ kids-carousel .carousel-wrapper {
   padding-left: 20px;
   font-size: 12.5px;
   font-weight: bold;
-  margin-bottom: 34px; }
+  margin-bottom: 2px; }
 
 .login-anchor {
   font-size: 13px;
@@ -2379,6 +2398,18 @@ kids-carousel .carousel-wrapper {
           font-size: 21px;
           letter-spacing: 2px;
           line-height: 43px; }
+
+.border {
+  border: none; }
+
+.outline {
+  outline: none; }
+
+.focus:focus {
+  border: 1px black solid; }
+
+.yellow:focus {
+  background: #faffbd; }
 
 .order-wrapper {
   width: 100%; }
@@ -2633,6 +2664,18 @@ kids-carousel .carousel-wrapper {
 .reg-subheading {
   margin-bottom: 47px; }
 
+.register-input-div {
+  position: relative;
+  height: 85px; }
+
+#idea-de-carlos {
+  height: 100px; }
+
+.error {
+  font-size: 12px;
+  color: red;
+  margin-left: 2px; }
+
 .reg-input-style {
   border: 1px solid rgba(142, 142, 148, 0.3);
   height: 50px;
@@ -2640,7 +2683,7 @@ kids-carousel .carousel-wrapper {
   padding-left: 20px;
   font-size: 11px;
   font-weight: bold;
-  margin-bottom: 34px; }
+  margin-bottom: 4px; }
 
 .reg-anchor {
   font-size: 14px;
@@ -2659,9 +2702,8 @@ kids-carousel .carousel-wrapper {
     margin-bottom: 10px; }
     .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-characters {
       font-size: 11.5px;
-      margin-top: -29px;
       color: #999;
-      margin-left: 5px;
+      margin-left: 2px;
       margin-bottom: 34px; }
     .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-checkbox input {
       height: 18px;
@@ -2740,6 +2782,9 @@ kids-carousel .carousel-wrapper {
         .reg-wrapper .login-wrapper .login-section-3 hr {
           margin-bottom: 44px; } }
 
+.require {
+  border: 1px solid red; }
+
 .single-box {
   border: 1px solid rgba(142, 142, 148, 0.3);
   height: 50px;
@@ -2763,6 +2808,7 @@ i {
     .single-wrapper .single-products .single-images {
       margin-top: 5px; }
       .single-wrapper .single-products .single-images .single-main-image {
+        width: 100%;
         display: flex;
         justify-content: center; }
     .single-wrapper .single-products .single-info .single-name {
@@ -2934,7 +2980,6 @@ i {
       flex-direction: row;
       margin-top: 5px; }
       .single-products .single-images .single-main-image {
-        margin-left: 10%;
         order: 2; }
         .single-products .single-images .single-main-image img {
           height: 423px;
@@ -2957,6 +3002,14 @@ i {
     letter-spacing: 3px;
     margin-bottom: 65px;
     margin-left: 16px; } }
+
+@media (max-width: 906px) and (min-width: 768px) {
+  .single-main-image img {
+    margin-left: 3%; } }
+
+@media (min-width: 907px) {
+  .single-main-image img {
+    margin-left: 10%; } }
 
 .user-managenment-div {
   border-bottom: 1px solid rgba(142, 142, 148, 0.3);

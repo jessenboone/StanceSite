@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('mensCtrl', function($scope, mainSrvc) {
+.controller('mensCtrl', function($rootScope, $scope, mainSrvc) {
 
   $scope.getProducts = () => {
      mainSrvc.getProducts('Mens', 'New Arrivals').then(function(response) {

@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('checkoutCtrl', function($scope, mainSrvc) {
+.controller('checkoutCtrl', function($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'checkout working';
   $scope.test2 = mainSrvc.test;
