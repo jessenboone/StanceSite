@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('singleProductCtrl', function($scope, mainSrvc, $stateParams) {
+.controller('singleProductCtrl', function($rootScope, $scope, mainSrvc, $stateParams) {
 
   $scope.pic1 = true;
 

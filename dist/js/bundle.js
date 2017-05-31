@@ -55,7 +55,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 });
 'use strict';
 
-angular.module('app').controller('billingCtrl', function ($scope, mainSrvc) {
+angular.module('app').controller('billingCtrl', function ($rootScope, $scope, mainSrvc) {
 
   $scope.checked = true;
 
@@ -81,7 +81,7 @@ angular.module('app').controller('billingCtrl', function ($scope, mainSrvc) {
 });
 'use strict';
 
-angular.module('app').controller('cartCtrl', function ($scope, mainSrvc) {
+angular.module('app').controller('cartCtrl', function ($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'cart working';
   $scope.test2 = mainSrvc.test;
@@ -122,7 +122,7 @@ angular.module('app').controller('cartCtrl', function ($scope, mainSrvc) {
 });
 'use strict';
 
-angular.module('app').controller('checkoutCtrl', function ($scope, mainSrvc) {
+angular.module('app').controller('checkoutCtrl', function ($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'checkout working';
   $scope.test2 = mainSrvc.test;
@@ -176,7 +176,7 @@ angular.module('app').directive('footerDirective', function () {
 });
 'use strict';
 
-angular.module('app').directive('headerDirective', function () {
+angular.module('app').directive('headerDirective', function ($rootScope) {
 
   return {
     restrict: 'E',
@@ -195,7 +195,7 @@ angular.module('app').directive('helpDirective', function () {
 });
 'use strict';
 
-angular.module('app').controller('kidsCtrl', function ($scope, mainSrvc) {
+angular.module('app').controller('kidsCtrl', function ($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'kids working';
 
@@ -215,29 +215,58 @@ angular.module('app').controller('kidsCtrl', function ($scope, mainSrvc) {
 });
 'use strict';
 
-angular.module('app').controller('loginCtrl', function ($scope, mainSrvc) {
-
-  $scope.test = 'login working';
-  $scope.test2 = mainSrvc.test;
+angular.module('app').controller('loginCtrl', function ($rootScope, $scope, mainSrvc) {
 
   $scope.isShown = true;
   $scope.isShown2 = true;
 
-  $scope.login = function (returnUserEmail, returnUserPassword) {
+  $scope.isLoggedIn = false;
+
+  $scope.login = function () {
+    var returnUserEmail = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.email;
+    var returnUserPassword = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : $scope.password;
+
+
     mainSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
-      $scope.email = response.email;
-      $scope.password = response.password;
-      if (returnUserEmail === $scope.email && returnUserPassword === $scope.password) {
 
-        /*check the function names below with the functions in the view page*/
-
-        $scope.isLoggedIn = true;
-        $scope.userId = response.user_id;
-        $scope.getCartTotal($scope.userId);
-        $scope.showHide('prods');
+      if (response[0]) {
+        $rootScope.loggedUser = response;
+        console.log($rootScope);
+      } else {
+        console.log('wrong user');
       }
     });
   };
+
+  // $scope.login = (returnUserEmail, returnUserPassword) => {
+  //   mainSrvc.login(returnUserEmail, returnUserPassword).then(function(response) {
+  //     $scope.email = response.email;
+  //     $scope.password = response.password;
+  //
+  //     if (returnUserEmail !== user.email && returnUserPassword !== user.password) {
+  //
+  //     }
+  //
+  //
+  //     else {
+  //       // (returnUserEmail === $scope.email && returnUserPassword === $scope.password)
+  //
+  //       $scope.isLoggedIn = true;
+  //       $scope.userId = response.user_id;
+  //       $scope.getCartTotal($scope.userId);
+  //       $scope.showHide('prods');
+  //
+  //
+  //       user.email = '';
+  //       user.password = '';
+  //     }
+  //
+  //       /*check the function names below with the functions in the view page*/
+  //
+  //
+  //   });
+  // };
+
 });
 'use strict';
 
@@ -276,17 +305,20 @@ angular.module('app').service('mainSrvc', function ($http) {
   };
 
   this.login = function (email, password) {
+    console.log('service', email, password);
     return $http({
       method: 'POST',
-      url: '/login',
+      url: '/api/login',
       data: {
         email: email,
         password: password
       }
     }).then(function (response) {
       return response.data;
-    } /*index number from table*/);
+    });
   };
+
+  // response => response.data
 
   // CART //////////////////////////////////////////
   this.getCart = function (user) {
@@ -365,7 +397,7 @@ angular.module('app').service('mainSrvc', function ($http) {
 });
 'use strict';
 
-angular.module('app').controller('mensCtrl', function ($scope, mainSrvc) {
+angular.module('app').controller('mensCtrl', function ($rootScope, $scope, mainSrvc) {
 
   $scope.getProducts = function () {
     mainSrvc.getProducts('Mens', 'New Arrivals').then(function (response) {
@@ -379,7 +411,7 @@ angular.module('app').controller('mensCtrl', function ($scope, mainSrvc) {
 });
 'use strict';
 
-angular.module('app').controller('ordersCtrl', function ($scope, mainSrvc) {
+angular.module('app').controller('ordersCtrl', function ($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'orders working';
   $scope.test2 = mainSrvc.test;
@@ -428,25 +460,27 @@ angular.module('app').controller('registerCtrl', function ($scope, mainSrvc) {
   $scope.isShown = true;
   $scope.isShown2 = true;
 
-  $scope.emailVeri = false;
-
   $scope.register = function (user) {
+    var flag = true;
     var EMAIL_REGEXP = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
     if (user.email !== user.email_confirm) {
       $scope.match2 = true;
-      return;
+      flag = false;
     }
     console.log(EMAIL_REGEXP.test(user.email));
     if (!EMAIL_REGEXP.test(user.email)) {
       $scope.match = true;
-      return;
-    } else if (user.password.length < 8) {
+      flag = false;
+    }
+    if (user.password.length < 8) {
       $scope.match3 = true;
-      return;
-    } else if (user.password !== user.password_confirm) {
+      flag = false;
+    }
+    if (user.password !== user.password_confirm) {
       $scope.match4 = true;
-      return;
-    } else {
+      flag = false;
+    }
+    if (flag) {
       mainSrvc.register(user).then(function (response) {
         user.first_name = '';
         user.last_name = '';
@@ -471,7 +505,7 @@ angular.module('app').controller('registerCtrl', function ($scope, mainSrvc) {
 });
 'use strict';
 
-angular.module('app').controller('singleProductCtrl', function ($scope, mainSrvc, $stateParams) {
+angular.module('app').controller('singleProductCtrl', function ($rootScope, $scope, mainSrvc, $stateParams) {
 
   $scope.pic1 = true;
 
@@ -499,7 +533,7 @@ angular.module('app').controller('singleProductCtrl', function ($scope, mainSrvc
 });
 'use strict';
 
-angular.module('app').controller('accountCtrl', function ($scope, mainSrvc) {
+angular.module('app').controller('accountCtrl', function ($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'account working';
   $scope.test2 = mainSrvc.test;
@@ -511,7 +545,7 @@ angular.module('app').controller('accountCtrl', function ($scope, mainSrvc) {
 });
 'use strict';
 
-angular.module('app').directive('userDataDirective', function () {
+angular.module('app').directive('userDataDirective', function ($rootScope) {
 
   return {
     method: 'E',
@@ -520,7 +554,7 @@ angular.module('app').directive('userDataDirective', function () {
 });
 'use strict';
 
-angular.module('app').controller('womensCtrl', function ($scope, mainSrvc) {
+angular.module('app').controller('womensCtrl', function ($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'womens working';
   $scope.test2 = mainSrvc.test;

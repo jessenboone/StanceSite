@@ -4,27 +4,27 @@ angular.module('app')
   $scope.isShown = true;
   $scope.isShown2 = true;
 
-  $scope.emailVeri = false;
-
   $scope.register = (user) => {
-    var EMAIL_REGEXP = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+    var flag = true;
+    const EMAIL_REGEXP = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
     if (user.email !== user.email_confirm) {
       $scope.match2 = true;
-      return;
+      flag = false;
     }
     console.log(EMAIL_REGEXP.test(user.email));
     if (!EMAIL_REGEXP.test(user.email)) {
       $scope.match = true;
-      return;
+      flag = false;
     }
-    else if (user.password.length < 8) {
+    if (user.password.length < 8) {
       $scope.match3 = true;
-      return;
+      flag = false;
     }
-    else if (user.password !== user.password_confirm) {
+    if (user.password !== user.password_confirm) {
       $scope.match4 = true;
-      return;
-    } else {
+      flag = false;
+    }
+    if (flag) {
       mainSrvc.register(user).then(function(response) {
         user.first_name = '';
         user.last_name = '';
@@ -46,6 +46,5 @@ angular.module('app')
       });
     }
   };
-
 
 });

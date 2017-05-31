@@ -8,13 +8,19 @@
         <p class="login-p">If you are a registered user, please enter your email and password.</p>
       </div>
       <div class="login-my-acc-inputs bottom3">
-        <input type="text" placeholder="Email Address" class="login-input-style outline focus yellow">
-        <input type="password" placeholder="Password" class="login-input-style outline focus yellow">
+        <div class="login-input-div">
+          <input type="text" placeholder="Email Address" ng-model="email" class="login-input-style outline focus yellow">
+          <p class="error regular" ng-if="!user.email && emailEmpty" ng-hide="emailEmpty">This field is required.</p>
+        </div>
+        <div class="login-input-div">
+          <input type="password" placeholder="Password" ng-model="password" class="login-input-style outline focus yellow">
+          <p class="error regular" ng-if="!user.password && passwordEmpty">This field is required.</p>
+        </div>
       </div>
       <div class="login-login bold">
-        <button id="bright1" class="point bold border outline" type="submit">Login</button>
+        <button id="bright1" class="point bold border outline" type="submit" ng-click="login(email, password)">Login</button>
         <div class="login-checkbox">
-          <input type="checkbox"/>
+          <input class="checkbox" type="checkbox" checked/>
           <p>Remember Me</p>
         </div>
       </div>

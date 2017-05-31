@@ -6,41 +6,41 @@
         <p class="reg-subheading capital bold">name</p>
         <form ng-submit="register(user)">
           <div class="register-input-div">
-            <input ng-model="user.first_name" class="reg-input-style outline focus" type="text" placeholder="First Name" ng-class="{ 'require': !user.first_name && firstNameEmpty}" ng-blur="firstNameEmpty=true" required/>
+            <input ng-model="user.first_name" class="reg-input-style outline focus" type="text" placeholder="First Name" ng-class="{ 'require': !user.first_name && firstNameEmpty }" ng-blur="firstNameEmpty=true"/>
             <p class="error regular" ng-if="!user.first_name && firstNameEmpty">This field is required.</p>
           </div>
           <div class="register-input-div">
-            <input ng-model="user.last_name" class="reg-input-style outline focus" type="text" placeholder="Last Name" ng-class="{ 'require': !user.last_name && lastNameEmpty}" ng-blur="lastNameEmpty=true" required/>
+            <input ng-model="user.last_name" class="reg-input-style outline focus" type="text" placeholder="Last Name" ng-class="{ 'require': !user.last_name && lastNameEmpty }" ng-blur="lastNameEmpty=true"/>
             <p class="error regular" ng-if="!user.last_name && lastNameEmpty">This field is required.</p>
-          <div class="register-input-div">
+          </div>
         </form>
       </div>
       <div class="reg-email reg-flex">
         <p class="reg-subheading capital bold">email / login information</p>
         <form ng-submit="register(user)">
           <div class="register-input-div">
-            <input ng-model="user.email" class="reg-input-style outline focus" type="email" placeholder="Email" name="user.email" ng-class="{ 'require': !user.email && emailEmpty}" ng-blur="emailEmpty=true" required/>
+            <input ng-model="user.email" class="reg-input-style outline focus" type="email" placeholder="Email" name="user.email" ng-class="{ 'require': !user.email && emailEmpty }" ng-blur="emailEmpty=true"/>
             <p class="error regular" ng-if="!user.email && emailEmpty && !match">This field is required.</p>
             <p class="error regular" ng-if="match">Enter a valid email address.</p>
           </div>
           <div class="register-input-div">
-            <input ng-model="user.email_confirm" class="reg-input-style outline focus" type="email" placeholder="Confirm Email" ng-class="{ 'require': !user.email_confirm && emailConfirmEmpty}" ng-blur="emailConfirmEmpty=true" required/>
+            <input ng-model="user.email_confirm" class="reg-input-style outline focus" type="email" placeholder="Confirm Email" ng-class="{ 'require': !user.email_confirm && emailConfirmEmpty }" ng-blur="emailConfirmEmpty=true"/>
             <p class="error regular" ng-if="!user.email_confirm && emailConfirmEmpty && !match2">This field is required.</p>
             <p class="error regular" ng-if="match2">Email address must match.</p>
           </div>
-          <div class="register-input-div">
-            <input ng-model="user.password" class="reg-input-style outline focus" type="password" placeholder="Password" ng-class="{ 'require': !user.password && passwordEmpty}" ng-blur="passwordEmpty=true" required/>
+          <div id="idea-de-carlos" class="register-input-div">
+            <input ng-model="user.password" class="reg-input-style outline focus" type="password" placeholder="Password" ng-class="{ 'require': !user.password && passwordEmpty }" ng-blur="passwordEmpty=true"/>
             <p class="error regular" ng-if="!user.password && passwordEmpty && !match3">This field is required.</p>
-            <p class="reg-characters" ng-hide="!user.password && passwordEmpty && match3">8 - 255 characters</p>
+            <p class="reg-characters" ng-if="!user.password && !passwordEmpty && !match3">8 - 255 characters</p>
             <p class="error regular" ng-if="match3">Password must be 8 - 255 characters.</p>
           </div>
           <div class="register-input-div">
-            <input ng-model="user.password_confirm" class="reg-input-style outline focus" type="password" placeholder="Confirm Password" ng-class="{ 'require': !user.password_confirm && passwordConfirmEmpty}" ng-blur="passwordConfirmEmpty=true" required/>
+            <input ng-model="user.password_confirm" class="reg-input-style outline focus" type="password" placeholder="Confirm Password" ng-class="{ 'require': !user.password_confirm && passwordConfirmEmpty }" ng-blur="passwordConfirmEmpty=true"/>
             <p class="error regular" ng-if="!user.password_confirm && passwordConfirmEmpty">This field is required.</p>
             <p class="error regular" ng-if="match4">Password must match.</p>
           </div>
           <div class="reg-checkbox">
-            <input type="checkbox" ng-model="user.newsletter" ng-true-value="true" ng-false-value="false"/><p class="bold reg-checkbox-text">Please add me to the Stance newsletter list to receive the latest product launches and online exclusives.</p>
+            <input class="checkbox" ng-init="user.newsletter=true" type="checkbox" ng-model="user.newsletter" ng-true-value="true" ng-false-value="false" checked/><p class="bold reg-checkbox-text">Please add me to the Stance newsletter list to receive the latest product launches and online exclusives.</p>
         </form>
         </div>
         <p class="reg-privacy">Stance does not share or sell personal info. (<a href="https://www.stance.com/account?dwcont=C41383969" class="reg-privacy-policy reg-anchor" title="Privacy Policy">Privacy Policy</a>)</p>

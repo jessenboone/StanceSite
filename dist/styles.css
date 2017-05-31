@@ -2113,6 +2113,9 @@ kids-carousel .carousel-wrapper {
   line-height: 18px;
   letter-spacing: .75px; }
 
+.login-input-div {
+  height: 85px; }
+
 .login-input-style {
   border: 1px solid rgba(142, 142, 148, 0.2);
   height: 50px;
@@ -2120,7 +2123,7 @@ kids-carousel .carousel-wrapper {
   padding-left: 20px;
   font-size: 12.5px;
   font-weight: bold;
-  margin-bottom: 34px; }
+  margin-bottom: 2px; }
 
 .login-anchor {
   font-size: 13px;
@@ -2583,14 +2586,16 @@ kids-carousel .carousel-wrapper {
   margin-bottom: 47px; }
 
 .register-input-div {
-  position: relative; }
+  position: relative;
+  height: 85px; }
+
+#idea-de-carlos {
+  height: 100px; }
 
 .error {
   font-size: 12px;
   color: red;
-  position: absolute;
-  z-index: 2;
-  top: 56px; }
+  margin-left: 2px; }
 
 .reg-input-style {
   border: 1px solid rgba(142, 142, 148, 0.3);
@@ -2599,7 +2604,7 @@ kids-carousel .carousel-wrapper {
   padding-left: 20px;
   font-size: 11px;
   font-weight: bold;
-  margin-bottom: 34px; }
+  margin-bottom: 4px; }
 
 .reg-anchor {
   font-size: 14px;
@@ -2618,9 +2623,8 @@ kids-carousel .carousel-wrapper {
     margin-bottom: 10px; }
     .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-characters {
       font-size: 11.5px;
-      margin-top: -29px;
       color: #999;
-      margin-left: 5px;
+      margin-left: 2px;
       margin-bottom: 34px; }
     .reg-wrapper .reg-create-wrapper .reg-create .reg-email .reg-checkbox input {
       height: 18px;
