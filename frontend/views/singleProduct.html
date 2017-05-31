@@ -1,21 +1,14 @@
 <main class="single-wrapper regular" ng-repeat="p in singleProduct">
-<<<<<<< HEAD
-  <section class="single-images">
-    <div class="single-main-image" id="single-main-image">
-      <img ng-src={{p.details_large_main_image_url}} alt="socks" />
-    </div>
-||||||| merged common ancestors
+
   <section class="single-images">
     <div class="single-main-image">
-      <img ng-src={{p.details_large_main_image_url}} alt="socks" />
+      <!-- <img ng-src={{p.details_large_main_image_url}} alt="socks" /> -->
     </div>
-=======
->>>>>>> master
 
   <div class="single-products">
     <section class="single-images">
       <div class="single-main-image" ng-if="pic1">
-        <img src={{p.main_image_url}} alt="socks" />
+        <img src={{p.details_large_main_image_url}} alt="socks" />
       </div>
       <div class="single-main-image" ng-if="pic2">
         <img src={{p.large_front_image_url}} alt="socks" />

@@ -808,7 +808,7 @@
             <img class="american-flag" src="https://bfx-objects.borderfree.com/v1/dist/images/context-chooser/flags/US.gif" alt=""><small id="phone">1-888-391-9020</small>
         </div>
         <div class="header-left-bottom" id="header-left-bottom">
-            <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/Sites-Stance_US-Site/-/default/v1495370486050/images/svg-icons/stance-logo.svg" alt="stance logo">
+            <img ui-sref="home" src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/Sites-Stance_US-Site/-/default/v1495370486050/images/svg-icons/stance-logo.svg" alt="stance logo">
         </div>
     </div>
     <div class="header-middle">
@@ -816,9 +816,9 @@
             <h4>FREE US SHIPPING OVER $25</h4>
         </div>
         <div class="header-middle-bottom" id="header-middle-bottom">
-            <a ng-mouseover="showMen = true" ng-mouseleave="showMen = false" ng-class="{'showBorder': showMen}">MEN</a>
-            <a ng-mouseover="showWomen = true" ng-mouseleave="showWomen = false">WOMEN</a>
-            <a ng-mouseover="showKids = true" ng-mouseleave="showKids = false">KIDS</a>
+            <a class="regular" ng-mouseover="showMen = true" ng-mouseleave="showMen = false" ng-class="{'showBorder': showMen}" ui-sref="mens">MEN</a>
+            <a ng-mouseover="showWomen = true" ng-mouseleave="showWomen = false" ui-sref="womens">WOMEN</a>
+            <a ng-mouseover="showKids = true" ng-mouseleave="showKids = false" ui-sref="kids">KIDS</a>
             <a ng-mouseover="showUnderwear = true" ng-mouseleave="showUnderwear = false">UNDERWEAR</a>
             <a ng-mouseover="showDiscover = true" ng-mouseleave="showDiscover = false">DISCOVER</a>
         </div>
