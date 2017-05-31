@@ -21,8 +21,8 @@ module.exports = {
     let userInfo = [user.email, user.password];
     db.login(userInfo, (err, user) => {
       if (!err) {
-        res.status(200).send(user);
         req.session.user = user;
+        res.status(200).send(user);
       } else {
         res.send(err)
       }
