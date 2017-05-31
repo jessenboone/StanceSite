@@ -1,13 +1,16 @@
 <div class="carousel-wrapper">
   <div class="carousel">
-    <div style="width: 200px" class="slide1">Slide 1</div>
-    <div class="slide2">Slide 2</div>
-    <div class="slide3">Slide 3</div>
+    <div class="slide"><img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw5183b756/assets/in-line/socks/casual/kids/holiday/ho16-kids-holiday-01-tertiary_lg.jpg" alt="Kids Image"></div>
+    <div class="slide"><img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw8bb2438d/assets/in-line/socks/casual/kids/holiday/ho16-kids-holiday-02-tertiary_lg.jpg" alt="Kids Image"></div>
+    <div class="slide"><img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw037ee37a/assets/in-line/socks/casual/kids/holiday/ho16-kids-holiday-03-tertiary_lg.jpg" alt="Kids Image"></div>
+    <div class="slide"><img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dwab64bd1d/assets/in-line/socks/casual/kids/holiday/ho16-kids-holiday-04-tertiary_lg.jpg" alt="Kids Image"></div>
+    <div class="slide"><img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dwc2dd0f89/assets/in-line/socks/casual/kids/holiday/ho16-kids-holiday-05-tertiary_lg.jpg" alt="Kids Image"></div>
   </div>
-  <!-- <div class="slider-nav">
-    <div><</div>
-    <div>></div>
-  </div> -->
+
+  <div class="kids-carousel-arrows">
+    <button type="button" class="kids-carousel-arrow prev-arrow"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+    <button type="button" class="kids-carousel-arrow next-arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+  </div>
 
   <script type="text/javascript">
 
@@ -16,12 +19,12 @@
         infinite: true,
         cssEase: "linear"
       });
-    //  $('.slider-nav').slick({
-    //    slidesToShow: 3,
-    //    slidesToScroll: 1,
-    //    asNavFor: '.carousel',
-    //    centerMode: true,
-    //    focusOnSelect: true
-    //  });
+      $('.prev-arrow').click(function(){
+        $(".carousel").slick('slickPrev');
+      });
+      $('.next-arrow').click(function(){
+        $(".carousel").slick('slickNext');
+      });
+
   </script>
 </div>

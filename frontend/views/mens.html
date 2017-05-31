@@ -40,9 +40,9 @@
   <p class="featured-title condensed capital" id="newArrivalLink">New Arrivals</p>
   <button class="featured-button bold">Shop Now</button>
   <div class="featured-items-container">
-    <div class="featured-item" ng-repeat="p in products | limitTo:4" ui-sref="singleProduct({ id: p.product_id })">
+    <div class="featured-item" ng-repeat="p in products | limitTo:4" ui-sref="singleProduct({ id: p.product_id, mwk: p.mwk})">
       <div class="new_img">New</div>
-      <img ng-src={{p.main_image_url}} />
+      <img ng-src={{p.main_image_url}} href="/mens.html#single-main-image" />
       <hr class="line-under-featured-image">
       <p class="featured-item-name capital condensed">{{p.name}}</p>
       <p class="featured-item-style regular">{{p.collection}}</p>
@@ -55,7 +55,7 @@
   <p class="featured-title condensed capital">Super Invisibles</p>
   <button class="featured-button bold">Shop Now</button>
   <div class="featured-items-container">
-    <div class="featured-item" ng-repeat="p in prod | limitTo:-4" ui-sref="singleProduct({ id: p.product_id })">
+    <div class="featured-item" ng-repeat="p in prod | limitTo:-4" ui-sref="singleProduct({ id: p.id, mwk: p.mwk })">
       <img ng-src={{p.main_image_url}} />
       <hr class="line-under-featured-image">
       <p class="featured-item-name capital condensed">{{p.name}}</p>
