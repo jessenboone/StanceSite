@@ -48,5 +48,5 @@ gulp.task('build', ['build-css', 'build-js', 'build-views', 'build-images', 'wat
 });
 
 gulp.task('watch', function() {
-    return gulp.watch(['./index.html','./partials/*.html', "frontend/**/*.scss", 'frontend/**/*.js'], ['build']);
+    return gulp.watch(['./index.html','./frontend/views/**/*.html', "frontend/**/*.scss", 'frontend/**/*.js'], ['build']);
 });
