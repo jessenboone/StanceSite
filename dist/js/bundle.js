@@ -184,8 +184,14 @@ angular.module('app').directive('headerDirective', function ($rootScope) {
 
   return {
     restrict: 'E',
-    templateUrl: '../views/directives/headerDirective.html'
-
+    templateUrl: '../views/directives/headerDirective.html',
+    controller: function controller($scope, $rootScope) {
+      console.log($rootScope);
+      if ($rootScope.loggedUser) {
+        $scope.user = $rootScope.loggedUser[0];
+        isLoggedIn = true;
+      }
+    }
   };
 });
 'use strict';
@@ -235,6 +241,7 @@ angular.module('app').controller('loginCtrl', function ($rootScope, $scope, main
 
       if (response[0]) {
         $rootScope.loggedUser = response;
+        // headerLogin($rootScope.loggedUser);
         console.log($rootScope);
       } else {
         console.log('wrong user');

@@ -13,6 +13,7 @@ angular.module('app')
 
       if (response[0]) {
         $rootScope.loggedUser = response;
+        // headerLogin($rootScope.loggedUser);
         console.log($rootScope);
       } else {
         console.log('wrong user');
