@@ -239,12 +239,7 @@ angular.module('app').controller('loginCtrl', function ($rootScope, $scope, $loc
 
   $scope.isShown = true;
   $scope.isShown2 = true;
-<<<<<<< HEAD
-
   $scope.noMatch = false;
-=======
-  $scope.isLoggedIn = false;
->>>>>>> master
 
   $scope.login = function () {
     var returnUserEmail = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userEmail;
@@ -467,7 +462,7 @@ angular.module('app').directive('randomDirective', function (mainSrvc) {
           var arr = [];
           var rand = [];
           for (var i = 0; i < response.length; i++) {
-            if (response[i]['mwk'] === $stateParams[0].mwk) {
+            if (response[i]['mwk'] === $stateParams.mwk) {
               arr.push(response[i]);
             }
           }
