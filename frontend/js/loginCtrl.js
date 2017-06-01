@@ -5,9 +5,6 @@ angular.module('app')
   $scope.isShown2 = true;
   $scope.noMatch = false;
 
-
-
-
   $scope.login = (returnUserEmail = $scope.userEmail, returnUserPassword = $scope.userPassword) => {
 
     mainSrvc.login(returnUserEmail, returnUserPassword).then((response) => {

@@ -101,5 +101,25 @@ angular.module('app')
     }).then(response => response.data)
   };
   //need to talk to Todd about this
+  this.checkLoginStatus = () => {
+    return $http({
+      method: 'GET',
+      url: '/loggedUser'
+    }).then(response => {
+      console.log(response.data)
+      if(response.status === 200){
+        return response.data;
+      } else {
+        return
+      }
+    })
+  },
+  this.logOut = () => {
+    return $http({
+      method: 'GET',
+      url: "/logout"
+    }).then(response => {
 
+    });
+  }
 });

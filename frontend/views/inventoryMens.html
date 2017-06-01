@@ -1,0 +1,160 @@
+<div class="inventory-page-container">
+  <div class="inventory-input-container">
+    <p class="inventory-category-title capital condensed">Men</p>
+    <p class="regular inventory-category">Featured</p>
+    <p class="regular inventory-category inventory-category-selected">Casual</p>
+    <p id="inventory-first-category" class="regular inventory-category inventory-category-subcategory">Performance</p>
+    <p class="regular inventory-category inventory-category-subcategory">Premium</p>
+    <p class="regular inventory-category inventory-category-subcategory inventory-category-selected">Made in U.S.A</p>
+    <p class="regular inventory-category inventory-category-subcategory">Dress Socks</p>
+    <p class="regular inventory-category inventory-category-subcategory">The Reverse</p>
+    <p id="inventory-last-category" class="regular inventory-category inventory-category-subcategory">Topstich</p>
+    <p class="regular inventory-category">Shop by Height</p>
+    <p class="regular inventory-category">All Men</p>
+    <p class="inventory-category-title capital condensed">Filters</p>
+    <div class="inventory-filter-option">
+      <div class="inventory-filter-option-top">
+        <p class="inventory-filter-title bold">Height</p>
+        <button ng-show="!heightFilterOpened" ng-click="heightFilterOpened = !heightFilterOpened">+</button>
+        <button ng-show="heightFilterOpened" ng-click="heightFilterOpened = !heightFilterOpened">-</button>
+      </div>
+      <div ng-show="heightFilterOpened" class="inventory-filter-option-bottom">
+        <div class="checkout-checkbox">
+          <input class="checkbox" type="checkbox">
+          <p>Crew</p>
+        </div>
+        <div class="checkout-checkbox">
+          <input class="checkbox" type="checkbox">
+          <p>Boot</p>
+        </div>
+      </div>
+    </div>
+    <div class="inventory-filter-option">
+      <div class="inventory-filter-option-top">
+        <p class="inventory-filter-title bold">Pattern</p>
+        <button ng-show="!patternFilterOpened" ng-click="patternFilterOpened = !patternFilterOpened">+</button>
+        <button ng-show="patternFilterOpened" ng-click="patternFilterOpened = !patternFilterOpened">-</button>
+      </div>
+      <div ng-show="patternFilterOpened" class="inventory-filter-option-bottom">
+        <div class="checkout-checkbox">
+          <input class="checkbox" type="checkbox">
+          <p>Stripes</p>
+        </div>
+      </div>
+    </div>
+    <div class="inventory-filter-option">
+      <div class="inventory-filter-option-top">
+        <p class="inventory-filter-title bold">Fiber</p>
+        <button ng-show="!fiberFilterOpened" ng-click="fiberFilterOpened = !fiberFilterOpened">+</button>
+        <button ng-show="fiberFilterOpened" ng-click="fiberFilterOpened = !fiberFilterOpened">-</button>
+      </div>
+      <div ng-show="fiberFilterOpened" class="inventory-filter-option-bottom">
+        <div class="checkout-checkbox">
+          <input class="checkbox" type="checkbox">
+          <p>Cotton</p>
+        </div>
+      </div>
+    </div>
+    <div class="inventory-filter-option">
+      <div class="inventory-filter-option-top">
+        <p class="inventory-filter-title bold">Color</p>
+        <button ng-show="!colorFilterOpened" ng-click="colorFilterOpened = !colorFilterOpened">+</button>
+        <button ng-show="colorFilterOpened" ng-click="colorFilterOpened = !colorFilterOpened">-</button>
+      </div>
+      <div ng-show="colorFilterOpened" class="inventory-filter-option-bottom">
+        <div class="inventory-color-filter">
+          <div class="inventory-color-circle blue">
+
+          </div>
+          <div class="inventory-color-circle red">
+
+          </div>
+          <div class="inventory-color-circle green">
+
+          </div>
+          <div class="inventory-color-circle pink">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inventory-filter-option">
+      <div class="inventory-filter-option-top">
+        <p class="inventory-filter-title bold">Thickness</p>
+        <button ng-show="!thicknessFilterOpened" ng-click="thicknessFilterOpened = !thicknessFilterOpened">+</button>
+        <button ng-show="thicknessFilterOpened" ng-click="thicknessFilterOpened = !thicknessFilterOpened">-</button>
+      </div>
+      <div ng-show="thicknessFilterOpened" class="inventory-filter-option-bottom">
+        <div class="checkout-checkbox">
+          <input class="checkbox" type="checkbox">
+          <p>Sheer</p>
+        </div>
+        <div class="checkout-checkbox">
+          <input class="checkbox" type="checkbox">
+          <p>Light</p>
+        </div>
+        <div class="checkout-checkbox">
+          <input class="checkbox" type="checkbox">
+          <p>Medium</p>
+        </div>
+        <div class="checkout-checkbox">
+          <input class="checkbox" type="checkbox">
+          <p>Standard</p>
+        </div>
+      </div>
+    </div>
+    <div class="inventory-filter-option">
+      <div class="inventory-filter-option-top">
+        <p class="inventory-filter-title bold">Size</p>
+        <button ng-show="!sizeFilterOpened" ng-click="sizeFilterOpened = !sizeFilterOpened">+</button>
+        <button ng-show="sizeFilterOpened" ng-click="sizeFilterOpened = !sizeFilterOpened">-</button>
+      </div>
+      <div ng-show="sizeFilterOpened" class="inventory-filter-option-bottom">
+        <div class="inventory-size-filter">
+          <p>M</p>
+          <p>L</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="inventory-output-container">
+    <picture>
+           <source media="(min-width: 818px)" srcset="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw17eb84e4/assets/in-line/socks/premium/made-in-america/in-line-socks-premium-made-in-america-secondary_lg.jpg">
+           <source media="(min-width: 426px)" srcset="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dwfa7370ae/assets/in-line/socks/premium/made-in-america/in-line-socks-premium-made-in-america-secondary_md.jpg">
+           <img alt="Made in USA" srcset="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw4e498cdc/assets/in-line/socks/premium/made-in-america/in-line-socks-premium-made-in-america-secondary_sm.jpg">
+       </picture>
+    <div class="inventory-output-category">
+      <p class="capital condensed inventory-category-title">Crew</p>
+      <p class="regular inventory-category-item-count">1 - 75 of 125 Items</p>
+    </div>
+    <div class="inventory-output-filter">
+      <div class="inventory-filter-dropdown-nav">
+        <p class="regular">Refine(0)</p>
+        <button ng-show="!down" ng-click="down = !down">+</button>
+        <button ng-show="down" ng-click="down = !down">-</button>
+      </div>
+      <select class="inventory-sort-option regular">
+        <option value="">Sort</option>
+        <option value="mp">Most Popular</option>
+        <option value="htl">Price High to Low</option>
+        <option value="lth">Price Low to High</option>
+      </select>
+    </div>
+    <div ng-show="down" class="inventory-filter-dropdown">
+      <!--  -->
+      <!-- Here is where the sorting directive will be added -->
+      <!--  -->
+    </div>
+    <div class="featuredSocks-3">
+      <div class="featured-items-container">
+        <div class="featured-item-3" ng-repeat="p in product" ui-sref="singleProduct({ id: p.id, mwk: p.mwk })">
+          <img ng-src={{p.main_image_url}} />
+          <hr class="line-under-featured-image">
+          <p class="featured-item-name capital condensed">{{p.name}}</p>
+          <p class="featured-item-style regular">{{p.collection}}</p>
+          <p class="condensed">{{p.price | currency}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
