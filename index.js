@@ -15,11 +15,13 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist'));
 
 app.use(session({
-  secret: config.database_secret,
+  cookieName: "session",
+  secret: config.sessionSecret,
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false }
 }));
+
 // app.use(passport.initialize()); --used for auth0
 // app.use(passport.session()); -- used for auth0
 
@@ -77,6 +79,10 @@ app.get('/api/product/:id', productsControl.getSingleProduct);
 // USERS
 app.post('/api/register', usersControl.register);
 app.post('/api/login', usersControl.login);
+app.get('/logout', function(req, res) {
+  req.session.reset();
+  res.redirect('/');
+});
 
 // CART
 app.post('/api/cart', cartControl.getCart);

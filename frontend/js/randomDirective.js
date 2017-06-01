@@ -7,14 +7,15 @@ angular.module('app')
     // scope: {
     //
     // }
+
     controller: function($scope, $stateParams) {
       $scope.getProducts = () => {
         console.log('stateParams', $stateParams.mwk);
-        mainSrvc.getProducts($stateParams.mkw).then(function(response) {
+        mainSrvc.getProducts($stateParams.mwk).then(function(response) {
             var arr = []
             var rand = []
             for (var i = 0; i < response.length; i++) {
-              if (response[i]['mwk'] === 'Mens') {
+              if (response[i]['mwk'] === $stateParams[0].mwk) {
                 arr.push(response[i]);
               }
             }
@@ -27,6 +28,7 @@ angular.module('app')
       }
       $scope.getProducts();
     }
+
   }
 
 })

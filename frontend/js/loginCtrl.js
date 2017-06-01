@@ -1,13 +1,14 @@
 angular.module('app')
-.controller('loginCtrl', function($rootScope, $scope, mainSrvc) {
+.controller('loginCtrl', function($rootScope, $scope, $location, mainSrvc) {
 
   $scope.isShown = true;
   $scope.isShown2 = true;
+  $scope.noMatch = false;
 
-  $scope.isLoggedIn = false;
 
 
-  $scope.login = (returnUserEmail = $scope.email, returnUserPassword = $scope.password) => {
+
+  $scope.login = (returnUserEmail = $scope.userEmail, returnUserPassword = $scope.userPassword) => {
 
     mainSrvc.login(returnUserEmail, returnUserPassword).then((response) => {
 
@@ -15,8 +16,13 @@ angular.module('app')
         $rootScope.loggedUser = response;
         // headerLogin($rootScope.loggedUser);
         console.log($rootScope);
+        $scope.email = '';
+        $scope.password = '';
+        $location.path('account');
+        $scope.apply();
+
       } else {
-        console.log('wrong user');
+        $scope.noMatch = true;
       }
 
     });
