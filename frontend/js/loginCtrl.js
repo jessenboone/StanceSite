@@ -5,7 +5,6 @@ angular.module('app')
   $scope.isShown2 = true;
   $scope.isLoggedIn = false;
 
-
   $scope.login = (returnUserEmail = $scope.email, returnUserPassword = $scope.password) => {
 
     mainSrvc.login(returnUserEmail, returnUserPassword).then((response) => {
