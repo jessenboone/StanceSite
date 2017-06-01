@@ -22,7 +22,6 @@ angular.module('app')
 
       } else {
         $scope.noMatch = true;
-
       }
 
     });
