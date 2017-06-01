@@ -14,6 +14,7 @@ angular.module('app')
 
       if (response[0]) {
         $rootScope.loggedUser = response;
+        // headerLogin($rootScope.loggedUser);
         console.log($rootScope);
         $scope.email = '';
         $scope.password = '';

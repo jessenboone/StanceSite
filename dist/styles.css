@@ -1538,9 +1538,6 @@ table {
 .header-men-hover {
   position: absolute;
   z-index: 1;
-  border-top-color: #F2F2F2;
-  border-top-width: 1.5px;
-  border-top-style: solid;
   background-color: white;
   top: 140px;
   width: 100%;
@@ -1555,7 +1552,7 @@ table {
   cursor: pointer; }
 
 .header-hover-title {
-  width: 12%;
+  width: 15%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1567,6 +1564,8 @@ table {
   border-right-width: 1.5px;
   padding-bottom: 20px;
   color: #7B7B91; }
+  .header-hover-title p {
+    color: black; }
   .header-hover-title .header-hover-list {
     margin-top: 35px; }
     .header-hover-title .header-hover-list .hover-list-items:hover {
@@ -1579,9 +1578,6 @@ table {
 .header-women-hover {
   position: absolute;
   z-index: 25;
-  border-top-color: #F2F2F2;
-  border-top-width: 1.5px;
-  border-top-style: solid;
   background-color: white;
   top: 140px;
   width: 100%;
@@ -1595,9 +1591,6 @@ table {
 .header-kids-hover {
   position: absolute;
   z-index: 25;
-  border-top-color: #F2F2F2;
-  border-top-width: 1.5px;
-  border-top-style: solid;
   background-color: white;
   top: 140px;
   width: 100%;
@@ -1611,9 +1604,6 @@ table {
 .header-underwear-hover {
   position: absolute;
   z-index: 25;
-  border-top-color: #F2F2F2;
-  border-top-width: 1.5px;
-  border-top-style: solid;
   background-color: white;
   top: 140px;
   width: 100%;
@@ -1627,9 +1617,6 @@ table {
 .header-discover-hover {
   position: absolute;
   z-index: 25;
-  border-top-color: #F2F2F2;
-  border-top-width: 1.5px;
-  border-top-style: solid;
   background-color: white;
   top: 140px;
   width: 100%;
@@ -1646,7 +1633,10 @@ table {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  font-family: regular; }
+  font-family: regular;
+  border-bottom-color: #F2F2F2;
+  border-bottom-style: solid;
+  border-bottom-width: 1.5px; }
   .header-container .header-left {
     display: flex;
     flex-direction: column;
@@ -1659,7 +1649,7 @@ table {
       font-size: 11px;
       display: flex;
       align-items: center;
-      padding-top: 12px; }
+      padding-top: 20px; }
       .header-container .header-left .header-left-top .american-flag {
         margin-left: 30px;
         width: 25px;
@@ -1678,7 +1668,7 @@ table {
   .header-container .header-middle {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     list-style-type: none;
     width: 50%;
@@ -1695,26 +1685,25 @@ table {
       height: 50px; }
     .header-container .header-middle .header-middle-bottom {
       display: flex;
+      width: 80%;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
       font-size: 11px;
-      margin-top: 50px;
-      padding-bottom: 5px;
+      padding-bottom: 0px;
       margin-left: 60px;
-      padding-right: 30px;
       color: #7B7B91;
       text-decoration: none; }
       .header-container .header-middle .header-middle-bottom p:hover {
         cursor: pointer;
-        text-decoration: underline; }
+        color: black; }
       .header-container .header-middle .header-middle-bottom p {
         display: flex;
         justify-content: center;
         height: 67.4px;
         margin-left: 20px;
         margin-right: 20px;
-        padding-top: 10px;
+        padding-top: 20px;
         color: grey;
         text-decoration: none; }
   .header-container .header-right {
@@ -1726,7 +1715,7 @@ table {
       display: flex;
       flex-direction: row;
       align-items: center;
-      padding-top: 12px;
+      padding-top: 20px;
       font-family: regular;
       font-size: 13px;
       font-weight: 500;
@@ -1747,8 +1736,10 @@ table {
       .header-container .header-right .header-right-top .header-right-top-middle2:hover {
         cursor: pointer; }
       .header-container .header-right .header-right-top .header-right-top-middle2 {
-        font-size: 16px;
         padding-left: 35px; }
+        .header-container .header-right .header-right-top .header-right-top-middle2 i {
+          color: black;
+          font-size: 16px; }
       .header-container .header-right .header-right-top .header-right-top-right:hover {
         cursor: pointer; }
       .header-container .header-right .header-right-top .header-right-top-right {
@@ -1757,8 +1748,10 @@ table {
     .header-container .header-right .header-right-bottom {
       display: flex;
       flex-direction: row;
+      justify-content: center;
       align-items: center;
-      padding-top: 56px;
+      width: 100%;
+      padding-top: 55px;
       padding-left: 80px;
       font-size: 11.5px;
       font-family: regular;
@@ -1794,9 +1787,9 @@ table {
         transform: scaleX(-1); }
 
 .showBorder {
-  border-bottom-color: orange;
+  border-bottom-color: black;
   border-bottom-style: solid;
-  border-bottom-width: 5px; }
+  border-bottom-width: 2px; }
 
 @media (min-width: 926px) {
   #header-container-responsive {

@@ -189,8 +189,14 @@ angular.module('app').directive('headerDirective', function ($rootScope) {
 
   return {
     restrict: 'E',
-    templateUrl: '../views/directives/headerDirective.html'
-
+    templateUrl: '../views/directives/headerDirective.html',
+    controller: function controller($scope, $rootScope) {
+      console.log($rootScope);
+      if ($rootScope.loggedUser) {
+        $scope.user = $rootScope.loggedUser[0];
+        isLoggedIn = true;
+      }
+    }
   };
 });
 'use strict';
@@ -239,12 +245,7 @@ angular.module('app').controller('loginCtrl', function ($rootScope, $scope, $loc
 
   $scope.isShown = true;
   $scope.isShown2 = true;
-<<<<<<< HEAD
-
   $scope.noMatch = false;
-=======
-  $scope.isLoggedIn = false;
->>>>>>> master
 
   $scope.login = function () {
     var returnUserEmail = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userEmail;
@@ -255,6 +256,7 @@ angular.module('app').controller('loginCtrl', function ($rootScope, $scope, $loc
 
       if (response[0]) {
         $rootScope.loggedUser = response;
+        // headerLogin($rootScope.loggedUser);
         console.log($rootScope);
         $scope.email = '';
         $scope.password = '';
@@ -468,13 +470,7 @@ angular.module('app').directive('randomDirective', function (mainSrvc) {
           var arr = [];
           var rand = [];
           for (var i = 0; i < response.length; i++) {
-<<<<<<< HEAD
-            if (response[i]['mwk'] === $stateParams.mwk) {
-||||||| merged common ancestors
-            if (response[i]['mwk'] === 'Mens') {
-=======
             if (response[i]['mwk'] === $stateParams[0].mwk) {
->>>>>>> master
               arr.push(response[i]);
             }
           }
