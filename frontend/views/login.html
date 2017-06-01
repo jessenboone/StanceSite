@@ -9,12 +9,16 @@
       </div>
       <div class="login-my-acc-inputs bottom3">
         <div class="login-input-div">
-          <input type="text" placeholder="Email Address" ng-model="email" class="login-input-style outline focus yellow">
-          <p class="error regular" ng-if="!user.email && emailEmpty" ng-hide="emailEmpty">This field is required.</p>
+          <input type="email" placeholder="Email Address" ng-model="userEmail" class="login-input-style outline focus yellow"
+          ng-class="{ 'required': !userEmail && emailEmpty }" ng-blur="emailEmpty=true"/>
+          <p class="error regular" ng-if="!userEmail && emailEmpty && !noMatch">This field is required.</p>
+          <p class="error regular" ng-if="noMatch">Email and password do not match.</p>
         </div>
         <div class="login-input-div">
-          <input type="password" placeholder="Password" ng-model="password" class="login-input-style outline focus yellow">
-          <p class="error regular" ng-if="!user.password && passwordEmpty">This field is required.</p>
+          <input type="password" placeholder="Password" ng-model="userPassword" class="login-input-style outline focus yellow"
+          ng-class="{ 'required': !userPassword && passwordEmpty }" ng-blur="passwordEmpty=true"/>
+          <p class="error regular" ng-if="!userPassword && passwordEmpty && !noMatch">This field is required.</p>
+          <p class="error regular" ng-if="noMatch">Email and password do not match.</p>
         </div>
       </div>
       <div class="login-login bold">
@@ -33,9 +37,9 @@
         <p class="login-p login-check-order-p">See your order even if you are not a registered user. Enter the order number and the billing address ZIP code.</p>
       </div>
       <div class="login-check-order-inputs">
-        <input type="text" placeholder="Order Number" class="login-input-style outline focus">
-        <input type="text" placeholder="Order Email" class="login-input-style outline focus">
-        <input type="text" placeholder="Billing Zip Code" class="login-input-style outline focus">
+        <input type="text" placeholder="Order Number" class="login-input-style login-order-style outline focus">
+        <input type="text" placeholder="Order Email" class="login-input-style login-order-style outline focus">
+        <input type="text" placeholder="Billing Zip Code" class="login-input-style login-order-style outline focus">
       </div>
       <div class="login-check-order-button">
         <p>For International Orders, please contact customer service.</p>
@@ -71,7 +75,7 @@
   <section class="login-section-3">
     <div class="login-acc-settings-div">
       <div class="login-my-acc">
-        <p><a class="bold" href="#">My Account</a></p>
+        <p><a class="bold" ui-sref="account">My Account</a></p>
       </div>
       <div class="login-settings-confidently">
         <div class="login-settings-sub bottom3">
