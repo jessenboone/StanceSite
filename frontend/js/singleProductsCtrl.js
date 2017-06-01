@@ -10,6 +10,13 @@ angular.module('app')
   }
   $scope.getSingleProduct();
 
+  $scope.createItem = (quantity, purchase) => {
+    $rootScope.itemsPurchased.push(
+      {purchase,
+      quantity}
+    );
+  };
+
   // $scope.getProducts = () => {
   //   mainSrvc.getProducts($stateParams.mwk).then(function(response) {
   //     console.log(response);

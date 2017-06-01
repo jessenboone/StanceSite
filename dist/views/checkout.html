@@ -1,0 +1,145 @@
+<div class="checkout-steps-container">
+  <div class="checkout-steps bold">
+    <p class="capital checkout-step">Step 1: Shipping</p>
+    <p class="capital checkout-step">Step 2: Billing</p>
+    <p class="capital checkout-step">Step 3: Place Order</p>
+  </div>
+</div>
+<div class="checkout-container">
+  <div class="checkout-shipping-container">
+    <p class="checkout-input-title condensed capital">Select or enter shipping address</p>
+    <form class="checkout-input-form" action="index.html" method="post">
+      <label for="checkout-firstname">First Name</label>
+      <input type="text" id="checkout-firstname">
+      <label for="checkout-lastname">Last Name</label>
+      <input type="text" id="checkout-lastname">
+      <label for="checkout-lastname">Street Address, PO Box</label>
+      <input type="text" id="checkout-lastname">
+      <label for="checkout-lastname">Apartment, Suite, Unit, Building, Floor (Optional)</label>
+      <input type="text" id="checkout-lastname">
+      <label for="checkout-lastname">City</label>
+      <input type="text" id="checkout-lastname">
+      <label for="checkout-lastname">ZIP Code</label>
+      <input type="text" id="checkout-lastname">
+      <label for="checkout-country">Country</label>
+      <select id="checkout-country">
+        <option>Choose...</option>
+        <option>United States</option>
+        <option>Canada</option>
+        <option>Mexico</option>
+      </select>
+      <label for="checkout-state">State</label>
+      <select id="checkout-state">
+        <option>Choose...</option>
+      	<option value="AL">Alabama</option>
+      	<option value="AK">Alaska</option>
+      	<option value="AZ">Arizona</option>
+      	<option value="AR">Arkansas</option>
+      	<option value="CA">California</option>
+      	<option value="CO">Colorado</option>
+      	<option value="CT">Connecticut</option>
+      	<option value="DE">Delaware</option>
+      	<option value="DC">District Of Columbia</option>
+      	<option value="FL">Florida</option>
+      	<option value="GA">Georgia</option>
+      	<option value="HI">Hawaii</option>
+      	<option value="ID">Idaho</option>
+      	<option value="IL">Illinois</option>
+      	<option value="IN">Indiana</option>
+      	<option value="IA">Iowa</option>
+      	<option value="KS">Kansas</option>
+      	<option value="KY">Kentucky</option>
+      	<option value="LA">Louisiana</option>
+      	<option value="ME">Maine</option>
+      	<option value="MD">Maryland</option>
+      	<option value="MA">Massachusetts</option>
+      	<option value="MI">Michigan</option>
+      	<option value="MN">Minnesota</option>
+      	<option value="MS">Mississippi</option>
+      	<option value="MO">Missouri</option>
+      	<option value="MT">Montana</option>
+      	<option value="NE">Nebraska</option>
+      	<option value="NV">Nevada</option>
+      	<option value="NH">New Hampshire</option>
+      	<option value="NJ">New Jersey</option>
+      	<option value="NM">New Mexico</option>
+      	<option value="NY">New York</option>
+      	<option value="NC">North Carolina</option>
+      	<option value="ND">North Dakota</option>
+      	<option value="OH">Ohio</option>
+      	<option value="OK">Oklahoma</option>
+      	<option value="OR">Oregon</option>
+      	<option value="PA">Pennsylvania</option>
+      	<option value="RI">Rhode Island</option>
+      	<option value="SC">South Carolina</option>
+      	<option value="SD">South Dakota</option>
+      	<option value="TN">Tennessee</option>
+      	<option value="TX">Texas</option>
+      	<option value="UT">Utah</option>
+      	<option value="VT">Vermont</option>
+      	<option value="VA">Virginia</option>
+      	<option value="WA">Washington</option>
+      	<option value="WV">West Virginia</option>
+      	<option value="WI">Wisconsin</option>
+      	<option value="WY">Wyoming</option>
+      </select>
+      <label for="checkout-lastname">Phone</label>
+      <input type="text" id="checkout-lastname">
+      <div class="checkout-example-phone-container">
+        <p class="checkout-example-phone regular">Example: 333-333-3333</p>
+      </div>
+      <div class="checkout-checkbox">
+        <input class="checkbox" type="checkbox" checked>
+        <p>Add to Address Book</p>
+      </div>
+      <div class="checkout-checkbox">
+        <input class="checkbox" type="checkbox" checked>
+        <p>Use this address for Billing</p>
+      </div>
+      <p class="checkout-gift-title bold">Is this a gift?</p>
+      <div class="checkbox-gift-radio-container">
+        <div class="checkbox-gift-radio-option">
+          <input type="radio" name="gift" class="bullet" id="gift-true" value="true">
+          <label for="gift-true">Yes</label>
+        </div>
+        <div class="checkbox-gift-radio-option">
+          <input type="radio" name="gift" class="bullet" id="gift-false" value="false">
+          <label for="gift-false">No</label>
+        </div>
+      </div>
+    </form>
+    <p class="checkout-input-title condensed capital">Select Shipping Method</p>
+    <form ng-init="shippingMethod=uspsGround" class="checkout-shipping-option-form" action="index.html" method="post">
+      <div class="checkout-shipping-option">
+        <input class="bullet" type="radio" id="USPS-ground" ng-value="uspsGround" ng-model="shippingMethod" name="checkout-shipping-address">
+        <label for="USPS-Ground">
+          <p class="bold">USPS Shipping: $0.00 (<a href="#">Details</a>)</p>
+          <p class="regular">(USPS Ground Shipping 4-6 Business Days)</p>
+        </label>
+      </div>
+      <div class="checkout-shipping-option">
+        <input class="bullet" type="radio" id="UPS-ground" ng-value="upsGround" ng-model="shippingMethod" name="checkout-shipping-address">
+        <label for="UPS-ground">
+          <p class="bold">UPS Ground: $7.00 (<a href="#">Details</a>)</p>
+          <p class="regular">(UPS Ground Shipping 3-5 Business Days)</p>
+        </label>
+      </div>
+      <div class="checkout-shipping-option">
+        <input class="bullet" type="radio" id="UPS-2nd-day" ng-value="upsSecondDay" ng-model="shippingMethod" name="checkout-shipping-address">
+        <label for="UPS-2nd-day">
+          <p class="bold">UPS Second Day: $12.00 (<a href="#">Details</a>)</p>
+          <p class="regular">(Two Business Day Delivery)</p>
+        </label>
+      </div>
+      <div class="checkout-shipping-option">
+        <input class="bullet" type="radio" id="UPS-next-day" ng-value="upsNextDay" ng-model="shippingMethod" name="checkout-shipping-address">
+        <label for="UPS-next-day">
+          <p class="bold">UPS Next Day Delivery: $18.00 (<a href="#">Details</a>)</p>
+          <p class="regular">(Next Business Day Delivery)</p>
+        </label>
+      </div>
+    </form>
+    <button class="checkout-button bold" ui-sref="billing">Continue to Billing</button>
+  </div>
+  <order-summary></order-summary>
+</div>

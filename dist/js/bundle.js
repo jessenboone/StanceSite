@@ -539,6 +539,11 @@ angular.module('app').controller('singleProductCtrl', function ($rootScope, $sco
   };
   $scope.getSingleProduct();
 
+  $scope.createItem = function (quantity, purchase) {
+    $rootScope.itemsPurchased.push({ purchase: purchase,
+      quantity: quantity });
+  };
+
   // $scope.getProducts = () => {
   //   mainSrvc.getProducts($stateParams.mwk).then(function(response) {
   //     console.log(response);
