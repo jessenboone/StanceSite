@@ -1,0 +1,58 @@
+<main class="acc-wrapper regular">
+  <div class="acc-div">
+    <section class="acc-my-acc">
+      <p class="acc-heading capital condensed">my account | welcome, {{user.first_name}}jason <span class="condensed">(<a ng-click="logOut()">logout</a>)</span></p>
+    </section>
+
+    <div class="acc-divs">
+      <section class="acc-personal-orders acc-padding acc-div-divide">
+        <div class="acc-div-double acc-border-bottom">
+          <a class="acc-noline" href="#">
+            <p class="acc-subheading capital condensed">personal data</p>
+            <p class="acc-text">Show or update your personal information</p>
+          </a>
+        </div>
+        <div class="acc-div-double acc-border-bottom">
+          <a class="acc-noline" ui-sref="orders">
+            <p class="acc-subheading capital condensed">orders</p>
+            <div class="acc-text">
+              <p>Check the status of your orders or see past orders.</p>
+              <p>For International Orders, please contact customer service.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="acc-address-wishlist acc-padding acc-div-divide">
+        <div class="acc-div-double acc-border-bottom">
+          <a class="acc-noline" href="#">
+            <p class="acc-subheading capital condensed">address</p>
+            <p class="acc-text">Manage your billing and shipping addresses</p>
+          </a>
+        </div>
+        <div class="acc-div-double acc-border-bottom">
+          <a class="acc-noline" href="#">
+            <p class="acc-subheading capital condensed">wish list</p>
+            <p class="acc-text">View and modify items on your list or invite friends</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="acc-padding acc-div-divide">
+        <div class="acc-payment acc-border-bottom acc-div-double">
+          <a class="acc-noline" href="#">
+            <p class="acc-subheading capital condensed">payment settings</p>
+            <p class="acc-text">Manage credit cards</p>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="acc-account-management">
+    <user-data-directive></user-data-directive>
+    <div class="acc-directive">
+      <help-directive></help-directive>
+    </div>
+  </section>
+</main>
