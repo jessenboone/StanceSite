@@ -63,5 +63,10 @@ angular.module('app', ['ui.router'])
       templateUrl: './../views/billing.html',
       controller: 'billingCtrl'
     })
+    .state("inventory", {
+      url: "/inventory",
+      templateUrl: "./../views/inventory.html",
+      controller: "inventoryCtrl"
+    })
 
 });
