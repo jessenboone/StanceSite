@@ -436,14 +436,15 @@ angular.module('app').directive('randomDirective', function (mainSrvc) {
     // scope: {
     //
     // }
+
     controller: function controller($scope, $stateParams) {
       $scope.getProducts = function () {
         console.log('stateParams', $stateParams.mwk);
-        mainSrvc.getProducts($stateParams.mkw).then(function (response) {
+        mainSrvc.getProducts($stateParams.mwk).then(function (response) {
           var arr = [];
           var rand = [];
           for (var i = 0; i < response.length; i++) {
-            if (response[i]['mwk'] === 'Mens') {
+            if (response[i]['mwk'] === $stateParams.mwk) {
               arr.push(response[i]);
             }
           }
@@ -455,6 +456,7 @@ angular.module('app').directive('randomDirective', function (mainSrvc) {
       };
       $scope.getProducts();
     }
+
   };
 });
 'use strict';
@@ -519,6 +521,14 @@ angular.module('app').controller('singleProductCtrl', function ($rootScope, $sco
     });
   };
   $scope.getSingleProduct();
+
+  // $scope.createItem = (quantity, product_id) => {
+  //   if($rootScope.loggedUser[0].id){
+  //     mainServ.createCart(quantity, product_id).then(function(response){
+  //
+  //     })
+  //   }
+  // }
 
   // $scope.getProducts = () => {
   //   mainSrvc.getProducts($stateParams.mwk).then(function(response) {

@@ -8,13 +8,13 @@
   <div class="single-products">
     <section class="single-images">
       <div class="single-main-image" ng-if="pic1">
-        <img src={{p.details_large_main_image_url}} alt="socks" />
+        <img ng-src={{p.details_large_main_image_url}} alt="socks" />
       </div>
       <div class="single-main-image" ng-if="pic2">
-        <img src={{p.large_front_image_url}} alt="socks" />
+        <img ng-src={{p.large_front_image_url}} alt="socks" />
       </div>
       <div class="single-main-image" ng-if="pic3">
-        <img src={{p.large_back_image_url}} alt="socks" />
+        <img ng-src={{p.large_back_image_url}} alt="socks" />
       </div>
 
       <div class="single-image-views">
@@ -42,10 +42,12 @@
       </select>
       <div class="single-qty">
         <p class="bold">QTY</p>
-        <input class="single-box bold" type="text" name="" value="1" />
+        <input class="single-box bold" type="text" value="1" min="1" ng-model="quantity"/>
       </div>
       <p class="single-availability"><span class="bold">Availability:</span> In Stock</p>
-      <button class="bold" id="single-bright" type="button" name="button">Add to Cart</button>
+      <form ng-submit="createItem(quantity, p.product_id)">
+        <button class="bold" id="single-bright" type="submit" name="button">Add to Cart</button>
+      </form>
       <div class="single-wish-fit">
         <div class="single-wishlist single-child">
           <i class="fa fa-heart fa-lg" aria-hidden="true"></i>

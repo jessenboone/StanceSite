@@ -3,12 +3,22 @@ angular.module('app')
 
   $scope.pic1 = true;
 
+
+
   $scope.getSingleProduct = () => {
     mainSrvc.getSingleProduct($stateParams.id).then(function(response) {
       $scope.singleProduct = response;
     });
   }
   $scope.getSingleProduct();
+
+  // $scope.createItem = (quantity, product_id) => {
+  //   if($rootScope.loggedUser[0].id){
+  //     mainServ.createCart(quantity, product_id).then(function(response){
+  //
+  //     })
+  //   }
+  // }
 
   // $scope.getProducts = () => {
   //   mainSrvc.getProducts($stateParams.mwk).then(function(response) {
