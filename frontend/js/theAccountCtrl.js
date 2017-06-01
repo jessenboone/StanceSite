@@ -1,8 +1,7 @@
 angular.module('app')
 .controller('accountCtrl', function($rootScope, $scope, mainSrvc, $location, $timeout) {
 
-  $scope.test = 'account working';
-  $scope.test2 = mainSrvc.test;
+  $scope.user = $rootScope.loggedUser[0];
 
   $scope.isShown = true;
   $scope.isShown2 = true;

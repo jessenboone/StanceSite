@@ -7,6 +7,7 @@ angular.module('app')
     // scope: {
     //
     // }
+
     controller: function($scope, $stateParams) {
       $scope.getProducts = () => {
         console.log('stateParams', $stateParams.mwk);
@@ -27,5 +28,4 @@ angular.module('app')
       $scope.getProducts();
     }
   }
-
-})
+});
