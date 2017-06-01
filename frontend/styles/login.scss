@@ -22,6 +22,12 @@ $aqua: #0493c1;
   border: none;
 }
 
+.error {
+  font-size: 12px;
+  color: red;
+  margin-left: 2px;
+}
+
 .outline {
   outline: none;
 }
@@ -81,6 +87,10 @@ $aqua: #0493c1;
   font-size: 12.5px;
   font-weight: bold;
   margin-bottom: 2px;
+}
+
+.login-order-style {
+  margin-bottom: 35px;
 }
 
 .login-anchor {
@@ -309,4 +319,8 @@ $aqua: #0493c1;
       }
     }
   }
+}
+
+.required {
+  border: 1px solid red;
 }
