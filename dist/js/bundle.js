@@ -51,6 +51,10 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     url: '/billing',
     templateUrl: './../views/billing.html',
     controller: 'billingCtrl'
+  }).state("inventory", {
+    url: "/inventory",
+    templateUrl: "./../views/inventory.html",
+    controller: "inventoryCtrl"
   });
 });
 'use strict';
@@ -168,6 +172,7 @@ angular.module('app').controller('checkoutCtrl', function ($rootScope, $scope, m
     });
   };
 });
+"use strict";
 'use strict';
 
 angular.module('app').directive('footerDirective', function () {
@@ -199,6 +204,17 @@ angular.module('app').directive('helpDirective', function () {
 });
 'use strict';
 
+angular.module('app').controller('inventoryCtrl', function ($scope, mainSrvc, $stateParams) {
+
+  $scope.getProducts = function () {
+    mainSrvc.getProducts("Womens").then(function (response) {
+      $scope.product = response;
+    });
+  };
+  $scope.getProducts();
+});
+'use strict';
+
 angular.module('app').controller('kidsCtrl', function ($rootScope, $scope, mainSrvc) {
 
   $scope.test = 'kids working';
@@ -219,16 +235,20 @@ angular.module('app').controller('kidsCtrl', function ($rootScope, $scope, mainS
 });
 'use strict';
 
-angular.module('app').controller('loginCtrl', function ($rootScope, $scope, mainSrvc) {
+angular.module('app').controller('loginCtrl', function ($rootScope, $scope, $location, mainSrvc) {
 
   $scope.isShown = true;
   $scope.isShown2 = true;
+<<<<<<< HEAD
 
+  $scope.noMatch = false;
+=======
   $scope.isLoggedIn = false;
+>>>>>>> master
 
   $scope.login = function () {
-    var returnUserEmail = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.email;
-    var returnUserPassword = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : $scope.password;
+    var returnUserEmail = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userEmail;
+    var returnUserPassword = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : $scope.userPassword;
 
 
     mainSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
@@ -236,8 +256,12 @@ angular.module('app').controller('loginCtrl', function ($rootScope, $scope, main
       if (response[0]) {
         $rootScope.loggedUser = response;
         console.log($rootScope);
+        $scope.email = '';
+        $scope.password = '';
+        $location.path('account');
+        $scope.apply();
       } else {
-        console.log('wrong user');
+        $scope.noMatch = true;
       }
     });
   };
@@ -444,7 +468,13 @@ angular.module('app').directive('randomDirective', function (mainSrvc) {
           var arr = [];
           var rand = [];
           for (var i = 0; i < response.length; i++) {
+<<<<<<< HEAD
             if (response[i]['mwk'] === $stateParams.mwk) {
+||||||| merged common ancestors
+            if (response[i]['mwk'] === 'Mens') {
+=======
+            if (response[i]['mwk'] === $stateParams[0].mwk) {
+>>>>>>> master
               arr.push(response[i]);
             }
           }
@@ -549,8 +579,7 @@ angular.module('app').controller('singleProductCtrl', function ($rootScope, $sco
 
 angular.module('app').controller('accountCtrl', function ($rootScope, $scope, mainSrvc) {
 
-  $scope.test = 'account working';
-  $scope.test2 = mainSrvc.test;
+  $scope.user = $rootScope.loggedUser[0];
 
   $scope.isShown = true;
   $scope.isShown2 = true;

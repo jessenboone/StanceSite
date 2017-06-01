@@ -15,7 +15,7 @@ angular.module('app')
             var arr = []
             var rand = []
             for (var i = 0; i < response.length; i++) {
-              if (response[i]['mwk'] === $stateParams.mwk) {
+              if (response[i]['mwk'] === $stateParams[0].mwk) {
                 arr.push(response[i]);
               }
             }
