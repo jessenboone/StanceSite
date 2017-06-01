@@ -41,6 +41,7 @@ module.exports = {
   },
 
   createCart: (req, res) => {
+    console.log(req.body);
     let item = req.body;
     db.get_cart([item.user_id], (err, cart) => {
       if (!err) {

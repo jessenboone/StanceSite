@@ -36,7 +36,7 @@ module.exports = {
       delete req.session.user[0].password;
       res.status(200).send(req.session.user[0]);
     } else {
-      res.status(404).send();
+      res.status(201).send();
     }
   }
 };

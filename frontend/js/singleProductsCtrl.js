@@ -4,7 +4,6 @@ angular.module('app')
   $scope.pic1 = true;
 
 
-
   $scope.getSingleProduct = () => {
     mainSrvc.getSingleProduct($stateParams.id).then(function(response) {
       $scope.singleProduct = response;
@@ -13,10 +12,13 @@ angular.module('app')
   $scope.getSingleProduct();
 
   $scope.createItem = (quantity, purchase) => {
-    $rootScope.itemsPurchased.push(
-      {purchase,
-      quantity}
-    );
+    if ($rootScope.loggedUser) {
+      mainSrvc.createCart(quantity, purchase, $rootScope.loggedUser.id).then(function(response) {
+        console.log('added to cart');
+      });
+    } else {
+      mainSrvc.unloggedUserCart(quantity, purchase).then(function(response) {});
+    }
   };
 
   // $scope.createItem = (quantity, product_id) => {

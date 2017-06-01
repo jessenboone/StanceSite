@@ -205,10 +205,9 @@ angular.module('app').directive('headerDirective', function ($rootScope) {
     restrict: 'E',
     templateUrl: '../views/directives/headerDirective.html',
     controller: function controller($scope, $rootScope) {
-      console.log($rootScope);
       if ($rootScope.loggedUser) {
         $scope.user = $rootScope.loggedUser[0];
-        isLoggedIn = true;
+        // isLoggedIn = true;
       }
     }
   };
@@ -291,13 +290,10 @@ angular.module('app').controller('loginCtrl', function ($rootScope, $scope, $loc
     mainSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
 
       if (response[0]) {
-        $rootScope.loggedUser = response;
-        // headerLogin($rootScope.loggedUser);
-        console.log($rootScope);
+        $rootScope.loggedUser = response[0];
         $scope.email = '';
         $scope.password = '';
         $location.path('account');
-        $scope.apply();
       } else {
         $scope.noMatch = true;
       }
@@ -418,7 +414,7 @@ angular.module('app').service('mainSrvc', function ($http) {
   this.createCart = function (quantity, purchase, user_id) {
     return $http({
       method: 'POST',
-      url: '/create/cart',
+      url: '/api/cart/add',
       data: {
         quantity: quantity,
         purchase: purchase,
@@ -426,6 +422,17 @@ angular.module('app').service('mainSrvc', function ($http) {
       }
     }).then(function (response) {
       return response;
+    });
+  };
+
+  this.unloggedUserCart = function (quantity, purchase) {
+    return $http({
+      method: 'POST',
+      url: '/api/cart/add/unlogged',
+      data: {
+        quantity: quantity,
+        purchase: purchase
+      }
     });
   };
 
@@ -465,7 +472,6 @@ angular.module('app').service('mainSrvc', function ($http) {
       method: 'GET',
       url: '/loggedUser'
     }).then(function (response) {
-      console.log(response.data);
       if (response.status === 200) {
         return response.data;
       } else {
@@ -604,8 +610,13 @@ angular.module('app').controller('singleProductCtrl', function ($rootScope, $sco
   $scope.getSingleProduct();
 
   $scope.createItem = function (quantity, purchase) {
-    $rootScope.itemsPurchased.push({ purchase: purchase,
-      quantity: quantity });
+    if ($rootScope.loggedUser) {
+      mainSrvc.createCart(quantity, purchase, $rootScope.loggedUser.id).then(function (response) {
+        console.log('added to cart');
+      });
+    } else {
+      mainSrvc.unloggedUserCart(quantity, purchase).then(function (response) {});
+    }
   };
 
   // $scope.createItem = (quantity, product_id) => {
@@ -635,7 +646,7 @@ angular.module('app').controller('singleProductCtrl', function ($rootScope, $sco
 
 angular.module('app').controller('accountCtrl', function ($rootScope, $scope, mainSrvc, $location, $timeout) {
 
-  $scope.user = $rootScope.loggedUser[0];
+  $scope.user = $rootScope.loggedUser;
 
   $scope.isShown = true;
   $scope.isShown2 = true;
@@ -647,7 +658,8 @@ angular.module('app').controller('accountCtrl', function ($rootScope, $scope, ma
 
     $timeout(function () {
       $location.path("login");
-      $scope.$apply();
+      //  $scope.$apply();
+      $rootScope.$apply($rootScope.loggedUser = false);
     }, 300);
   };
 });

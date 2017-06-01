@@ -19,23 +19,10 @@ app.use(session({
   secret: config.sessionSecret,
   resave: false,
   saveUninitialized: true,
-  // cookie: { secure: false }
+  duration: 30 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000
+  // cookie: { maxAge:600000 }
 }));
-
-// app.use(function(req, res, next) {
-//   if (req.session.user) {
-//     console.log("found");
-//     delete req.session.user[0].password; // delete the password from the session
-//     // res.locals.user = req.session.user;
-//
-//     res.body.loginStatus = req.session.user[0];
-//       // finishing processing the middleware and run the route
-//       next();
-//   } else {
-//     console.log("not found");
-//     next();
-//   }
-// });
 
 // app.use(passport.initialize()); --used for auth0
 // app.use(passport.session()); -- used for auth0
