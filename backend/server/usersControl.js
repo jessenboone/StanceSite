@@ -28,5 +28,15 @@ module.exports = {
         res.send(err)
       }
     });
+  },
+
+  checkLoginStatus: (req, res) => {
+    console.log(req.session)
+    if (req.session.user) {
+      delete req.session.user[0].password;
+      res.status(200).send(req.session.user[0]);
+    } else {
+      res.status(404).send();
+    }
   }
 };
