@@ -68,7 +68,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 
 angular.module('app').run(function ($rootScope, mainSrvc) {
   mainSrvc.checkLoginStatus().then(function (response) {
-    $rootScope.loggedUser = response;
+    $rootScope.loggedUser = response.data;
   });
 });
 'use strict';
@@ -208,7 +208,6 @@ angular.module('app').directive('headerDirective', function ($rootScope) {
       console.log($rootScope);
       if ($rootScope.loggedUser) {
         $scope.user = $rootScope.loggedUser[0];
-        isLoggedIn = true;
       }
     }
   };

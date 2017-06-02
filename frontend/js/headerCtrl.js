@@ -8,7 +8,6 @@ angular.module('app')
       console.log($rootScope);
       if ($rootScope.loggedUser) {
         $scope.user = $rootScope.loggedUser[0];
-        isLoggedIn = true;
       }
     }
   }
