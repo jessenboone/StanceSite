@@ -1,0 +1,91 @@
+<div class="home-wrapper">
+  <!-- insert header directive -->
+
+  <!-- starting jumbotron -->
+  <div class="home-jumbotron-container">
+    <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dwb6ebbc25/2017/assets/in-line/socks/casual/kids/dual-gender/lifestyle/chairs/kids-dual-gender-chairs-secondary_md.jpg" alt="Kids New Arrivals">
+    <div class="home-jumbotron-text">
+      <p class="home-subheading capital regular">New Arrivals</p>
+      <p class="home-heading capital condensed">All-day Play</p>
+      <p class="home-text regular">Introduce a little anarchy with heart-spotted pinks and purples, southwestern stripes, and hand-drawn monsters.</p>
+      <button href="#boys" class="home-button bold">Shop new Arrivals</button>
+    </div>
+  </div>
+  <div class="home-collection-images condensed capital">
+    <div class="home-collection">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw659d1a4d/2017/assets/in-line/socks/casual/kids/boys/lifestyle/purple-hand/secondary_md.jpg" alt="Image of stars and stripes">
+      <p>Boys</p>
+    </div>
+    <div class="home-collection">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw11cbe815/2017/assets/in-line/socks/casual/kids/girls/lifestyle/girls-americana/secondary_md.jpg" alt="Image of basketball legends socks">
+      <p>Girls</p>
+    </div>
+    <div class="home-collection">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw2c8ff372/2017/assets/in-line/socks/casual/baby-toddler/boys/lifestyle/tricycle/baby-toddler-tricycle-secondary_md.jpg" alt="image of womens socks">
+      <p>Baby</p>
+    </div>
+    <div class="home-collection">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dwc0b96eb1/assets/in-line/underwear/boxer-briefs/merch/in-line-underwear-boys-secondary-new_md.jpg" alt="image of kids socks">
+      <p>Boys Underwear</p>
+    </div>
+  </div>
+</div>
+
+<div class="featuredSocks">
+  <p class="featured-title condensed capital" id="boys">Boys</p>
+  <button class="featured-button bold">Shop Now</button>
+  <div class="featured-items-container">
+    <div class="featured-item" ng-repeat="p in products | limitTo:4" ui-sref="singleProduct({ id: p.product_id, mwk: p.mwk })">
+      <img ng-src={{p.main_image_url}} />
+      <hr class="line-under-featured-image">
+      <p class="featured-item-name capital condensed">{{p.name}}</p>
+      <p class="featured-item-style regular">{{p.collection}}</p>
+      <p class="condensed">{{p.price | currency}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="featuredSocks">
+  <p class="featured-title condensed capital">Girls</p>
+  <button class="featured-button bold">Shop Now</button>
+  <div class="featured-items-container">
+    <div class="featured-item" ng-repeat="p in product | limitTo:-4" ui-sref="singleProduct({ id: p.product_id, mwk: p.mwk })">
+      <img ng-src={{p.main_image_url}} />
+      <hr class="line-under-featured-image">
+      <p class="featured-item-name capital condensed">{{p.name}}</p>
+      <p class="featured-item-style regular">{{p.collection}}</p>
+      <p class="condensed">{{p.price | currency}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="featuredSocks">
+  <p class="featured-title condensed capital">Baby</p>
+  <button class="featured-button bold">Shop Now</button>
+  <div class="featured-items-container">
+    <div class="featured-item" ng-repeat="p in prod | limitTo:-4" ui-sref="singleProduct({ id: p.product_id, mwk: p.mwk })">
+      <img ng-src={{p.main_image_url}} />
+      <hr class="line-under-featured-image">
+      <p class="featured-item-name capital condensed">{{p.name}}</p>
+      <p class="featured-item-style regular">{{p.collection}}</p>
+      <p class="condensed">{{p.price | currency}}</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="kids-carousel-container">
+  <div class="kids-carousel-top">
+    <p class="kids-carousel-title capital condensed">It's their world,<br>we're just<br>living in it.</p>
+    <div class="line-under-kids-carousel-title"></div>
+    <p class="kids-carousel-text regular">Get them started on the right foot. With new styles, including a few for the "big kids," you're sure to find something they'll all love.</p>
+    <button class="kids-carousel-button bold">Shop New Arrivals</button>
+  </div>
+  <div class="kids-carousel-bottom">
+    <div class="kids-carousel-bottom-description">
+      <div class="line-in-kids-carousel-bottom-description"></div>
+      <p class="kids-carousel-description bold">Kids New Arrivals</p>
+    </div>
+    <kids-carousel></kids-carousel>
+  </div>
+</div>

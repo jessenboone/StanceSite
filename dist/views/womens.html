@@ -1,0 +1,97 @@
+
+<div class="home-wrapper">
+  <!-- insert header directive -->
+
+  <!-- starting jumbotron -->
+  <div class="home-jumbotron-container">
+    <picture>
+            <source media="(min-width: 1440px)" srcset="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dwc996a8b0/2017/assets/in-line/socks/casual/blue/women/crew/pink-and-cheetah/women-summer-lifestyle-primary_lg.jpg">
+            <source media="(min-width: 750px)" srcset="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw2d3349b9/2017/assets/in-line/socks/casual/blue/women/crew/pink-and-cheetah/women-summer-lifestyle-primary_md.jpg">
+            <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dwe9c1966b/2017/assets/in-line/socks/casual/blue/women/crew/pink-and-cheetah/women-summer-lifestyle-secondary_md.jpg" alt="Women's New Arrivals">
+    </picture>
+    <div class="home-jumbotron-text">
+      <p class="home-subheading capital regular">New Arrivals</p>
+      <p class="home-heading capital condensed">This just in</p>
+      <p class="home-text regular">Shorter silhouettes, brighter designs, and new collections, just in time for warmer weather.</p>
+      <button class="home-button bold">Shop New Arrivals</button>
+    </div>
+  </div>
+  <div class="home-collection-images condensed capital">
+    <div class="home-collection">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw6751ee85/2017/assets/in-line/socks/casual/blue/women/americana/americana-bike/women-americana-bike-secondary_md.jpg" alt="Image of stars and stripes">
+      <p>STARS AND STRIPES</p>
+    </div>
+    <div class="home-collection">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw2f07cc85/2017/assets/mlb/collections/mlb-women/stripes/womens-mlb-secondary_md.jpg" alt="Image of basketball legends socks">
+      <p>Introducing women's mlb</p>
+    </div>
+    <div class="home-collection">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw12393bfd/2017/assets/in-line/socks/performance/fusion-athletic/training-low-jacket/women-training-low-secondary_md.jpg" alt="image of womens socks">
+      <p>Train with the best</p>
+    </div>
+    <div class="home-collection">
+      <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw7b90b5b8/2017/assets/in-line/socks/premium/reserve/women/lifestyle/reserve-mesh/women-reserve-mesh-secondary_md.jpg" alt="image of kids socks">
+      <p>Channel style and grace</p>
+    </div>
+  </div>
+</div>
+
+<div class="featuredSocks">
+  <p class="featured-title condensed capital">New Arrivals</p>
+  <button class="featured-button bold">Shop Now</button>
+  <div class="featured-items-container">
+    <div class="featured-item" ng-repeat="p in products | limitTo:4" ui-sref="singleProduct({ id: p.product_id, mwk: p.mwk })">
+      <div class="new_img">New</div>
+      <img ng-src={{p.main_image_url}} />
+      <hr class="line-under-featured-image">
+      <p class="featured-item-name capital condensed">{{p.name}}</p>
+      <p class="featured-item-style regular">{{p.collection}}</p>
+      <p class="condensed">{{p.price | currency}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="featuredSocks">
+  <p class="featured-title condensed capital">Training</p>
+  <button class="featured-button bold">Shop Now</button>
+  <div class="featured-items-container">
+    <div class="featured-item" ng-repeat="p in product | limitTo:-4" ui-sref="singleProduct({ id: p.product_id, mwk: p.mwk })">
+      <img ng-src={{p.main_image_url}} />
+      <hr class="line-under-featured-image">
+      <p class="featured-item-name capital condensed">{{p.name}}</p>
+      <p class="featured-item-style regular">{{p.collection}}</p>
+      <p class="condensed">{{p.price | currency}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="featuredSocks">
+  <p class="featured-title condensed capital">Uncommon Solids</p>
+  <button class="featured-button bold">Shop Now</button>
+  <div class="featured-items-container">
+    <div class="featured-item" ng-repeat="p in prod | limitTo:-4" ui-sref="singleProduct({ id: p.product_id })">
+      <img ng-src={{p.main_image_url}} />
+      <hr class="line-under-featured-image">
+      <p class="featured-item-name capital condensed">{{p.name}}</p>
+      <p class="featured-item-style regular">{{p.collection}}</p>
+      <p class="condensed">{{p.price | currency}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="punksAndPoets-container">
+  <p class="punksAndPoets-title capital condensed">Punks <span class="punkAndPoets-and-sign">&</span> Poets</p>
+  <div class="line-under-punksAndPoets"></div>
+  <div class="punksAndPoets-section-container">
+    <div class="punksAndPoets-section">
+      <img alt="Rihanna" srcset="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw45f8e772/assets/punks-poets/rihanna/lifestyle/rihanna-chair-secondary_sm.jpg">
+      <p class="condensed capital punksAndPoets-name">Rihanna<img class="punksAndPoets-arrow" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-right-c-128.png" alt="arrow-right"></p>
+      <p class="regular punksAndPoets-bio">Rihanna has taken the music, entertainment and fashion industries by storm. As an accomplished performer, she has sold 54 million albums and 210 million digital tracks worldwide, making her the top-selling digital artist of all time. She’s put out 7 albums in 7 years, achieved 13 number-one singles and won 8 Grammy Awards.</p>
+    </div>
+    <div class="punksAndPoets-section">
+      <img alt="Lauren Fleshman" srcset="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw59205667/assets/punks-poets/lauren-fleshman/lifestyle/lauren-fleshman-secondary_sm.jpg">
+      <p class="condensed capital punksAndPoets-name">Lauren Fleshman<img class="punksAndPoets-arrow" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-right-c-128.png" alt="arrow-right"></p>
+      <p class="regular punksAndPoets-bio">These days, everyone seems to be a multi-hyphenate. Be they model-actors, chef-author-pilates-instructors, or motivational speaker-athletes, Lauren Fleshman manages to run circles around the best of them. A self-described tomboy from the heart of California, Fleshman quickly discovered an aptitude for out-running her peers, which catapulted her into a collegiate racing career.</p>
+    </div>
+  </div>
+</div>

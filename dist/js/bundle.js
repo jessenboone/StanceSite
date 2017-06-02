@@ -55,6 +55,20 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     url: "/inventory",
     templateUrl: "./../views/inventory.html",
     controller: "inventoryCtrl"
+  }).state("inventoryMens", {
+    url: "/inventoryMens",
+    templateUrl: "./../views/inventoryMens.html",
+    controller: "inventoryMensCtrl"
+  }).state("inventoryKids", {
+    url: "/inventoryKids",
+    templateUrl: "./../views/inventoryKids.html",
+    controller: "inventoryKidsCtrl"
+  });
+});
+
+angular.module('app').run(function ($rootScope, mainSrvc) {
+  mainSrvc.checkLoginStatus().then(function (response) {
+    $rootScope.loggedUser = response;
   });
 });
 'use strict';
@@ -189,8 +203,14 @@ angular.module('app').directive('headerDirective', function ($rootScope) {
 
   return {
     restrict: 'E',
-    templateUrl: '../views/directives/headerDirective.html'
-
+    templateUrl: '../views/directives/headerDirective.html',
+    controller: function controller($scope, $rootScope) {
+      console.log($rootScope);
+      if ($rootScope.loggedUser) {
+        $scope.user = $rootScope.loggedUser[0];
+        isLoggedIn = true;
+      }
+    }
   };
 });
 'use strict';
@@ -208,6 +228,28 @@ angular.module('app').controller('inventoryCtrl', function ($scope, mainSrvc, $s
 
   $scope.getProducts = function () {
     mainSrvc.getProducts("Womens").then(function (response) {
+      $scope.product = response;
+    });
+  };
+  $scope.getProducts();
+});
+'use strict';
+
+angular.module('app').controller('inventoryKidsCtrl', function ($scope, mainSrvc, $stateParams) {
+
+  $scope.getProducts = function () {
+    mainSrvc.getProducts("Kids").then(function (response) {
+      $scope.product = response;
+    });
+  };
+  $scope.getProducts();
+});
+'use strict';
+
+angular.module('app').controller('inventoryMensCtrl', function ($scope, mainSrvc, $stateParams) {
+
+  $scope.getProducts = function () {
+    mainSrvc.getProducts("Mens").then(function (response) {
       $scope.product = response;
     });
   };
@@ -250,6 +292,7 @@ angular.module('app').controller('loginCtrl', function ($rootScope, $scope, $loc
 
       if (response[0]) {
         $rootScope.loggedUser = response;
+        // headerLogin($rootScope.loggedUser);
         console.log($rootScope);
         $scope.email = '';
         $scope.password = '';
@@ -417,10 +460,30 @@ angular.module('app').service('mainSrvc', function ($http) {
     });
   };
   //need to talk to Todd about this
+  this.checkLoginStatus = function () {
+    return $http({
+      method: 'GET',
+      url: '/loggedUser'
+    }).then(function (response) {
+      console.log(response.data);
+      if (response.status === 200) {
+        return response.data;
+      } else {
+        return;
+      }
+    });
+  }, this.logOut = function () {
+    return $http({
+      method: 'GET',
+      url: "/logout"
+    }).then(function (response) {});
+  };
 });
 'use strict';
 
 angular.module('app').controller('mensCtrl', function ($rootScope, $scope, mainSrvc) {
+
+  console.log($rootScope);
 
   $scope.getProducts = function () {
     mainSrvc.getProducts('Mens', 'New Arrivals').then(function (response) {
@@ -475,7 +538,6 @@ angular.module('app').directive('randomDirective', function (mainSrvc) {
       };
       $scope.getProducts();
     }
-
   };
 });
 'use strict';
@@ -566,7 +628,7 @@ angular.module('app').controller('singleProductCtrl', function ($rootScope, $sco
 });
 'use strict';
 
-angular.module('app').controller('accountCtrl', function ($rootScope, $scope, mainSrvc) {
+angular.module('app').controller('accountCtrl', function ($rootScope, $scope, mainSrvc, $location, $timeout) {
 
   $scope.user = $rootScope.loggedUser[0];
 
@@ -574,6 +636,15 @@ angular.module('app').controller('accountCtrl', function ($rootScope, $scope, ma
   $scope.isShown2 = true;
   $scope.isShown3 = true;
   $scope.isShown4 = true;
+
+  $scope.logOut = function () {
+    mainSrvc.logOut().then(function (response) {});
+
+    $timeout(function () {
+      $location.path("login");
+      $scope.$apply();
+    }, 300);
+  };
 });
 'use strict';
 

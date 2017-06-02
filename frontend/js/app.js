@@ -68,5 +68,20 @@ angular.module('app', ['ui.router'])
       templateUrl: "./../views/inventory.html",
       controller: "inventoryCtrl"
     })
-
+    .state("inventoryMens", {
+      url: "/inventoryMens",
+      templateUrl: "./../views/inventoryMens.html",
+      controller: "inventoryMensCtrl"
+    })
+    .state("inventoryKids", {
+      url: "/inventoryKids",
+      templateUrl: "./../views/inventoryKids.html",
+      controller: "inventoryKidsCtrl"
+    })
 });
+
+angular.module('app').run(function($rootScope, mainSrvc){
+  mainSrvc.checkLoginStatus().then(function(response){
+    $rootScope.loggedUser = response;
+  })
+})
