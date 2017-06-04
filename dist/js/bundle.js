@@ -68,7 +68,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 
 angular.module('app').run(function ($rootScope, mainSrvc) {
   mainSrvc.checkLoginStatus().then(function (response) {
-    $rootScope.loggedUser = response;
+    $rootScope.loggedUser = response.data;
   });
 });
 'use strict';
@@ -206,9 +206,9 @@ angular.module('app').directive('headerDirective', function (mainSrvc) {
     // scope: {total: '='},
     controller: function controller($rootScope, $scope) {
       if ($rootScope.loggedUser) {
-
         // $scope.user = $rootScope.loggedUser[0];
         // isLoggedIn = true;
+        $scope.user = $rootScope.loggedUser[0];
       }
       console.log($rootScope);
       $scope.getCart = function () {

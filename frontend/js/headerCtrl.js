@@ -7,9 +7,9 @@ angular.module('app')
     // scope: {total: '='},
     controller: function($rootScope, $scope) {
       if ($rootScope.loggedUser) {
-
         // $scope.user = $rootScope.loggedUser[0];
         // isLoggedIn = true;
+        $scope.user = $rootScope.loggedUser[0];
       }
       console.log($rootScope);
       $scope.getCart = () => {
