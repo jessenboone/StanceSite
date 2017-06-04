@@ -101,42 +101,41 @@ angular.module('app').controller('billingCtrl', function ($rootScope, $scope, ma
 
 angular.module('app').controller('cartCtrl', function ($rootScope, $scope, mainSrvc) {
 
-  $scope.test = 'cart working';
-  $scope.test2 = mainSrvc.test;
-
-  $scope.getCart = function (user) {
+  $scope.getCart = function () {
     $scope.subtotal = 0;
-    mainSrvc.getCart(user).then(function (response) {
-      $scope.userCart = response.map(function (v) {
-        v.total = v.quantity * v.product_price;
-        $scope.subtotal += v.total;
-        return v;
+    if ($rootScope.loggedUser) {
+      mainSrvc.getCart($rootScope.loggedUser.id).then(function (response) {
+        $rootScope.products = $scope.products = response;
+        console.log($rootScope.products);
       });
-    });
+    } else {
+      $scope.products = $rootScope.cart;
+      console.log($scope.products);
+    }
   };
+  $scope.getCart();
 
-  $scope.deleteItemInCart = function (product, item) {
-    mainSrvc(product, item).then(function (response) {
-      $scope.response = response;
-      /*????????????????????*/
-    });
-  };
-
-  $scope.createItem = function (quantity, purchase) {
-    var user_id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : $scope.userId;
-
-    mainSrvc.createItem(quantity, purchase, user_id).then(function (response) {
-      $scope.getCartTotal($scope.userId);
-    });
-  };
+  // $scope.deleteItemInCart = (product, item) => {
+  //   mainSrvc(product, item).then((response) => {
+  //     $scope.response = response;
+  //     /*????????????????????*/
+  //   });
+  // };
+  //
+  // $scope.createItem = (quantity, purchase, user_id = $scope.userId) => {
+  //   mainSrvc.createItem(quantity, purchase, user_id).then(function(response) {
+  //     $scope.getCartTotal($scope.userId);
+  //   });
+  // };
 
   $scope.getCartTotal = function () {
-    var user_id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userId;
+    var user_id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $rootScope.loggedUser.id;
 
     $scope.cartTotal = 0;
     mainSrvc.getCart(user_id).then(function (response) {
-      $scope.cartTotal = response.reduce(function (acc, value) {
-        return value.quantity + acc;
+      $rootScope.cartTotal = $scope.cartTotal = response.reduce(function (acc, value) {
+        console.log('in the reduce');
+        return value.quantity * value.price + acc;
       }, 0);
     });
   };
@@ -199,16 +198,41 @@ angular.module('app').directive('footerDirective', function () {
 });
 'use strict';
 
-angular.module('app').directive('headerDirective', function ($rootScope) {
+angular.module('app').directive('headerDirective', function (mainSrvc) {
 
   return {
     restrict: 'E',
     templateUrl: '../views/directives/headerDirective.html',
-    controller: function controller($scope, $rootScope) {
+    // scope: {total: '='},
+    controller: function controller($rootScope, $scope) {
       if ($rootScope.loggedUser) {
-        $scope.user = $rootScope.loggedUser[0];
+
+        // $scope.user = $rootScope.loggedUser[0];
         // isLoggedIn = true;
       }
+      console.log($rootScope);
+      $scope.getCart = function () {
+        console.log($rootScope.loggedUser);
+        $scope.subtotal = 0;
+        if ($rootScope.loggedUser) {
+          mainSrvc.getCart($rootScope.loggedUser.id).then(function (response) {
+            var count = 0;
+            for (var i = 0; i < response.length; i++) {
+              count += response[i].quantity;
+            }
+            $scope.c = count;
+          });
+        } else {
+          $scope.c = 0;
+        }
+      };
+      $scope.getCart();
+
+      $rootScope.refreshHeader = function () {
+        setTimeout(function () {
+          $scope.$apply($scope.getCart());
+        }, 100);
+      };
     }
   };
 });
@@ -286,18 +310,19 @@ angular.module('app').controller('loginCtrl', function ($rootScope, $scope, $loc
     var returnUserEmail = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userEmail;
     var returnUserPassword = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : $scope.userPassword;
 
-
     mainSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
-
       if (response[0]) {
         $rootScope.loggedUser = response[0];
         $scope.email = '';
         $scope.password = '';
         $location.path('account');
+        $rootScope.refreshHeader();
       } else {
         $scope.noMatch = true;
       }
     });
+
+    console.log('login', $rootScope);
   };
 
   // $scope.login = (returnUserEmail, returnUserPassword) => {
@@ -386,7 +411,7 @@ angular.module('app').service('mainSrvc', function ($http) {
   this.getCart = function (user) {
     return $http({
       method: 'POST',
-      url: '/cart',
+      url: '/api/cart',
       data: { user: user }
     }).then(function (response) {
       return response.data;
@@ -433,6 +458,8 @@ angular.module('app').service('mainSrvc', function ($http) {
         quantity: quantity,
         purchase: purchase
       }
+    }).then(function (response) {
+      return response.data;
     });
   };
 
@@ -488,8 +515,6 @@ angular.module('app').service('mainSrvc', function ($http) {
 'use strict';
 
 angular.module('app').controller('mensCtrl', function ($rootScope, $scope, mainSrvc) {
-
-  console.log($rootScope);
 
   $scope.getProducts = function () {
     mainSrvc.getProducts('Mens', 'New Arrivals').then(function (response) {
@@ -612,10 +637,14 @@ angular.module('app').controller('singleProductCtrl', function ($rootScope, $sco
   $scope.createItem = function (quantity, purchase) {
     if ($rootScope.loggedUser) {
       mainSrvc.createCart(quantity, purchase, $rootScope.loggedUser.id).then(function (response) {
-        console.log('added to cart');
+        $rootScope.refreshHeader();
       });
     } else {
-      mainSrvc.unloggedUserCart(quantity, purchase).then(function (response) {});
+      console.log('in unlogged function');
+      mainSrvc.unloggedUserCart(quantity, purchase).then(function (response) {
+        $rootScope.cart = response;
+        $rootScope.refreshHeader();
+      });
     }
   };
 
@@ -707,7 +736,11 @@ angular.module('app').directive("kidsCarousel", function () {
 angular.module('app').directive("orderSummary", function () {
   return {
     restrict: "E",
-    templateUrl: "./views/orderSummary.html"
+    templateUrl: "./views/orderSummary.html",
+    controller: function controller($rootScope, $scope) {
+      $scope.items = $rootScope.products;
+      $scope.cartTotal = $rootScope.cartTotal;
+    }
   };
 });
 "use strict";

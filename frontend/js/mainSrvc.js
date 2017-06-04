@@ -45,7 +45,7 @@ angular.module('app')
   this.getCart = (user) => {
     return $http({
       method: 'POST',
-      url: '/cart',
+      url: '/api/cart',
       data: {user}
     }).then(response => response.data)
   };
@@ -84,7 +84,7 @@ angular.module('app')
         quantity,
         purchase
       }
-    })
+    }).then(response => response.data)
   }
 
   // EMAIL LIST //////////////////////////////////////////

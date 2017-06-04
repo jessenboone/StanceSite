@@ -91,7 +91,8 @@ app.post('/api/cart', cartControl.getCart);
 app.delete('/api/cart/clear', cartControl.deleteCart);
 app.delete('/api/cart/clear/:product_id/:user_id', cartControl.deleteItemInCart);
 app.post('/api/cart/add', cartControl.createCart);
-app.put('/api/cart/update', cartControl.createCart);     /* still not working - needs more configuring */
+app.put('/api/cart/update', cartControl.createCart);
+app.post('/api/cart/add/unlogged', cartControl.unloggedUserCart);  
 
 // EMAIL LIST
 app.post('/api/email', emailListControl.addEmail);

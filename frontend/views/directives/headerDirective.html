@@ -838,7 +838,7 @@
                 <i class="fa fa-shopping-cart" aria-hidden="true" ui-sref="cart"></i>
             </div>
             <div class="header-right-top-right">
-                0
+                {{c || 0}}
             </div>
         </div>
         <div class="header-right-bottom" id="header-right-bottom">
@@ -876,7 +876,7 @@
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             </div>
             <div id="header-cart-responsive">
-                <p>0</p>
+                <p>{{c || 0}}</p>
             </div>
         </div>
     </div>
