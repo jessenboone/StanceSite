@@ -4,19 +4,27 @@ const app = require('../.././index.js')
 module.exports = {
 
   getCart: (req, res) => {
-    let user = req.body[0].user_id;
-    db.get_cart([user], (err, cart) => {
-      if (!err) {
-        res.send(cart);
-      } else {
-        res.send(err);
-      }
-    });
+    if (req.body.user) {
+      let user = req.body.user;
+      db.get_cart([user], (err, cart) => {
+        if (!err) {
+          console.log(cart);
+          res.send(cart);
+        } else {
+          res.send(err);
+        }
+      });
+
+    } else {
+      console.log('unlogggedUser', req.session.cart);
+      let cart = req.session.cart;
+      res.status(200).send();
+    }
+
   },
 
   deleteCart: (req, res) => {
     db.delete_cart((err, cart) => {
-      console.log(cart, 'in function')
       if (!err) {
         res.send(cart);
       } else {
@@ -28,13 +36,10 @@ module.exports = {
   deleteItemInCart: (req, res) => {
     let item = req.params.product_id;
     let user = req.params.user_id;
-    console.log(item, user);
     db.delete_item_in_cart([item, user], (err, cart) => {
       if (!err) {
-        console.log(cart);
         res.send(cart);
       } else {
-        console.log(err);
         res.send(err);
       }
     });
@@ -50,11 +55,11 @@ module.exports = {
           if (cart[i].product_id === item.purchase) {
             index = i;
             found = true;
-            cart[i].quantity += item.quantity;
+            cart[i].quantity += parseInt(item.quantity);
           }
         }
         if (found === false) {
-          db.add_to_cart([item.product_id, item.quantity, item.user_id], (err, cart) => {
+          db.add_to_cart([item.purchase, item.quantity, item.user_id], (err, cart) => {
             if (!err) {
               res.status(200).send(cart);
             } else {
@@ -77,5 +82,24 @@ module.exports = {
     })
   },
 
+  unloggedUserCart: (req, res) => {
+    var item = req.body.purchase;
+    var quantity = req.body.quantity;
+    var itemsInCart = req.session.cart || [];
+    if (itemsInCart.length > 0) {
+      for (var i = 0; i < itemsInCart.length; i++) {
+        if (itemsInCart[i].item === item) {
+          itemsInCart[i].quantity += parseInt(quantity);
+        } else {
+          itemsInCart.push({item, quantity});
+        }
+      }
+    } else {
+      itemsInCart.push({item, quantity});
+    }
+    req.session.cart = itemsInCart;
+    console.log(req.session.cart);
+    res.status(200).send(req.session.cart)
+  }
 
 };

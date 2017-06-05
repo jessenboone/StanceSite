@@ -45,7 +45,7 @@ angular.module('app')
   this.getCart = (user) => {
     return $http({
       method: 'POST',
-      url: '/cart',
+      url: '/api/cart',
       data: {user}
     }).then(response => response.data)
   };
@@ -67,7 +67,7 @@ angular.module('app')
   this.createCart = (quantity, purchase, user_id) => {
     return $http({
       method: 'POST',
-      url: '/create/cart',
+      url: '/api/cart/add',
       data: {
         quantity,
         purchase,
@@ -75,6 +75,17 @@ angular.module('app')
       }
     }).then(response => response)
   };
+
+  this.unloggedUserCart = (quantity, purchase) => {
+    return $http({
+      method: 'POST',
+      url: '/api/cart/add/unlogged',
+      data: {
+        quantity,
+        purchase
+      }
+    }).then(response => response.data)
+  }
 
   // EMAIL LIST //////////////////////////////////////////
   this.addEmail = (email) => {
@@ -101,5 +112,24 @@ angular.module('app')
     }).then(response => response.data)
   };
   //need to talk to Todd about this
+  this.checkLoginStatus = () => {
+    return $http({
+      method: 'GET',
+      url: '/loggedUser'
+    }).then(response => {
+      if(response.status === 200){
+        return response.data;
+      } else {
+        return
+      }
+    })
+  },
+  this.logOut = () => {
+    return $http({
+      method: 'GET',
+      url: "/logout"
+    }).then(response => {
 
+    });
+  }
 });

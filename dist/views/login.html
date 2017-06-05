@@ -1,0 +1,96 @@
+<main class="login-wrapper regular">
+
+  <section class="login-section-1">
+    <div class="login-my-acc-div bottom3">
+      <div class="login-my-acc-text">
+        <p class="login-acc-heading capital condensed bottom3"><span>my account login</span></p>
+        <p class="login-subheading login-acc-subheading capital condensed bottom3">returning customers</p>
+        <p class="login-p">If you are a registered user, please enter your email and password.</p>
+      </div>
+      <div class="login-my-acc-inputs bottom3">
+        <div class="login-input-div">
+          <input type="email" placeholder="Email Address" ng-model="userEmail" class="login-input-style outline focus yellow"
+          ng-class="{ 'required': !userEmail && emailEmpty }" ng-blur="emailEmpty=true"/>
+          <p class="error regular" ng-if="!userEmail && emailEmpty && !noMatch">This field is required.</p>
+          <p class="error regular" ng-if="noMatch">Email and password do not match.</p>
+        </div>
+        <div class="login-input-div">
+          <input type="password" placeholder="Password" ng-model="userPassword" class="login-input-style outline focus yellow"
+          ng-class="{ 'required': !userPassword && passwordEmpty }" ng-blur="passwordEmpty=true"/>
+          <p class="error regular" ng-if="!userPassword && passwordEmpty && !noMatch">This field is required.</p>
+          <p class="error regular" ng-if="noMatch">Email and password do not match.</p>
+        </div>
+      </div>
+      <div class="login-login bold">
+        <button id="bright1" class="point bold border outline" type="submit" ng-click="login(email, password)">Login</button>
+        <div class="login-checkbox">
+          <input class="checkbox" type="checkbox" checked/>
+          <p>Remember Me</p>
+        </div>
+      </div>
+      <p><a href="#" class="login-anchor point bold">Forgot Password?</a></p>
+    </div>
+
+    <div class="login-check-order-div">
+      <div class="login-check-order-text">
+        <p class="login-subheading condensed capital bottom3">check order</p>
+        <p class="login-p login-check-order-p">See your order even if you are not a registered user. Enter the order number and the billing address ZIP code.</p>
+      </div>
+      <div class="login-check-order-inputs">
+        <input type="text" placeholder="Order Number" class="login-input-style login-order-style outline focus">
+        <input type="text" placeholder="Order Email" class="login-input-style login-order-style outline focus">
+        <input type="text" placeholder="Billing Zip Code" class="login-input-style login-order-style outline focus">
+      </div>
+      <div class="login-check-order-button">
+        <p>For International Orders, please contact customer service.</p>
+        <button id="bright2" type="submit" class="bold point border outline" ui-sref="orders">Check Status</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="login-section-2">
+    <div class="login-new-customer-div">
+      <p class="login-subheading capital condensed bottom3">new customers</p>
+      <p class="login-p login-new-Customer-p">Creating an account is easy, and you'll enjoy the benefits of faster checkout, order history, a wish list and more.</p>
+      <button id="bright2" type="submit" class="point bold border outline" ui-sref="register">Create Account Now</button>
+    </div>
+
+    <div class="login-benefits-div">
+      <p class="login-benefits-heading bottom3 bold">Benefits of Creating an Account</p>
+      <div class="login-benefits-sub login-p bottom3">
+        <p class="bold">News and exclusive offers!</p>
+        <p>Sign up to receive email updates on special promotions, new product announcements, gift ideas and more.</p>
+      </div>
+      <div class="login-benefits-sub login-p bottom3">
+        <p class="bold">Order History</p>
+        <p>Receive important information about your order. You can even track it up to the minute it arrives.</p>
+      </div>
+      <div class="login-benefits-sub login-p bottom3">
+        <p class="bold">Faster Checkout</p>
+        <p>Save your billing and shipping information to make it easier to buy your favorite gear.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="login-section-3">
+    <div class="login-acc-settings-div">
+      <div class="login-my-acc">
+        <p><a class="bold" ui-sref="account">My Account</a></p>
+      </div>
+      <div class="login-settings-confidently">
+        <div class="login-settings-sub bottom3">
+          <p class="login-acc capital bottom3 bold" ng-click="isShown=!isShown">account settings</p>
+          <p><a href="#" class="login-anchor bold point" ng-show="isShown">Create Account</a></p>
+        </div>
+        <div class="login-settings-sub bottom3">
+          <p class="login-acc capital bottom3 bold" ng-click="isShown2=!isShown2">shop confidently</p>
+          <p><a href="#" class="login-anchor bold point" ng-show="isShown2">Privacy Policy</a></p>
+        </div>
+      </div>
+      <hr/>
+
+      <help-directive></help-directive>
+
+  </section>
+
+</main>

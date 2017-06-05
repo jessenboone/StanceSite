@@ -19,7 +19,9 @@ app.use(session({
   secret: config.sessionSecret,
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false }
+  duration: 30 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000
+  // cookie: { maxAge:600000 }
 }));
 
 // app.use(passport.initialize()); --used for auth0
@@ -79,9 +81,9 @@ app.get('/api/product/:id', productsControl.getSingleProduct);
 // USERS
 app.post('/api/register', usersControl.register);
 app.post('/api/login', usersControl.login);
+app.get("/loggedUser", usersControl.checkLoginStatus)
 app.get('/logout', function(req, res) {
-  req.session.reset();
-  res.redirect('/');
+  req.session.destroy();
 });
 
 // CART
@@ -89,7 +91,8 @@ app.post('/api/cart', cartControl.getCart);
 app.delete('/api/cart/clear', cartControl.deleteCart);
 app.delete('/api/cart/clear/:product_id/:user_id', cartControl.deleteItemInCart);
 app.post('/api/cart/add', cartControl.createCart);
-app.put('/api/cart/update', cartControl.createCart);     /* still not working - needs more configuring */
+app.put('/api/cart/update', cartControl.createCart);
+app.post('/api/cart/add/unlogged', cartControl.unloggedUserCart);  
 
 // EMAIL LIST
 app.post('/api/email', emailListControl.addEmail);

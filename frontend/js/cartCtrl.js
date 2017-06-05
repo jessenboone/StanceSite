@@ -1,38 +1,41 @@
 angular.module('app')
 .controller('cartCtrl', function($rootScope, $scope, mainSrvc) {
 
-  $scope.test = 'cart working';
-  $scope.test2 = mainSrvc.test;
 
-  $scope.getCart = (user) => {
+  $scope.getCart = () => {
     $scope.subtotal = 0;
-    mainSrvc.getCart(user).then((response) => {
-      $scope.userCart = response.map(v => {
-        v.total = v.quantity * v.product_price
-        $scope.subtotal += v.total
-        return v
-      })
-    });
-  };
+    if ($rootScope.loggedUser) {
+      mainSrvc.getCart($rootScope.loggedUser.id).then((response) => {
+        $rootScope.products = $scope.products = response;
+        console.log($rootScope.products);
 
-  $scope.deleteItemInCart = (product, item) => {
-    mainSrvc(product, item).then((response) => {
-      $scope.response = response;
-      /*????????????????????*/
-    });
+      });
+    } else {
+      $scope.products = $rootScope.cart;
+      console.log($scope.products);
+    }
   };
+  $scope.getCart();
 
-  $scope.createItem = (quantity, purchase, user_id = $scope.userId) => {
-    mainSrvc.createItem(quantity, purchase, user_id).then(function(response) {
-      $scope.getCartTotal($scope.userId);
-    });
-  };
+  // $scope.deleteItemInCart = (product, item) => {
+  //   mainSrvc(product, item).then((response) => {
+  //     $scope.response = response;
+  //     /*????????????????????*/
+  //   });
+  // };
+  //
+  // $scope.createItem = (quantity, purchase, user_id = $scope.userId) => {
+  //   mainSrvc.createItem(quantity, purchase, user_id).then(function(response) {
+  //     $scope.getCartTotal($scope.userId);
+  //   });
+  // };
 
-  $scope.getCartTotal = (user_id = $scope.userId) => {
+  $scope.getCartTotal = (user_id = $rootScope.loggedUser.id) => {
     $scope.cartTotal = 0;
     mainSrvc.getCart(user_id).then((response) => {
-      $scope.cartTotal = response.reduce((acc, value) => {
-        return value.quantity + acc;
+      $rootScope.cartTotal = $scope.cartTotal = response.reduce((acc, value) => {
+        console.log('in the reduce');
+        return (value.quantity * value.price) + acc;
       }, 0)
     })
   }

@@ -3,14 +3,27 @@ angular.module('app')
 
   $scope.pic1 = true;
 
-
-
   $scope.getSingleProduct = () => {
     mainSrvc.getSingleProduct($stateParams.id).then(function(response) {
       $scope.singleProduct = response;
     });
   }
   $scope.getSingleProduct();
+
+  $scope.createItem = (quantity, purchase) => {
+    if ($rootScope.loggedUser) {
+      mainSrvc.createCart(quantity, purchase, $rootScope.loggedUser.id).then(function(response) {
+        $rootScope.refreshHeader();
+      });
+    } else {
+      console.log('in unlogged function');
+      mainSrvc.unloggedUserCart(quantity, purchase).then(function(response) {
+        $rootScope.cart = response;
+        $rootScope.refreshHeader();
+      });
+    }
+
+  };
 
   // $scope.createItem = (quantity, product_id) => {
   //   if($rootScope.loggedUser[0].id){

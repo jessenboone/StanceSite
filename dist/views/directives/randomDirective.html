@@ -1,0 +1,11 @@
+<div class="random-items-container">
+  <div class="random-item" ng-repeat="r in random">
+    <img ng-src={{r.main_image_url}} />
+    <!-- <hr class="line-under-random-image"> -->
+    <div class="random-text">
+      <p class="random-item-name capital condensed">{{r.name}}</p>
+      <p class="random-item-style regular">{{r.collection}}</p>
+      <p class="bold random-price">{{r.price | currency}}</p>
+    </div>
+  </div>
+</div>
