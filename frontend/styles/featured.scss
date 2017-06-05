@@ -39,6 +39,10 @@
     background: black;
     margin-bottom: 20px;
   }
+  .featured-button:hover{
+    background: #3B3B3F;
+    transition: 0.5s
+  }
   .featured-items-container{
     width: 100%;
     display: flex;

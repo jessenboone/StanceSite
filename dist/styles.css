@@ -863,6 +863,9 @@ table {
     color: white;
     background: black;
     margin-bottom: 20px; }
+  .featuredSocks .featured-button:hover {
+    background: #3B3B3F;
+    transition: 0.5s; }
   .featuredSocks .featured-items-container {
     width: 100%;
     display: flex;
@@ -1893,6 +1896,9 @@ table {
 .regular {
   font-family: "regular"; }
 
+button {
+  outline: none; }
+
 .condensed {
   font-family: "condensed"; }
 
@@ -1918,7 +1924,10 @@ table {
   .home-subheading {
     margin-top: 10px; }
   .home-jumbotron-text {
-    width: 560px; } }
+    width: 560px; }
+  .home-button:hover {
+    color: white;
+    transition: 0.5s; } }
 
 @media (max-width: 767px) {
   .home-collection {
@@ -1982,6 +1991,9 @@ table {
         height: 48px;
         padding: 0 28px;
         margin-bottom: 40px; }
+      .home-wrapper .home-jumbotron-container .home-jumbotron-text .home-button:hover {
+        background: #3B3B3F;
+        transition: 0.5s; }
   .home-wrapper .home-collection-images {
     width: 100%;
     display: flex;
