@@ -42,7 +42,7 @@
       </select>
       <div class="single-qty">
         <p class="bold">QTY</p>
-        <input class="single-box bold" type="text" value="1" min="1" ng-model="quantity"/>
+        <input class="single-box bold" ng-init="quantity=1" value="quantity" min="1" ng-model="quantity" />
       </div>
       <p class="single-availability"><span class="bold">Availability:</span> In Stock</p>
       <form ng-submit="createItem(quantity, p.product_id)">

@@ -85,4 +85,3 @@ angular.module('app').run(function($rootScope, mainSrvc){
     $rootScope.loggedUser = response.data;
   })
 })
-    

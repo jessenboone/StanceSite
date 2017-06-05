@@ -1,7 +1,7 @@
 angular.module('app')
 .controller('accountCtrl', function($rootScope, $scope, mainSrvc, $location, $timeout) {
 
-  $scope.user = $rootScope.loggedUser[0];
+  $scope.user = $rootScope.loggedUser;
 
   $scope.isShown = true;
   $scope.isShown2 = true;
@@ -13,7 +13,8 @@ angular.module('app')
 
      $timeout(() => {
        $location.path("login");
-       $scope.$apply();
+      //  $scope.$apply();
+       $rootScope.$apply($rootScope.loggedUser = false);
      }, 300);
    };
 });

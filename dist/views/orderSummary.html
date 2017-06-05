@@ -4,20 +4,20 @@
     <p class="checkout-edit">Edit</p>
   </div>
   <div class="checkout-order-summary-container">
-    <div class="checkout-order-item-container">
-      <img src="https://sits-pod41.demandware.net/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dw66fe9e84/prod_images/M556B17XAL_MUL.jpg?sw=89&sh=89&sm=fit" alt="sock">
+    <div ng-repeat="item in items" class="checkout-order-item-container">
+      <img ng-src={{item.details_large_main_image_url}} alt="sock">
       <div class="checkout-order-item">
-        <p class="checkout-order-item-title condensed capital">Xalapa</p>
+        <p class="checkout-order-item-title condensed capital">{{item.name}}</p>
         <p class="checkout-order-item-description regular">Color: MULTI</p>
         <p class="checkout-order-item-description regular">Size: L(9-12)</p>
-        <p class="checkout-order-item-description regular">Qty: 1</p>
-        <p class="checkout-order-item-description regular">$15.00</p>
+        <p class="checkout-order-item-description regular">{{item.quantity}}</p>
+        <p class="checkout-order-item-description regular">{{item.price | currency}}</p>
       </div>
     </div>
     <div class="checkout-order-total-container">
       <div class="checkout-order-total-column">
         <p class="bold">Subtotal</p>
-        <p class="bold">$35.00</p>
+        <p class="bold">{{cartTotal | currency}}</p>
       </div>
       <div class="checkout-order-total-column">
         <p class="regular">Shipping {{shippingMethod.name}} Edit</p>
@@ -25,11 +25,11 @@
       </div>
       <div class="checkout-order-total-column">
         <p class="regular">Sales Tax</p>
-        <p class="regular">$0.00</p>
+        <p class="regular">$5.00</p>
       </div>
       <div class="checkout-order-total-column">
         <p class="bold">Order Total:</p>
-        <p class="bold">{{15 + shippingMethod.price | currency}}</p>
+        <p class="bold">{{5 + cartTotal + shippingMethod.price | currency}}</p>
       </div>
     </div>
   </div>

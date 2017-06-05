@@ -68,7 +68,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 
 angular.module('app').run(function ($rootScope, mainSrvc) {
   mainSrvc.checkLoginStatus().then(function (response) {
-    $rootScope.loggedUser = response.data;
+    $rootScope.loggedUser = response;
   });
 });
 'use strict';
@@ -199,22 +199,17 @@ angular.module('app').directive('footerDirective', function () {
 });
 'use strict';
 
-angular.module('app').directive('headerDirective', function (mainSrvc) {
+angular.module('app').directive('headerDirective', function ($rootScope) {
 
   return {
     restrict: 'E',
     templateUrl: '../views/directives/headerDirective.html',
     controller: function controller($scope, $rootScope) {
+      console.log($rootScope);
       if ($rootScope.loggedUser) {
         $scope.user = $rootScope.loggedUser[0];
+        isLoggedIn = true;
       }
-      $scope.getProducts = function () {
-        mainSrvc.getProducts().then(function (response) {
-          $scope.products = response;
-          console.log(response);
-        });
-      };
-      $scope.getProducts();
     }
   };
 });

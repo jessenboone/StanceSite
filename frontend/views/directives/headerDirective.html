@@ -815,11 +815,11 @@
             <h4>FREE US SHIPPING OVER $25</h4>
         </div>
         <div class="header-middle-bottom" id="header-middle-bottom">
-            <p ng-mouseover="showMen = true" ng-mouseleave="showMen = false" ng-class="{'showBorder': showMen}" ui-sref="mens">MEN</p>
-            <p ng-mouseover="showWomen = true" ng-mouseleave="showWomen = false" ng-class="{'showBorder': showWomen}" ui-sref="womens">WOMEN</p>
-            <p ng-mouseover="showKids = true" ng-mouseleave="showKids = false" ng-class="{'showBorder': showKids}" ui-sref="kids">KIDS</p>
-            <p ng-mouseover="showUnderwear = true" ng-mouseleave="showUnderwear = false" ng-class="{'showBorder': showUnderwear}">UNDERWEAR</p>
-            <p ng-mouseover="showDiscover = true" ng-mouseleave="showDiscover = false" ng-class="{'showBorder': showDiscover}">DISCOVER</p>
+            <p ng-mouseover="showMen = true" ng-mouseleave="showMen = false" ng-class="{'showBorder': showMen}" ui-sref="mens" ng-click="showMen = !showMen">MEN</p>
+            <p ng-mouseover="showWomen = true" ng-mouseleave="showWomen = false" ng-class="{'showBorder': showWomen}" ui-sref="womens" ng-click="showWomen = !showWomen">WOMEN</p>
+            <p ng-mouseover="showKids = true" ng-mouseleave="showKids = false" ng-class="{'showBorder': showKids}" ui-sref="kids" ng-click="showKids = !showKids">KIDS</p>
+            <p ng-mouseover="showUnderwear = true" ng-mouseleave="showUnderwear = false" ng-class="{'showBorder': showUnderwear}" ng-click="showUnderwear = !showUnderwear">UNDERWEAR</p>
+            <p ng-mouseover="showDiscover = true" ng-mouseleave="showDiscover = false" ng-class="{'showBorder': showDiscover}" ng-click="showDiscover = !showDiscover">DISCOVER</p>
         </div>
     </div>
     <div class="header-right">
@@ -831,14 +831,14 @@
                 <!-- <p href='/auth'>{{ 1 ? "Logged in suckas" : 'Login / Regist'}}</p> -->
                 <div ui-sref="login">
                   <p ng-if="!loggedUser">Login / Register</p>
-                  <p ng-if="loggedUser">Welcome, {{loggedUser[0].first_name}}</p>
+                  <p ng-if="loggedUser">Welcome, {{loggedUser.first_name}}</p>
                 </div>
             </div>
             <div class="header-right-top-middle2">
                 <i class="fa fa-shopping-cart" aria-hidden="true" ui-sref="cart"></i>
             </div>
             <div class="header-right-top-right">
-                0
+                {{c || 0}}
             </div>
         </div>
         <div class="header-right-bottom" id="header-right-bottom">
@@ -918,7 +918,7 @@
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             </div>
             <div id="header-cart-responsive">
-                <p>0</p>
+                <p>{{c || 0}}</p>
             </div>
         </div>
     </div>
