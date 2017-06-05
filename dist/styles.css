@@ -2957,6 +2957,9 @@ kids-carousel .carousel-wrapper {
   height: 50px;
   width: 100%; }
 
+#single-bright {
+  outline: none; }
+
 #single-bright:hover {
   background: rgba(26, 26, 26, 0.8);
   transition: 1s; }
