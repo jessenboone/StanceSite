@@ -1,15 +1,21 @@
 angular.module('app')
-.directive('headerDirective', function($rootScope) {
+.directive('headerDirective', function(mainSrvc) {
 
   return {
     restrict: 'E',
     templateUrl: '../views/directives/headerDirective.html',
     controller: function($scope, $rootScope) {
-      console.log($rootScope);
       if ($rootScope.loggedUser) {
         $scope.user = $rootScope.loggedUser[0];
-        isLoggedIn = true;
       }
+      $scope.getProducts = () => {
+         mainSrvc.getProducts().then(function(response) {
+           $scope.products = response;
+           console.log(response);
+         });
+       }
+       $scope.getProducts();
+
     }
   }
 })
