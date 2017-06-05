@@ -6,23 +6,19 @@ angular.module('app')
   $scope.noMatch = false;
 
   $scope.login = (returnUserEmail = $scope.userEmail, returnUserPassword = $scope.userPassword) => {
-
     mainSrvc.login(returnUserEmail, returnUserPassword).then((response) => {
-
       if (response[0]) {
-        $rootScope.loggedUser = response;
-        // headerLogin($rootScope.loggedUser);
-        console.log($rootScope);
+        $rootScope.loggedUser = response[0];
         $scope.email = '';
         $scope.password = '';
         $location.path('account');
-        $scope.apply();
-
+        $rootScope.refreshHeader();
       } else {
         $scope.noMatch = true;
       }
-
     });
+    
+    console.log('login', $rootScope);
   }
 
 

@@ -13,19 +13,19 @@
 
     <div class="products-list-wrapper">
 
-      <div class="product">
+      <div class="product" ng-repeat="p in products">
         <div class="product-left">
           <div class="product-image">
-            <img ng-src="https://sits-pod41.demandware.net/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwdf7f2e68/prod_images/M3204SOC_BRN.jpg?sw=89&sh=89&sm=fit" alt="">
+            <img ng-src={{p.main_image_url}}>
           </div><!-- end product image -->
         </div><!-- end product-left -->
 
         <div class="product-right">
           <div class="wrapper">
             <div class="product-details" id="product-details">
-              <h3 class="condensed">RED STRIPES</h3>
-              <p class="regular">Item No.: 6734</p>
-              <p class="regular">Collection: NEW ARRIVALS</p>
+              <h3 class="condensed">{{p.name}}</h3>
+              <p class="regular">Item No.: {{p.product_id}}</p>
+              <p class="regular">Collection: {{p.collection}}</p>
               <p class="regular">Size: Large</p>
               <a class="regular" href="#">Edit Details</a>
             </div> <!-- end product details -->
@@ -34,7 +34,7 @@
           <div class="quantity-details-wraper">
             <div class="quantity">
               <div class="input-box">
-                <label class="bold" for="">Qty</label>
+                <label class="bold" for="">{{p.quantity}}</label>
                 <input type="text" name="" value="1" class="qty-input">
               </div><!-- end input box -->
             </div><!-- end quantity -->
@@ -46,50 +46,8 @@
               <h1>Remove</h2>
             </div><!-- end quantity text -->
             <div class="price">
-              <h3 class="retail">$16.00</h3>
-              <h1 class="sale">$9.99</h1>
-              <h2 class="subtotal bold">$19.98</h2>
-            </div><!-- end price -->
-          </div><!-- end price-details-wraper -->
-        </div><!-- end right -->
-      </div><!-- end product -->
-
-      <div class="product">
-        <div class="product-left">
-          <div class="product-image">
-            <img ng-src="https://sits-pod41.demandware.net/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dw3e442258/prod_images/M115D16CAN_RED.jpg?sw=89&sh=89&sm=fit" alt="">
-          </div><!-- end product image -->
-        </div><!-- end product-left -->
-
-        <div class="product-right">
-          <div class="wrapper">
-            <div class="product-details" id="product-details">
-              <h3 class="condensed">CANDYSTRIPE</h3>
-              <p class="regular">Item No.: 00087686547</p>
-              <p class="regular">Collection: HOLDIAY</p>
-              <p class="regular">Size: Large</p>
-              <a class="regular" href="#">Edit Details</a>
-            </div> <!-- end product details -->
-          </div><!-- end wrapper -->
-
-          <div class="quantity-details-wraper">
-            <div class="quantity">
-              <div class="input-box">
-                <label class="bold" for="">Qty</label>
-                <input type="text" name="" value="1" class="qty-input">
-              </div><!-- end input box -->
-            </div><!-- end quantity -->
-          </div><!-- end quantity details -->
-
-          <div class="price-details-wrapper" id="price-details-wraper">
-            <div class="quantity-text regular">
-              <h6>In Stock</h6>
-              <h1>Remove</h2>
-            </div><!-- end quantity text -->
-            <div class="price">
-              <h3 class="retail">$16.00</h3>
-              <h1 class="sale">$9.99</h1>
-              <h2 class="subtotal bold">$19.98</h2>
+              <h3 class="retail">{{p.price | currency}}</h3>
+              <h2 class="subtotal bold">{{p.price * p.quantity | currency}}</h2>
             </div><!-- end price -->
           </div><!-- end price-details-wraper -->
         </div><!-- end right -->
@@ -128,36 +86,19 @@
         <div class="recommend-title">
           <h1 class="condensed">YOU MIGHT ALSO LIKE</h1>
         </div><!-- end recommend title -->
-        <ul class="recommend-items">
-          <li class="item">
-            <img src="https://sits-pod41.demandware.net/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dw3678dd3b/prod_images/M115D16GAM_BLU.jpg?sw=246&sh=374&sm=fit" alt="">
-            <h1>Gamut</h1>
-            <h3>Super Invisible</h3>
-            <p>$10.00</p>
-          </li><!-- end item -->
-          <li class="item">
-            <img src="https://sits-pod41.demandware.net/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwb519ef0a/prod_images/M448A17UNC_BLK.jpg?sw=246&sh=374&sm=fit" alt="">
-            <h1>Uncommon Solids Crew</h1>
-            <h3>Run</h3>
-            <p>$18.00</p>
-          </li><!-- end item -->
-          <li class="item">
-            <img src="https://sits-pod41.demandware.net/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwe5b2e00b/prod_images/M656A16CLO_AQU.jpg?sw=246&sh=374&sm=fit" alt="">
-            <h1>Cloudy</h1>
-            <h3>Skate</h3>
-            <p>$18.00</p>
-          </li><!-- end item -->
-          <li class="item">
-            <img src="https://sits-pod41.demandware.net/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dw25f2a6ba/prod_images/M348A16UNC_BLK.jpg?sw=246&sh=374&sm=fit" alt="">
-            <h1>Uncommon</h1>
-            <h3>Run</h3>
-            <p>$16.00</p>
-          </li><!-- end item -->
-        </ul><!-- end recommend items -->
       </div><!-- end recommend section -->
+
+      <random-directive></random-directive>
 
     </div><!-- end products list -->
   </div><!-- end main content wrapper -->
+
+
+
+
+
+  <!--//////////// DESKTOP VIEW ///////////-->
+
 
    <div class="desktop-content-wrapper">
     <div class="table-column-titles">
@@ -169,16 +110,16 @@
 
     <div class="products-list-wrapper">
 
-      <div class="individual-product">
+      <div class="individual-product" ng-repeat="p in products">
         <div class="one">
           <div class="product-image">
-            <img ng-src="https://sits-pod41.demandware.net/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwdf7f2e68/prod_images/M3204SOC_BRN.jpg?sw=89&sh=89&sm=fit" alt="">
+            <img ng-src={{p.main_image_url}}>
           </div><!-- end product image -->
 
           <div class="product-details" id="product-details">
-            <h3 class="condensed">RED STRIPES</h3>
-            <p class="regular">Item No.: 6734</p>
-            <p class="regular">Collection: NEW ARRIVALS</p>
+            <h3 class="condensed">{{p.name}}</h3>
+            <p class="regular">Item No.: {{p.product_id}}</p>
+            <p class="regular">Collection: {{p.collection}}</p>
             <p class="regular">Size: L</p>
             <a class="regular" href="#">Edit Details</a>
           </div> <!-- end product details -->
@@ -186,7 +127,7 @@
 
         <div class="two">
           <div class="input-box">
-            <input class="bold" type="text" name="" value="1" class="qty-input">
+            <input class="bold" type="text" name="" value="{{p.quantity}}" class="qty-input">
           </div><!-- end input box -->
 
           <div class="quantity-text regular">
@@ -199,61 +140,18 @@
         <div class="three-four-wrapper">
           <div class="three">
             <div class="price-section">
-              <h3 class="retail-price">$16.00</h3>
-              <h1 class="sale-price">$9.99</h1>
+              <h3 class="retail-price">{{p.price | currency}}</h3>
             </div><!-- end price section -->
           </div><!-- end three -->
 
           <div class="four">
             <div class="total-section">
-              <h2 class="total bold">$19.98</h2>
+              <h2 class="total bold">{{p.price * p.quantity | currency}}</h2>
             </div>
           </div><!-- end four -->
         </div><!-- end three-four-wrapper -->
       </div><!-- end individual product -->
 
-      <div class="individual-product">
-        <div class="one">
-          <div class="product-image">
-            <img ng-src="https://sits-pod41.demandware.net/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dw3e442258/prod_images/M115D16CAN_RED.jpg?sw=89&sh=89&sm=fit" alt="">
-          </div><!-- end product image -->
-
-          <div class="product-details" id="product-details">
-            <h3 class="condensed">CANDYSTRIPES</h3>
-            <p class="regular">Item No.: 6734</p>
-            <p class="regular">Collection: NEW ARRIVALS</p>
-            <p class="regular">Size: L</p>
-            <a class="regular" href="#">Edit Details</a>
-          </div> <!-- end product details -->
-        </div><!-- end one -->
-
-        <div class="two">
-          <div class="input-box">
-            <input class="bold" type="text" name="" value="1" class="qty-input">
-          </div><!-- end input box -->
-
-          <div class="quantity-text regular">
-            <h6>In Stock</h6>
-            <h1>Remove</h2>
-          </div><!-- end quantity text -->
-
-        </div><!-- end two -->
-
-        <div class="three-four-wrapper">
-          <div class="three">
-            <div class="price-section">
-              <h3 class="retail-price">$16.00</h3>
-              <h1 class="sale-price">$9.99</h1>
-            </div><!-- end price section -->
-          </div><!-- end three -->
-
-          <div class="four">
-            <div class="total-section">
-              <h2 class="total bold">$19.98</h2>
-            </div>
-          </div><!-- end four -->
-        </div><!-- end three-four-wrapper -->
-      </div><!-- end individual product -->
 
       <div class="cart-total-section">
         <div class="left">
@@ -265,7 +163,7 @@
           <div class="cart-total">
             <div class="subtotal">
               <p>Subtotal</p>
-              <p>$32.99</p>
+              <p>{{cartTotal | currency}}</p>
             </div>
             <div class="dotted-dash"></div>
             <div class="shipping">
@@ -279,10 +177,10 @@
               <div class="dotted-dash"></div>
             <div class="est-total">
               <p>Estimated Total</p>
-              <p>$34.99</p>
+              <p>{{cartTotal + 10 | currency}}</p>
             </div>
           </div><!-- end cart-total-section -->
-          <button class="bold" id="black-btn" type="button" name="button"><p>Checkout</p></button>
+          <button class="bold" id="black-btn" type="button" name="button" ui-sref="checkout"><p>Checkout</p></button>
         </div><!-- end right -->
       </div><!-- end cart total section -->
 

@@ -19,23 +19,10 @@ app.use(session({
   secret: config.sessionSecret,
   resave: false,
   saveUninitialized: true,
-  // cookie: { secure: false }
+  duration: 30 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000
+  // cookie: { maxAge:600000 }
 }));
-
-// app.use(function(req, res, next) {
-//   if (req.session.user) {
-//     console.log("found");
-//     delete req.session.user[0].password; // delete the password from the session
-//     // res.locals.user = req.session.user;
-//
-//     res.body.loginStatus = req.session.user[0];
-//       // finishing processing the middleware and run the route
-//       next();
-//   } else {
-//     console.log("not found");
-//     next();
-//   }
-// });
 
 // app.use(passport.initialize()); --used for auth0
 // app.use(passport.session()); -- used for auth0
@@ -104,7 +91,8 @@ app.post('/api/cart', cartControl.getCart);
 app.delete('/api/cart/clear', cartControl.deleteCart);
 app.delete('/api/cart/clear/:product_id/:user_id', cartControl.deleteItemInCart);
 app.post('/api/cart/add', cartControl.createCart);
-app.put('/api/cart/update', cartControl.createCart);     /* still not working - needs more configuring */
+app.put('/api/cart/update', cartControl.createCart);
+app.post('/api/cart/add/unlogged', cartControl.unloggedUserCart);  
 
 // EMAIL LIST
 app.post('/api/email', emailListControl.addEmail);

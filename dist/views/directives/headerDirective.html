@@ -781,8 +781,6 @@
     <div class="header-hover-title">
         <p>ABOUT US</p>
     </div>
-
-<<<<<<< HEAD
     <div class="header-hover-title">
         <p>PRESS</p>
     </div>
@@ -817,11 +815,11 @@
             <h4>FREE US SHIPPING OVER $25</h4>
         </div>
         <div class="header-middle-bottom" id="header-middle-bottom">
-            <p ng-mouseover="showMen = true" ng-mouseleave="showMen = false" ng-class="{'showBorder': showMen}" ui-sref="mens">MEN</p>
-            <p ng-mouseover="showWomen = true" ng-mouseleave="showWomen = false" ng-class="{'showBorder': showWomen}" ui-sref="womens">WOMEN</p>
-            <p ng-mouseover="showKids = true" ng-mouseleave="showKids = false" ng-class="{'showBorder': showKids}" ui-sref="kids">KIDS</p>
-            <p ng-mouseover="showUnderwear = true" ng-mouseleave="showUnderwear = false" ng-class="{'showBorder': showUnderwear}">UNDERWEAR</p>
-            <p ng-mouseover="showDiscover = true" ng-mouseleave="showDiscover = false" ng-class="{'showBorder': showDiscover}">DISCOVER</p>
+            <p ng-mouseover="showMen = true" ng-mouseleave="showMen = false" ng-class="{'showBorder': showMen}" ui-sref="mens" ng-click="showMen = !showMen">MEN</p>
+            <p ng-mouseover="showWomen = true" ng-mouseleave="showWomen = false" ng-class="{'showBorder': showWomen}" ui-sref="womens" ng-click="showWomen = !showWomen">WOMEN</p>
+            <p ng-mouseover="showKids = true" ng-mouseleave="showKids = false" ng-class="{'showBorder': showKids}" ui-sref="kids" ng-click="showKids = !showKids">KIDS</p>
+            <p ng-mouseover="showUnderwear = true" ng-mouseleave="showUnderwear = false" ng-class="{'showBorder': showUnderwear}" ng-click="showUnderwear = !showUnderwear">UNDERWEAR</p>
+            <p ng-mouseover="showDiscover = true" ng-mouseleave="showDiscover = false" ng-class="{'showBorder': showDiscover}" ng-click="showDiscover = !showDiscover">DISCOVER</p>
         </div>
     </div>
     <div class="header-right">
@@ -833,50 +831,66 @@
                 <!-- <p href='/auth'>{{ 1 ? "Logged in suckas" : 'Login / Regist'}}</p> -->
                 <div ui-sref="login">
                   <p ng-if="!loggedUser">Login / Register</p>
-                  <p ng-if="loggedUser">Welcome, {{loggedUser[0].first_name}}</p>
+                  <p ng-if="loggedUser">Welcome, {{loggedUser.first_name}}</p>
                 </div>
-=======
-    <div class="header-container" id="header-container">
-        <div class="header-left">
-            <div class="header-left-top" id="header-left-top ">
-                <img class="american-flag" src="https://bfx-objects.borderfree.com/v1/dist/images/context-chooser/flags/US.gif" alt=""><small id="phone">1-888-391-9020</small>
-            </div>
-            <div class="header-left-bottom" id="header-left-bottom">
-                <img src="http://demandware.edgesuite.net/bbbn_prd/on/demandware.static/Sites-Stance_US-Site/-/default/v1495370486050/images/svg-icons/stance-logo.svg" alt="stance logo" ui-sref="home">
->>>>>>> master
             </div>
             <div class="header-right-top-middle2">
                 <i class="fa fa-shopping-cart" aria-hidden="true" ui-sref="cart"></i>
             </div>
             <div class="header-right-top-right">
-                0
+                {{c || 0}}
             </div>
         </div>
-<<<<<<< HEAD
         <div class="header-right-bottom" id="header-right-bottom">
             <div class="header-right-bottom-left">
-                <p>Search</p>
-=======
-        <div class="header-right">
-            <div class="header-right-top">
-                <div class="header-right-top-left" id="header-right-top-left">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                </div>
-                <div class="header-right-top-middle1" id="header-right-top-middle1">
-                    <a href='/auth'><p>{{ 1 ? "Logged in suckas" : 'Login / Regist'}}</p></a>
-                </div>
-                <div class="header-right-top-middle2">
-                    <i class="fa fa-shopping-cart" aria-hidden="true" ui-sref="cart"></i>
-                </div>
-                <div class="header-right-top-right">
-                    0
-                </div>
->>>>>>> master
+                <input class="search" ng-class="{'input-extended': search || hover}" type="text" name="" placeholder="Search" ng-focus="search=true" ng-blur="search=false" ng-model="searchText">
+                <div class="search-results" ng-show="search || hover " ng-mouseover="hover=true" ng-mouseleave="hover=false">
+                  <div class="search-left">
+                    <h1>Collections</h1>
+                    <p>Star Wars</p>
+                    <p>NBA</p>
+                    <p>MLB</p>
+                    <p>New Arrivals</p>
+                    <p>Featured</p>
+                  </div><!-- end search left -->
+                  <div class="search-right">
+                    <div class="search-for-text">
+                      <p>Search for " {{searchText}} " ?</p>
+                    </div>
+                    <div class="search-item" ng-repeat="p in products | filter:searchText | limitTo: 5" >
+                      <div class="search-image" ui-sref="singleProduct({ id: p.product_id, mwk: p.mwk})">
+                        <img ng-src={{p.details_main_image_url}}>
+                      </div><!-- end search image -->
+                      <div class="search-desc">
+                        <h1>{{p.name}}</h1>
+                        <p>{{p.price | currency}}</p>
+                      </div><!-- end search desc -->
+                    </div>
+                  </div><!-- end search right -->
+
+
+
+                  <!-- <div class="left-search">
+                    <h1>Collections</h1>
+                    <p>Star Wars</p>
+                    <p>MLB</p>
+                    <p>NBA</p>
+                    <p>Super Invisibles</p>
+                    <p>Evil Knievel</p>
+                  </div> -->
+                  <!-- <div id="vert-line"></div> -->
+                  <!-- <div class="right-search" ui-sref="singleProduct({ id: p.product_id, mwk: p.mwk})">
+                    <div><img ng-src={{p.details_main_image_url}} ></div>
+                    <div class="right-search-text">
+                      <div class="search-item-name regular">{{p.name}}</div>
+                      <div class="search-item-price">from: {{p.price | currency}}</div>
+                    </div>
+                  </div>
+                </div> -->
             </div>
-            <div class="header-right-bottom-right">
-                <i class="fa fa-search"></i>
-            </div>
+            <!-- <i class="fa fa-search"></i> -->
         </div>
+        <i class="fa fa-search"></i>
     </div>
 </div>
 
@@ -904,7 +918,7 @@
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             </div>
             <div id="header-cart-responsive">
-                <p>0</p>
+                <p>{{c || 0}}</p>
             </div>
         </div>
     </div>
