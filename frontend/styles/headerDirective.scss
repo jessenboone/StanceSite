@@ -528,14 +528,18 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
-      align-items: center;
+      // align-items: center;
       width: 100%;
-      padding-top: 55px;
+      padding-top: 32px;
       padding-left: 80px;
       font-size: 11.5px;
       font-family: regular;
       color: #7B7B91;
       font-weight: 300;
+
+      i {
+        padding-top: 17px;
+      }
 
       .header-right-bottom-left {
         position: absolute;
@@ -548,11 +552,6 @@
         border-bottom: 0px;
         padding: 0px;
 
-        .focus-container {
-          border: 1px black solid;
-
-        }
-
         input {
           border: 0px;
           width: 70px;
@@ -562,9 +561,13 @@
         }
 
         input:focus {
+          outline: none;
+          border: 1px black solid;
+        }
+
+        .input-extended {
           width: 550px;
           height: 42px;
-
         }
 
 
@@ -597,7 +600,69 @@
 // }
 
 
+.search-results {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  z-index: 9999;
 
+  .search-left {
+    border-right: 1px solid grey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    width: 50%;
+    // height: 90%;
+    h1 {
+      font-size: 26px;
+      color: black;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+    p {
+      line-height: 28px;
+      margin-left: 10px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+    p:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .search-right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    .search-for-text {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+    .search-item {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 25px;
+    }
+    .search-image {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    .search-desc {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        color: black;
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
 
 
 

@@ -4,13 +4,21 @@ angular.module('app')
   return {
     restrict: 'E',
     templateUrl: '../views/directives/headerDirective.html',
-    // scope: {total: '='},
-    controller: function($rootScope, $scope) {
+
+    controller: function($scope, $rootScope) {
       if ($rootScope.loggedUser) {
         // $scope.user = $rootScope.loggedUser[0];
         // isLoggedIn = true;
         $scope.user = $rootScope.loggedUser[0];
       }
+
+      $scope.getProducts = () => {
+         mainSrvc.getProducts().then(function(response) {
+           $scope.products = response;
+         });
+       }
+       $scope.getProducts();
+
       $scope.getCart = () => {
         $scope.subtotal = 0;
         if ($rootScope.loggedUser) {

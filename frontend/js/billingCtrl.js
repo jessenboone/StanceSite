@@ -1,7 +1,11 @@
 angular.module('app')
-.controller('billingCtrl', function($rootScope, $scope, mainSrvc, stripe) {
+.controller('billingCtrl', function($rootScope, $scope, mainSrvc, $location, $anchorScroll, stripe) {
+
 
   $scope.checked = true;
+
+  $location.hash('top');
+  $anchorScroll();
 
   $scope.uspsGround = {
     "name": "USPS Shipping",

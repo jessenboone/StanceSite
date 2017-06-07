@@ -5,6 +5,18 @@ angular.module('app')
   $scope.isShown2 = true;
   $scope.noMatch = false;
 
+$("#email").keypress(function(event) {
+  if (event.which === 13) {
+    $("#password").focus()
+  }
+});
+
+$("#password").keypress(function(event) {
+  if (event.which === 13) {
+    $scope.login();
+  }
+});
+
   $scope.login = (returnUserEmail = $scope.userEmail, returnUserPassword = $scope.userPassword) => {
     mainSrvc.login(returnUserEmail, returnUserPassword).then((response) => {
       if (response[0]) {
@@ -17,7 +29,7 @@ angular.module('app')
         $scope.noMatch = true;
       }
     });
-    
+
     console.log('login', $rootScope);
   }
 

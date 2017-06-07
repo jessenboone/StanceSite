@@ -4,11 +4,13 @@ angular.module('app')
   $scope.test = 'orders working';
   $scope.test2 = mainSrvc.test;
 
-  $scope.getOrders = (user_id) => {
-    mainSrvc.getOrders(user_id).then(function(response) {
-      $scope.order = response;
+  $scope.getOrders = () => {
+    mainSrvc.getOrders($rootScope.loggedUser.id).then(function(response) {
+      console.log(response);
+      $scope.orders = response;
     })
   }
+  $scope.getOrders();
 
 
 });

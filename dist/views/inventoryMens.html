@@ -147,7 +147,7 @@
     </div>
     <div class="featuredSocks-3">
       <div class="featured-items-container">
-        <div class="featured-item-3" ng-repeat="p in product" ui-sref="singleProduct({ id: p.id, mwk: p.mwk })">
+        <div class="featured-item-3" ng-repeat="p in product" ui-sref="singleProduct({ id: p.product_id, mwk: p.mwk })">
           <img ng-src={{p.main_image_url}} />
           <hr class="line-under-featured-image">
           <p class="featured-item-name capital condensed">{{p.name}}</p>

@@ -829,9 +829,9 @@
             </div>
             <div class="header-right-top-middle1" id="header-right-top-middle1">
                 <!-- <p href='/auth'>{{ 1 ? "Logged in suckas" : 'Login / Regist'}}</p> -->
-                <div ui-sref="login">
-                  <p ng-if="!loggedUser">Login / Register</p>
-                  <p ng-if="loggedUser">Welcome, {{loggedUser.first_name}}</p>
+                <div>
+                  <p ui-sref="login" ng-if="!loggedUser">Login / Register</p>
+                  <p ui-sref="account" ng-if="loggedUser">Welcome, {{loggedUser.first_name}}</p>
                 </div>
             </div>
             <div class="header-right-top-middle2">
@@ -843,12 +843,54 @@
         </div>
         <div class="header-right-bottom" id="header-right-bottom">
             <div class="header-right-bottom-left">
-                <input type="text" name="" placeholder="Search">
+                <input class="search" ng-class="{'input-extended': search || hover}" type="text" name="" placeholder="Search" ng-focus="search=true" ng-blur="search=false" ng-model="searchText">
+                <div class="search-results" ng-show="search || hover " ng-mouseover="hover=true" ng-mouseleave="hover=false">
+                  <div class="search-left">
+                    <h1>Collections</h1>
+                    <p>Star Wars</p>
+                    <p>NBA</p>
+                    <p>MLB</p>
+                    <p>New Arrivals</p>
+                    <p>Featured</p>
+                  </div><!-- end search left -->
+                  <div class="search-right">
+                    <div class="search-for-text">
+                      <p>Search for " {{searchText}} " ?</p>
+                    </div>
+                    <div class="search-item" ng-repeat="p in products | filter:searchText | limitTo: 5" >
+                      <div class="search-image" ui-sref="singleProduct({ id: p.product_id, mwk: p.mwk})">
+                        <img ng-src={{p.details_main_image_url}}>
+                      </div><!-- end search image -->
+                      <div class="search-desc">
+                        <h1>{{p.name}}</h1>
+                        <p>{{p.price | currency}}</p>
+                      </div><!-- end search desc -->
+                    </div>
+                  </div><!-- end search right -->
+
+
+
+                  <!-- <div class="left-search">
+                    <h1>Collections</h1>
+                    <p>Star Wars</p>
+                    <p>MLB</p>
+                    <p>NBA</p>
+                    <p>Super Invisibles</p>
+                    <p>Evil Knievel</p>
+                  </div> -->
+                  <!-- <div id="vert-line"></div> -->
+                  <!-- <div class="right-search" ui-sref="singleProduct({ id: p.product_id, mwk: p.mwk})">
+                    <div><img ng-src={{p.details_main_image_url}} ></div>
+                    <div class="right-search-text">
+                      <div class="search-item-name regular">{{p.name}}</div>
+                      <div class="search-item-price">from: {{p.price | currency}}</div>
+                    </div>
+                  </div>
+                </div> -->
             </div>
-            <div class="header-right-bottom-right">
-                <i class="fa fa-search"></i>
-            </div>
+            <!-- <i class="fa fa-search"></i> -->
         </div>
+        <i class="fa fa-search"></i>
     </div>
 </div>
 

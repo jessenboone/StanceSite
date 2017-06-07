@@ -2,7 +2,7 @@
 
 angular.module('app', ['ui.router', 'angular-stripe']).config(function ($stateProvider, $urlRouterProvider, stripeProvider) {
 
-  stripeProvider.setPublishableKey('NEED A KEY');
+  stripeProvider.setPublishableKey('pk_test_udqh9s4rjfo18x53kQPAvNrR');
 
   $urlRouterProvider.otherwise('/');
 
@@ -75,9 +75,12 @@ angular.module('app').run(function ($rootScope, mainSrvc) {
 });
 'use strict';
 
-angular.module('app').controller('billingCtrl', function ($rootScope, $scope, mainSrvc) {
+angular.module('app').controller('billingCtrl', function ($rootScope, $scope, mainSrvc, $location, $anchorScroll, stripe) {
 
   $scope.checked = true;
+
+  $location.hash('top');
+  $anchorScroll();
 
   $scope.uspsGround = {
     "name": "USPS Shipping",
@@ -98,6 +101,30 @@ angular.module('app').controller('billingCtrl', function ($rootScope, $scope, ma
     "name": "UPS Next Day Delivery",
     "price": 18.00
   };
+
+  $scope.charge = function () {
+    return stripe.card.createToken($scope.payment.card).then(function (response) {
+      var payment = angular.copy($scope.payment);
+      payment.card = void 0;
+      payment.token = response.id;
+      checkoutService.processPayment($scope.total * 100, payment);
+    }).then(function (payment) {
+      swal({
+        title: "Thank You!",
+        text: "Your order will be shipped within 3 business days.",
+        imageUrl: "http://www.sv411.com/wp-content/uploads/GoPro-Logo.jpg",
+        confirmButtonText: "Continue exporing GoBro"
+      });
+      $scope.zeroOut();
+      $state.go('home');
+    }).catch(function (err) {
+      if (err.type && /^Stripe/.test(err.type)) {
+        console.log('Stripe error: ', err.message);
+      } else {
+        console.log('Other error occurred, possibly with your API', err.message);
+      }
+    });
+  };
 });
 'use strict';
 
@@ -108,11 +135,9 @@ angular.module('app').controller('cartCtrl', function ($rootScope, $scope, mainS
     if ($rootScope.loggedUser) {
       mainSrvc.getCart($rootScope.loggedUser.id).then(function (response) {
         $rootScope.products = $scope.products = response;
-        console.log($rootScope.products);
       });
     } else {
       $scope.products = $rootScope.cart;
-      console.log($scope.products);
     }
   };
   $scope.getCart();
@@ -205,13 +230,21 @@ angular.module('app').directive('headerDirective', function (mainSrvc) {
   return {
     restrict: 'E',
     templateUrl: '../views/directives/headerDirective.html',
-    // scope: {total: '='},
-    controller: function controller($rootScope, $scope) {
+
+    controller: function controller($scope, $rootScope) {
       if ($rootScope.loggedUser) {
         // $scope.user = $rootScope.loggedUser[0];
         // isLoggedIn = true;
         $scope.user = $rootScope.loggedUser[0];
       }
+
+      $scope.getProducts = function () {
+        mainSrvc.getProducts().then(function (response) {
+          $scope.products = response;
+        });
+      };
+      $scope.getProducts();
+
       $scope.getCart = function () {
         $scope.subtotal = 0;
         if ($rootScope.loggedUser) {
@@ -305,6 +338,18 @@ angular.module('app').controller('loginCtrl', function ($rootScope, $scope, $loc
   $scope.isShown = true;
   $scope.isShown2 = true;
   $scope.noMatch = false;
+
+  $("#email").keypress(function (event) {
+    if (event.which === 13) {
+      $("#password").focus();
+    }
+  });
+
+  $("#password").keypress(function (event) {
+    if (event.which === 13) {
+      $scope.login();
+    }
+  });
 
   $scope.login = function () {
     var returnUserEmail = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userEmail;
@@ -478,7 +523,7 @@ angular.module('app').service('mainSrvc', function ($http) {
   this.getOrders = function (user_id) {
     return $http({
       method: 'GET',
-      url: '/orders/' + user_id
+      url: '/api/orders/' + user_id
     }).then(function (response) {
       return response.data;
     });
@@ -487,7 +532,7 @@ angular.module('app').service('mainSrvc', function ($http) {
   this.submitOrder = function (order) {
     return $http({
       method: 'POST',
-      url: '/orders/submit',
+      url: '/api/orders/submit',
       data: { order: order }
     }).then(function (response) {
       return response.data;
@@ -533,15 +578,17 @@ angular.module('app').controller('ordersCtrl', function ($rootScope, $scope, mai
   $scope.test = 'orders working';
   $scope.test2 = mainSrvc.test;
 
-  $scope.getOrders = function (user_id) {
-    mainSrvc.getOrders(user_id).then(function (response) {
-      $scope.order = response;
+  $scope.getOrders = function () {
+    mainSrvc.getOrders($rootScope.loggedUser.id).then(function (response) {
+      console.log(response);
+      $scope.orders = response;
     });
   };
+  $scope.getOrders();
 });
 'use strict';
 
-angular.module('app').directive('randomDirective', function (mainSrvc) {
+angular.module('app').directive('randomDirective', function (mainSrvc, $location, $anchorScroll) {
 
   return {
     restrict: 'E',
@@ -556,15 +603,34 @@ angular.module('app').directive('randomDirective', function (mainSrvc) {
         mainSrvc.getProducts($stateParams.mwk).then(function (response) {
           var arr = [];
           var rand = [];
-          for (var i = 0; i < response.length; i++) {
-            if (response[i]['mwk'] === $stateParams.mwk) {
-              arr.push(response[i]);
+          if ($stateParams.mwk) {
+            for (var i = 0; i < response.length; i++) {
+              if (response[i]['mwk'] === $stateParams.mwk) {
+                arr.push(response[i]);
+              }
+            }
+            // for (var j = 0; j < 4; j++) {
+            //   rand.push(arr[Math.floor(arr.length * Math.random())]);
+            // }
+            while (rand.length < 4) {
+              var randomNumber = Math.floor(arr.length * Math.random());
+              if (rand.indexOf(arr[randomNumber]) === -1) {
+                rand.push(arr[randomNumber]);
+              }
+            }
+          } else {
+            while (rand.length < 4) {
+              var randomNumber = Math.floor(response.length * Math.random());
+              if (rand.indexOf(response[randomNumber]) === -1) {
+                rand.push(response[randomNumber]);
+              }
             }
           }
-          for (var j = 0; j < 4; j++) {
-            rand.push(arr[Math.floor(arr.length * Math.random())]);
-          }
           $scope.random = rand;
+
+          //////MOVES PAGE TO TOP/////////////
+          $location.hash('top');
+          $anchorScroll();
         });
       };
       $scope.getProducts();
