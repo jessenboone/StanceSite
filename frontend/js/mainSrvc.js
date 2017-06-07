@@ -45,7 +45,7 @@ angular.module('app')
   this.getCart = (user) => {
     return $http({
       method: 'POST',
-      url: '/cart',
+      url: '/api/cart',
       data: {user}
     }).then(response => response.data)
   };
@@ -67,7 +67,7 @@ angular.module('app')
   this.createCart = (quantity, purchase, user_id) => {
     return $http({
       method: 'POST',
-      url: '/create/cart',
+      url: '/api/cart/add',
       data: {
         quantity,
         purchase,
@@ -75,6 +75,17 @@ angular.module('app')
       }
     }).then(response => response)
   };
+
+  this.unloggedUserCart = (quantity, purchase) => {
+    return $http({
+      method: 'POST',
+      url: '/api/cart/add/unlogged',
+      data: {
+        quantity,
+        purchase
+      }
+    }).then(response => response.data)
+  }
 
   // EMAIL LIST //////////////////////////////////////////
   this.addEmail = (email) => {
@@ -89,14 +100,14 @@ angular.module('app')
   this.getOrders = (user_id) => {
     return $http({
       method: 'GET',
-      url: '/orders/' + user_id
+      url: '/api/orders/' + user_id
     }).then(response => response.data)
   };
 
   this.submitOrder = (order) => {
     return $http({
       method: 'POST',
-      url: '/orders/submit',
+      url: '/api/orders/submit',
       data: {order}
     }).then(response => response.data)
   };
@@ -106,7 +117,6 @@ angular.module('app')
       method: 'GET',
       url: '/loggedUser'
     }).then(response => {
-      console.log(response.data)
       if(response.status === 200){
         return response.data;
       } else {

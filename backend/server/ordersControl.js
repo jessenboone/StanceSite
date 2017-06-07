@@ -16,12 +16,10 @@ module.exports = {
 
   submitOrder: (req, res) => {
     let order = req.body
-    console.log(req.body);
     db.submit_order([], (err, order) => {
       if (!err) {
         console.lgo(order);
       } else {
-        console.log(err);
         res.send(err)
       }
     })
