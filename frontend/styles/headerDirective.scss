@@ -537,6 +537,13 @@
       color: #7B7B91;
       font-weight: 300;
 
+      .focus-container {
+        border: 1px #E7E7EF solid;
+        outline: none;
+
+      }
+
+
       .header-right-bottom-left {
         position: absolute;
         right: 146px;
@@ -547,11 +554,8 @@
         border-top: 0px;
         border-bottom: 0px;
         padding: 0px;
+        outline: none;
 
-        .focus-container {
-          border: 1px black solid;
-
-        }
 
         input {
           border: 0px;
@@ -559,11 +563,14 @@
           height: 42px;
           padding-left: 20px;
           transition: .5s all ease;
+
         }
 
         input:focus {
           width: 550px;
           height: 42px;
+          outline: none;
+          border: 1px solid #E7E7EF;
 
         }
 
