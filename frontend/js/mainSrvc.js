@@ -100,14 +100,14 @@ angular.module('app')
   this.getOrders = (user_id) => {
     return $http({
       method: 'GET',
-      url: '/orders/' + user_id
+      url: '/api/orders/' + user_id
     }).then(response => response.data)
   };
 
   this.submitOrder = (order) => {
     return $http({
       method: 'POST',
-      url: '/orders/submit',
+      url: '/api/orders/submit',
       data: {order}
     }).then(response => response.data)
   };

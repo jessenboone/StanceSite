@@ -829,9 +829,9 @@
             </div>
             <div class="header-right-top-middle1" id="header-right-top-middle1">
                 <!-- <p href='/auth'>{{ 1 ? "Logged in suckas" : 'Login / Regist'}}</p> -->
-                <div ui-sref="login">
-                  <p ng-if="!loggedUser">Login / Register</p>
-                  <p ng-if="loggedUser">Welcome, {{loggedUser.first_name}}</p>
+                <div>
+                  <p ui-sref="login" ng-if="!loggedUser">Login / Register</p>
+                  <p ui-sref="account" ng-if="loggedUser">Welcome, {{loggedUser.first_name}}</p>
                 </div>
             </div>
             <div class="header-right-top-middle2">

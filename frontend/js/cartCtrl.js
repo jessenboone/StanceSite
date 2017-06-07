@@ -7,12 +7,10 @@ angular.module('app')
     if ($rootScope.loggedUser) {
       mainSrvc.getCart($rootScope.loggedUser.id).then((response) => {
         $rootScope.products = $scope.products = response;
-        console.log($rootScope.products);
 
       });
     } else {
       $scope.products = $rootScope.cart;
-      console.log($scope.products);
     }
   };
   $scope.getCart();
