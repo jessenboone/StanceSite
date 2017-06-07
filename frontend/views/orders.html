@@ -3,7 +3,7 @@
     <p class="order-heading capital condensed">order history</p>
     <p class="order-total-items regular">1 - 1 Items</p>
 
-    <div class="order-info-div">
+    <div class="order-info-div" ng-repeat="order in orders">
       <div class="order-small-div"></div>
       <div class="order-info">
         <div class="order-status">
@@ -17,7 +17,7 @@
         <div class="order-product-info">
           <div class="order-status-2">
             <p class="order-status-subheading bold">Shipped to:</p>
-            <p>Miguel Larios               </p>
+            <p>{{order.name}}               </p>
           </div>
           <div class="order-status-2">
             <p class="order-status-subheading bold">Items:</p>

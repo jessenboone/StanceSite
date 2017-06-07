@@ -129,6 +129,9 @@ table {
   .checkbox-card-radio-container {
     display: flex; } }
 
+.checkout-steps {
+  display: flex; }
+
 .checkout-enter-coupon-container button {
   display: flex;
   align-items: center;
@@ -285,7 +288,8 @@ table {
         margin-left: -10px;
         margin-bottom: 15px; }
       .product-right .price-details-wrapper .price h3 {
-        text-decoration: line-through; }
+        font-family: "regular";
+        color: gray; }
 
 /*end product right*/
 .cart-total {
@@ -468,7 +472,8 @@ table {
       .desktop-content-wrapper .one .product-details h3 {
         font-size: 24px;
         margin-bottom: 10px;
-        letter-spacing: 1.5px; }
+        letter-spacing: 1.5px;
+        line-height: 26px; }
       .desktop-content-wrapper .one .product-details p {
         font-size: 13px;
         line-height: 17px;
@@ -510,7 +515,7 @@ table {
     flex-direction: column; }
     .desktop-content-wrapper .price-section h3 {
       color: grey;
-      text-decoration: line-through; }
+      font-family: "regular"; }
     .desktop-content-wrapper .price-section h1 {
       color: #0484A9; }
   .desktop-content-wrapper .total-section {

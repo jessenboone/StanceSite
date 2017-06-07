@@ -8,7 +8,6 @@ module.exports = {
       let user = req.body.user;
       db.get_cart([user], (err, cart) => {
         if (!err) {
-          console.log(cart);
           res.send(cart);
         } else {
           res.send(err);
@@ -98,7 +97,6 @@ module.exports = {
       itemsInCart.push({item, quantity});
     }
     req.session.cart = itemsInCart;
-    console.log(req.session.cart);
     res.status(200).send(req.session.cart)
   }
 

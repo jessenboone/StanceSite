@@ -82,6 +82,6 @@ angular.module('app', ['ui.router'])
 
 angular.module('app').run(function($rootScope, mainSrvc){
   mainSrvc.checkLoginStatus().then(function(response){
-    $rootScope.loggedUser = response.data;
+    $rootScope.loggedUser = response;
   })
 })

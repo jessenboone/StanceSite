@@ -68,14 +68,17 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 
 angular.module('app').run(function ($rootScope, mainSrvc) {
   mainSrvc.checkLoginStatus().then(function (response) {
-    $rootScope.loggedUser = response.data;
+    $rootScope.loggedUser = response;
   });
 });
 'use strict';
 
-angular.module('app').controller('billingCtrl', function ($rootScope, $scope, mainSrvc) {
+angular.module('app').controller('billingCtrl', function ($rootScope, $scope, mainSrvc, $location, $anchorScroll) {
 
   $scope.checked = true;
+
+  $location.hash('top');
+  $anchorScroll();
 
   $scope.uspsGround = {
     "name": "USPS Shipping",
@@ -106,11 +109,9 @@ angular.module('app').controller('cartCtrl', function ($rootScope, $scope, mainS
     if ($rootScope.loggedUser) {
       mainSrvc.getCart($rootScope.loggedUser.id).then(function (response) {
         $rootScope.products = $scope.products = response;
-        console.log($rootScope.products);
       });
     } else {
       $scope.products = $rootScope.cart;
-      console.log($scope.products);
     }
   };
   $scope.getCart();
@@ -214,14 +215,11 @@ angular.module('app').directive('headerDirective', function (mainSrvc) {
       $scope.getProducts = function () {
         mainSrvc.getProducts().then(function (response) {
           $scope.products = response;
-          console.log(response);
         });
       };
       $scope.getProducts();
 
-      console.log($rootScope);
       $scope.getCart = function () {
-        console.log($rootScope.loggedUser);
         $scope.subtotal = 0;
         if ($rootScope.loggedUser) {
           mainSrvc.getCart($rootScope.loggedUser.id).then(function (response) {
@@ -314,6 +312,18 @@ angular.module('app').controller('loginCtrl', function ($rootScope, $scope, $loc
   $scope.isShown = true;
   $scope.isShown2 = true;
   $scope.noMatch = false;
+
+  $("#email").keypress(function (event) {
+    if (event.which === 13) {
+      $("#password").focus();
+    }
+  });
+
+  $("#password").keypress(function (event) {
+    if (event.which === 13) {
+      $scope.login();
+    }
+  });
 
   $scope.login = function () {
     var returnUserEmail = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userEmail;
@@ -487,7 +497,7 @@ angular.module('app').service('mainSrvc', function ($http) {
   this.getOrders = function (user_id) {
     return $http({
       method: 'GET',
-      url: '/orders/' + user_id
+      url: '/api/orders/' + user_id
     }).then(function (response) {
       return response.data;
     });
@@ -496,7 +506,7 @@ angular.module('app').service('mainSrvc', function ($http) {
   this.submitOrder = function (order) {
     return $http({
       method: 'POST',
-      url: '/orders/submit',
+      url: '/api/orders/submit',
       data: { order: order }
     }).then(function (response) {
       return response.data;
@@ -542,15 +552,17 @@ angular.module('app').controller('ordersCtrl', function ($rootScope, $scope, mai
   $scope.test = 'orders working';
   $scope.test2 = mainSrvc.test;
 
-  $scope.getOrders = function (user_id) {
-    mainSrvc.getOrders(user_id).then(function (response) {
-      $scope.order = response;
+  $scope.getOrders = function () {
+    mainSrvc.getOrders($rootScope.loggedUser.id).then(function (response) {
+      console.log(response);
+      $scope.orders = response;
     });
   };
+  $scope.getOrders();
 });
 'use strict';
 
-angular.module('app').directive('randomDirective', function (mainSrvc) {
+angular.module('app').directive('randomDirective', function (mainSrvc, $location, $anchorScroll) {
 
   return {
     restrict: 'E',
@@ -565,15 +577,32 @@ angular.module('app').directive('randomDirective', function (mainSrvc) {
         mainSrvc.getProducts($stateParams.mwk).then(function (response) {
           var arr = [];
           var rand = [];
-          for (var i = 0; i < response.length; i++) {
-            if (response[i]['mwk'] === $stateParams.mwk) {
-              arr.push(response[i]);
+          if ($stateParams.mwk) {
+            for (var i = 0; i < response.length; i++) {
+              if (response[i]['mwk'] === $stateParams.mwk) {
+                arr.push(response[i]);
+              }
+            }
+            // for (var j = 0; j < 4; j++) {
+            //   rand.push(arr[Math.floor(arr.length * Math.random())]);
+            // }
+            while (rand.length < 4) {
+              var randomNumber = Math.floor(arr.length * Math.random());
+              if (rand.indexOf(arr[randomNumber]) === -1) {
+                rand.push(arr[randomNumber]);
+              }
+            }
+          } else {
+            while (rand.length < 4) {
+              var randomNumber = Math.floor(response.length * Math.random());
+              if (rand.indexOf(response[randomNumber]) === -1) {
+                rand.push(response[randomNumber]);
+              }
             }
           }
-          for (var j = 0; j < 4; j++) {
-            rand.push(arr[Math.floor(arr.length * Math.random())]);
-          }
           $scope.random = rand;
+          $location.hash('top');
+          $anchorScroll();
         });
       };
       $scope.getProducts();
