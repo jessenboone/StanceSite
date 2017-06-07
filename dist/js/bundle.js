@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
+angular.module('app', ['ui.router', 'angular-stripe']).config(function ($stateProvider, $urlRouterProvider, stripeProvider) {
+
+  stripeProvider.setPublishableKey('NEED A KEY');
 
   $urlRouterProvider.otherwise('/');
 
@@ -68,7 +70,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 
 angular.module('app').run(function ($rootScope, mainSrvc) {
   mainSrvc.checkLoginStatus().then(function (response) {
-    $rootScope.loggedUser = response.data;
+    $rootScope.loggedUser = response;
   });
 });
 'use strict';
@@ -210,9 +212,7 @@ angular.module('app').directive('headerDirective', function (mainSrvc) {
         // isLoggedIn = true;
         $scope.user = $rootScope.loggedUser[0];
       }
-      console.log($rootScope);
       $scope.getCart = function () {
-        console.log($rootScope.loggedUser);
         $scope.subtotal = 0;
         if ($rootScope.loggedUser) {
           mainSrvc.getCart($rootScope.loggedUser.id).then(function (response) {

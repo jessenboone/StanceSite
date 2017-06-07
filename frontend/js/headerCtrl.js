@@ -11,9 +11,7 @@ angular.module('app')
         // isLoggedIn = true;
         $scope.user = $rootScope.loggedUser[0];
       }
-      console.log($rootScope);
       $scope.getCart = () => {
-        console.log($rootScope.loggedUser);
         $scope.subtotal = 0;
         if ($rootScope.loggedUser) {
           mainSrvc.getCart($rootScope.loggedUser.id).then((response) => {

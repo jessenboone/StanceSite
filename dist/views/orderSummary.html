@@ -38,10 +38,10 @@
     <p class="checkout-edit">Edit</p>
   </div>
   <div class="checkout-order-address-info-container">
-    <p class="checkout-order-address-info regular">Carlos Larios</p>
-    <p class="checkout-order-address-info regular">1010 s 10th Ave</p>
-    <p class="checkout-order-address-info regular">Yakima, WA 98902</p>
-    <p class="checkout-order-address-info regular">United States</p>
+    <p class="checkout-order-address-info regular">{{firstName + " " + lastName}}</p>
+    <p class="checkout-order-address-info regular">{{streetAddress}}</p>
+    <p class="checkout-order-address-info regular">{{cityAddress}}</p>
+    <p class="checkout-order-address-info regular">{{country}}</p>
     <br>
     <p class="checkout-order-address-info regular">Method: {{shippingMethod.name}}</p>
   </div>

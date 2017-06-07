@@ -10,18 +10,18 @@
     <p class="checkout-input-title condensed capital">Select or enter shipping address</p>
     <form class="checkout-input-form" action="index.html" method="post">
       <label for="checkout-firstname">First Name</label>
-      <input type="text" id="checkout-firstname">
+      <input ng-model="firstName" type="text" id="checkout-firstname">
       <label for="checkout-lastname">Last Name</label>
-      <input type="text" id="checkout-lastname">
+      <input ng-model="lastName" type="text" id="checkout-lastname">
       <label for="checkout-lastname">Street Address, PO Box</label>
-      <input type="text" id="checkout-lastname">
+      <input ng-model="streetAddress" type="text" id="checkout-lastname">
       <label for="checkout-lastname">Apartment, Suite, Unit, Building, Floor (Optional)</label>
       <input type="text" id="checkout-lastname">
       <label for="checkout-lastname">City</label>
-      <input type="text" id="checkout-lastname">
+      <input ng-model="city" type="text" id="checkout-lastname">
       <label for="checkout-lastname">ZIP Code</label>
       <input type="text" id="checkout-lastname">
-      <label for="checkout-country">Country</label>
+      <label ng-model="country" for="checkout-country">Country</label>
       <select id="checkout-country">
         <option>Choose...</option>
         <option>United States</option>
