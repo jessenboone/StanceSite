@@ -28,6 +28,7 @@ module.exports = {
   },
 
   checkLoginStatus: (req, res) => {
+    console.log('in function');
     if (req.session.user) {
       delete req.session.user[0].password;
       res.status(200).send(req.session.user[0]);

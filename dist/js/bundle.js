@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
+angular.module('app', ['ui.router', 'angular-stripe']).config(function ($stateProvider, $urlRouterProvider, stripeProvider) {
+
+  stripeProvider.setPublishableKey('pk_test_udqh9s4rjfo18x53kQPAvNrR');
 
   $urlRouterProvider.otherwise('/');
 
@@ -73,7 +75,7 @@ angular.module('app').run(function ($rootScope, mainSrvc) {
 });
 'use strict';
 
-angular.module('app').controller('billingCtrl', function ($rootScope, $scope, mainSrvc, $location, $anchorScroll) {
+angular.module('app').controller('billingCtrl', function ($rootScope, $scope, mainSrvc, $location, $anchorScroll, stripe) {
 
   $scope.checked = true;
 
@@ -98,6 +100,30 @@ angular.module('app').controller('billingCtrl', function ($rootScope, $scope, ma
   $scope.upsNextDay = {
     "name": "UPS Next Day Delivery",
     "price": 18.00
+  };
+
+  $scope.charge = function () {
+    return stripe.card.createToken($scope.payment.card).then(function (response) {
+      var payment = angular.copy($scope.payment);
+      payment.card = void 0;
+      payment.token = response.id;
+      checkoutService.processPayment($scope.total * 100, payment);
+    }).then(function (payment) {
+      swal({
+        title: "Thank You!",
+        text: "Your order will be shipped within 3 business days.",
+        imageUrl: "http://www.sv411.com/wp-content/uploads/GoPro-Logo.jpg",
+        confirmButtonText: "Continue exporing GoBro"
+      });
+      $scope.zeroOut();
+      $state.go('home');
+    }).catch(function (err) {
+      if (err.type && /^Stripe/.test(err.type)) {
+        console.log('Stripe error: ', err.message);
+      } else {
+        console.log('Other error occurred, possibly with your API', err.message);
+      }
+    });
   };
 });
 'use strict';
@@ -601,6 +627,8 @@ angular.module('app').directive('randomDirective', function (mainSrvc, $location
             }
           }
           $scope.random = rand;
+
+          //////MOVES PAGE TO TOP/////////////
           $location.hash('top');
           $anchorScroll();
         });
